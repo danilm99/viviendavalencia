@@ -90,7 +90,8 @@ p{max-width:66ch;margin:8px 0}
 .ledger.two{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .klegend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:var(--muted);margin:4px 0 0}
 .klegend span::before{content:"";display:inline-block;width:14px;height:4px;background:var(--c);margin-right:6px;vertical-align:2px}
-@media (max-width:640px){.ledger{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}.ledger button{padding:10px 10px 10px;min-height:104px}.ledger b{padding-right:26px}}
+@media (max-width:640px){.ledger,.ledger.two{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.ledger button{padding:10px 10px 10px;min-height:0}.ledger b{padding-right:24px;font-size:23px}.ledger button .ic{top:10px;right:8px;width:20px;height:20px}.ledger span{font-size:13px}.ledger small{font-size:11.5px}}
+@media (max-width:340px){.ledger,.ledger.two{grid-template-columns:1fr}}
 /* figuras */
 figure{margin:22px 0 8px;padding:10px 0 0;border-top:3px solid var(--rule)}
 figure .t{font:700 18px/1.2 var(--display);letter-spacing:-.01em;margin:0 0 2px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
@@ -157,6 +158,8 @@ label.ctl{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--
 .ctls .full{grid-column:1/-1}
 @media (max-width:640px){.ctls{grid-template-columns:1fr}}
 .chk{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--fg)}
+label.ctl.chk{flex-direction:row;align-self:end;padding-bottom:8px}
+label.ctl.chk input{width:18px;height:18px;accent-color:var(--fg)}
 .explorer{background:var(--panel);padding:18px 18px 12px;margin:16px -18px;border-top:6px solid var(--mark)}
 @media (max-width:640px){.explorer{margin:16px -16px;padding:14px 14px 10px}}
 .explorer figure{border-top-width:1px;border-top-color:var(--line)}
@@ -181,12 +184,57 @@ summary{cursor:pointer;font-weight:600}
 .det ul{font-size:14px;padding-left:18px}
 .det li{margin-bottom:5px}
 .det .tbl table{font-size:13px}
-.two figure svg text,.det figure svg text{font-size:14px}
-@media (max-width:640px){figure svg text{font-size:15px}.two figure svg text{font-size:15px}.hero-chart svg text{font-size:15px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 a.totop{position:fixed;right:14px;bottom:14px;width:40px;height:40px;border-radius:999px;background:var(--fg);color:var(--bg);display:flex;align-items:center;justify-content:center;text-decoration:none;font:700 18px var(--display);box-shadow:var(--shadow);z-index:7;opacity:0;pointer-events:none;transition:opacity .2s}
 a.totop.on{opacity:1;pointer-events:auto}
 a.totop:hover{background:var(--mark);color:var(--mark-ink)}
+/* ---- móvil ---- */
+table.cardm td.y{border-radius:3px}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  header.hero{padding:22px 0 4px}
+  h1{font-size:clamp(34px,10vw,46px);margin-bottom:12px}
+  .dek{font-size:16.5px;line-height:1.45}
+  .meta{font-size:12.5px}
+  .btnrow{gap:8px;margin:12px 0}
+  .btn{padding:8px 13px;font-size:14px;border-width:1.5px}
+  section{padding:30px 0 6px}
+  h2{font-size:clamp(25px,7.2vw,30px)}
+  h3{font-size:19px;margin-top:24px}
+  .lede{font-size:16px}
+  .callout{font-size:18.5px;line-height:1.32}
+  figure{margin:18px 0 6px}
+  figure .t{font-size:16px}
+  figure .t button{font-size:11.5px;padding:3px 8px}
+  figure .d,figcaption,.src{font-size:12.5px}
+  .bars{grid-template-columns:minmax(92px,40%) 1fr auto;gap:6px 8px;font-size:13px}
+  .bars .val{font-size:12.5px}
+  .bars.wide{grid-template-columns:1fr auto;row-gap:2px}
+  .bars.wide .lbl{grid-column:1/-1;white-space:normal;margin-top:6px}
+  .stack{height:18px}
+  table{font-size:13px}
+  table.cardm thead{display:none}
+  table.cardm,table.cardm tbody,table.cardm tr,table.cardm td{display:block;width:100%}
+  table.cardm tr{border-top:1px solid var(--line);padding:10px 0}
+  table.cardm td{border:0;padding:2px 0}
+  table.cardm td.y{display:inline-block;width:auto;padding:1px 8px;margin:0 0 4px}
+  table.cardm.prom tr{display:flex;flex-direction:column;align-items:flex-start}
+  table.cardm.prom td.y{order:-1}
+  #tGrupos td:nth-child(2){color:var(--muted);font-size:12.5px}
+  #tDist th:first-child,#tDist td:first-child{position:sticky;left:0;background:var(--bg);z-index:1;box-shadow:1px 0 0 var(--line)}
+  .swipe{display:block}
+  nav.spine{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+  nav.spine a{font-size:13.5px}
+  a.totop{width:38px;height:38px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .det .box{border-top-width:6px}
+  .det h4{font-size:22px}
+  .det .big{font-size:42px}
+  .explorer{margin:16px -16px;padding:14px 16px 10px}
+  .timeline{grid-template-columns:1fr;gap:2px}
+  .timeline b{justify-self:start;margin-top:10px}
+  ul.src-list{font-size:13px}
+}
+.swipe{display:none;font-size:12px;color:var(--muted);margin:4px 0 0}
 @media print{nav.spine,.det,.btnrow{display:none}.page{display:block}figure{break-inside:avoid}}
 </style>
 </head>
@@ -231,7 +279,7 @@ a.totop:hover{background:var(--mark);color:var(--mark-ink)}
   <figure><div class="t">Fianza mediana de los contratos nuevos por código postal: 2021 frente a 2025</div><div class="d">Una fianza equivale a una mensualidad. Solo códigos con 40 o más contratos; entre paréntesis, la mediana de 2021.</div><div class="bars" id="chFianzaCp"></div><figcaption>Registro de fianzas de la Generalitat (dadesobertes.gva.es). <span id="capFianzaCp"></span></figcaption></figure>
 
   <h3>Por distrito</h3>
-  <div class="tbl"><table id="tDist"><thead><tr><th>Distrito</th><th class="n">Alquiler €/m²<small>idealista sep-26</small></th><th class="n">Var. anual</th><th class="n">Compra €/m²<small>idealista sep-26</small></th><th class="n">Var. anual</th><th class="n">Alquiler €/mes<small>UPV 4T-25</small></th><th class="n">Alquiler pagado<small>SERPAVI mediana 2023</small></th><th class="n">Var. 2018-23</th><th class="n">Renta/persona<small>INE 2024</small></th></tr></thead><tbody></tbody></table></div>
+  <p class="swipe">Desliza la tabla para ver todas las columnas.</p><div class="tbl"><table id="tDist"><thead><tr><th>Distrito</th><th class="n">Alquiler €/m²<small>idealista sep-26</small></th><th class="n">Var. anual</th><th class="n">Compra €/m²<small>idealista sep-26</small></th><th class="n">Var. anual</th><th class="n">Alquiler €/mes<small>UPV 4T-25</small></th><th class="n">Alquiler pagado<small>SERPAVI mediana 2023</small></th><th class="n">Var. 2018-23</th><th class="n">Renta/persona<small>INE 2024</small></th></tr></thead><tbody></tbody></table></div>
   <p class="src">Brains RE (1T-2026) sitúa el esfuerzo del alquiler por encima del 30 % de la renta del hogar en 17 de los 19 distritos: Poblats Marítims 42,5 %, Quatre Carreres 41,4 %; solo el Pla del Real (24,9 %) queda claramente por debajo. idealista estima el esfuerzo medio en la ciudad en el 40 % (feb-2026).</p>
   <figure><div class="t">Evolución del alquiler anunciado por distrito, €/m² (media anual idealista)</div><div class="d">Elige un distrito para compararlo con la media de la ciudad.</div><div class="ctls"><label class="ctl">Distrito<select id="selDist"></select></label></div><div id="chDistSerie"></div><figcaption>idealista vía Anuario Estadístico (tablas 4.4), medias anuales 2016-2024 y dato de septiembre de 2026.</figcaption></figure>
   <h3>Alquiler mediano pagado por barrio (2023)</h3>
@@ -313,7 +361,7 @@ a.totop:hover{background:var(--mark);color:var(--mark-ink)}
   <figure><div class="t">Población de otra nacionalidad por continente (2017-2025)</div><div id="chContSerie"></div><figcaption>Padrón municipal a 1 de enero, vía Anuario. Hasta 2020 la UE incluye al Reino Unido; América del Norte y Central se separan desde 2021 (aquí se suman).</figcaption></figure>
   <figure><div class="t">Nacionalidades más frecuentes: 2017, 2021 y 2025</div><div id="chNac3"></div><figcaption>Padrón vía Anuario (tablas de nacionalidades más frecuentes). Rumanía era la primera en 2017 y es la séptima en 2025. Las nacionalidades sin barra en un año no estaban ese año entre las más frecuentes que publica el Anuario.</figcaption></figure>
   <h3>Seis grupos, seis mercados</h3>
-  <div class="tbl"><table id="tGrupos"><thead><tr><th>Grupo</th><th>Nacionalidades</th><th>Cifras y dónde viven</th></tr></thead><tbody></tbody></table></div>
+  <div class="tbl"><table class="cardm" id="tGrupos"><thead><tr><th>Grupo</th><th>Nacionalidades</th><th>Cifras y dónde viven</th></tr></thead><tbody></tbody></table></div>
   <figure><div class="t">Composición por distrito (2025)</div><div class="d">Porcentaje de cada origen sobre los residentes de otra nacionalidad del distrito. El centro y la playa concentran a europeos y norteamericanos; la periferia norte y oeste, con los alquileres más bajos de la ciudad, a latinoamericanos, africanos y asiáticos.</div><div id="chContDist"></div><figcaption>Padrón municipal 2025 vía Anuario (tabla 9).</figcaption></figure>
   <h3>Renta, tenencia y lo que pagan</h3>
   <div class="cards" id="cardsRentaExt"></div>
@@ -369,14 +417,14 @@ a.totop:hover{background:var(--mark);color:var(--mark-ink)}
   <p class="lede" id="pGasto"></p>
   <div class="ledger two" id="kpiGasto"></div>
   <h3>Promesas frente a realidad (2018-2026)</h3>
-  <div class="tbl"><table class="prom" id="tProm"><thead><tr><th>Anuncio</th><th>Cuándo</th><th>Qué ha pasado</th></tr></thead><tbody></tbody></table></div>
+  <div class="tbl"><table class="prom cardm" id="tProm"><thead><tr><th>Anuncio</th><th>Cuándo</th><th>Qué ha pasado</th></tr></thead><tbody></tbody></table></div>
   <figure><div class="t">Coste por vivienda pública según la vía (€)</div><div class="bars wide" id="chCoste"></div><figcaption>Cálculo propio a partir de los importes publicados por el Ayuntamiento y la Generalitat. Comprar un edificio ya habitado (La Torre) protege a sus inquilinos, pero no añade viviendas al parque.</figcaption></figure>
   <h3>Ayuntamiento y AUMSA</h3>
-  <div class="tbl"><table id="tAyto"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
+  <div class="tbl"><table class="cardm" id="tAyto"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
   <h3>Generalitat (EVha y Conselleria)</h3>
-  <div class="tbl"><table id="tGva"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
+  <div class="tbl"><table class="cardm" id="tGva"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
   <h3>Estado y fondos europeos</h3>
-  <div class="tbl"><table id="tEstado"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
+  <div class="tbl"><table class="cardm" id="tEstado"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
 </section>
 
 <section id="explorador">
@@ -434,10 +482,13 @@ const fecha=iso=>{ const m=String(iso).match(/(\d{4})-(\d{2})-(\d{2})/); return 
 const normD=s=>{ s=dkey(s); const m={"L'Eixample":"l'Eixample","L'Olivereta":"l'Olivereta","La Saïdia":"la Saïdia","El Pla del Real":"el Pla del Real"}; return m[s]||s; };
 function showTip(e,html){ tip.innerHTML=html; tip.style.display='block'; const r=tip.getBoundingClientRect(); let x=e.clientX+12,y=e.clientY+12; if(x+r.width>innerWidth-8)x=e.clientX-r.width-12; if(y+r.height>innerHeight-8)y=e.clientY-r.height-12; tip.style.left=x+'px'; tip.style.top=y+'px'; }
 function hideTip(){ tip.style.display='none'; }
+const cw=el=>{ const w=el.clientWidth||(el.parentElement&&el.parentElement.clientWidth)||720; return Math.max(300,Math.min(720,Math.round(w))); };
+const REDRAW=new Map();
 
 // ---------- gráfico de líneas con crosshair (eje derecho: sr.axis='r') ----------
 function lineChart(el,o){
-  const W=720,H=o.h||260,m={l:48,r:o.series.some(s=>s.axis==='r')?48:22,t:14,b:28}; const w=W-m.l-m.r,h=H-m.t-m.b;
+  REDRAW.set(el,()=>lineChart(el,o));
+  const W=cw(el),H=o.h||260,m={l:48,r:o.series.some(s=>s.axis==='r')?48:22,t:14,b:28}; const w=W-m.l-m.r,h=H-m.t-m.b;
   const L=o.series.filter(s=>s.axis!=='r'), R=o.series.filter(s=>s.axis==='r');
   const xs=o.series.flatMap(s=>s.pts.map(p=>p[0]));
   const x0=o.x0??Math.min(...xs), x1=o.x1??Math.max(...xs);
@@ -451,12 +502,14 @@ function lineChart(el,o){
   if(R.length) for(const t of ticks(r0,r1,5)) s+='<text x="'+(W-m.r+6)+'" y="'+(YR(t)+4)+'" text-anchor="start" fill="'+R[0].color+'">'+(o.rf?o.rf(t):fmt(t))+'</text>';
   for(const t of xt) s+='<text x="'+X(t)+'" y="'+(H-8)+'" text-anchor="'+(X(t)>W-30?'end':X(t)<m.l+12?'start':'middle')+'" fill="var(--muted)">'+t+'</text>';
   for(const a of (o.ann||[])){ s+='<line x1="'+X(a.x)+'" x2="'+X(a.x)+'" y1="'+m.t+'" y2="'+(m.t+h)+'" stroke="var(--fg)" stroke-dasharray="3 3" stroke-opacity=".5"/><text x="'+(X(a.x)+4)+'" y="'+(a.pos==='b'?(m.t+h-6):(m.t+10))+'" fill="var(--muted)" font-size="10.5">'+esc(a.label)+'</text>'; }
+  const LBL=[];
   o.series.forEach((sr,i)=>{ const YY=sr.axis==='r'?YR:Y; const d=sr.pts.map((p,j)=>((j&&!(o.gap&&p[0]-sr.pts[j-1][0]>o.gap))?'L':'M')+X(p[0]).toFixed(1)+' '+YY(p[1]).toFixed(1)).join(' ');
     if(sr.area) s+='<path d="'+d+' L'+X(sr.pts[sr.pts.length-1][0]).toFixed(1)+' '+YY(sr.axis==='r'?r0:y0)+' L'+X(sr.pts[0][0]).toFixed(1)+' '+YY(sr.axis==='r'?r0:y0)+'Z" fill="'+sr.color+'" opacity=".1"/>';
     s+='<path d="'+d+'" fill="none" stroke="'+sr.color+'" stroke-width="'+(sr.w||2.2)+'" stroke-linejoin="round"'+(sr.dash?' stroke-dasharray="5 4"':'')+'/>';
     if(sr.dots) for(const p of sr.pts) s+='<circle cx="'+X(p[0])+'" cy="'+YY(p[1])+'" r="3.5" fill="'+sr.color+'" stroke="var(--panel)" stroke-width="1.5"/>';
     const last=sr.pts[sr.pts.length-1]; s+='<circle cx="'+X(last[0])+'" cy="'+YY(last[1])+'" r="4" fill="'+sr.color+'" stroke="var(--panel)" stroke-width="2"/>';
-    if(sr.label!==false) s+='<text x="'+(X(last[0])-6)+'" y="'+(YY(last[1])-9)+'" text-anchor="end" fill="var(--fg)" font-weight="600">'+esc(sr.lf?sr.lf(last[1]):((sr.axis==='r'&&o.rf)?o.rf(last[1]):(o.yf?o.yf(last[1]):fmt(last[1]))))+'</text>';
+    let ly=YY(last[1])-9; const lx=X(last[0])-6; for(let g=0;g<6&&LBL.some(q=>Math.abs(q[1]-ly)<13&&Math.abs(q[0]-lx)<90);g++) ly+= (ly<m.t+20?16:-16)*(g%2?-1:1)*(g+1); ly=Math.max(m.t+10,Math.min(m.t+h-4,ly)); if(sr.label!==false) LBL.push([lx,ly]);
+    if(sr.label!==false) s+='<text x="'+lx+'" y="'+ly+'" text-anchor="end" fill="var(--fg)" font-weight="600">'+esc(sr.lf?sr.lf(last[1]):((sr.axis==='r'&&o.rf)?o.rf(last[1]):(o.yf?o.yf(last[1]):fmt(last[1]))))+'</text>';
   });
   s+='<line id="cx" x1="0" x2="0" y1="'+m.t+'" y2="'+(m.t+h)+'" stroke="var(--fg)" stroke-opacity=".4" style="display:none"/><rect x="'+m.l+'" y="'+m.t+'" width="'+w+'" height="'+h+'" fill="transparent" id="hit"/></svg>';
   el.innerHTML=s; const prev=el.previousElementSibling; if(prev&&prev.classList.contains('legend')) prev.remove();
@@ -477,34 +530,39 @@ const qlabel=x=>{ const y=Math.floor(x); return Math.round((x-y)*4+0.5)+'T '+y; 
 
 // ---------- barras verticales (apiladas si vals[i] es array) ----------
 function barChart(el,o){
-  const W=720,H=o.h||220,m={l:44,r:10,t:16,b:26}; const w=W-m.l-m.r,h=H-m.t-m.b;
+  REDRAW.set(el,()=>barChart(el,o));
+  const W=cw(el),H=o.h||220,m={l:44,r:10,t:16,b:26}; const w=W-m.l-m.r,h=H-m.t-m.b;
   const n=o.cats.length, tot=o.vals.map(v=>Array.isArray(v)?v.reduce((a,b)=>a+b,0):v), ymax=o.y1||Math.max(...tot)*1.1, ymin=o.y0||0;
   const Y=v=>m.t+h-(v-ymin)/(ymax-ymin)*h, bw=w/n, bar=Math.min(bw*0.68,60);
   let s='<svg viewBox="0 0 '+W+' '+H+'" font-family="var(--body)" font-size="11">';
   for(const t of ticks(ymin,ymax,4)) s+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(t)+'" y2="'+Y(t)+'" stroke="var(--grid)"/><text x="'+(m.l-6)+'" y="'+(Y(t)+4)+'" text-anchor="end" fill="var(--muted)">'+(o.yf?o.yf(t):fmt(t))+'</text>';
   o.cats.forEach((c,i)=>{ const x=m.l+bw*i+(bw-bar)/2; let v=o.vals[i]; const segs=Array.isArray(v)?v:[v]; let acc=ymin;
     segs.forEach((sv,k)=>{ const y1=Y(acc), y2=Y(acc+sv); s+='<rect x="'+x+'" y="'+y2+'" width="'+bar+'" height="'+Math.max(0,y1-y2-(k?2:0))+'" fill="'+((o.colors||[C.s1])[k]||C.s1)+'"><title>'+esc(c)+(o.names?' · '+esc(o.names[k]):'')+': '+fmt(sv)+'</title></rect>'; acc+=sv; });
-    if(o.labels!==false&&(n<=14||i===n-1)) s+='<text x="'+(x+bar/2)+'" y="'+(Y(acc)-4)+'" text-anchor="middle" fill="var(--fg)" font-size="10.5">'+(o.vf?o.vf(acc):fmt(acc))+'</text>';
-    if(n<=16||i%Math.ceil(n/12)===0) s+='<text x="'+(x+bar/2)+'" y="'+(H-8)+'" text-anchor="middle" fill="var(--muted)">'+esc(c)+'</text>';
+    if(o.labels!==false&&((n<=14&&bw>=34)||i===n-1)) s+='<text x="'+(x+bar/2)+'" y="'+(Y(acc)-4)+'" text-anchor="middle" fill="var(--fg)" font-size="10.5">'+(o.vf?o.vf(acc):fmt(acc))+'</text>';
+    const every=Math.max(1,Math.ceil(n*Math.max(30,String(c).length*6.2+6)/w)); if(i%every===0||i===n-1) s+='<text x="'+(x+bar/2)+'" y="'+(H-8)+'" text-anchor="middle" fill="var(--muted)">'+esc(c)+'</text>';
   });
-  s+='</svg>'; el.innerHTML=s;
+  s+='</svg>'; el.innerHTML=s; { const pv=el.previousElementSibling; if(pv&&pv.classList.contains('legend')) pv.remove(); }
   if(o.names) el.insertAdjacentHTML('beforebegin','<div class="legend">'+o.names.map((nm,k)=>'<span class="sq" style="--c:'+(o.colors[k])+'">'+esc(nm)+'</span>').join('')+'</div>');
 }
 function groupBars(el,o){
-  const W=720,H=o.h||240,m={l:44,r:10,t:16,b:40}; const w=W-m.l-m.r,h=H-m.t-m.b;
-  const n=o.cats.length,k=o.series.length, ymax=o.y1||Math.max(...o.series.flatMap(s=>s.vals))*1.1;
-  const Y=v=>m.t+h-v/ymax*h, bw=w/n, gw=bw*0.78, bar=gw/k;
+  REDRAW.set(el,()=>groupBars(el,o));
+  const W=cw(el),n=o.cats.length,k=o.series.length; const bw0=(W-54)/n, rot=bw0<64;
+  const H=(o.h||240)+(rot?34:0),m={l:44,r:10,t:16,b:rot?74:40}; const w=W-m.l-m.r,h=H-m.t-m.b;
+  const ymax=o.y1||Math.max(...o.series.flatMap(s=>s.vals))*1.1;
+  const Y=v=>m.t+h-v/ymax*h, bw=w/n, gw=bw*0.8, bar=gw/k;
   let s='<svg viewBox="0 0 '+W+' '+H+'" font-family="var(--body)" font-size="11">';
   for(const t of ticks(0,ymax,4)) s+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(t)+'" y2="'+Y(t)+'" stroke="var(--grid)"/><text x="'+(m.l-6)+'" y="'+(Y(t)+4)+'" text-anchor="end" fill="var(--muted)">'+(o.yf?o.yf(t):fmt(t))+'</text>';
-  o.cats.forEach((c,i)=>{ const x0=m.l+bw*i+(bw-gw)/2; o.series.forEach((sr,j)=>{ const v=sr.vals[i]||0; s+='<rect x="'+(x0+bar*j)+'" y="'+Y(v)+'" width="'+(bar-1.5)+'" height="'+(m.t+h-Y(v))+'" fill="'+sr.color+'"><title>'+esc(c)+' · '+esc(sr.name)+': '+fmt(v)+'</title></rect>'; });
-    const lbl=c.length>13?c.slice(0,12)+'…':c; s+='<text x="'+(x0+gw/2)+'" y="'+(H-10)+'" text-anchor="middle" fill="var(--muted)" font-size="'+(n>10?9.5:11)+'">'+esc(lbl)+'</text>'; });
-  s+='</svg>'; el.innerHTML=s;
+  o.cats.forEach((c,i)=>{ const x0=m.l+bw*i+(bw-gw)/2; o.series.forEach((sr,j)=>{ const v=sr.vals[i]||0; s+='<rect x="'+(x0+bar*j)+'" y="'+Y(v)+'" width="'+Math.max(1,bar-1.5)+'" height="'+(m.t+h-Y(v))+'" fill="'+sr.color+'"><title>'+esc(c)+' · '+esc(sr.name)+': '+fmt(v)+'</title></rect>'; });
+    const cx=x0+gw/2, ly=m.t+h+12, lbl=c.length>14?c.slice(0,13)+'…':c;
+    s+=rot?'<text transform="translate('+cx+' '+ly+') rotate(-45)" text-anchor="end" fill="var(--muted)">'+esc(lbl)+'</text>':'<text x="'+cx+'" y="'+(H-10)+'" text-anchor="middle" fill="var(--muted)">'+esc(lbl)+'</text>'; });
+  s+='</svg>'; el.innerHTML=s; { const pv=el.previousElementSibling; if(pv&&pv.classList.contains('legend')) pv.remove(); }
   el.insertAdjacentHTML('beforebegin','<div class="legend">'+o.series.map(sr=>'<span class="sq" style="--c:'+sr.color+'">'+esc(sr.name)+'</span>').join('')+'</div>');
 }
 function barsH(el,rows,o={}){ const mx=o.max||Math.max(...rows.map(r=>r.v)); el.innerHTML=rows.map(r=>'<div class="lbl" title="'+esc(r.l)+'">'+esc(r.l)+(r.sub?'<small>'+esc(r.sub)+'</small>':'')+'</div><div class="trk"><div class="fill'+(r.c?' '+r.c:'')+'" style="width:'+(100*Math.max(0,r.v)/mx)+'%"></div></div><div class="val">'+(o.vf?o.vf(r.v):fmt(r.v))+(r.vs?' <small>'+esc(r.vs)+'</small>':'')+'</div>').join(''); }
 function stackRows(el,rows,names,colors){ el.innerHTML='<div class="stackleg">'+names.map((n,i)=>'<span style="--c:'+colors[i]+'">'+esc(n)+'</span>').join('')+'</div>'+rows.map(r=>{ const t=r.v.reduce((a,b)=>a+b,0)||1; return '<div style="display:grid;grid-template-columns:minmax(100px,30%) 1fr;gap:8px;align-items:center;font-size:13px;margin:3px 0"><div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="'+esc(r.l)+'">'+esc(r.l)+'</div><div class="stack" style="margin:0">'+r.v.map((v,i)=>'<div style="width:'+(100*v/t)+'%;background:'+colors[i]+'" title="'+esc(names[i])+': '+fmt(v)+' ('+Math.round(100*v/t)+' %)"></div>').join('')+'</div></div>'; }).join(''); }
 function scatterChart(el,pts,o={}){
-  const W=720,H=o.h||300,m={l:52,r:16,t:14,b:34}; const w=W-m.l-m.r,h=H-m.t-m.b;
+  REDRAW.set(el,()=>scatterChart(el,pts,o));
+  const W=cw(el),H=o.h||300,m={l:52,r:16,t:14,b:34}; const w=W-m.l-m.r,h=H-m.t-m.b;
   if(pts.length<2){ el.innerHTML='<p class="sub">Sin puntos en común.</p>'; return null; }
   const xs=pts.map(p=>p.x), ys=pts.map(p=>p.y);
   const pad=(a,b)=>{ const d=(b-a)||Math.abs(a)||1; return [a-d*0.08,b+d*0.08]; };
@@ -584,6 +642,7 @@ function figDet(id,key){ const el=document.getElementById(id); if(!el) return; c
 const links=[...document.querySelectorAll('nav.spine a[href^="#"]')]; const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
 const io=new IntersectionObserver(es=>{ for(const en of es) if(en.isIntersecting){ links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)); const a=links.find(a=>a.getAttribute('href')==='#'+en.target.id); if(a&&innerWidth<=980) a.scrollIntoView({block:'nearest',inline:'center'}); } },{rootMargin:'-20% 0px -70% 0px'});
 secs.forEach(s=>io.observe(s));
+let lastW=innerWidth,rzT; addEventListener('resize',()=>{ clearTimeout(rzT); rzT=setTimeout(()=>{ if(Math.abs(innerWidth-lastW)<40) return; lastW=innerWidth; for(const [el,f] of [...REDRAW]){ if(!el.isConnected){ REDRAW.delete(el); continue; } if(el.offsetParent!==null) f(); } },250); });
 const totop=document.querySelector('a.totop'); if(totop){ addEventListener('scroll',()=>totop.classList.toggle('on',scrollY>900),{passive:true}); }
 // ================= Fuentes y fichas de detalle =================
 const SRC={

@@ -8,7 +8,7 @@
 <meta property="og:title" content="Mapa de pisos turísticos de València">
 <meta property="og:description" content="Todos los pisos turísticos de la ciudad, piso a piso, con licencias, propietarios y precios. Datos a septiembre de 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
 <style>
@@ -219,6 +219,83 @@ tr.lnk:hover td{background:color-mix(in srgb,var(--fg) 5%,transparent)}
 .stackleg span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:6px;vertical-align:-1px}
 .tiles-dark{filter:invert(1) hue-rotate(185deg) brightness(.9) contrast(.92) saturate(.55)}
 .leaflet-tile-pane .tiles-dark img{mix-blend-mode:normal}
+
+/* ===== Sistema visual compartido con el informe (hormigón, tinta, rotulador amarillo) ===== */
+:root{
+  --bg:#ecedea; --panel:#ffffff; --fg:#15171a; --muted:#5b6066; --line:#cfd2cc;
+  --accent:#ffd23f; --accent-fg:#15171a; --hl:#ffd23f;
+  --ok:#1f8f5f; --nat:#2a9d8f; --temp:#b8860b; --warn:#d1352b; --ex:#8a8f96; --osm:#1f4fa3; --catav:#7a4da8; --route:#1f4fa3; --bar:#1f4fa3;
+  --shadow:0 8px 28px rgba(21,23,26,.18);
+  --display:"Bricolage Grotesque","Arial Black",sans-serif; --body:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#121416; --panel:#1b1e21; --fg:#ecede8; --muted:#a1a6ad; --line:#33373c; --hl:#7a6612;
+  --ok:#4fc38a; --nat:#4ec3b5; --temp:#e0b73a; --warn:#ef6b5f; --ex:#777c84; --osm:#6d9ae8; --catav:#b08ee0; --route:#6d9ae8; --bar:#6d9ae8;
+  --shadow:0 8px 28px rgba(0,0,0,.6); } }
+:root[data-theme="dark"]{
+  --bg:#121416; --panel:#1b1e21; --fg:#ecede8; --muted:#a1a6ad; --line:#33373c; --hl:#7a6612;
+  --ok:#4fc38a; --nat:#4ec3b5; --temp:#e0b73a; --warn:#ef6b5f; --ex:#777c84; --osm:#6d9ae8; --catav:#b08ee0; --route:#6d9ae8; --bar:#6d9ae8;
+  --shadow:0 8px 28px rgba(0,0,0,.6); }
+body{-webkit-font-smoothing:antialiased}
+a{color:var(--fg);text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#search{border-radius:999px;border-width:2px;border-color:var(--fg);padding:4px 6px 4px 14px}
+.chip{font-size:12.5px;padding:6px 11px;border-color:var(--line)}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+#count{font-family:var(--body);font-size:13px;border-radius:999px;padding:5px 12px;letter-spacing:0}
+#count b{font:800 16px var(--display);color:var(--fg);background:linear-gradient(transparent 55%,var(--hl) 55%,var(--hl) 92%,transparent 92%);padding:0 2px}
+#tabs{border-radius:999px;border:2px solid var(--fg);padding:3px}
+#tabs button{font:600 14px var(--body);text-transform:none;letter-spacing:0;border-radius:999px;padding:7px 16px}
+#tabs a{font:600 14px var(--body);text-transform:none;letter-spacing:0;color:var(--fg);border-radius:999px;padding:7px 14px;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px}
+.fab{border-radius:999px;border-width:2px;border-color:var(--fg)}
+.fab[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--fg)}
+#sheet{border-top:6px solid var(--accent);border-radius:16px 16px 0 0}
+#sheet h2{font:800 23px/1.08 var(--display);letter-spacing:-.015em}
+.btn{border:2px solid var(--fg);border-radius:999px;font-weight:600}
+.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn.primary:hover{background:var(--accent);color:var(--accent-fg)}
+.btn[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--fg)}
+#menu .card{border-top:6px solid var(--accent);border-radius:16px 16px 0 0}
+#menu h3{font:800 20px/1.1 var(--display);letter-spacing:-.01em}
+.seg button[aria-pressed="true"]{border-color:var(--fg);box-shadow:0 0 0 3px var(--accent)}
+.tg[aria-pressed="true"] .sw2{background:var(--fg)}
+.tg[aria-pressed="true"] .sw2::after{background:var(--accent)}
+.opt svg{stroke:var(--fg)}
+.pin.sel{outline-color:var(--accent);outline-width:4px}
+.marker-cluster,.marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:rgba(21,23,26,.28)}
+.marker-cluster div,.marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:var(--accent);color:#15171a;font:700 12.5px var(--body);border:2px solid #15171a;line-height:26px}
+.barrio{fill:var(--fg);fill-opacity:.03}
+.leaflet-tooltip.btip{font-family:var(--display);font-weight:700;text-transform:none;letter-spacing:0}
+#navTop{border-radius:14px;border-bottom:5px solid var(--accent)}
+#navDist,#navEta{font-family:var(--display);font-weight:800}
+/* vista Datos */
+#data h1{font:800 clamp(32px,7vw,52px)/.98 var(--display);font-variation-settings:"wdth" 88;letter-spacing:-.03em}
+#data h2{font:800 clamp(22px,4vw,30px)/1.05 var(--display);text-transform:none;letter-spacing:-.02em;border-top:3px solid var(--fg);padding-top:14px}
+#data h3{font:700 17px/1.2 var(--display);text-transform:none;letter-spacing:0;color:var(--fg)}
+#data .lead{font-size:14.5px}
+.kpis{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.kpi{border-radius:0;border-top:4px solid var(--osm);padding:12px 14px}
+.kpi.w{border-top-color:var(--warn)}.kpi.t{border-top-color:var(--temp)}
+.kpi b{font:800 30px/1 var(--display);font-variation-settings:"wdth" 85;letter-spacing:-.02em;color:var(--osm)}
+.kpi.w b{color:var(--warn)}.kpi.t b{color:var(--temp)}
+.kpi span{display:block;font:600 13px/1.3 var(--body);text-transform:none;letter-spacing:0;color:var(--fg);margin-top:6px}
+.bars .trk{border-radius:0;background:color-mix(in srgb,var(--fg) 8%,transparent)}.bars .fill{border-radius:0}
+th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2px solid var(--fg)}
+.note{border:0;border-left:4px solid var(--accent);border-radius:0;background:transparent;color:var(--fg)}
+.fact{border-radius:0;border:0;border-top:1px solid var(--line);background:transparent;padding:12px 0}
+.fact b{font:700 16px/1.25 var(--display)}
+.stack{border-radius:0;gap:2px}
+.seg2{border:2px solid var(--fg)}
+.more{border:2px solid var(--fg);font-weight:600}
+@media (max-width:640px){
+  #search input{font-size:16px}
+  #tabs button,#tabs a{padding:7px 13px;font-size:13.5px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .kpi b{font-size:25px}
+  .bars{grid-template-columns:minmax(92px,40%) 1fr auto;gap:6px 8px;font-size:13px}
+  #data .tbl table{font-size:12.5px}
+  #src{max-width:60vw}
+}
 </style>
 </head>
 <body>
@@ -227,7 +304,7 @@ tr.lnk:hover td{background:color-mix(in srgb,var(--fg) 5%,transparent)}
 <div id="top">
   <form id="search" role="search" autocomplete="off">
     <svg class="i" viewBox="0 0 24 24" style="color:var(--muted)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input id="q" type="search" placeholder="Buscar piso, barrio, host, calle o nº VT…" aria-label="Buscar">
+    <input id="q" type="search" placeholder="Buscar piso, barrio, host, calle o nº VT…" aria-label="Buscar piso, barrio, host, calle o número VT">
     <button type="button" class="ib" id="clearQ" aria-label="Borrar búsqueda" hidden><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     <button type="button" class="ib" id="menuBtn" aria-label="Capas y datos"><svg class="i" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5"/></svg></button>
   </form>
@@ -420,6 +497,7 @@ tr.lnk:hover td{background:color-mix(in srgb,var(--fg) 5%,transparent)}
 (function(){
 'use strict';
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+if(innerWidth<480){ const qi=document.getElementById('q'); if(qi) qi.placeholder='Calle, barrio, host o nº VT…'; }
 const embedded=JSON.parse($('#embedded').textContent);
 const barriosGeo=JSON.parse($('#barriosData').textContent);
 const extra=JSON.parse($('#extraData').textContent);
@@ -427,9 +505,9 @@ const research=JSON.parse($('#researchData').textContent);
 const F={}; embedded.meta.fields.forEach((k,i)=>F[k]=i);
 const ROOM_LABELS=embedded.meta.room_labels, LIC_LABELS=embedded.meta.lic_labels;
 const LIC_COL=['var(--warn)','var(--ok)','var(--nat)','var(--temp)','var(--ex)','var(--ex)'];
-$('#embLabel').textContent=embedded.meta.source+' · '+embedded.meta.count.toLocaleString('es-ES')+' anuncios';
-const fmt=n=>Number(n).toLocaleString('es-ES');
-const eur=n=>Math.round(n).toLocaleString('es-ES')+' €';
+const fmt=(n,d)=>{ const v=Number(n); if(!isFinite(v)) return '—'; const dd=d==null?(Number.isInteger(v)?0:Math.min(2,(String(v).split('.')[1]||'').length)):d; const f=Math.abs(v).toFixed(dd); const [i,fr]=f.split('.'); return (v<0?'−':'')+i.replace(/\B(?=(\d{3})+(?!\d))/g,'.')+(fr?','+fr:''); };
+const eur=n=>fmt(Math.round(n))+' €';
+$('#embLabel').textContent=embedded.meta.source+' · '+fmt(embedded.meta.count)+' anuncios';
 const norm=s=>(s||'').toString().normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 const title=s=>(s||'').toLowerCase().replace(/(^|[\s\-'’(])([a-záéíóúñç])/g,(m,a,b)=>a+b.toUpperCase());
 function esc(s){ return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
@@ -825,7 +903,7 @@ function buildData(){
   const prices=R.filter(r=>r[F.room]===0&&r[F.price]>0&&r[F.price]<2000).map(r=>r[F.price]);
   const totViv=Object.values(extra.barrios).reduce((a,b)=>a+(b.viv||0),0);
   $('#dLead').textContent=srcLabel+' · '+fmt(R.length)+' anuncios activos';
-  $('#kpis').innerHTML=[[fmt(R.length),'anuncios',''],[pct(entire,n)+' %','viviendas completas',''],[(100*entire/totViv).toFixed(1).replace('.',',')+' %','de las '+fmt(totViv)+' viviendas de la ciudad',''],[pct(byLic[1],n)+' %','con nº VT (Generalitat)',''],[pct(byLic[0],n)+' %','sin ningún registro','w'],[pct(byLic[3],n)+' %','anunciados como "temporada"','t'],[Math.round(rev/1e6)+' M€','ingresos est. 12 meses',''],[(median(prices)||'—')+' €','mediana €/noche','']]
+  $('#kpis').innerHTML=[[fmt(R.length),'anuncios',''],[pct(entire,n)+' %','viviendas completas',''],[(100*entire/419829).toFixed(1).replace('.',',')+' %','de las 419.829 viviendas de la ciudad (Catastro)',''],[pct(byLic[1],n)+' %','con nº VT (Generalitat)',''],[pct(byLic[0],n)+' %','sin ningún registro','w'],[pct(byLic[3],n)+' %','anunciados como "temporada"','t'],[Math.round(rev/1e6)+' M€','ingresos est. 12 meses',''],[(median(prices)||'—')+' €','mediana €/noche','']]
     .map(([v,l,c])=>'<div class="kpi'+(c?' '+c:'')+'"><b>'+v+'</b><span>'+l+'</span></div>').join('');
   $('#licStack').innerHTML=byLic.map((c,k)=>'<div style="width:'+(100*c/n)+'%;background:'+LIC_COL[k]+'" title="'+esc(LIC_LABELS[k])+': '+fmt(c)+'"></div>').join('');
   $('#licLeg').innerHTML=byLic.map((c,k)=>'<span style="--c:'+LIC_COL[k]+'">'+esc(LIC_LABELS[k])+' <b>'+fmt(c)+'</b> ('+pct(c,n)+' %)</span>').join('');
