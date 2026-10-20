@@ -217,6 +217,8 @@ tr.lnk:hover td{background:color-mix(in srgb,var(--fg) 5%,transparent)}
 .stack div{height:100%;min-width:2px}
 .stackleg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
 .stackleg span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:6px;vertical-align:-1px}
+.tiles-dark{filter:invert(1) hue-rotate(185deg) brightness(.9) contrast(.92) saturate(.55)}
+.leaflet-tile-pane .tiles-dark img{mix-blend-mode:normal}
 </style>
 </head>
 <body>
@@ -438,11 +440,11 @@ const dark=matchMedia('(prefers-color-scheme: dark)');
 const map=L.map('map',{zoomControl:false,attributionControl:true,maxZoom:20}).setView([39.4699,-0.3763],13);
 const ATTR_OSM='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const bases={
-  map:()=>L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',attribution:ATTR_OSM+' &copy; <a href="https://carto.com/attributions">CARTO</a>'}),
-  dark:()=>L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',attribution:ATTR_OSM+' &copy; <a href="https://carto.com/attributions">CARTO</a>'}),
-  sat:()=>L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'Imagen &copy; Esri, Maxar, Earthstar Geographics'})
+  map:()=>L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:20,maxNativeZoom:19,attribution:ATTR_OSM}),
+  dark:()=>L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:20,maxNativeZoom:19,className:'tiles-dark',attribution:ATTR_OSM}),
+  sat:()=>L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:19,attribution:'Imagen &copy; Esri, Maxar, Earthstar Geographics'})
 };
-const satLabels=L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',pane:'overlayPane',opacity:.95});
+const satLabels=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:19,pane:'overlayPane',opacity:.95,attribution:'Etiquetas &copy; Esri'});
 let baseKey=null, baseLayer=null;
 function setBase(k){
   if(baseLayer) map.removeLayer(baseLayer);
