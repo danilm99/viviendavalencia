@@ -229,11 +229,11 @@ tr.lnk:hover td{background:color-mix(in srgb,var(--fg) 5%,transparent)}
   --display:"Bricolage Grotesque","Arial Black",sans-serif; --body:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
-  --bg:#121416; --panel:#1b1e21; --fg:#ecede8; --muted:#a1a6ad; --line:#33373c; --hl:#7a6612;
+  --bg:#121416; --panel:#1b1e21; --fg:#ecede8; --muted:#a1a6ad; --line:#33373c; --hl:#7a6612; --accent:#ffd23f; --accent-fg:#15171a;
   --ok:#4fc38a; --nat:#4ec3b5; --temp:#e0b73a; --warn:#ef6b5f; --ex:#777c84; --osm:#6d9ae8; --catav:#b08ee0; --route:#6d9ae8; --bar:#6d9ae8;
   --shadow:0 8px 28px rgba(0,0,0,.6); } }
 :root[data-theme="dark"]{
-  --bg:#121416; --panel:#1b1e21; --fg:#ecede8; --muted:#a1a6ad; --line:#33373c; --hl:#7a6612;
+  --bg:#121416; --panel:#1b1e21; --fg:#ecede8; --muted:#a1a6ad; --line:#33373c; --hl:#7a6612; --accent:#ffd23f; --accent-fg:#15171a;
   --ok:#4fc38a; --nat:#4ec3b5; --temp:#e0b73a; --warn:#ef6b5f; --ex:#777c84; --osm:#6d9ae8; --catav:#b08ee0; --route:#6d9ae8; --bar:#6d9ae8;
   --shadow:0 8px 28px rgba(0,0,0,.6); }
 body{-webkit-font-smoothing:antialiased}
@@ -551,7 +551,7 @@ const catavLayer=L.markerClusterGroup({maxClusterRadius:36,disableClusteringAtZo
 const btip=f=>()=>{const b=f.properties.neighbourhood; const n=barrioCount.get(b)||0, bi=extra.barrios[b]; return b+'<small>'+fmt(n)+' anuncios'+(bi&&bi.viv?' · '+(100*(barrioRatio.get(b)||0)).toFixed(1).replace('.',',')+' % de '+fmt(bi.viv)+' viviendas':'')+'</small>';};
 const barriosLayer=L.geoJSON(barriosGeo,{className:'barrio',onEachFeature:(f,l)=>{l.bindTooltip(btip(f),{className:'btip',sticky:true});l.on('click',()=>map.fitBounds(l.getBounds()));}});
 const heatLayer=L.geoJSON(barriosGeo,{style:f=>heatStyle(f),onEachFeature:(f,l)=>l.bindTooltip(btip(f),{className:'btip',sticky:true})});
-function heatStyle(f){ const r=barrioRatio.get(f.properties.neighbourhood)||0; const t=Math.sqrt(r/ratioMax); return {color:'#8a5a2b',weight:1,opacity:.5,fillColor:'#d9731a',fillOpacity:0.06+0.74*t}; }
+function heatStyle(f){ const r=barrioRatio.get(f.properties.neighbourhood)||0; const t=Math.sqrt(r/ratioMax); return {color:'#5b6066',weight:1,opacity:.55,fillColor:'#d1352b',fillOpacity:0.05+0.7*t}; }
 const exclLayer=L.geoJSON(extra.excluidos,{className:'excl',onEachFeature:(f,l)=>l.bindTooltip('Ámbito excluido VUT<small>'+esc(f.properties.nombre||'')+'</small>',{className:'btip',sticky:true})});
 $('#tgBarrios').onclick=e=>{tog(e.currentTarget)?barriosLayer.addTo(map):map.removeLayer(barriosLayer);};
 $('#tgHeat').onclick=e=>{tog(e.currentTarget)?heatLayer.addTo(map):map.removeLayer(heatLayer);};
