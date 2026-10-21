@@ -6,7 +6,7 @@ const [,,page,out,extraJs]=process.argv;
  const p=await c.newPage(); const errs=[]; p.on('pageerror',e=>errs.push(e.message));
  await p.goto('file://'+path.resolve(page)); await p.waitForTimeout(1500); await p.addScriptTag({content:core}); if(process.env.NOSEL) await p.evaluate(s=>window.__NOSEL=s,process.env.NOSEL);
  await p.evaluate(()=>{ const {norm,hasL,isUnit,SKIP}=__I18N; window.__U=new Map(); window.__T=new Map(); window.__A=new Map();
-  const NOSEL=window.__NOSEL||''; window.__harv=(root)=>{ const walk=el=>{ if(SKIP.has(el.tagName)) return; if(NOSEL&&el.matches&&el.matches(NOSEL)) return; for(const a of ['title','aria-label','placeholder','alt','content']){ const v=el.getAttribute&&el.getAttribute(a); if(v&&hasL(v)&&(a!=='content'||el.tagName==='META')) __A.set(norm(v),(__A.get(norm(v))||0)+1); }
+  const NOSEL=window.__NOSEL||''; window.__harv=(root)=>{ const walk=el=>{ if(SKIP.has(el.tagName)) return; if(NOSEL&&el.matches&&el.matches(NOSEL)) return; for(const a of ['title','aria-label','placeholder','alt','content','data-h']){ const v=el.getAttribute&&el.getAttribute(a); if(v&&hasL(v)&&(a!=='content'||el.tagName==='META')) __A.set(norm(v),(__A.get(norm(v))||0)+1); }
     if(el.tagName==='OPTION'){ const t=norm(el.textContent); if(hasL(t)) __U.set(t,'opt'); return; }
     if(isUnit(el)){ const k=norm(el.innerHTML); __U.set(k,el.tagName); return; }
     for(const n of el.childNodes){ if(n.nodeType===3){ const t=norm(n.nodeValue); if(hasL(t)) __T.set(t,(__T.get(t)||0)+1); } else if(n.nodeType===1) walk(n); } };

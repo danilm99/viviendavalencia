@@ -104,7 +104,8 @@ p{max-width:66ch;margin:8px 0}
 @media (max-width:340px){.ledger,.ledger.two{grid-template-columns:1fr}}
 /* figuras */
 figure{margin:22px 0 8px;padding:10px 0 0;border-top:3px solid var(--rule)}
-figure .t{font:700 18px/1.2 var(--display);letter-spacing:-.01em;margin:0 0 2px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+figure .t{font:700 18px/1.2 var(--display);letter-spacing:-.01em;margin:0 0 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;align-items:baseline}
+figure .t button{margin-left:auto}
 figure .t button{flex:none;border:0;background:var(--mark);color:var(--mark-ink);font:600 12.5px var(--body);border-radius:999px;padding:3px 10px;cursor:pointer}
 figure .t button:hover{background:var(--fg);color:var(--bg)}
 figure .d{font-size:13.5px;color:var(--muted);margin:0 0 8px;max-width:70ch}
@@ -171,6 +172,7 @@ label.ctl{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--
 label.ctl.chk{flex-direction:row;align-self:end;padding-bottom:8px}
 label.ctl.chk input{width:18px;height:18px;accent-color:var(--fg)}
 .explorer{background:var(--panel);padding:18px 18px 12px;margin:16px -18px;border-top:6px solid var(--mark)}
+@media (max-width:1180px){.explorer{margin:16px 0}}
 @media (max-width:640px){.explorer{margin:16px -16px;padding:14px 14px 10px}}
 .explorer figure{border-top-width:1px;border-top-color:var(--line)}
 .interp{font-size:15px;margin:12px 0;max-width:none}
@@ -247,6 +249,10 @@ table.cardm td.y{border-radius:3px}
 .swipe{display:none;font-size:12px;color:var(--muted);margin:4px 0 0}
 @media print{nav.spine,.det,.btnrow{display:none}.page{display:block}figure{break-inside:avoid}}
 
+@media (max-width:980px){section[id],h3[id],.rec[id],.party[id]{scroll-margin-top:62px}}
+:root:not([data-theme="dark"]) .ty-an,:root:not([data-theme="dark"]) .ty-pp{color:#8a6408}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ty-an,:root:not([data-theme="light"]) .ty-pp{color:var(--s5)}}
+@media (pointer:coarse){figure .t button,.lnkbtn{min-height:36px;padding:8px 12px}nav.spine a{padding-top:10px;padding-bottom:10px}.det .x{width:44px;height:44px}}
 /* barra común del sitio */
 .sitebar{background:var(--fg);color:var(--bg);display:flex;align-items:center;gap:18px;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));min-height:42px;font:600 13.5px/1 var(--body)}
 .sitebar a{color:var(--bg);text-decoration:none}
@@ -257,8 +263,9 @@ table.cardm td.y{border-radius:3px}
 .sitebar nav a{padding:13px 10px 11px;white-space:nowrap;border-bottom:3px solid transparent}
 .sitebar nav a[aria-current="page"]{border-bottom-color:var(--mark)}
 .sitebar nav a.langsw{opacity:.75}
-@media (max-width:560px){.sitebar{gap:8px}.sitebar .sb-home{font-size:14px}.sitebar nav{margin-left:auto}.sitebar nav a{padding:13px 7px 11px}}
-@media (max-width:400px){.sitebar .sb-home{display:none}.sitebar nav{margin-left:0}}
+.sitebar nav a.sb-i{display:none}
+@media (max-width:720px){.sitebar{gap:8px}.sitebar .sb-home{display:none}.sitebar nav{margin-left:0}.sitebar nav a.sb-i{display:block}.sitebar nav a{padding:13px 8px 11px}}
+@media (max-width:480px){.sitebar nav a .lg{display:none}.sitebar nav a{padding:13px 7px 11px}}
 @media print{.sitebar{display:none}}
 
 
@@ -303,7 +310,9 @@ table.st td:first-child{font-weight:700;white-space:nowrap}
 table.gv td:first-child{white-space:nowrap;font-weight:600}
 table.gv td.maj{white-space:nowrap}
 .badge{display:inline-block;font:600 11.5px/1 var(--body);padding:4px 8px;border-radius:999px;white-space:nowrap;border:1.5px solid currentColor}
-.st-ok{color:var(--s3)}.st-part{color:var(--s5)}.st-no{color:var(--s2)}.st-curso{color:var(--s1)}.st-nv{color:var(--muted)}.st-m{color:var(--fg)}
+.st-ok{color:#17704a}.st-part{color:#8a6408}.st-no{color:#b02a22}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .st-ok{color:var(--s3)}:root:not([data-theme="light"]) .st-part{color:var(--s5)}:root:not([data-theme="light"]) .st-no{color:var(--s2)}}
+.st-curso{color:var(--s1)}.st-nv{color:var(--muted)}.st-m{color:var(--fg)}
 .rec{margin:22px 0 6px}
 .rec h3{margin:0 0 6px}
 .rec .gov{font-size:14.5px;margin:0 0 10px;max-width:78ch}
@@ -323,16 +332,16 @@ table.cardm td[data-h]::before{content:attr(data-h);display:block;font-weight:60
 <script>window.goatcounter={path:function(){return location.pathname||"/"}}</script><script data-goatcounter="https://viviendavalencia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
-<div class="sitebar"><a class="sb-home" href="./">viviendavalencia.info</a><nav aria-label="Secciones del sitio"><a href="./">Informe</a><a href="pisos-turisticos-valencia.html">Mapa</a><a href="elecciones-29n.html" aria-current="page">Elecciones 29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></nav></div>
+<div class="sitebar"><a class="sb-home" href="./">viviendavalencia.info</a><nav aria-label="Secciones del sitio"><a href="./" class="sb-i"><span class="sb-ini">Inicio</span></a><a href="informe-vivienda-valencia.html">Informe<span class="lg"> completo</span></a><a href="pisos-turisticos-valencia.html">Mapa</a><a href="elecciones-29n.html" aria-current="page"><span class="lg">Elecciones </span>29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></nav></div>
 <div class="page">
 <nav class="spine" id="spine">
   <div class="brand">Elecciones del 29-N y vivienda</div>
   <a href="#estado">Programas</a><a href="#dicho">Qué han dicho</a><a href="#temas">Por temas</a><a href="#competencias">Quién decide qué</a><a href="#gobiernos">Quién ha gobernado</a><a href="#historial">Prometido y hecho</a><a href="#votaciones">Votaciones</a><a href="#evidencia">Otras ciudades</a><a href="#metodo">Método</a>
-  <div class="foot"><a href="index.html">Informe sobre la vivienda</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></div>
+  <div class="foot"><a href="./">Inicio</a> · <a href="informe-vivienda-valencia.html">Informe completo</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></div>
 </nav>
 <main id="top">
 <header class="hero">
-  <p class="meta">Actualizado el 21 de octubre de 2026 · <a href="index.html">viviendavalencia.info</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></p>
+  <p class="meta">Actualizado el 21 de octubre de 2026 · <a href="./">viviendavalencia.info</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></p>
   <h1>Elecciones del 29-N: qué dicen los partidos sobre vivienda</h1>
   <p class="dek">Lo que han dicho hasta ahora las candidaturas con opciones de escaño en Valencia, qué decide cada administración y qué hizo cada partido cuando tuvo el poder de decidir.</p>
   <div class="warn"><b>Todavía no hay programas.</b> A 21 de octubre de 2026 ningún partido ha publicado su programa electoral para el 29-N. Lo que recogemos son documentos y declaraciones; cuando se publiquen los programas, actualizaremos la página.</div>
@@ -389,22 +398,22 @@ table.cardm td[data-h]::before{content:attr(data-h);display:block;font-weight:60
 <section id="evidencia">
 <h2>Qué dice la experiencia de otras ciudades</h2>
 <p>Muchas de estas propuestas ya se han probado en otros sitios. En el informe resumimos qué se hizo y qué pasó después en 19 casos, con los estudios que lo evalúan. No es una valoración de los partidos: sirve para saber qué resultados han tenido medidas parecidas.</p>
-<div class="ev"><a href="index.html#fuera" data-g="build"><b>Construir más</b><span>Auckland, Minneapolis y Tokio</span></a><a href="index.html#fuera" data-g="pub"><b>Vivienda pública y sin ánimo de lucro</b><span>Viena y Singapur</span></a><a href="index.html#fuera" data-g="rent"><b>Limitar el precio del alquiler</b><span>Berlín, París, Cataluña, Irlanda y Países Bajos</span></a><a href="index.html#fuera" data-g="tur"><b>Limitar el alquiler turístico</b><span>Nueva York, Barcelona y Ámsterdam</span></a><a href="index.html#fuera" data-g="tax"><b>Gravar la vivienda vacía y la especulación</b><span>Vancouver, Francia, Copenhague y Canadá</span></a></div>
+<div class="ev"><a href="informe-vivienda-valencia.html#fuera" data-g="build"><b>Construir más</b><span>Auckland, Minneapolis y Tokio</span></a><a href="informe-vivienda-valencia.html#fuera" data-g="pub"><b>Vivienda pública y sin ánimo de lucro</b><span>Viena y Singapur</span></a><a href="informe-vivienda-valencia.html#fuera" data-g="rent"><b>Limitar el precio del alquiler</b><span>Berlín, París, Cataluña, Irlanda y Países Bajos</span></a><a href="informe-vivienda-valencia.html#fuera" data-g="tur"><b>Limitar el alquiler turístico</b><span>Nueva York, Barcelona y Ámsterdam</span></a><a href="informe-vivienda-valencia.html#fuera" data-g="tax"><b>Gravar la vivienda vacía y la especulación</b><span>Vancouver, Francia, Copenhague y Canadá</span></a></div>
 </section>
 <section id="metodo">
 <h2>Cómo hemos hecho esta página</h2>
 <ul class="plain"><li>Incluimos las candidaturas que las encuestas publicadas sitúan con al menos un escaño en la provincia de Valencia: PP, PSOE, Compromís-Front Valencià y Vox. Van en el orden de votos que obtuvieron en la provincia en 2023.</li><li>Solo recogemos lo dicho para estas elecciones: documentos oficiales del partido y declaraciones públicas de sus dirigentes o candidatos desde la convocatoria (5 de octubre). No usamos programas de elecciones anteriores ni deducimos posturas.</li><li>Las frases entre comillas son literales. No valoramos las propuestas: al final de la página enlazamos lo que dicen los estudios sobre cada tipo de medida en otras ciudades.</li><li>Para el historial usamos datos oficiales (BOE, DOGV, cuentas de la EVha, informes de la Conselleria y del Ministerio) y, cuando no los hay, prensa. Algunas cifras proceden de la administración que gobierna y se presentan como suyas; lo indicamos.</li></ul>
 <p>Si ves un error, una omisión o una declaración que falta, escríbenos: lo corregimos y lo anotamos en el registro de cambios del informe. Última actualización: 21 de octubre de 2026.</p>
 </section>
-<p class="foot"><a href="./">Informe sobre la vivienda en València</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a></p>
+<p class="foot"><a href="./">Inicio</a> · <a href="informe-vivienda-valencia.html">Informe completo sobre la vivienda en València</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a></p>
 <p class="foot">viviendavalencia.info · Página informativa sin afiliación a ningún partido. Datos y código abiertos. Esta web cuenta visitas de forma anónima con GoatCounter, sin cookies.</p>
 </main>
 </div>
-<a class="totop" id="totop" href="#top" aria-label="Volver arriba">↑</a>
+<a class="totop" id="totop" href="#" aria-label="Volver arriba" onclick="scrollTo({top:0,behavior:'smooth'});return false">↑</a>
 <script>(function(){ const links=[...document.querySelectorAll('nav.spine a[href^="#"]')]; const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
-const io=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)); const on=links.find(a=>a.classList.contains('on')); if(on&&innerWidth<=980) on.scrollIntoView({inline:'center',block:'nearest'}); } }); },{rootMargin:'-40% 0px -55% 0px'}); secs.forEach(s=>io.observe(s));
+const io=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)); const on=links.find(a=>a.classList.contains('on')); if(on&&innerWidth<=980){ const sp=on.parentElement; sp.scrollTo({left:on.offsetLeft-sp.clientWidth/2+on.offsetWidth/2,behavior:'smooth'}); } } }); },{rootMargin:'-40% 0px -55% 0px'}); secs.forEach(s=>io.observe(s));
 const tt=document.getElementById('totop'); addEventListener('scroll',()=>tt.classList.toggle('on',scrollY>900),{passive:true}); })();</script>
-<script>(function(){ document.querySelectorAll('a.langsw').forEach(function(a){ var va=window.LANG==='va'; a.textContent=va?'Castellano':'Valencià'; a.setAttribute('lang',va?'es':'ca-ES-valencia'); a.addEventListener('click',function(e){ e.preventDefault(); location.href=location.pathname+'?lang='+(va?'es':'va')+location.hash; }); }); })();</script>
+<script>(function(){ document.querySelectorAll('a.langsw').forEach(function(a){ var va=window.LANG==='va'; a.textContent=va?'Castellano':'Valencià'; a.setAttribute('lang',va?'es':'ca-ES-valencia'); a.setAttribute('href','?lang='+(va?'es':'va')); a.addEventListener('click',function(e){ e.preventDefault(); location.href=location.pathname+'?lang='+(va?'es':'va')+location.hash; }); }); })();</script>
 <script>(function(){ if(window.LANG!=='va'||!window.VA_DICT) return; const D=window.VA_DICT;
 const INL=new Set(['B','STRONG','I','EM','A','SMALL','SPAN','MARK','SUP','SUB','BR','ABBR','U','S','Q','TIME','WBR']);
 const SKIP=new Set(['SCRIPT','STYLE','NOSCRIPT','TEXTAREA','CODE','PRE']);
@@ -414,12 +423,14 @@ function keyOf(s){ const nums=[]; let i=0; const k=norm(s).replace(NUM,m=>{ nums
 const fill=(t,nums)=>t.replace(/\{(\d+)\}/g,(m,i)=>nums[+i]!=null?nums[+i]:m);
 function look(s){ if(!s||!hasL(s)) return null; const [k,nums]=keyOf(s); const t=D[k]; return t==null?null:fill(t,nums); }
 window.tr=function(s){ const t=look(s); return t==null?s:t; };
-const DONE=new WeakSet(), VALS=new Set(Object.values(D).map(norm));
+const LAST=new WeakMap(), DONE=new WeakSet(), VALS=new Set(Object.values(D).map(norm));
 function isUnit(el){ if(el.querySelector('[data-notr]')) return false; let txt=false; for(const n of el.childNodes){ if(n.nodeType===3){ if(n.nodeValue.trim()) txt=true; } else if(n.nodeType===1){ if(!INL.has(n.tagName)) return false; if(n.querySelector('button,input,select,svg,textarea,img')) return false; } } return txt&&hasL(el.textContent); }
-function attrs(el){ for(const a of ['title','aria-label','placeholder','alt']){ const v=el.getAttribute&&el.getAttribute(a); if(v){ const t=look(v); if(t!=null&&t!==v) el.setAttribute(a,t); } } }
+function attrs(el){ for(const a of ['title','aria-label','placeholder','alt','data-h']){ const v=el.getAttribute&&el.getAttribute(a); if(v){ const t=look(v); if(t!=null&&t!==v) el.setAttribute(a,t); } } }
+function stripArch(h){ const A=[]; const s=h.replace(/\s*<a class="arch" href="([^"]*)"[^>]*>[^<]*<\/a>/g,(m,href)=>{ A.push([m,href]); return ''; }); return [s,A]; }
+function putArch(h,A){ for(const [m,href] of A){ const u=href.replace(/^https?:\/\/web\.archive\.org\/web\/\d+[a-z_]*\//,''); const i=h.indexOf('href="'+u+'"'); if(i<0){ h+=m; continue; } const j=h.indexOf('</a>',i); h=j<0?h+m:h.slice(0,j+4)+m+h.slice(j+4); } return h; }
 function walk(el){ if(el.nodeType!==1||SKIP.has(el.tagName)||el.hasAttribute('data-notr')) return; attrs(el);
   if(el.tagName==='OPTION'){ const t=look(el.textContent); if(t!=null) el.textContent=t; return; }
-  if(isUnit(el)){ if(DONE.has(el)&&VALS.has(norm(el.innerHTML))) return; const t=look(el.innerHTML); if(t!=null&&t!==el.innerHTML){ el.innerHTML=t; } DONE.add(el); return; }
+  if(isUnit(el)){ if(DONE.has(el)&&(VALS.has(norm(el.innerHTML))||LAST.get(el)===el.innerHTML)) return; const raw=el.innerHTML; const [st,A]=stripArch(raw); const t0=look(st); const t=t0==null?null:putArch(t0,A); if(t!=null&&t!==raw){ el.innerHTML=t; } DONE.add(el); LAST.set(el,el.innerHTML); return; }
   for(const n of [...el.childNodes]){ if(n.nodeType===3){ const v=n.nodeValue; if(!v.trim()) continue; const t=look(v); if(t!=null){ const lead=v.match(/^\s*/)[0], trail=v.match(/\s*$/)[0]; const nv=lead+t+trail; if(nv!==v) n.nodeValue=nv; } } else if(n.nodeType===1) walk(n); } }
 const doc=()=>{ walk(document.body); const t=look(document.title); if(t) document.title=t; document.querySelectorAll('meta[name=description],meta[property="og:description"],meta[property="og:title"]').forEach(m=>{ const x=look(m.content); if(x) m.content=x; }); };
 doc(); let busy=false;

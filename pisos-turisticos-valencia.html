@@ -94,6 +94,7 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke
 
 /* ---- Hoja inferior ---- */
 #sheet{position:absolute;z-index:1100;left:0;right:0;bottom:0;background:var(--panel);border-radius:18px 18px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.25);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(105%);transition:transform .25s ease;max-height:72vh;overflow:auto}
+#sheet:not(.open){visibility:hidden;transition:transform .25s,visibility 0s .25s}
 #sheet.open{transform:none}
 @media (prefers-reduced-motion:reduce){#sheet{transition:none}}
 .grip{width:40px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 10px}
@@ -308,6 +309,10 @@ th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2p
   #src{max-width:60vw}
 }
 #tabs a.langsw{color:var(--muted);text-decoration:none;padding:7px 10px}
+#tabs a#tabHome{text-decoration:none;padding:7px 10px;color:var(--fg)}
+#tabs{max-width:100%;overflow-x:auto;scrollbar-width:none}#tabs::-webkit-scrollbar{display:none}
+@media (max-width:360px){#tabs button,#tabs a{padding:7px 6px;font-size:12.5px}#tabs a#tabHome,#tabs a.langsw{padding:7px 5px}}
+@media (max-width:400px){#tabs button,#tabs a{padding:7px 8px;font-size:13px}#tabs a#tabHome,#tabs a.langsw{padding:7px 6px}}
 @media (max-width:560px){#tabs .lg{display:none}#tabs button,#tabs a{padding:7px 10px}#tabs a.langsw{padding:7px 8px}}
 </style>
 <script>window.goatcounter={path:function(){return location.pathname||"/"}}</script><script data-goatcounter="https://viviendavalencia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -332,7 +337,7 @@ th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2p
     <button class="chip" data-f="gva" aria-pressed="false"><span class="sq" style="--c:var(--ok)"></span>Registro GVA</button>
     <button class="chip" data-f="osm" aria-pressed="false"><span class="dot" style="--c:var(--osm)"></span>OSM</button>
   </div>
-  <div id="results" role="listbox" aria-label="Resultados"></div>
+  <div id="results" aria-label="Resultados"></div>
 </div>
 
 <div id="fabs">
@@ -345,10 +350,10 @@ th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2p
 <div id="foot">
   <div id="count"><b id="n">0</b> visibles · <span id="ntot">0</span> en total</div>
   <div id="src"></div>
-  <div id="tabs" role="tablist"><button role="tab" id="tabMap" aria-selected="true">Mapa</button><button role="tab" id="tabData" aria-selected="false">Datos</button><a id="tabInforme" href="informe-vivienda-valencia.html" title="Informe completo sobre la vivienda en València">Informe</a><a id="tabElec" href="elecciones-29n.html" title="Elecciones del 29-N: qué dicen los partidos sobre vivienda"><span class="lg">Elecciones&nbsp;</span>29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></div>
+  <div id="tabs"><a id="tabHome" href="./" title="Inicio" aria-label="Inicio"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/></svg></a><button id="tabMap" aria-selected="true">Mapa</button><button id="tabData" aria-selected="false">Datos</button><a id="tabInforme" href="informe-vivienda-valencia.html" title="Informe completo sobre la vivienda en València">Informe</a><a id="tabElec" href="elecciones-29n.html" title="Elecciones del 29-N: qué dicen los partidos sobre vivienda"><span class="lg">Elecciones&nbsp;</span>29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></div>
 </div>
 
-<section id="sheet" aria-live="polite">
+<section id="sheet" aria-label="Ficha del anuncio">
   <div class="grip"></div>
   <button class="ib close" id="closeSheet" aria-label="Cerrar"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   <h2 id="sName"></h2>
@@ -361,7 +366,7 @@ th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2p
     <button class="btn" id="goBike" data-mode="bike"><svg class="i" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l5-9h5l2 9M11 8l-2-3h3"/></svg>Bici</button>
     <button class="btn" id="goCar" data-mode="car"><svg class="i" viewBox="0 0 24 24"><path d="M3 13l2-5h14l2 5v5H3zM5 18v2M19 18v2M7 13h10"/></svg>Coche</button>
   </div>
-  <div id="routeInfo"></div>
+  <div id="routeInfo" aria-live="polite"></div>
   <div class="row" style="margin-top:10px">
     <button class="btn primary" id="startNav" hidden><svg class="i" viewBox="0 0 24 24"><path d="M12 2 4 20l8-4 8 4z"/></svg>Iniciar GPS</button>
     <a class="btn" id="gmaps" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Google Maps</a>
@@ -420,7 +425,7 @@ th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2p
   </div>
 </div>
 
-<div id="data" role="tabpanel">
+<div id="data" aria-label="Datos">
   <div class="wrap">
     <header>
       <h1>Pisos turísticos y vivienda en València</h1>
@@ -517,7 +522,7 @@ th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2p
 (function(){
 'use strict';
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
-if(innerWidth<480){ const qi=document.getElementById('q'); if(qi) qi.placeholder='Calle, barrio, host o nº VT…'; }
+if(innerWidth<480){ const qi=document.getElementById('q'); if(qi) qi.placeholder=window.T('Calle, barrio, host o nº VT…','Carrer, barri, host o nº VT…'); }
 const embedded=JSON.parse($('#embedded').textContent);
 const barriosGeo=JSON.parse($('#barriosData').textContent);
 const extra=JSON.parse($('#extraData').textContent);
@@ -551,12 +556,11 @@ function setBase(k){
   baseKey=k; baseLayer=bases[k]().addTo(map);
   if(k==='sat'&&$('#tgLabels').getAttribute('aria-pressed')==='true') satLabels.addTo(map);
   $$('#baseSeg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.base===k));
-  try{localStorage.setItem('pisosvlc.base',k);}catch(e){}
 }
 let savedBase=null; try{savedBase=localStorage.getItem('pisosvlc.base');}catch(e){}
 setBase(savedBase||(dark.matches?'dark':'map'));
 dark.addEventListener('change',()=>{ if(!savedBase) setBase(dark.matches?'dark':'map'); });
-$$('#baseSeg button').forEach(b=>b.onclick=()=>{savedBase=b.dataset.base;setBase(b.dataset.base);});
+$$('#baseSeg button').forEach(b=>b.onclick=()=>{savedBase=b.dataset.base;setBase(b.dataset.base);try{localStorage.setItem('pisosvlc.base',savedBase);}catch(e){}});
 function tog(el){const on=el.getAttribute('aria-pressed')!=='true';el.setAttribute('aria-pressed',on);return on;}
 function setTg(id,on){ $(id).setAttribute('aria-pressed',!!on); }
 $('#tgLabels').onclick=e=>{const on=tog(e.currentTarget); if(baseKey==='sat'){on?satLabels.addTo(map):map.removeLayer(satLabels);} };
@@ -588,7 +592,7 @@ const CF={}; extra.catav.vut.fields.forEach((k,i)=>CF[k]=i);
 const catavRows=extra.catav.vut.rows.map((c,i)=>{ const r=[-1000000-i,c[CF.lat],c[CF.lon],c[CF.emplazamiento]||'Edificio con licencia VUT',0,null,c[CF.barrio]||'',c[CF.distrito]||'','','',0,0,'',0,0,'',0,-1]; r.catav=c; return r; });
 
 // ================= Datos =================
-let rows=[], osmRows=[], markers=new Map(), filters=new Set(), hostFilter=null;
+let rows=[], osmRows=[], markers=new Map(), filters=new Set(), hostFilter=null, barrioFilter=null;
 let selected=null, selMarker=null, srcLabel='';
 function colorOf(r){ if(r.osm) return 'var(--osm)'; if(r.catav) return 'var(--catav)'; if(r.gva) return 'var(--ok)'; if(r[F.lic]===1&&r[F.vt_reg]===0) return 'var(--warn)'; return LIC_COL[r[F.lic]]||'var(--ex)'; }
 function pinIcon(r,sel){
@@ -599,6 +603,7 @@ function passes(r){
   if(r.catav) return filters.has('catav');
   if(r.gva) return filters.has('gva');
   if(hostFilter!=null&&!r.osm&&r[F.host_id]!==hostFilter) return false;
+  if(barrioFilter!=null&&!r.osm&&r[F.barrio]!==barrioFilter) return false;
   const act=[...filters].filter(f=>f!=='catav'&&f!=='gva');
   if(!act.length) return true;
   if(filters.has('osm')) return !!r.osm;
@@ -626,7 +631,7 @@ function render(){
   if(catList.length&&!map.hasLayer(catavLayer)) map.addLayer(catavLayer);
   if(gvaList.length&&!map.hasLayer(gvaLayer)) map.addLayer(gvaLayer);
   $('#ntot').textContent=fmt(rows.length+osmRows.length+catList.length+gvaList.length);
-  $('#src').textContent=srcLabel+(osmRows.length?' · OSM: '+osmRows.length:'')+(catList.length?' · CATAV: '+catList.length+' edificios':'')+(gvaList.length?' · Registro GVA: '+gvaList.length+' parcelas':'')+(hostFilter!=null?' · filtrado por host':'');
+  $('#src').textContent=srcLabel+(osmRows.length?' · OSM: '+osmRows.length:'')+(catList.length?' · CATAV: '+catList.length+' edificios':'')+(gvaList.length?' · Registro GVA: '+gvaList.length+' parcelas':'')+(hostFilter!=null?window.T(' · filtrado por anfitrión (✕ para quitar)',' · filtrat per amfitrió (✕ per a llevar-lo)'):'')+(barrioFilter!=null?window.T(' · barrio: ',' · barri: ')+title(barrioFilter)+window.T(' (✕ para quitar)',' (✕ per a llevar-lo)'):'');
   updateCount();
   return list.concat(osmList,catList,gvaList);
 }
@@ -635,7 +640,7 @@ function updateCount(){ const b=map.getBounds(); let n=0; for(const m of markers
 map.on('moveend',updateCount);
 function anonRows(rs){ let k=0; const ps=new Map(); for(const r of rs){ if(r.osm||r.catav||r.gva) continue; const hid=r[F.host_id]; if((r[F.host_n]||0)<5&&!hostInfo(hid)&&r[F.host]){ if(!ps.has(hid)) ps.set(hid,-(++k)-500000); r[F.host_id]=ps.get(hid); r[F.host]=''; r[F.host_loc]=''; r[F.host_since]=''; } } return rs; }
 function useRows(r,label){ anonRows(r);
-  rows=r; srcLabel=label; hostFilter=null; closeSheet();
+  rows=r; srcLabel=label; hostFilter=null; barrioFilter=null; closeSheet();
   barrioCount=new Map(); barrioRatio=new Map();
   for(const x of rows){ barrioCount.set(x[F.barrio],(barrioCount.get(x[F.barrio])||0)+1); if(x[F.room]===0) barrioRatio.set(x[F.barrio],(barrioRatio.get(x[F.barrio])||0)+1); }
   for(const [b,n] of barrioRatio){ const bi=extra.barrios[b]; barrioRatio.set(b, bi&&bi.viv? n/bi.viv : 0); }
@@ -645,22 +650,22 @@ function useRows(r,label){ anonRows(r);
 
 // ================= Búsqueda =================
 let tmr;
-$('#q').addEventListener('input',()=>{clearTimeout(tmr);tmr=setTimeout(doSearch,180);$('#clearQ').hidden=!$('#q').value;});
+$('#q').addEventListener('input',()=>{clearTimeout(tmr);tmr=setTimeout(doSearch,180);$('#clearQ').hidden=!$('#q').value&&hostFilter==null&&barrioFilter==null;});
 $('#search').addEventListener('submit',e=>{e.preventDefault();doSearch(true);$('#q').blur();});
-$('#clearQ').onclick=()=>{$('#q').value='';$('#clearQ').hidden=true;$('#results').innerHTML='';render();};
+$('#clearQ').onclick=()=>{$('#q').value='';hostFilter=null;barrioFilter=null;$('#clearQ').hidden=true;$('#results').innerHTML='';render();};
 function doSearch(fit){
   const q=norm($('#q').value); const list=render(); const box=$('#results'); box.innerHTML='';
   if(!q) return;
   const sorted=list.slice().sort((a,b)=>(norm(a[F.name]).includes(q)?0:1)-(norm(b[F.name]).includes(q)?0:1)||b[F.reviews]-a[F.reviews]);
   for(const r of sorted.slice(0,40)){
-    const b=document.createElement('button'); b.className='res'; b.setAttribute('role','option');
+    const b=document.createElement('button'); b.className='res';
     b.innerHTML='<span class="dot" style="background:'+colorOf(r)+'"></span><span><b></b><small></small></span>';
-    b.querySelector('b').textContent=r[F.name]||'(sin nombre)';
-    b.querySelector('small').textContent=[title(r[F.barrio]),title(r[F.distrito]),r.catav?'Licencia Ayto. · '+r.catav[CF.num_vut]+' VUT':r.gva?'Registro GVA · '+r.gva[GF.n]+' VUT':(r.osm?'OSM':(r[F.vt]||window.tr(LIC_LABELS[r[F.lic]]))),r[F.price]?r[F.price]+window.T(' €/noche',' €/nit'):''].filter(Boolean).join(' · ');
+    b.querySelector('b').textContent=r[F.name]||window.T('(sin nombre)','(sense nom)');
+    b.querySelector('small').textContent=[title(r[F.barrio]),title(r[F.distrito]),r.catav?window.T('Licencia Ayto. · ','Llicència Ajt. · ')+r.catav[CF.num_vut]+' VUT':r.gva?window.T('Registro GVA · ','Registre GVA · ')+r.gva[GF.n]+' VUT':(r.osm?'OSM':(r[F.vt]||window.tr(LIC_LABELS[r[F.lic]]))),r[F.price]?r[F.price]+window.T(' €/noche',' €/nit'):''].filter(Boolean).join(' · ');
     b.onclick=()=>{box.innerHTML='';select(r,true);};
     box.appendChild(b);
   }
-  if(!sorted.length){const d=document.createElement('div');d.className='res';d.innerHTML='<small>Sin resultados</small>';box.appendChild(d);}
+  if(!sorted.length){const d=document.createElement('div');d.className='res';d.innerHTML='<small>'+window.T('Sin resultados','Sense resultats')+'</small>';box.appendChild(d);}
   if(fit&&sorted.length){ map.fitBounds(L.latLngBounds(sorted.slice(0,300).map(r=>[r[F.lat],r[F.lon]])).pad(.2),{maxZoom:16}); }
 }
 document.addEventListener('click',e=>{ if(!e.target.closest('#top')) $('#results').innerHTML=''; });
@@ -672,7 +677,7 @@ function select(r,zoom){
   selected=r; selMarker=markers.get(r[F.id]);
   if(selMarker) selMarker.setIcon(pinIcon(r,true));
   if(zoom) map.setView([r[F.lat],r[F.lon]],17,{animate:true});
-  $('#sName').textContent=r[F.name]||'(sin nombre)';
+  $('#sName').textContent=r[F.name]||window.T('(sin nombre)','(sense nom)');
   $('#sSub').textContent=[title(r[F.barrio]),title(r[F.distrito])].filter(Boolean).join(' · ')||'OpenStreetMap';
   const tags=$('#sTags'); tags.innerHTML='';
   const add=(t,c)=>{const s=document.createElement('span');s.className='tag'+(c?' '+c:'');s.textContent=t;tags.appendChild(s);};
@@ -705,6 +710,7 @@ function select(r,zoom){
   $('#routeInfo').textContent='';
   $$('#sheet .btn[data-mode]').forEach(b=>b.setAttribute('aria-pressed','false'));
   clearRoute(); $('#sheet').classList.add('open');
+  requestAnimationFrame(()=>{ const sh=$('#sheet').getBoundingClientRect(); if(sh.width<innerWidth-40) return; const p=map.latLngToContainerPoint([r[F.lat],r[F.lon]]); const vis=sh.top; if(p.y>vis-40) map.panBy([0,p.y-vis/2],{animate:true}); });
 }
 $('#closeSheet').onclick=closeSheet;
 function closeSheet(){ $('#sheet').classList.remove('open'); if(selMarker) selMarker.setIcon(pinIcon(selMarker._r,false)); selected=null; selMarker=null; clearRoute(); }
@@ -739,7 +745,7 @@ function locate(center){
 function bearing(a,b){ const φ1=a.lat*Math.PI/180,φ2=b.lat*Math.PI/180,Δλ=(b.lng-a.lng)*Math.PI/180; const y=Math.sin(Δλ)*Math.cos(φ2), x=Math.cos(φ1)*Math.sin(φ2)-Math.sin(φ1)*Math.cos(φ2)*Math.cos(Δλ); return (Math.atan2(y,x)*180/Math.PI+360)%360; }
 
 // ================= Ruta =================
-let routeLine=null, currentMode=null, currentRoute=null;
+let routeLine=null, currentMode=null, currentRoute=null, routeHadWatch=false;
 const GM={foot:'walking',bike:'bicycling',car:'driving'};
 const MODE_ES={foot:'a pie',bike:'en bici',car:'en coche'};
 $$('#sheet .btn[data-mode]').forEach(b=>b.onclick=()=>route(b.dataset.mode));
@@ -751,13 +757,16 @@ async function fetchRoute(mode,from,to){
   return null;
 }
 async function route(mode){
-  if(!selected) return;
+  const target=selected; if(!target) return;
   currentMode=mode; updateGmaps();
   $$('#sheet .btn[data-mode]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===mode));
+  routeHadWatch=watchId!=null;
   const info=$('#routeInfo'); info.textContent='Obteniendo tu ubicación…';
-  try{ await locate(false); }catch(e){ info.textContent='Sin ubicación: usa el botón de Google Maps.'; return; }
+  try{ await locate(false); }catch(e){ if(selected===target) info.textContent='Sin ubicación: usa el botón de Google Maps.'; return; }
+  if(selected!==target) return;
   info.textContent='Calculando ruta…';
-  const rt=await fetchRoute(mode,myPos,L.latLng(selected[F.lat],selected[F.lon]));
+  const rt=await fetchRoute(mode,myPos,L.latLng(target[F.lat],target[F.lon]));
+  if(selected!==target) return;
   if(!rt){ info.textContent='El servicio de rutas no responde. Usa Google Maps.'; return; }
   currentRoute=rt; drawRoute(rt); map.fitBounds(routeLine.getBounds().pad(.15));
   info.innerHTML='<b>'+km(rt.distance)+'</b> · <b>'+dur(rt.duration)+'</b> '+MODE_ES[mode]+' (OSRM)';
@@ -783,6 +792,7 @@ async function startNav(){
   navTick();
 }
 function stopNav(){
+  if(!routeHadWatch) stopWatch();
   navOn=false; $('#nav').classList.remove('on'); $('#top').hidden=false; $('#fabs').hidden=false; $('#foot').hidden=false; $('#recenter').hidden=true;
   try{ wakeLock&&wakeLock.release(); }catch(e){} wakeLock=null;
   if(selected) $('#sheet').classList.add('open');
@@ -847,8 +857,9 @@ $$('.chip').forEach(c=>c.onclick=()=>{
 
 // ================= Menú / importación =================
 const menu=$('#menu');
-function openMenu(){menu.classList.add('open');}
-$('#menuBtn').onclick=openMenu; $('#menuClose').onclick=()=>menu.classList.remove('open');
+function openMenu(){menu.classList.add('open'); const f=menu.querySelector('button'); if(f) f.focus();}
+$('#menuBtn').onclick=openMenu; $('#menuClose').onclick=()=>{ menu.classList.remove('open'); $('#menuBtn').focus(); };
+document.addEventListener('keydown',e=>{ if(e.key!=='Escape') return; if(menu.classList.contains('open')){ menu.classList.remove('open'); $('#menuBtn').focus(); } else if($('#results').innerHTML){ $('#results').innerHTML=''; } else if($('#sheet').classList.contains('open')&&!navOn){ closeSheet(); } });
 menu.addEventListener('click',e=>{ if(e.target===menu) menu.classList.remove('open'); });
 function status(t){ $('#status').textContent=t; }
 $('#importBtn').onclick=()=>$('#file').click();
@@ -915,7 +926,7 @@ const pct=(a,b)=>b?Math.round(100*a/b):0;
 function bar(label,sub,segs,val,valsub,data){
   return '<div class="lbl"'+(data?' data-b="'+esc(data)+'" style="cursor:pointer"':'')+' title="'+esc(label)+'">'+esc(label)+(sub?'<small>'+esc(sub)+'</small>':'')+'</div><div class="trk">'+segs.map(s=>'<div class="fill'+(s.cls?' '+s.cls:'')+'" style="width:'+(100*Math.max(0,Math.min(1,s.w)))+'%"></div>').join('')+'</div><div class="val">'+val+(valsub?' <small>'+valsub+'</small>':'')+'</div>';
 }
-function gotoBarrio(b){ showTab('map'); const f=barriosGeo.features.find(x=>x.properties.neighbourhood===b); if(f){ if($('#tgBarrios').getAttribute('aria-pressed')!=='true'){setTg('#tgBarrios',true);barriosLayer.addTo(map);} map.fitBounds(L.geoJSON(f).getBounds()); } $('#q').value=b; $('#clearQ').hidden=false; render(); }
+function gotoBarrio(b){ showTab('map'); const f=barriosGeo.features.find(x=>x.properties.neighbourhood===b); if(f){ if($('#tgBarrios').getAttribute('aria-pressed')!=='true'){setTg('#tgBarrios',true);barriosLayer.addTo(map);} map.fitBounds(L.geoJSON(f).getBounds()); } barrioFilter=b; hostFilter=null; $('#q').value=''; $('#results').innerHTML=''; $('#clearQ').hidden=false; render(); }
 function factCard(f){ return '<div class="fact"><b>'+esc(f.title)+'</b>'+esc(f.text)+(f.url?'<div class="src"><a href="'+esc(f.url)+'" target="_blank" rel="noopener">'+esc(f.source||host(f.url))+'</a>'+(f.url2?' · <a href="'+esc(f.url2)+'" target="_blank" rel="noopener">'+esc(f.source2||host(f.url2))+'</a>':'')+'</div>':'')+'</div>'; }
 function buildData(){
   const R=rows, n=R.length||1;
@@ -966,7 +977,7 @@ function buildData(){
   const hsAll=[...byH.values()].sort((a,b)=>b.n-a.n); const hs=hsAll.slice(0,showAllHosts?50:20);
   $('#hostTable tbody').innerHTML=hs.map(o=>{ const hi=hostInfo(o.id); return '<tr class="lnk" data-h="'+(o.id||'')+'"><td>'+esc(o.name||'—')+(hi?'<small>'+esc(hi.company||'')+(hi.type?' · '+esc(hi.type):'')+'</small>':(o.loc?'<small>'+esc(o.loc)+'</small>':''))+'</td><td class="n">'+fmt(o.n)+'</td><td class="n">'+pct(o.entire,o.n)+' %</td><td class="n">'+pct(o.vt,o.n)+' %</td><td class="n">'+(o.rev?Math.round(o.rev/1000)+' k€':'—')+'</td><td>'+esc([...o.b.entries()].sort((a,b)=>b[1]-a[1]).slice(0,3).map(([b,c])=>title(b)+' ('+c+')').join(', '))+'</td></tr>'; }).join('');
   $('#moreHosts').textContent=showAllHosts?'Ver top 20':'Ver top 50';
-  $$('#hostTable tr.lnk').forEach(tr=>tr.onclick=()=>{ const id=parseInt(tr.dataset.h,10); if(!id) return; hostFilter=id; showTab('map'); const l=render(); if(l.length) map.fitBounds(L.latLngBounds(l.map(r=>[r[F.lat],r[F.lon]])).pad(.2)); });
+  $$('#hostTable tr.lnk').forEach(tr=>tr.onclick=()=>{ const id=parseInt(tr.dataset.h,10); if(!id) return; hostFilter=id; barrioFilter=null; $('#q').value=''; $('#clearQ').hidden=false; showTab('map'); const l=render(); if(l.length) map.fitBounds(L.latLngBounds(l.map(r=>[r[F.lat],r[F.lon]])).pad(.2)); });
   const hk=research.hosts?Object.keys(research.hosts).length:0;
   $('#hostNote').innerHTML=hk?'<b>Quién hay detrás.</b> La segunda línea de cada host identifica la sociedad o gestora según webs propias, Registro Mercantil (vía InfoNIF/BORME) y prensa. Al tocar un piso en el mapa aparece la ficha del grupo. Un mismo grupo puede operar varias cuentas de host.':'<b>Pendiente:</b> identificación de las sociedades detrás de cada host.';
   $('#hostFacts').innerHTML=(research.host_patterns||[]).map(factCard).join('');
@@ -1012,12 +1023,14 @@ function keyOf(s){ const nums=[]; let i=0; const k=norm(s).replace(NUM,m=>{ nums
 const fill=(t,nums)=>t.replace(/\{(\d+)\}/g,(m,i)=>nums[+i]!=null?nums[+i]:m);
 function look(s){ if(!s||!hasL(s)) return null; const [k,nums]=keyOf(s); const t=D[k]; return t==null?null:fill(t,nums); }
 window.tr=function(s){ const t=look(s); return t==null?s:t; };
-const DONE=new WeakSet(), VALS=new Set(Object.values(D).map(norm));
+const LAST=new WeakMap(), DONE=new WeakSet(), VALS=new Set(Object.values(D).map(norm));
 function isUnit(el){ if(el.querySelector('[data-notr]')) return false; let txt=false; for(const n of el.childNodes){ if(n.nodeType===3){ if(n.nodeValue.trim()) txt=true; } else if(n.nodeType===1){ if(!INL.has(n.tagName)) return false; if(n.querySelector('button,input,select,svg,textarea,img')) return false; } } return txt&&hasL(el.textContent); }
-function attrs(el){ for(const a of ['title','aria-label','placeholder','alt']){ const v=el.getAttribute&&el.getAttribute(a); if(v){ const t=look(v); if(t!=null&&t!==v) el.setAttribute(a,t); } } }
+function attrs(el){ for(const a of ['title','aria-label','placeholder','alt','data-h']){ const v=el.getAttribute&&el.getAttribute(a); if(v){ const t=look(v); if(t!=null&&t!==v) el.setAttribute(a,t); } } }
+function stripArch(h){ const A=[]; const s=h.replace(/\s*<a class="arch" href="([^"]*)"[^>]*>[^<]*<\/a>/g,(m,href)=>{ A.push([m,href]); return ''; }); return [s,A]; }
+function putArch(h,A){ for(const [m,href] of A){ const u=href.replace(/^https?:\/\/web\.archive\.org\/web\/\d+[a-z_]*\//,''); const i=h.indexOf('href="'+u+'"'); if(i<0){ h+=m; continue; } const j=h.indexOf('</a>',i); h=j<0?h+m:h.slice(0,j+4)+m+h.slice(j+4); } return h; }
 function walk(el){ if(el.nodeType!==1||SKIP.has(el.tagName)||el.hasAttribute('data-notr')) return; attrs(el);
   if(el.tagName==='OPTION'){ const t=look(el.textContent); if(t!=null) el.textContent=t; return; }
-  if(isUnit(el)){ if(DONE.has(el)&&VALS.has(norm(el.innerHTML))) return; const t=look(el.innerHTML); if(t!=null&&t!==el.innerHTML){ el.innerHTML=t; } DONE.add(el); return; }
+  if(isUnit(el)){ if(DONE.has(el)&&(VALS.has(norm(el.innerHTML))||LAST.get(el)===el.innerHTML)) return; const raw=el.innerHTML; const [st,A]=stripArch(raw); const t0=look(st); const t=t0==null?null:putArch(t0,A); if(t!=null&&t!==raw){ el.innerHTML=t; } DONE.add(el); LAST.set(el,el.innerHTML); return; }
   for(const n of [...el.childNodes]){ if(n.nodeType===3){ const v=n.nodeValue; if(!v.trim()) continue; const t=look(v); if(t!=null){ const lead=v.match(/^\s*/)[0], trail=v.match(/\s*$/)[0]; const nv=lead+t+trail; if(nv!==v) n.nodeValue=nv; } } else if(n.nodeType===1) walk(n); } }
 const doc=()=>{ walk(document.body); const t=look(document.title); if(t) document.title=t; document.querySelectorAll('meta[name=description],meta[property="og:description"],meta[property="og:title"]').forEach(m=>{ const x=look(m.content); if(x) m.content=x; }); };
 doc(); let busy=false;

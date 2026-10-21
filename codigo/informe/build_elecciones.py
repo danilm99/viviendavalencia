@@ -12,7 +12,7 @@ E = load("data_elecciones.py", "E29")
 H = load("data_historial.py", "H") if (ROOT / "data_historial.py").exists() else None
 head_tpl = open(ROOT / "tpl/01_head.html", encoding="utf-8").read()
 base_css = head_tpl.split("<style>", 1)[1].split("/* otras ciudades */", 1)[0]
-apply_js = open(ROOT.parent / "valenciano/apply.js", encoding="utf-8").read()
+apply_js = next(p for p in [ROOT.parent / "valenciano/apply.js", ROOT.parent / "codigo/valenciano/apply.js", ROOT / "apply.js", pathlib.Path("/tmp/claude-0/-home-claude/71b84656-6dc8-5a74-99a5-b596aab2a40b/scratchpad/i18n/apply.js")] if p.exists()).read_text(encoding="utf-8")
 
 def esc(s):
     s = re.sub(r"(\d) (%|€|M€)", "\\1\u00a0\\2", s)
@@ -73,7 +73,9 @@ table.st td:first-child{font-weight:700;white-space:nowrap}
 table.gv td:first-child{white-space:nowrap;font-weight:600}
 table.gv td.maj{white-space:nowrap}
 .badge{display:inline-block;font:600 11.5px/1 var(--body);padding:4px 8px;border-radius:999px;white-space:nowrap;border:1.5px solid currentColor}
-.st-ok{color:var(--s3)}.st-part{color:var(--s5)}.st-no{color:var(--s2)}.st-curso{color:var(--s1)}.st-nv{color:var(--muted)}.st-m{color:var(--fg)}
+.st-ok{color:#17704a}.st-part{color:#8a6408}.st-no{color:#b02a22}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .st-ok{color:var(--s3)}:root:not([data-theme="light"]) .st-part{color:var(--s5)}:root:not([data-theme="light"]) .st-no{color:var(--s2)}}
+.st-curso{color:var(--s1)}.st-nv{color:var(--muted)}.st-m{color:var(--fg)}
 .rec{margin:22px 0 6px}
 .rec h3{margin:0 0 6px}
 .rec .gov{font-size:14.5px;margin:0 0 10px;max-width:78ch}
@@ -174,7 +176,7 @@ def sec_temas():
 </section>"""
 
 def sec_evidencia():
-    cards = "".join(f'<a href="index.html#fuera" data-g="{g}"><b>{esc(t)}</b><span>{esc(c)}</span></a>' for t, c, g in E["evidence"])
+    cards = "".join(f'<a href="informe-vivienda-valencia.html#fuera" data-g="{g}"><b>{esc(t)}</b><span>{esc(c)}</span></a>' for t, c, g in E["evidence"])
     return f"""<section id="evidencia">
 <h2>Qué dice la experiencia de otras ciudades</h2>
 <p>Muchas de estas propuestas ya se han probado en otros sitios. En el informe resumimos qué se hizo y qué pasó después en 19 casos, con los estudios que lo evalúan. No es una valoración de los partidos: sirve para saber qué resultados han tenido medidas parecidas.</p>
@@ -297,11 +299,11 @@ SITEBAR<div class="page">
 <nav class="spine" id="spine">
   <div class="brand">Elecciones del 29-N y vivienda</div>
   {"".join(f'<a href="#{i}">{esc(t)}</a>' for i, t in NAV)}
-  <div class="foot"><a href="index.html">Informe sobre la vivienda</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></div>
+  <div class="foot"><a href="./">Inicio</a> · <a href="informe-vivienda-valencia.html">Informe completo</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></div>
 </nav>
 <main id="top">
 <header class="hero">
-  <p class="meta">Actualizado el {esc(E["updated"])} · <a href="index.html">viviendavalencia.info</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></p>
+  <p class="meta">Actualizado el {esc(E["updated"])} · <a href="./">viviendavalencia.info</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></p>
   <h1>Elecciones del 29-N: qué dicen los partidos sobre vivienda</h1>
   <p class="dek">Lo que han dicho hasta ahora las candidaturas con opciones de escaño en Valencia, qué decide cada administración y qué hizo cada partido cuando tuvo el poder de decidir.</p>
   <div class="warn"><b>Todavía no hay programas.</b> A {esc(E["updated"])} ningún partido ha publicado su programa electoral para el 29-N. Lo que recogemos son documentos y declaraciones; cuando se publiquen los programas, actualizaremos la página.</div>
@@ -316,20 +318,21 @@ SITEBAR<div class="page">
 {sec_votos()}
 {sec_evidencia()}
 {sec_metodo()}
-<p class="foot"><a href="./">Informe sobre la vivienda en València</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a></p>
+<p class="foot"><a href="./">Inicio</a> · <a href="informe-vivienda-valencia.html">Informe completo sobre la vivienda en València</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a></p>
 <p class="foot">viviendavalencia.info · Página informativa sin afiliación a ningún partido. Datos y código abiertos. Esta web cuenta visitas de forma anónima con GoatCounter, sin cookies.</p>
 </main>
 </div>
-<a class="totop" id="totop" href="#top" aria-label="Volver arriba">↑</a>
+<a class="totop" id="totop" href="#" aria-label="Volver arriba" onclick="scrollTo({{top:0,behavior:'smooth'}});return false">↑</a>
 <script>(function(){{ const links=[...document.querySelectorAll('nav.spine a[href^="#"]')]; const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
-const io=new IntersectionObserver(es=>{{ es.forEach(e=>{{ if(e.isIntersecting){{ links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)); const on=links.find(a=>a.classList.contains('on')); if(on&&innerWidth<=980) on.scrollIntoView({{inline:'center',block:'nearest'}}); }} }}); }},{{rootMargin:'-40% 0px -55% 0px'}}); secs.forEach(s=>io.observe(s));
+const io=new IntersectionObserver(es=>{{ es.forEach(e=>{{ if(e.isIntersecting){{ links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)); const on=links.find(a=>a.classList.contains('on')); if(on&&innerWidth<=980){{ const sp=on.parentElement; sp.scrollTo({{left:on.offsetLeft-sp.clientWidth/2+on.offsetWidth/2,behavior:'smooth'}}); }} }} }}); }},{{rootMargin:'-40% 0px -55% 0px'}}); secs.forEach(s=>io.observe(s));
 const tt=document.getElementById('totop'); addEventListener('scroll',()=>tt.classList.toggle('on',scrollY>900),{{passive:true}}); }})();</script>
-<script>(function(){{ document.querySelectorAll('a.langsw').forEach(function(a){{ var va=window.LANG==='va'; a.textContent=va?'Castellano':'Valencià'; a.setAttribute('lang',va?'es':'ca-ES-valencia'); a.addEventListener('click',function(e){{ e.preventDefault(); location.href=location.pathname+'?lang='+(va?'es':'va')+location.hash; }}); }}); }})();</script>
+<script>(function(){{ document.querySelectorAll('a.langsw').forEach(function(a){{ var va=window.LANG==='va'; a.textContent=va?'Castellano':'Valencià'; a.setAttribute('lang',va?'es':'ca-ES-valencia'); a.setAttribute('href','?lang='+(va?'es':'va')); a.addEventListener('click',function(e){{ e.preventDefault(); location.href=location.pathname+'?lang='+(va?'es':'va')+location.hash; }}); }}); }})();</script>
 <script>{apply_js}</script>
 </body>
 </html>
 """
 
-body = body.replace("SITEBAR", '<div class="sitebar"><a class="sb-home" href="./">viviendavalencia.info</a><nav aria-label="Secciones del sitio"><a href="./">Informe</a><a href="pisos-turisticos-valencia.html">Mapa</a><a href="elecciones-29n.html" aria-current="page">Elecciones 29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></nav></div>\n', 1)
+import sys; sys.path.insert(0, str(ROOT)); from sitebar import bar
+body = body.replace("SITEBAR", bar("elec"), 1)
 OUT.write_text(HEAD + body, encoding="utf-8")
 print("ok", OUT, len(HEAD + body))

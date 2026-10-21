@@ -6,12 +6,12 @@
 <meta property="og:image" content="https://viviendavalencia.info/og-informe.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://viviendavalencia.info/">
+<meta property="og:url" content="https://viviendavalencia.info/informe-vivienda-valencia.html">
 <meta property="og:site_name" content="viviendavalencia.info">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://viviendavalencia.info/og-informe.jpg">
-<link rel="canonical" href="https://viviendavalencia.info/">
+<link rel="canonical" href="https://viviendavalencia.info/informe-vivienda-valencia.html">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Informe sobre la vivienda en València</title>
 <meta name="description" content="Informe con datos de INE, Catastro, Hacienda, Generalitat, Ayuntamiento, CGPJ, idealista y UPV sobre el parque de viviendas de València: precios, alquileres reales, rentas, hogares, quién llega, grandes tenedores, pisos turísticos y gasto público. Con fichas de fuente en cada cifra, explorador de correlaciones y mapa de pisos turísticos.">
@@ -104,7 +104,8 @@ p{max-width:66ch;margin:8px 0}
 @media (max-width:340px){.ledger,.ledger.two{grid-template-columns:1fr}}
 /* figuras */
 figure{margin:22px 0 8px;padding:10px 0 0;border-top:3px solid var(--rule)}
-figure .t{font:700 18px/1.2 var(--display);letter-spacing:-.01em;margin:0 0 2px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+figure .t{font:700 18px/1.2 var(--display);letter-spacing:-.01em;margin:0 0 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;align-items:baseline}
+figure .t button{margin-left:auto}
 figure .t button{flex:none;border:0;background:var(--mark);color:var(--mark-ink);font:600 12.5px var(--body);border-radius:999px;padding:3px 10px;cursor:pointer}
 figure .t button:hover{background:var(--fg);color:var(--bg)}
 figure .d{font-size:13.5px;color:var(--muted);margin:0 0 8px;max-width:70ch}
@@ -171,6 +172,7 @@ label.ctl{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--
 label.ctl.chk{flex-direction:row;align-self:end;padding-bottom:8px}
 label.ctl.chk input{width:18px;height:18px;accent-color:var(--fg)}
 .explorer{background:var(--panel);padding:18px 18px 12px;margin:16px -18px;border-top:6px solid var(--mark)}
+@media (max-width:1180px){.explorer{margin:16px 0}}
 @media (max-width:640px){.explorer{margin:16px -16px;padding:14px 14px 10px}}
 .explorer figure{border-top-width:1px;border-top-color:var(--line)}
 .interp{font-size:15px;margin:12px 0;max-width:none}
@@ -247,6 +249,10 @@ table.cardm td.y{border-radius:3px}
 .swipe{display:none;font-size:12px;color:var(--muted);margin:4px 0 0}
 @media print{nav.spine,.det,.btnrow{display:none}.page{display:block}figure{break-inside:avoid}}
 
+@media (max-width:980px){section[id],h3[id],.rec[id],.party[id]{scroll-margin-top:62px}}
+:root:not([data-theme="dark"]) .ty-an,:root:not([data-theme="dark"]) .ty-pp{color:#8a6408}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ty-an,:root:not([data-theme="light"]) .ty-pp{color:var(--s5)}}
+@media (pointer:coarse){figure .t button,.lnkbtn{min-height:36px;padding:8px 12px}nav.spine a{padding-top:10px;padding-bottom:10px}.det .x{width:44px;height:44px}}
 /* barra común del sitio */
 .sitebar{background:var(--fg);color:var(--bg);display:flex;align-items:center;gap:18px;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));min-height:42px;font:600 13.5px/1 var(--body)}
 .sitebar a{color:var(--bg);text-decoration:none}
@@ -257,8 +263,9 @@ table.cardm td.y{border-radius:3px}
 .sitebar nav a{padding:13px 10px 11px;white-space:nowrap;border-bottom:3px solid transparent}
 .sitebar nav a[aria-current="page"]{border-bottom-color:var(--mark)}
 .sitebar nav a.langsw{opacity:.75}
-@media (max-width:560px){.sitebar{gap:8px}.sitebar .sb-home{font-size:14px}.sitebar nav{margin-left:auto}.sitebar nav a{padding:13px 7px 11px}}
-@media (max-width:400px){.sitebar .sb-home{display:none}.sitebar nav{margin-left:0}}
+.sitebar nav a.sb-i{display:none}
+@media (max-width:720px){.sitebar{gap:8px}.sitebar .sb-home{display:none}.sitebar nav{margin-left:0}.sitebar nav a.sb-i{display:block}.sitebar nav a{padding:13px 8px 11px}}
+@media (max-width:480px){.sitebar nav a .lg{display:none}.sitebar nav a{padding:13px 7px 11px}}
 @media print{.sitebar{display:none}}
 
 /* otras ciudades */

@@ -74,7 +74,7 @@ if(gk){ lineChart($('#chGini'),{series:[{name:'Índice de Gini (0-100)',color:C.
 const rdRows=Object.entries(RD).map(([d,r])=>{ const s=r['Renta neta media por persona']||{}; return {l:d,v:s['2024'],vs:'(+'+Math.round(100*(s['2024']/s['2015']-1))+' %)',c:'s1'}; }).filter(r=>r.v).sort((a,b)=>b.v-a.v);
 barsH($('#chRentaDist'),rdRows,{vf:v=>fmt(v)+' €'}); figDet('chRentaDist','f_rentadist');
 const esfIdx=Object.entries(D.rent_dec).map(([y,v])=>{ const r=RN[y]||rentaLast; return [+y,Math.round(100*v*85/(r/12))]; }).filter(p=>p[0]>=2015);
-lineChart($('#chEsfIdx'),{series:[{name:'Alquiler 85 m² / renta neta mensual por persona',color:C.s2,pts:esfIdx,dots:true,area:true,lf:v=>v+' %'}],y0:0,yf:v=>v+' %',xf:x=>''+Math.round(x),h:220,ann:[{x:2024.5,label:'renta de 2024 →',pos:'b'}]}); figDet('chEsfIdx','f_esfidx');
+lineChart($('#chEsfIdx'),{series:[{name:'Alquiler 85 m² / renta neta mensual por persona',color:C.s2,pts:esfIdx,dots:true,area:true,lf:v=>v+' %'}],y0:0,yf:v=>v+' %',xf:x=>''+Math.round(x),h:220,ann:[{x:2024.5,label:'renta de 2024 →',pos:'b',left:true}]}); figDet('chEsfIdx','f_esfidx');
 if(S.salarios) $('#blkSalarios').innerHTML=renderBlock(S.salarios,S.srcs);
 
 // ---- oferta
@@ -180,6 +180,7 @@ function renderBlock(B,defSrc){ let h=''; if(B.title) h+='<h3>'+esc(B.title)+'</
 
 // ---- registro de cambios y correcciones ----
 const CHANGES=[
+ ['21-10-2026','',"Nueva portada con accesos a todas las secciones, el resumen «En un minuto» y las cifras clave; el informe pasa a su propia página. Barra de navegación común, enlace directo a cada ficha de cifra clave y correcciones de navegación, móvil y accesibilidad en el informe y el mapa."],
  ['21-10-2026','',"Nueva página «Elecciones del 29-N»: qué han dicho los partidos sobre vivienda, quién decide qué en cada administración, quién ha gobernado y qué prometió y cumplió cada partido."],
  ['21-10-2026','',"Nueva sección «Otras ciudades» con 19 políticas de vivienda aplicadas fuera de València y sus resultados medidos."],
  ['21-10-2026','',"Cada cifra indica el tipo de dato (oficial, registro, estudio, anuncios, institucional, cálculo propio o prensa). Cada gráfico se puede ver como tabla y descargar en CSV. Datos y código publicados con licencia abierta."],

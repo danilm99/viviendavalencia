@@ -63,7 +63,11 @@ def js(o):
 parts = sorted((ROOT / "tpl").glob("*.html"))
 tpl = "".join(p.read_text(encoding="utf-8") for p in parts) if parts else (ROOT / "template_informe.html").read_text(encoding="utf-8")
 (ROOT / "template_informe.html").write_text(tpl, encoding="utf-8")
-out = tpl.replace("__DATA__", js(D))
+import sys; sys.path.insert(0, str(ROOT)); from sitebar import bar
+out = tpl.replace("__DATA__", js(D)).replace("<!--SITEBAR-->", bar("informe").rstrip("\n"), 1)
 p = ROOT.parent / "informe-vivienda-valencia.html"
 p.write_text(out, encoding="utf-8")
 print(p, round(p.stat().st_size / 1e6, 2), "MB")
+
+import subprocess
+subprocess.run([sys.executable, str(ROOT / "build_landing.py")], check=True)
