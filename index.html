@@ -298,8 +298,8 @@ a.arch{font-size:.85em;color:var(--muted);margin-left:4px}
 .land{max-width:1040px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 70px max(16px,env(safe-area-inset-left,0px))}
 .land header{padding:56px 0 18px}
 .land .kick{font:600 12.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-.land h1{font:800 clamp(34px,10.6vw,104px)/.92 var(--display);font-variation-settings:"wdth" 86;letter-spacing:-.035em;margin:0 0 18px;max-width:none}
-.land h1 span{background:linear-gradient(transparent 58%,var(--hl) 58%,var(--hl) 92%,transparent 92%)}
+.land h1{margin:0 0 22px;max-width:none;font-size:inherit;line-height:1}
+.land h1 .logo{display:inline-block;font:800 clamp(29px,9.6vw,96px)/1 var(--display);font-variation-settings:"wdth" 85;font-stretch:85%;letter-spacing:-.02em;background:var(--mark);color:var(--mark-ink);padding:.2em .26em .13em;white-space:nowrap}
 .land .dek{font-size:clamp(19px,2.2vw,24px);line-height:1.38;max-width:34ch;margin:0 0 12px}
 .land .sub2{font-size:15px;color:var(--muted);max-width:62ch;margin:0}
 .secs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0 8px}
@@ -332,7 +332,7 @@ a.arch{font-size:.85em;color:var(--muted);margin-left:4px}
 <main class="land" id="top">
 <header>
   <p class="kick">Datos a octubre de 2026</p>
-  <h1><span>ViviendaValencia</span><wbr>.info</h1>
+  <h1><span class="logo">viviendavalencia.info</span></h1>
   <p class="dek">Plataforma de código abierto para acercar a la ciudadanía los datos sobre la vivienda en València.</p>
   <p class="sub2">Estadísticas oficiales, registros públicos y estudios, con la fuente de cada cifra. Sin publicidad, sin cookies y sin afiliación a ningún partido.</p>
   <nav class="secs" aria-label="Secciones"><a class="sec sec-a" href="informe-vivienda-valencia.html"><b>Informe completo</b><span>Precios, rentas, hogares, propietarios, pisos turísticos, vivienda pública y gasto, con una ficha de fuente detrás de cada cifra y un explorador para cruzar indicadores.</span><i aria-hidden="true">→</i></a><a class="sec sec-b" href="pisos-turisticos-valencia.html"><b>Mapa de pisos turísticos</b><span>Los 7.968 anuncios de Airbnb de la ciudad, uno a uno, con su registro y su anfitrión, y el peso del alquiler turístico en cada barrio.</span><i aria-hidden="true">→</i></a><a class="sec sec-c" href="elecciones-29n.html"><b>Elecciones del 29-N</b><span>Qué dicen los partidos sobre vivienda, qué decide cada administración y qué hizo cada partido cuando gobernó.</span><i aria-hidden="true">→</i></a><a class="sec sec-d" href="https://github.com/danilm99/viviendavalencia" target="_blank" rel="noopener"><b>Datos y código abiertos</b><span>Todo el código y los datos de la web, con licencia libre, para comprobar de dónde sale cada cifra o reutilizarlos.</span><i aria-hidden="true">→</i></a></nav>
