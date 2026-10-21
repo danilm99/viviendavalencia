@@ -1,0 +1,80 @@
+{
+ "2013": {
+  "total": 1555,
+  "hipotecario": 400,
+  "lau": 1100,
+  "otros": 55
+ },
+ "2014": {
+  "total": 1755,
+  "hipotecario": 633,
+  "lau": 1044,
+  "otros": 78
+ },
+ "2015": {
+  "total": 1606,
+  "hipotecario": 598,
+  "lau": 981,
+  "otros": 27
+ },
+ "2016": {
+  "total": 1437,
+  "hipotecario": 366,
+  "lau": 1025,
+  "otros": 46
+ },
+ "2017": {
+  "total": 1134,
+  "hipotecario": 293,
+  "lau": 803,
+  "otros": 38
+ },
+ "2018": {
+  "total": 1287,
+  "hipotecario": 281,
+  "lau": 978,
+  "otros": 28
+ },
+ "2019": {
+  "total": 1133,
+  "hipotecario": 190,
+  "lau": 903,
+  "otros": 40
+ },
+ "2020": {
+  "total": 750,
+  "hipotecario": 129,
+  "lau": 594,
+  "otros": 27
+ },
+ "2021": {
+  "total": 908,
+  "hipotecario": 118,
+  "lau": 756,
+  "otros": 34
+ },
+ "2022": {
+  "total": 886,
+  "hipotecario": 173,
+  "lau": 688,
+  "otros": 25
+ },
+ "2023": {
+  "total": 700,
+  "hipotecario": 112,
+  "lau": 567,
+  "otros": 21
+ },
+ "2024": {
+  "total": 523,
+  "hipotecario": 58,
+  "lau": 439,
+  "otros": 26
+ },
+ "2025": {
+  "total": 427,
+  "hipotecario": 61,
+  "lau": 349,
+  "otros": 17
+ }
+}

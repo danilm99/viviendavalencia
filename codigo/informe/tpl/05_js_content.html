@@ -1,0 +1,197 @@
+// ================= Contenido =================
+const I=D.idealista, rentM=I.rent_month, saleM=I.sale_month, P=D.parque, PR=D.propietarios, CV=D.compraventas, OF=D.oferta;
+const rentNow=rentM[rentM.length-1][1], saleNow=saleM[saleM.length-1][1];
+const RN=(E.renta&&E.renta.city&&E.renta.city['Renta neta media por persona'])||{}, RH=(E.renta&&E.renta.city['Renta neta media por hogar'])||{};
+const rentaLast=RN['2024'], renta15=RN['2015']; const yrsR=Object.keys(RN);
+const XA=E.extranjeros||{}; const XN=XA.nacionalidades||{}, XC=XA.continente_distrito||{};
+const FI=E.fianzas, SC=E.serpavi_city, CG=E.cgpj, NAC=E.nacimientos, NI=E.natalidad_ind, HT=E.hojas_tamano||{}; const htY=Object.keys(HT).sort(); const htLast=HT[htY[htY.length-1]];
+const uni=y=>Math.round(1000*HT[y]['Hojas de  una persona']/HT[y]['Número de hojas familiares'])/10;
+const varR=Math.round(100*(rentaLast/renta15-1)), varA=Math.round(100*(D.rent_dec['2024']/D.rent_dec['2015']-1));
+$('#lead').textContent='Qué hay en el parque de '+fmt(P.catastro_residencial['2025'])+' viviendas de la ciudad, cuánto cuesta vivir en él, cuánto ganan quienes lo habitan, quién lo posee, quién llega y qué han hecho las administraciones. Datos de INE, Catastro, Hacienda, Generalitat, Ayuntamiento, CGPJ, idealista y UPV, con una ficha de fuente detrás de cada cifra y un explorador para cruzar cualquier par de series.';
+// hero
+lineChart($('#chHero'),{series:[{name:'Alquiler €/m²',color:'var(--fg)',pts:rentM.map(p=>[mkey(p[0]),p[1]]),area:false,w:2.6,lf:v=>v.toLocaleString('es-ES',{minimumFractionDigits:1})+' €/m²'}],y0:0,yf:v=>v.toLocaleString('es-ES'),xf:mlabel,h:200,bands:[{x0:2023.35,x1:2026.75}],ann:[{x:2014.0,label:'mínimo 5,9'},{x:2020.25,label:'covid'}],legend:false});
+figDet('chHero','f_hero');
+$('#kpis').innerHTML=kpiHtml([
+  [rentNow.toLocaleString('es-ES')+' €/m²','alquiler anunciado en septiembre de 2026','+'+Math.round(100*(rentNow/5.9-1))+' % desde enero de 2014','w','k_rent'],
+  [fmt(saleNow)+' €/m²','compra anunciada en septiembre de 2026','+'+Math.round(100*(saleNow/1385-1))+' % desde enero de 2015','w','k_sale'],
+  [fmt(FI['2026'].mediana)+' €','fianza mediana de un contrato de alquiler nuevo (2026)','equivale a un mes de alquiler; 620 € en 2020 (+'+Math.round(100*(FI['2026'].mediana/FI['2020'].mediana-1))+' %)','w','k_fianza'],
+  ['+'+varR+' %','renta neta por persona entre 2015 y 2024','frente a +'+varA+' % del alquiler anunciado en el mismo periodo','w','k_renta'],
+  ['−47 %','anuncios de alquiler entre 2018 y 2025','39.086 → 20.621 (idealista)','w','k_oferta'],
+  [fmt(P.censo_2021.vacias_consumo),'viviendas vacías según el Censo 2021',String(P.censo_2021.vacias_pct).replace('.',',')+' % del parque; 91.817 no principales','w','k_vacias'],
+  [fmt(PR.ibi_2026.grandes_tenedores),'grandes tenedores (cinco o más viviendas)','padrón del IBI, octubre de 2026; '+fmt(PR.ibi_2026.sociedades)+' son sociedades','w','k_gt'],
+  [fmt(D.turistico.vut_registro_gva),'viviendas turísticas registradas (GVA, 2026)','más '+fmt(D.turistico.airbnb_2026)+' anuncios en Airbnb (septiembre de 2026)','w','k_vut'],
+  [fmt(CG['2025'].total),'desahucios practicados en el partido judicial en 2025',fmt(CG['2013'].total)+' en 2013; '+pct(CG['2025'].lau,CG['2025'].total)+' % por impago de alquiler','g','k_desah'],
+  [fmt(NAC['2023']),'nacimientos en 2023','8.939 en 2008 (−35 %); 1,1 hijos por mujer','w','k_nac'],
+  [uni('2025').toLocaleString('es-ES')+' %','hogares de una sola persona (2025)',uni('2017').toLocaleString('es-ES')+' % en 2017','n','k_uni'],
+  ['19,7 %','vecinas y vecinos de otra nacionalidad (2025)','12,3 % en 2014; colombianos e italianos encabezan','n','k_ext'],
+  ['4','viviendas públicas nuevas entregadas por el Ayuntamiento desde 2015','Plan Vive: 192 terminadas de 10.000 en la Comunitat','w','k_pub'],
+]);
+$('#kpis').insertAdjacentHTML('afterend','<p class="klegend"><span style="--c:var(--s2)">empeora el acceso a la vivienda</span><span style="--c:var(--s3)">mejora</span><span style="--c:var(--s1)">precio o mercado</span><span style="--c:var(--s5)">dato de contexto</span><span style="--c:var(--fg)">estructura social</span></p><p class="sub">Cada cifra abre una ficha con qué mide, cómo se calcula y la fuente.</p>');
+$('#callout').innerHTML='Entre 2015 y 2024 la renta neta media subió un <mark>'+varR+' %</mark> y el alquiler anunciado un <mark>'+varA+' %</mark>. La fianza de un contrato nuevo, que es un mes de alquiler real, pasó de 620 € en 2020 a '+fmt(FI['2026'].mediana)+' € en 2026. El alquiler medio de la muestra de oferta de la UPV es de '+fmt(D.upv.rent_eur_month_q4['2025'])+' €/mes (4T-2025): 1,2 veces la renta neta mensual media de quien vive en la ciudad.';
+
+// ---- precios
+lineChart($('#chRent'),{series:[{name:'Alquiler €/m²',color:C.s1,pts:rentM.map(p=>[mkey(p[0]),p[1]]),area:true,lf:v=>v.toLocaleString('es-ES',{minimumFractionDigits:1})+' €/m²'}],y0:0,yf:v=>v.toLocaleString('es-ES'),xf:mlabel,ann:[{x:2014.0,label:'mínimo 5,9'},{x:2020.25,label:'covid',pos:'b'},{x:2023.37,label:'ley de vivienda',left:true},{x:2024.4,label:'moratoria VUT',pos:'m',leftNarrow:true}]}); figDet('chRent','f_rent');
+lineChart($('#chSale'),{series:[{name:'Compra €/m²',color:C.s4,pts:saleM.map(p=>[mkey(p[0]),p[1]]),area:true,lf:v=>fmt(v)+' €/m²'}],y0:0,yf:v=>fmt(v),xf:mlabel,ann:[{x:2015.0,label:'mínimo 1.385'},{x:2020.25,label:'covid',pos:'b'},{x:2023.37,label:'ley de vivienda',pos:'m',left:true}]}); figDet('chSale','f_sale');
+const idx=(obj,base)=>Object.entries(obj).filter(([y,v])=>v!=null).map(([y,v])=>[+y,100*v/obj[base]]);
+lineChart($('#chIndex'),{series:[{name:'Alquiler anunciado (idealista)',color:C.s1,pts:idx(D.rent_dec,'2014'),dots:true,lf:v=>fmt(v)},{name:'Compra anunciada (idealista)',color:C.s4,pts:idx(D.sale_dec,'2014'),dots:true,lf:v=>fmt(v)},{name:'IPV Comunitat Valenciana (INE, escrituras)',color:C.s3,pts:idx(D.ipv_cv.y,'2014'),dots:true,lf:v=>fmt(v)},{name:'Renta neta media por persona (INE, 2015 = 100)',color:C.n,pts:idx(RN,'2015'),dots:true,lf:v=>fmt(v)}],y0:80,yf:v=>fmt(v),xf:x=>''+Math.round(x)}); figDet('chIndex','f_index');
+const tq=Object.assign({},E.tasado_trim||{},D.mivau_tasado.q||{}); const tqs=Object.entries(tq).sort((a,b)=>qkey(a[0])-qkey(b[0]));
+lineChart($('#chTasado'),{series:[{name:'Valor tasado €/m²',color:C.s3,pts:tqs.map(([k,v])=>[qkey(k),v]),dots:true,lf:v=>fmt(v)+' €/m²'}],y0:0,yf:v=>fmt(v),xf:qlabel,h:230,gap:0.6}); figDet('chTasado','f_tasado');
+const serp=Object.entries(SC.col_mediana_eur).map(([y,v])=>[+y,v]); const fian=Object.entries(FI).map(([y,v])=>[+y,v.mediana]); const anun=Object.entries(D.rent_dec).map(([y,v])=>[+y,v*85]);
+lineChart($('#chPaga'),{series:[{name:'Mediana de todos los contratos vigentes (SERPAVI)',color:C.s3,pts:serp,dots:true,lf:v=>fmt(v)+' €'},{name:'Mediana de las fianzas de contratos nuevos (Generalitat)',color:C.s1,pts:fian,dots:true,lf:v=>fmt(v)+' €'},{name:'Alquiler anunciado, 85 m² (idealista, diciembre)',color:C.s4,pts:anun,dots:true,lf:v=>fmt(v)+' €'}],y0:0,yf:v=>fmt(v),xf:x=>''+Math.round(x),h:260}); figDet('chPaga','f_paga');
+$('#pPaga').textContent='Hay tres precios del alquiler y conviene no mezclarlos. El de los anuncios (idealista: 16,3 €/m², unos 1.390 €/mes por 85 m²) es el que encuentra quien busca piso hoy. El de los contratos nuevos de cada año, medido por la fianza que se deposita en la Generalitat, tenía una mediana de 620 € en 2020 y de '+fmt(FI['2026'].mediana)+' € en 2026: +'+Math.round(100*(FI['2026'].mediana/FI['2020'].mediana-1))+' % en seis años, con '+fmt(FI['2025'].n)+' contratos depositados en 2025. Y el de todos los contratos vigentes, antiguos incluidos (SERPAVI del Ministerio): 625 € de mediana en 2023, 400 € en 2014. Hacienda cuenta 64.180 viviendas arrendadas declaradas en IRPF en 2023 con una renta media de 686 €/mes. La distancia entre 625 y 1.390 € es la que separa a quien ya tiene contrato de quien tiene que buscar uno.';
+barsH($('#chTipologia'),Object.entries(D.upv.rent_by_bedrooms_q4_2025||{}).map(([k,v])=>({l:k==='0'?'Estudio':k==='1'?'1 habitación':k+' habitaciones',v,c:'s1'})),{vf:v=>fmt(v)+' €/mes'}); figDet('chTipologia','f_tipologia');
+$('#kpiPaga').innerHTML=kpiHtml([[fmt(SC.col_mediana_eur['2023'])+' €','mediana de los contratos vigentes (2023)',fmt(SC.col_mediana_eur['2014'])+' € en 2014; '+SC.col_mediana_m2['2023'].toFixed(1).replace('.',',')+' €/m² por '+SC.col_superficie_mediana['2023']+' m²','','p_serp'],[fmt(FI['2025'].mediana)+' €','fianza mediana de contrato nuevo (2025)','p25 '+fmt(FI['2025'].p25)+' €, p75 '+fmt(FI['2025'].p75)+' €; '+fmt(FI['2025'].n)+' contratos','a','p_fianza25'],[fmt(FI['2026'].mediana)+' €','fianza mediana, enero-septiembre de 2026',fmt(FI['2026'].n)+' contratos en nueve meses','a','p_fianza26'],['686 €','renta media declarada en IRPF (2023)','64.180 viviendas arrendadas; 8,1 €/m²','','p_aeat'],[fmt(D.rent_dec['2026']*85)+' €','piso anunciado de 85 m² (septiembre de 2026)','idealista, 16,3 €/m²','w','p_anun85'],[Math.round(100*(SC.col_p75_eur['2023']/SC.col_p25_eur['2023']-1))+' %','entre el contrato barato y el caro','p25 '+fmt(SC.col_p25_eur['2023'])+' € / p75 '+fmt(SC.col_p75_eur['2023'])+' € (SERPAVI 2023)','','p_p75']]);
+const cps=Object.entries(D.aeat_2023.cp).sort((a,b)=>b[1][1]-a[1][1]);
+const cpName=cp=>{ const v=D.aeat_2023.cp[cp]; return v?v[2].split(' / ')[0].split(' (')[0]:''; };
+barsH($('#chAeat'),cps.map(([cp,v])=>({l:cp+' '+cpName(cp),v:v[1],c:'s1'})),{vf:v=>fmt(v,1)+' €/m²'}); figDet('chAeat','f_aeat');
+const fcp=E.fianzas_cp_med||{}; const cpAll=Object.keys(fcp['2025']||{}).filter(cp=>fcp['2021']&&fcp['2021'][cp]).sort((a,b)=>fcp['2025'][b][1]-fcp['2025'][a][1]);
+barsH($('#chFianzaCp'),cpAll.map(cp=>({l:cp,v:fcp['2025'][cp][1],vs:'('+fmt(fcp['2021'][cp][1])+' €)',sub:fmt(fcp['2025'][cp][0])+' contratos en 2025',c:'s1'})),{vf:v=>fmt(v)+' €'}); figDet('chFianzaCp','f_fianzacp');
+$('#capFianzaCp').textContent=(cpAll.length?'Encabezan los códigos '+cpAll.slice(0,3).join(', ')+' (Pla del Remei, Russafa y el centro histórico); cierran '+cpAll.slice(-3).reverse().join(', ')+'.':'');
+const SD=E.serpavi_district||{}; const serpD=(y,d)=>{ const r=SD[y]&&SD[y].renta_mediana&&SD[y].renta_mediana[normD(d)]; return r?r[0]:null; };
+const RD=(E.renta&&E.renta.dist)||{}; const rentaD=(d,y)=>{ const r=RD[normD(d)]; return r&&r['Renta neta media por persona']?r['Renta neta media por persona'][y]:null; };
+const dist=Object.keys(D.upv.rent_district_month_4t2025);
+$('#tDist tbody').innerHTML=dist.map(d=>{ const i=I.districts_2026_09[d]||{}; const v=(x,f)=>x==null?'<span style="color:var(--muted)">—</span>':(f?f(x):x); const yo=x=>x==null?'—':'<span style="color:'+(x<0?'var(--s3)':'var(--fg)')+'">'+(x>0?'+':'')+x.toLocaleString('es-ES')+'&nbsp;%</span>';
+  const s23=serpD('2023',d), s18=serpD('2018',d), sv=(s23&&s18)?Math.round(100*(s23/s18-1)):null;
+  return '<tr><td>'+esc(normD(d))+'</td><td class="n">'+v(i.rent,x=>x.toLocaleString('es-ES',{minimumFractionDigits:1}))+'</td><td class="n">'+yo(i.rent_yoy)+'</td><td class="n">'+v(i.sale,fmt)+'</td><td class="n">'+yo(i.sale_yoy)+'</td><td class="n">'+v(D.upv.rent_district_month_4t2025[d],fmt)+'</td><td class="n">'+v(s23,x=>fmt(x)+' €')+'</td><td class="n">'+yo(sv)+'</td><td class="n">'+v(rentaD(d,'2024'),fmt)+'</td></tr>'; }).join('');
+const IDR=E.idealista_district_rent||{}; const idrYears=Object.keys(IDR).sort(); const distNames=idrYears.length?Object.keys(IDR[idrYears[idrYears.length-1]]).filter(k=>k!=='València'):[];
+const sel=$('#selDist'); sel.innerHTML=distNames.map(d=>'<option>'+esc(d)+'</option>').join(''); sel.value=distNames.includes('Ciutat Vella')?'Ciutat Vella':distNames[0];
+const idSeries=d=>{ const pts=idrYears.filter(y=>IDR[y][d]&&IDR[y][d].media).map(y=>[+y,IDR[y][d].media]); const now=I.districts_2026_09[Object.keys(I.districts_2026_09).find(k=>normD(k)===normD(d))||d]; if(d==='València') pts.push([2026,rentNow]); else if(now&&now.rent) pts.push([2026,now.rent]); return pts; };
+function drawDist(){ const d=sel.value; lineChart($('#chDistSerie'),{series:[{name:d,color:C.s1,pts:idSeries(d),dots:true,lf:v=>v.toLocaleString('es-ES',{minimumFractionDigits:1})+' €/m²'},{name:'Ciudad',color:C.n,pts:idSeries('València'),dots:true,lf:v=>v.toLocaleString('es-ES',{minimumFractionDigits:1})+' €/m²'}],y0:0,yf:v=>fmt(v),xf:x=>''+Math.round(x)+(Math.round(x)===2026?' (sep)':''),h:240}); }
+sel.addEventListener('change',drawDist); drawDist(); figDet('chDistSerie','f_distserie');
+const SB=Object.entries(E.serpavi_barrio_2023||{}).filter(([b,r])=>r.n>=100&&r.m2).sort((a,b)=>b[1].m2-a[1].m2);
+barsH($('#chBarrioTop'),SB.slice(0,15).map(([b,r])=>({l:bname(b),sub:r.distrito+' · '+fmt(r.renta)+' €/mes · '+fmt(r.n)+' contratos',v:r.m2,c:'s2'})),{vf:v=>v.toFixed(1).replace('.',',')+' €/m²',max:SB[0][1].m2});
+barsH($('#chBarrioBot'),SB.slice(-15).reverse().map(([b,r])=>({l:bname(b),sub:r.distrito+' · '+fmt(r.renta)+' €/mes · '+fmt(r.n)+' contratos',v:r.m2,c:'s3'})),{vf:v=>v.toFixed(1).replace('.',',')+' €/m²',max:SB[0][1].m2});
+const rq=Object.entries(D.upv.rent_eur_month_q4).map(([y,v])=>[+y,v]); const rentaMes=yrsR.map(y=>[+y,Math.round(RN[y]/12)]).filter(p=>p[0]>=2019);
+lineChart($('#chUpvRent'),{series:[{name:'Alquiler medio €/mes (UPV, 4T)',color:C.s1,pts:rq,dots:true,lf:v=>fmt(v)+' €'},{name:'Renta neta media mensual por persona (INE)',color:C.n,pts:rentaMes,dots:true,lf:v=>fmt(v)+' €'}],y0:0,yf:v=>fmt(v),xf:x=>''+Math.round(x),h:230}); figDet('chUpvRent','f_upvrent');
+const ESF=(E.esfuerzo_distrito&&E.esfuerzo_distrito.rows)||{};
+barsH($('#chEsfDist'),Object.entries(ESF).sort((a,b)=>b[1].esfuerzo_4t-a[1].esfuerzo_4t).map(([d,r])=>({l:d,sub:fmt(r.precio_4t)+' €/m²',v:Math.round(r.esfuerzo_4t*1000)/10,c:r.esfuerzo_4t>0.35?'s2':'s3'})),{vf:v=>fmt(v,1)+' %'}); figDet('chEsfDist','f_esfdist');
+
+// ---- rentas
+$('#pRenta').textContent='La renta neta media por persona en la ciudad pasó de '+fmt(renta15)+' € en 2015 a '+fmt(rentaLast)+' € en 2024 (+'+varR+' %); la del hogar, de '+fmt(RH['2015'])+' a '+fmt(RH['2024'])+' € (+'+Math.round(100*(RH['2024']/RH['2015']-1))+' %). Son datos fiscales del INE, después de impuestos, e incluyen la inflación: el IPC subió alrededor de un 25 % en ese periodo, así que la renta real creció en torno al 15 %. El alquiler anunciado subió un '+Math.round(100*(D.rent_dec['2024']/D.rent_dec['2015']-1))+' % y la compra un '+Math.round(100*(D.sale_dec['2024']/D.sale_dec['2015']-1))+' % en los mismos años. La desigualdad de renta bajó en el mismo periodo.';
+lineChart($('#chRenta'),{series:[{name:'Renta neta media por persona',color:C.s1,pts:yrsR.map(y=>[+y,RN[y]]),dots:true,lf:v=>fmt(v)+' €'},{name:'Renta neta media por hogar',color:C.s4,pts:yrsR.map(y=>[+y,RH[y]]),dots:true,lf:v=>fmt(v)+' €'}],y0:0,yf:v=>fmt(v/1000)+' k',xf:x=>''+Math.round(x),h:240}); figDet('chRenta','f_renta');
+const GI=(E.renta&&E.renta.gini)||{}; const gk=Object.keys(GI)[0], pk=Object.keys(GI)[1];
+if(gk){ lineChart($('#chGini'),{series:[{name:'Índice de Gini (0-100)',color:C.s1,pts:Object.entries(GI[gk]).sort().map(([y,v])=>[+y,v]),dots:true,lf:v=>v.toLocaleString('es-ES')},{name:'P80/P20',color:C.s3,pts:Object.entries(GI[pk]).sort().map(([y,v])=>[+y,v]),dots:true,axis:'r',lf:v=>v.toLocaleString('es-ES')}],y0:30,y1:40,r0:2,r1:4,yf:v=>v.toLocaleString('es-ES'),rf:v=>v.toLocaleString('es-ES'),xf:x=>''+Math.round(x),h:220}); figDet('chGini','f_gini'); }
+const rdRows=Object.entries(RD).map(([d,r])=>{ const s=r['Renta neta media por persona']||{}; return {l:d,v:s['2024'],vs:'(+'+Math.round(100*(s['2024']/s['2015']-1))+' %)',c:'s1'}; }).filter(r=>r.v).sort((a,b)=>b.v-a.v);
+barsH($('#chRentaDist'),rdRows,{vf:v=>fmt(v)+' €'}); figDet('chRentaDist','f_rentadist');
+const esfIdx=Object.entries(D.rent_dec).map(([y,v])=>{ const r=RN[y]||rentaLast; return [+y,Math.round(100*v*85/(r/12))]; }).filter(p=>p[0]>=2015);
+lineChart($('#chEsfIdx'),{series:[{name:'Alquiler 85 m² / renta neta mensual por persona',color:C.s2,pts:esfIdx,dots:true,area:true,lf:v=>v+' %'}],y0:0,yf:v=>v+' %',xf:x=>''+Math.round(x),h:220,ann:[{x:2024.5,label:'renta de 2024 →',pos:'b'}]}); figDet('chEsfIdx','f_esfidx');
+if(S.salarios) $('#blkSalarios').innerHTML=renderBlock(S.salarios,S.srcs);
+
+// ---- oferta
+barChart($('#chListings'),{cats:Object.keys(D.upv.rent_listings_q4),vals:Object.values(D.upv.rent_listings_q4),h:200}); figDet('chListings','f_listings');
+barChart($('#chSerpaviN'),{cats:Object.keys(SC.viviendas_alquiladas),vals:Object.values(SC.viviendas_alquiladas),h:200,colors:[C.s3],yf:v=>fmt(v/1000)+' k'}); figDet('chSerpaviN','f_serpavin');
+$('#kpiOferta').innerHTML=kpiHtml([['−47 %','anuncios de alquiler permanente (idealista)',fmt(OF.anuncios_alquiler['2018'])+' en 2018 → '+fmt(OF.anuncios_alquiler['2025'])+' en 2025','w','o_anun'],['+276 %','oferta de temporada en cinco años','frente a −33 % la permanente (oct-2024)','w','o_temp'],['+79 %','viviendas alquiladas con contrato, 2014 → 2023','36.026 → 64.420 (SERPAVI)','','o_serpn'],[fmt(OF.oferta_venta_2t2025),'viviendas en venta en portales','2T-2025 (COAPI-APIVA)','','o_venta'],['8 %','ventas cerradas en menos de una semana','2T-2026 (idealista); 10 % un año antes','','o_express'],[D.upv.newbuild_q4_2025.listings,'viviendas de obra nueva en oferta','4T-2025 UPV; 2.853 en marzo de 2020','','o_nueva'],[fmt(D.upv.newbuild_eur_m2_q4['2024'])+' €/m²','obra nueva, 4T-2024','1.915 €/m² en 2019 (+80 %)','','o_nuevam2']]);
+const TR=E.transacciones||{}; const trY0=Object.keys(TR).map(Number); const trY=[]; for(let y=Math.min(...trY0);y<=Math.max(...trY0);y++) trY.push(String(y));
+barChart($('#chTrans'),{cats:trY,vals:trY.map(y=>TR[y]?[TR[y].segunda,TR[y].nueva]:[0,0]),colors:[C.s4,C.s1],names:['Segunda mano','Nueva'],h:220}); figDet('chTrans','f_trans');
+const sq=Object.entries(CV.ciudad); barChart($('#chSales'),{cats:sq.map(([k])=>k.replace('T',' T')),vals:sq.map(([,v])=>v),h:200,labels:true}); figDet('chSales','f_sales');
+const cgY=Object.keys(CG).sort();
+barChart($('#chCgpj'),{cats:cgY,vals:cgY.map(y=>[CG[y].lau,CG[y].hipotecario,CG[y].otros]),colors:[C.s2,C.s4,C.n],names:['Impago de alquiler (LAU)','Ejecución hipotecaria','Otros'],h:230}); figDet('chCgpj','f_cgpj');
+$('#pDes').textContent='Los desahucios practicados en el partido judicial de València han bajado de '+fmt(CG['2013'].total)+' en 2013 a '+fmt(CG['2025'].total)+' en 2025 (−'+Math.round(100*(1-CG['2025'].total/CG['2013'].total))+' %), pero han cambiado de naturaleza: los hipotecarios pasan de '+fmt(CG['2013'].hipotecario)+' a '+fmt(CG['2025'].hipotecario)+' y los de alquiler siguen siendo la gran mayoría ('+pct(CG['2025'].lau,CG['2025'].total)+' %). La caída coincide con las moratorias para hogares vulnerables (2020-2025) y con el descenso de la morosidad hipotecaria. El dato mide solo los desalojos que pasan por un juzgado: quedan fuera las no renovaciones de contrato y las salidas forzadas por una subida de precio, que no pasan por un juzgado.';
+$('#kpiDes').innerHTML=kpiHtml([[fmt(D.desahucios.cv['2025'][0]),'desahucios en la Comunitat (2025)',fmt(D.desahucios.cv['2025'][1])+' por impago de alquiler, '+fmt(D.desahucios.cv['2025'][2])+' hipotecarios','w','d_cv'],[String(D.desahucios.tasa_cv_1t2026).replace('.',','),'desahucios por 100.000 habitantes (Comunitat, 1T-2026)','la tasa más alta de España','w','d_tasa'],[fmt(D.desahucios.prov_1t2026),'en la provincia, 1T-2026','+20 % interanual','','d_prov'],[D.desahucios.oficina_dret.suspendidos+' de '+D.desahucios.oficina_dret.total,'desahucios frenados por la Oficina municipal','octubre de 2021 a julio de 2022; 58 % por alquiler','','d_oficina'],[fmt(D.desahucios.ocupacion.usurpacion_prov_2023),'diligencias por ocupación de vivienda (provincia, 2023)','−9,6 %; 84 puntos ocupados en 2025 según el Ayuntamiento (474 en 2023)','','d_ocup']]);
+$('#desNote').textContent='CGPJ (lanzamientos practicados por partido judicial, 2013-2025), Fiscalía y Ayuntamiento de València.';
+
+// ---- parque
+barChart($('#chCenso'),{cats:Object.keys(P.censo),vals:Object.values(P.censo),h:200,yf:v=>fmt(v/1000)+' k'}); figDet('chCenso','f_censo');
+lineChart($('#chCatastro'),{series:[{name:'Inmuebles residenciales',color:C.s4,pts:Object.entries(P.catastro_residencial).map(([y,v])=>[+y,v]),dots:true,lf:v=>fmt(v)}],y0:400000,y1:425000,yf:v=>fmt(v/1000)+' k',xf:x=>''+Math.round(x),h:200}); figDet('chCatastro','f_catastro');
+const c11=P.censo_2011,c21=P.censo_2021;
+barChart($('#chUso'),{cats:['Censo 2011','Censo 2021'],vals:[[c11.principales,c11.secundarias,c11.vacias],[c21.principales,c21.no_principales-c21.vacias_consumo,c21.vacias_consumo]],colors:[C.s3,C.n,C.s2],names:['Principales','Secundarias / otras no principales','Vacías'],h:220,yf:v=>fmt(v/1000)+' k',vf:v=>fmt(v)}); figDet('chUso','f_uso');
+$('#kpiParque').innerHTML=kpiHtml([[pct(c21.principales,c21.total)+' %','viviendas principales (2021)','78 % en 2011','','q_prin'],[fmt(P.tenencia_2021.alquiler),'hogares en alquiler (2021)',pct(P.tenencia_2021.alquiler,c21.principales)+' % de las principales; en propiedad el '+pct(P.tenencia_2021.propiedad,c21.principales)+' %','','q_alq'],[fmt(P.emivasa_2026.total),'viviendas sin consumo de agua','Emivasa, marzo de 2026 (939 sin ningún consumo)','w','q_agua'],[fmt(htLast['Número de hojas familiares']),'hogares (hojas padronales, 2025)',htLast['Número medio de personas por hoja'].toFixed(2).replace('.',',')+' personas por hogar; 2,41 en 2017','','q_hog'],[fmt(100*XN['2025'].Total.total/P.poblacion['2025'],1)+' %','población de otra nacionalidad (2025)','14,6 % en 2021; '+fmt(XN['2025'].Total.total)+' personas','','q_ext'],[fmt(P.solares_2024.n),'solares sin edificar (2024)',fmt(P.solares_2024.m2/10000,0)+' hectáreas','','q_sol']]);
+barChart($('#chLic'),{cats:Object.keys(P.licencias_viviendas),vals:Object.values(P.licencias_viviendas),h:200}); figDet('chLic','f_lic');
+barChart($('#chAnt'),{cats:Object.keys(P.catastro_antiguedad_2024),vals:Object.values(P.catastro_antiguedad_2024),h:210,yf:v=>fmt(v/1000)+' k',colors:[C.s4]}); figDet('chAnt','f_ant');
+barsH($('#chNoPrin'),Object.entries(P.no_principales_distrito_2021).map(([k,v])=>({l:normD(k).replace(' (puntos)','-Canyamelar (barrio)').replace(/^El /,'el ').replace(/^La /,'la '),v,c:k.includes('(')?'s4':'s2'})).sort((a,b)=>b.v-a.v),{vf:v=>v+' %'}); figDet('chNoPrin','f_noprin');
+const C11=E.censo2011_distrito||{};
+barsH($('#chVac11'),Object.entries(C11).map(([d,r])=>({l:d,v:Math.round(1000*r.vacias/r.total)/10,c:'n',sub:fmt(r.vacias)+' de '+fmt(r.total)})).sort((a,b)=>b.v-a.v),{vf:v=>v.toLocaleString('es-ES')+' %'}); figDet('chVac11','f_vac11');
+const PD=E.poblacion_distrito||{}; const pdY=Object.keys(PD).sort(); const pdL=PD[pdY[pdY.length-1]]||{}, pdF=PD[pdY[0]]||{};
+barsH($('#chPobDist'),Object.entries(pdL).filter(([d])=>d!=='Total'&&d!=='València').map(([d,v])=>({l:d,v,vs:pdF[d]?'('+(v>=pdF[d]?'+':'')+Math.round(100*(v/pdF[d]-1))+' %)':'',c:'s4'})).sort((a,b)=>b.v-a.v),{vf:v=>fmt(v)}); figDet('chPobDist','f_pobdist');
+
+// ---- hogares
+const h17=HT['2017'], h25=HT['2025'];
+$('#pHog').textContent='La ciudad tiene cada vez más hogares y más pequeños: '+fmt(h25['Número de hojas familiares'])+' hojas padronales en 2025 frente a '+fmt(h17['Número de hojas familiares'])+' en 2017 (+'+Math.round(100*(h25['Número de hojas familiares']/h17['Número de hojas familiares']-1))+' %), con la población creciendo un 7 %. Las de una sola persona son ya el '+uni('2025').toLocaleString('es-ES')+' %. Nacen '+fmt(NAC['2023'])+' niños al año, un tercio menos que en 2008, con '+NI['2023'].isf.toFixed(2).replace('.',',')+' hijos por mujer y una edad media al primer hijo de '+NI['2023'].edad_primer_hijo.toFixed(1).replace('.',',')+' años (31,6 en 2015). En el Censo de 2021, '+fmt(E.censo21_hogares_tipo['Multipersonal sin familia'])+' hogares (3,8 %) eran personas que comparten piso sin ser familia, y '+fmt(E.censo21_hogares_tipo['Una familia con otras personas']+E.censo21_hogares_tipo['Un núcleo y otras personas'])+' más eran familias con personas adicionales conviviendo.';
+$('#kpiHog').innerHTML=kpiHtml([[uni('2025').toLocaleString('es-ES')+' %','hogares de una persona (2025)',uni('2017').toLocaleString('es-ES')+' % en 2017; 128.784 hojas','','h_uni'],[fmt(E.censo21_hogares_tipo['Multipersonal sin familia']),'hogares que comparten piso sin ser familia (2021)','3,8 % de los hogares (Censo 2021)','a','h_comp'],[NI['2023'].isf.toFixed(2).replace('.',','),'hijos por mujer (2023)','1,21 en 2015; 2,1 es el nivel de reemplazo','w','h_isf'],[NI['2023'].edad_primer_hijo.toFixed(1).replace('.',','),'edad media al primer hijo (2023)','31,6 en 2015','','h_edad1'],[fmt(NAC['2023']),'nacimientos (2023)','máximo de 8.939 en 2008','','h_nac'],[String(NI['2023'].tbn).replace('.',','),'nacimientos por 1.000 habitantes (2023)','8,3 en 2015','','h_tbn']]);
+lineChart($('#chNac'),{series:[{name:'Nacimientos',color:C.s1,pts:Object.entries(NAC).map(([y,v])=>[+y,v]),area:true,dots:true,lf:v=>fmt(v)}],y0:0,yf:v=>fmt(v),xf:x=>''+Math.round(x),h:220}); figDet('chNac','f_nac');
+const niY=Object.keys(NI).sort();
+lineChart($('#chIsf'),{series:[{name:'Hijos por mujer',color:C.s2,pts:niY.map(y=>[+y,NI[y].isf]),dots:true,lf:v=>v.toFixed(2).replace('.',',')},{name:'Edad media al primer hijo',color:C.s4,pts:niY.map(y=>[+y,NI[y].edad_primer_hijo]),dots:true,axis:'r',lf:v=>v.toFixed(1).replace('.',',')+' años'}],y0:1,y1:1.4,r0:31,r1:33,yf:v=>v.toLocaleString('es-ES'),rf:v=>v.toLocaleString('es-ES'),xf:x=>''+Math.round(x),h:220}); figDet('chIsf','f_isf');
+const hk=['Hojas de  una persona','Hojas de  2 personas','Hojas de  3 personas','Hojas de  4 personas'];
+const htYf=[]; for(let y=+htY[0];y<=+htY[htY.length-1];y++) htYf.push(String(y));
+barChart($('#chHojas'),{cats:htYf,vals:htYf.map(y=>HT[y]?[...hk.map(k=>HT[y][k]),HT[y]['Hojas de  5 personas']+HT[y]['Hojas de  6 personas']+HT[y]['Hojas de  7 y más']]:[0,0,0,0,0]),colors:[C.s1,C.s4,C.s3,C.n,C.s5],names:['1 persona','2','3','4','5 o más'],h:240,yf:v=>fmt(v/1000)+' k',vf:v=>fmt(v)}); figDet('chHojas','f_hojas');
+const CT=E.censo21_hogares_tipo; barsH($('#chTipoHog'),Object.entries(CT).filter(([k])=>k!=='total').sort((a,b)=>b[1]-a[1]).map(([k,v])=>({l:k,v,vs:'('+(100*v/CT.total).toFixed(1).replace('.',',')+' %)',c:k.includes('sin familia')?'s2':'s1'})),{vf:v=>fmt(v)}); figDet('chTipoHog','f_tipohog');
+const HC=E.hojas_comp_2025||{}; const HD=E.hogares_distrito&&E.hogares_distrito['2025']||{};
+barsH($('#chSolo24'),Object.entries(HC).filter(([k])=>!/^Total$/.test(k)).map(([k,r])=>{ const d=dkey(k); const tot=(HD[d]||[])[0]||1; return {l:d,v:Math.round(10000*r['Solo de 0 a 24 años']/tot)/10,sub:fmt(r['Solo de 0 a 24 años'])+' hojas',c:'s3'}; }).sort((a,b)=>b.v-a.v),{vf:v=>v.toLocaleString('es-ES')+' ‰'}); figDet('chSolo24','f_solo24');
+if(S.hogares) $('#blkSocial').innerHTML=renderBlock(S.hogares,S.srcs);
+
+// ---- quién llega
+$('#pExt').textContent=X.intro||''; $('#kpiExt').innerHTML=kpiHtml(X.kpis||[],X.srcs);
+const xcY=Object.keys(XC).sort(); const contKeys=['Unión Europea','Resto de Europa','América del Sur','América del Norte y Central','África','Asia'];
+const contVal=(y,k)=>{ const t=XC[y].Total||{}; const f=p=>Object.entries(t).filter(([kk])=>kk.startsWith(p)).reduce((a,[,v])=>a+(v||0),0); if(k==='Unión Europea') return f('Unión Europea'); if(k==='América del Norte y Central') return f('América del Norte')+f('América Central'); return f(k); };
+lineChart($('#chContSerie'),{series:contKeys.map((k,i)=>({name:k,color:[C.s1,C.s3,C.s2,C.s4,C.s5,C.n][i],pts:xcY.map(y=>[+y,contVal(y,k)]),dots:true,label:i<3,lf:v=>fmt(v)})),y0:0,yf:v=>fmt(v/1000)+' k',xf:x=>''+Math.round(x),h:260}); figDet('chContSerie','f_contserie');
+const nacTop=Object.entries(XN['2025']||{}).filter(([k])=>!['Total','Otros','Hombres','Mujeres','Varones'].includes(k)).sort((a,b)=>b[1].total-a[1].total).slice(0,12).map(([k])=>k);
+groupBars($('#chNac3'),{cats:nacTop,series:['2017','2021','2025'].map((y,i)=>({name:y,color:[C.n,C.s4,C.s1][i],vals:nacTop.map(k=>(XN[y]&&XN[y][k]&&XN[y][k].total)||0)})),yf:v=>fmt(v/1000)+' k',h:250}); figDet('chNac3','f_nac3');
+$('#tGrupos tbody').innerHTML=(X.grupos||[]).map(([g,n,t])=>'<tr><td><b>'+esc(g)+'</b></td><td>'+esc(n)+'</td><td>'+esc(t)+'</td></tr>').join('');
+const xc25=XC['2025']||{}; const cKeys=['Unión Europea (27)','Resto de Europa','América del Norte','América Central','América del Sur','África','Asia'];
+stackRows($('#chContDist'),Object.entries(xc25).filter(([d])=>d!=='Total').map(([d,r])=>({l:d,v:cKeys.map(k=>r[k]||0)})).sort((a,b)=>b.v[0]/b.v.reduce((x,y)=>x+y,0)-a.v[0]/a.v.reduce((x,y)=>x+y,0)),cKeys,[C.s1,C.s3,C.s2,'#e8a33d',C.s5,C.s4,C.n]); figDet('chContDist','f_contdist');
+$('#cardsRentaExt').innerHTML=cardHtml(X.renta||[]); $('#pJub').textContent=X.jubilados||''; $('#cardsNom').innerHTML=cardHtml(X.nomadas||[]); $('#pEst').textContent=X.estudiantes||'';
+
+// ---- propietarios
+const tr=PR.catastro_tramos; const resto=P.catastro_residencial['2024']-tr.total_gt5;
+barChart($('#chTramos'),{cats:['Hasta 5 viviendas','6-10','11-100','Más de 100'],vals:[resto,tr['6-10'],tr['11-100'],tr['>100']],h:210,yf:v=>fmt(v/1000)+' k',vf:v=>fmt(v),colors:[C.s3]}); figDet('chTramos','f_tramos');
+$('#kpiProp').innerHTML=kpiHtml([[fmt(PR.ibi_2026.grandes_tenedores),'propietarios con cinco o más viviendas (IBI 2026)',fmt(PR.ibi_2026.hace_3a)+' tres años antes','','pr_gt'],[fmt(PR.ibi_2026.sociedades),'de ellos, sociedades (IBI 2026)','735 tres años antes (+23 %)','w','pr_soc'],[fmt(PR.ayto_2021.ge10),'propietarios con diez o más viviendas (2021)',PR.ayto_2021.ge10_fisicas+' personas físicas, '+PR.ayto_2021.ge10_juridicas+' sociedades','','pr_ge10'],['32','sociedades con cien o más viviendas','6 con más de 300 (Ayuntamiento, 2021)','','pr_32'],[fmt(PR.ibi_2026.propietarios_total),'propietarios en el padrón del IBI (2026)','99,7 % con menos de diez viviendas','','pr_total'],['>90 %','del alquiler en manos de particulares','Banco de España, datos de 2021 (España)','','pr_part']]);
+barsH($('#chCaseros'),PR.grandes_caseros_cv.list.map(([l,v])=>({l,v,c:l.startsWith('Generalitat')?'s3':'s4'}))); figDet('chCaseros','f_caseros');
+barsH($('#chPrivados'),PR.privados_cv.list.map(([l,v])=>({l,v,c:'s4'}))); figDet('chPrivados','f_privados');
+$('#fondos').innerHTML=cardHtml(PR.fondos);
+const CVD=(E.catastro_valor_distrito&&E.catastro_valor_distrito.rows)||{};
+barsH($('#chCatVal'),Object.entries(CVD).map(([d,r])=>({l:d,v:r[3],sub:fmt(r[0])+' inmuebles · '+fmt(r[4])+' €/m²',c:'s4'})).sort((a,b)=>b.v-a.v),{vf:v=>fmt(v)+' €'}); figDet('chCatVal','f_catval');
+
+// ---- turístico
+if(D.turistico.ratio_barrios){ barsH($('#chRatio'),D.turistico.ratio_barrios.map(r=>({l:r[0].replace(/^(El|La|Els|Les) /,m=>m.toLowerCase()),sub:fmt(r[1])+' anuncios · '+fmt(r[2])+' viviendas',v:r[3]})),{vf:v=>v.toLocaleString('es-ES')+' %'}); figDet('chRatio','f_ratio'); }
+
+// ---- pública
+const pub=D.publica;
+$('#kpiPub').innerHTML=kpiHtml([['≈600','viviendas del parque municipal (AUMSA)','539 familias alojadas (2024)','','pu_aumsa'],['>1.900','demandantes de alquiler asequible (mayo de 2025)','1.231 en septiembre de 2023 y 1.838 en octubre de 2024 (+50 % en un año)','w','pu_dem'],['1.331','viviendas de EVha en la ciudad (2023)','unas 14.600 en la Comunitat','','pu_evha'],[pub.municipal.obra_nueva_2025_26,'viviendas municipales en obra 2025-26','Hortolans, Tarongers, Moreres; 72,9 M€','','pu_obra'],['273','viviendas compradas por el Ayuntamiento (2023-2025)','Safranar 131, Sareb 8 y La Torre 134 (fondo Ktesios)','','pu_compras'],[fmt(pub.evha.lista_espera['2023']),'en lista de espera de EVha (Comunitat, 2023)','9.583 en 2019','w','pu_lista'],[pub.evha.plan_vive_ciudad,'viviendas del Plan Vive licitadas en la ciudad (2024)','1.675 en toda la Comunitat','','pu_vive']]);
+barChart($('#chEvha'),{cats:Object.keys(pub.evha.lista_espera),vals:Object.values(pub.evha.lista_espera),h:190,colors:[C.s2]}); figDet('chEvha','f_evha');
+
+// ---- gasto público
+
+// ---- otras ciudades ----
+$('#pFuera').textContent=MU.intro||'';
+barsH($('#chShares'),(MU.shares||[]).map(([l,v,u,d])=>({l,v,sub:u,c:l==='València'?'s2':'s1'})),{vf:v=>fmt(v,v<10?1:0)+' %'}); $('#capShares').textContent=MU.shares_cap||''; figDet('chShares','f_shares');
+const CASES=[]; $('#casos').innerHTML=(MU.groups||[]).map(g=>'<div class="cgroup"><h3>'+esc(g.t)+'</h3><div class="cases">'+g.cases.map(c=>{ const i=CASES.push(c)-1; return '<button type="button" class="'+(c.tono||'')+'" data-case="'+i+'"><span class="pl">'+esc(c.lugar)+'</span><span class="yr">'+esc(c.anio)+'</span><span class="mt">'+esc(c.t)+'</span><span class="md">'+esc(c.medida)+'</span><span class="rs">'+esc(c.resultado)+'</span></button>'; }).join('')+'</div></div>').join('');
+$('#casos').insertAdjacentHTML('beforebegin','<div class="cfilt" role="group" aria-label="Filtrar por enfoque"><button type="button" aria-pressed="true" data-g="">Todos</button>'+(MU.groups||[]).map(g=>'<button type="button" aria-pressed="false" data-g="'+g.id+'">'+esc(g.t)+'</button>').join('')+'</div>');
+document.querySelectorAll('.cfilt button').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('.cfilt button').forEach(x=>x.setAttribute('aria-pressed',x===b)); const g=b.dataset.g; document.querySelectorAll('#casos .cgroup').forEach((el,i)=>el.hidden=!!g&&(MU.groups[i].id!==g)); }));
+$('#casos').addEventListener('click',e=>{ const b=e.target.closest('button[data-case]'); if(!b) return; const c=CASES[+b.dataset.case]; openDet({t:c.lugar+': '+c.t.charAt(0).toLowerCase()+c.t.slice(1),lbl:c.anio,secs:c.secs,src:c.src}); });
+$('#lessons').innerHTML=(MU.lessons||[]).map(t=>'<li>'+esc(t)+'</li>').join('');
+
+$('#pGasto').textContent=G.intro||''; $('#kpiGasto').innerHTML=kpiHtml(G.kpis||[],G.srcs);
+$('#tProm tbody').innerHTML=(G.promesas||[]).map(([t,y,r,u])=>'<tr><td>'+esc(t)+(u?'<small><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(host(u))+'</a></small>':'')+'</td><td class="y">'+esc(y)+'</td><td>'+esc(r)+'</td></tr>').join('');
+barsH($('#chCoste'),(G.coste||[]).sort((a,b)=>b[1]-a[1]).map(([l,v])=>({l,v,c:'s1'})),{vf:v=>fmt(v)+' €'}); figDet('chCoste','f_coste');
+$('#tAyto tbody').innerHTML=rowsHtml(G.ayto||[]); $('#tGva tbody').innerHTML=rowsHtml(G.gva||[]); $('#tEstado tbody').innerHTML=rowsHtml(G.estado||[]);
+
+// ---- bloques de investigación (salarios, emancipación)
+function renderBlock(B,defSrc){ let h=''; if(B.title) h+='<h3>'+esc(B.title)+'</h3>'; for(const t of (B.text||[])) h+='<p>'+esc(t)+'</p>'; if(B.kpis) h+='<div class="ledger two">'+kpiHtml(B.kpis,defSrc)+'</div>';
+  const figs=[]; for(const ch of (B.charts||[])){ const id='g'+Math.random().toString(36).slice(2,8); figs.push([id,ch]); h+='<figure><div class="t">'+esc(ch.title)+'</div>'+(ch.desc?'<div class="d">'+esc(ch.desc)+'</div>':'')+'<div id="'+id+'"'+(ch.type==='barsH'?' class="bars"':'')+'></div>'+(ch.cap?'<figcaption>'+esc(ch.cap)+'</figcaption>':'')+'</figure>'; }
+  for(const tb of (B.tables||[])) h+='<div class="tbl">'+(tb.title?'<h3>'+esc(tb.title)+'</h3>':'')+'<table><thead><tr>'+tb.cols.map((c,i)=>'<th'+(i?' class="n"':'')+'>'+esc(c)+'</th>').join('')+'</tr></thead><tbody>'+tb.rows.map(r=>'<tr>'+r.map((c,i)=>'<td'+(i?' class="n"':'')+'>'+esc(c)+'</td>').join('')+'</tr>').join('')+'</tbody></table>'+(tb.src?'<p class="src">'+esc(tb.src)+'</p>':'')+'</div>';
+  if(B.cards) h+='<div class="cards">'+cardHtml(B.cards)+'</div>';
+  setTimeout(()=>{ for(const [id,ch] of figs){ const el=document.getElementById(id); if(!el) continue; const cols=[C.s1,C.s4,C.s3,C.s2,C.n];
+    if(ch.type==='barsH') barsH(el,ch.rows.map((r,i)=>({l:r[0],v:r[1],vs:r[2]||'',c:'s'+((i%4)+1)})),{vf:v=>fmt(v,ch.dec||0)+(ch.unit?' '+ch.unit:'')});
+    else if(ch.type==='bar') barChart(el,{cats:ch.cats,vals:ch.vals,h:ch.h||210,colors:ch.colors||[C.s1],names:ch.names,yf:v=>fmt(v)+(ch.unit?' '+ch.unit:''),vf:v=>fmt(v,ch.dec||0)});
+    else lineChart(el,{series:ch.series.map((s,i)=>({name:s.name,color:cols[i%cols.length],pts:Object.entries(s.pts).map(([y,v])=>[+y,v]).sort((a,b)=>a[0]-b[0]),dots:true,axis:s.axis,label:s.label,lf:v=>fmt(v,s.dec||ch.dec||0)+' '+(s.unit||ch.unit||'')})),y0:ch.y0,y1:ch.y1,r0:ch.r0,r1:ch.r1,auto:ch.auto,yf:v=>fmt(v,ch.dec||0),rf:v=>fmt(v,ch.dec||0),xf:x=>''+Math.round(x),h:ch.h||230});
+    if(ch.det) figDet(id,ch.det); else { const fig=el.closest('figure'); const t=fig.querySelector('.t'); const b=document.createElement('button'); b.type='button'; b.textContent='Fuente y método'; b.addEventListener('click',()=>openDet({t:ch.title,how:ch.cap||'',src:(ch.srcs||defSrc||[])})); t.appendChild(b); } } },0);
+  return h; }
+
+
+// ---- registro de cambios y correcciones ----
+const CHANGES=[
+ ['21-10-2026','',"Nueva sección «Otras ciudades» con 19 políticas de vivienda aplicadas fuera de València y sus resultados medidos."],
+ ['21-10-2026','',"Cada cifra indica el tipo de dato (oficial, registro, estudio, anuncios, institucional, cálculo propio o prensa). Cada gráfico se puede ver como tabla y descargar en CSV. Datos y código publicados con licencia abierta."],
+ ['21-10-2026','',"Mapa: los anfitriones particulares (menos de cinco anuncios y sin ficha de empresa) dejan de mostrarse por su nombre."],
+ ['21-10-2026','',"Resumen «En un minuto», marcas de la ley de vivienda en los gráficos de precios y fecha visible en todas las cifras clave."],
+ ['21-10-2026','',"Contador de visitas con GoatCounter: sin cookies, sin datos personales y con estadísticas públicas."],
+ ['20-10-2026','fix',"La ficha «Renta frente a alquiler» compara ahora las dos series con un índice 2015 = 100; antes solo mostraba la renta."],
+ ['20-10-2026','fix',"Alquiler medio de oferta según la UPV (4T-2025): 1.659 €/mes. Se había publicado 2.091 €, que es el precio de los pisos de cuatro o más dormitorios. La tabla por distritos pasa del 3T al 4T-2025."],
+ ['20-10-2026','fix',"La población por distrito omitía 5 de los 19 distritos por un error al leer las notas al pie del Anuario; corregido."],
+ ['20-10-2026','fix',"Tras una revisión independiente de todo el informe se corrigieron varias cifras y fechas (entre ellas, el inicio de la serie de idealista en septiembre de 2008 y los jóvenes que se quedaron sin Bono Alquiler) y se retiraron afirmaciones causales que los datos no sostenían."],
+ ['octubre de 2026','',"Primera publicación del informe y del mapa de pisos turísticos."],
+];
+$('#changes').innerHTML=CHANGES.map(([d,k,t])=>'<li><b>'+esc(d)+'</b><span>'+(k==='fix'?'<span class="fix">Corrección. </span>':'')+esc(t)+'</span></li>').join('');
+
+// ---- cronología
+$('#timeline').innerHTML=D.politica.map(([y,t])=>'<b>'+esc(y)+'</b><p>'+esc(t)+'</p>').join('');

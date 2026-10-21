@@ -1,0 +1,152 @@
+// ================= Explorador =================
+const TS=[];
+const addTS=(id,name,unit,obj,src,dec)=>{ const pts={}; for(const [y,v] of Object.entries(obj||{})){ const yy=parseInt(y); if(isFinite(yy)&&v!=null&&isFinite(+v)) pts[yy]=+v; } if(Object.keys(pts).length>=3) TS.push({id,name,unit,pts,src,dec:dec||0}); };
+addTS('rent','Alquiler anunciado (diciembre), €/m²','€/m²',D.rent_dec,'idealista',1);
+addTS('rent85','Alquiler anunciado de un piso de 85 m², €/mes','€/mes',Object.fromEntries(Object.entries(D.rent_dec).map(([y,v])=>[y,Math.round(v*85)])),'idealista (cálculo propio)');
+addTS('sale','Compra anunciada (diciembre), €/m²','€/m²',D.sale_dec,'idealista');
+addTS('ipv','Índice de precios de vivienda CV (2025 = 100)','índice',D.ipv_cv.y,'INE',1);
+addTS('serpavi_med','Alquiler mediano de los contratos vigentes, €/mes','€/mes',SC.col_mediana_eur,'SERPAVI (MIVAU)');
+addTS('serpavi_m2','Alquiler mediano de los contratos vigentes, €/m²','€/m²',SC.col_mediana_m2,'SERPAVI (MIVAU)',2);
+addTS('serpavi_n','Viviendas alquiladas con contrato','viviendas',SC.viviendas_alquiladas,'SERPAVI (MIVAU)');
+addTS('fianza','Fianza mediana de los contratos nuevos, €','€',Object.fromEntries(Object.entries(FI).map(([y,v])=>[y,v.mediana])),'Generalitat, registro de fianzas');
+addTS('fianza_n','Contratos nuevos con fianza depositada','contratos',Object.fromEntries(Object.entries(FI).filter(([y])=>y!=='2026').map(([y,v])=>[y,v.n])),'Generalitat, registro de fianzas');
+addTS('upv_rent','Alquiler medio de oferta en el 4T (UPV), €/mes','€/mes',D.upv.rent_eur_month_q4,'Observatorio UPV');
+addTS('upv_list','Anuncios de alquiler en la muestra de la UPV (4T)','anuncios',D.upv.rent_listings_q4,'Observatorio UPV');
+const tasAnual={}; for(const [k,v] of Object.entries(tq)){ const y=k.slice(0,4); (tasAnual[y]=tasAnual[y]||[]).push(v); } addTS('tasado','Valor tasado medio anual, €/m²','€/m²',Object.fromEntries(Object.entries(tasAnual).map(([y,a])=>[y,Math.round(a.reduce((x,z)=>x+z,0)/a.length)])),'MIVAU');
+addTS('renta_p','Renta neta media por persona, €','€',RN,'INE, Atlas de renta');
+addTS('renta_h','Renta neta media por hogar, €','€',RH,'INE, Atlas de renta');
+addTS('renta_med','Mediana de la renta por unidad de consumo, €','€',(E.renta&&E.renta.city['Mediana de la renta por unidad de consumo'])||{},'INE, Atlas de renta');
+if(gk){ addTS('gini','Índice de Gini','',GI[gk],'INE, Atlas de renta',1); addTS('p8020','Ratio P80/P20','',GI[pk],'INE, Atlas de renta',1); }
+addTS('esf85','Esfuerzo: alquiler de 85 m² sobre la renta mensual por persona, %','%',Object.fromEntries(esfIdx.filter(p=>p[0]<=2024)),'cálculo propio (idealista, INE)');
+addTS('nac','Nacimientos','',NAC,'INE, MNP');
+addTS('isf','Hijos por mujer','',Object.fromEntries(Object.entries(NI).map(([y,v])=>[y,v.isf])),'Anuario',2);
+addTS('edad1','Edad media al primer hijo','años',Object.fromEntries(Object.entries(NI).map(([y,v])=>[y,v.edad_primer_hijo])),'Anuario',1);
+addTS('tbn','Tasa bruta de natalidad (‰)','‰',Object.fromEntries(Object.entries(NI).map(([y,v])=>[y,v.tbn])),'Anuario',1);
+addTS('hojas','Hogares (hojas padronales)','hogares',Object.fromEntries(htY.map(y=>[y,HT[y]['Número de hojas familiares']])),'Padrón municipal');
+addTS('uni','Hogares de una persona, %','%',Object.fromEntries(htY.map(y=>[y,uni(y)])),'Padrón municipal',1);
+addTS('pph','Personas por hogar','',Object.fromEntries(htY.map(y=>[y,Math.round(HT[y]['Número medio de personas por hoja']*100)/100])),'Padrón municipal',2);
+const DA=(E.demo_atlas&&E.demo_atlas.city)||{};
+addTS('pob','Población','hab.',DA['Población']||{},'INE, Atlas de renta');
+addTS('esp','Población de nacionalidad española, %','%',DA['Porcentaje de población española']||{},'INE, Atlas de renta',1);
+addTS('p65','Población de 65 o más años, %','%',DA['Porcentaje de población de 65 y más años']||{},'INE, Atlas de renta',1);
+addTS('p18','Población menor de 18 años, %','%',DA['Porcentaje de población menor de 18 años']||{},'INE, Atlas de renta',1);
+addTS('edadm','Edad media de la población','años',DA['Edad media de la población']||{},'INE, Atlas de renta',1);
+addTS('ext','Población de otra nacionalidad','personas',Object.fromEntries(Object.entries(XN).map(([y,v])=>[y,v.Total&&v.Total.total])),'Padrón municipal');
+for(const k of ['Colombia','Italia','Venezuela','Ucrania','China','Rusia','Rumanía','Pakistán']) addTS('nac_'+k,'Población de nacionalidad: '+k,'personas',Object.fromEntries(Object.entries(XN).map(([y,v])=>[y,v[k]&&v[k].total])),'Padrón municipal');
+addTS('trans','Compraventas de vivienda','',Object.fromEntries(Object.entries(TR).map(([y,v])=>[y,v.total])),'MIVAU');
+addTS('trans_n','Compraventas de vivienda nueva','',Object.fromEntries(Object.entries(TR).map(([y,v])=>[y,v.nueva])),'MIVAU');
+addTS('lanz','Desahucios practicados (partido judicial)','',Object.fromEntries(Object.entries(CG).map(([y,v])=>[y,v.total])),'CGPJ');
+addTS('lanz_lau','Desahucios por impago de alquiler','',Object.fromEntries(Object.entries(CG).map(([y,v])=>[y,v.lau])),'CGPJ');
+addTS('lanz_hip','Desahucios hipotecarios','',Object.fromEntries(Object.entries(CG).map(([y,v])=>[y,v.hipotecario])),'CGPJ');
+addTS('lic','Viviendas con licencia de obra','',P.licencias_viviendas,'Oficina d\'Estadística');
+addTS('cat','Inmuebles residenciales (Catastro)','',P.catastro_residencial,'Catastro');
+addTS('evha','Lista de espera de vivienda pública (Comunitat)','',pub.evha.lista_espera,'Conselleria de Vivienda');
+for(const B of [S.salarios,S.hogares]) for(const ch of ((B&&B.charts)||[])) for(const s of (ch.series||[])) if(s.explorer!==false) addTS('x_'+s.name,s.name+(s.unit?', '+s.unit:''),s.unit||'',s.pts,s.src||B.src||'investigación propia',s.dec||ch.dec||0);
+
+const XS=[]; const addXS=(id,name,unit,obj,src,dec)=>{ const vals={}; for(const [d,v] of Object.entries(obj||{})){ if(v!=null&&isFinite(+v)) vals[normD(d)]=+v; } if(Object.keys(vals).length>=8) XS.push({id,name,unit,vals,src,dec:dec||0}); };
+addXS('renta24','Renta neta media por persona 2024, €','€',Object.fromEntries(Object.entries(RD).map(([d,r])=>[d,(r['Renta neta media por persona']||{})['2024']])),'INE, Atlas de renta');
+addXS('renta_var','Variación de la renta por persona 2015-2024, %','%',Object.fromEntries(Object.entries(RD).map(([d,r])=>{ const s=r['Renta neta media por persona']||{}; return [d,s['2024']&&s['2015']?Math.round(1000*(s['2024']/s['2015']-1))/10:null]; })),'INE, Atlas de renta',1);
+addXS('irent','Alquiler anunciado en septiembre de 2026, €/m²','€/m²',Object.fromEntries(Object.entries(I.districts_2026_09).map(([d,r])=>[d,r.rent])),'idealista',1);
+addXS('irent_yoy','Variación anual del alquiler anunciado, %','%',Object.fromEntries(Object.entries(I.districts_2026_09).map(([d,r])=>[d,r.rent_yoy])),'idealista',1);
+addXS('isale','Compra anunciada en septiembre de 2026, €/m²','€/m²',Object.fromEntries(Object.entries(I.districts_2026_09).map(([d,r])=>[d,r.sale])),'idealista');
+addXS('irent16','Alquiler anunciado en 2016, €/m² (media)','€/m²',Object.fromEntries(Object.entries(IDR['2016']||{}).map(([d,r])=>[d,r.media])),'idealista vía Anuario',2);
+addXS('irent_var','Variación del alquiler anunciado 2016-2024, %','%',Object.fromEntries(Object.keys(IDR['2024']||{}).map(d=>[d,(IDR['2016']&&IDR['2016'][d]&&IDR['2024'][d])?Math.round(1000*(IDR['2024'][d].media/IDR['2016'][d].media-1))/10:null])),'idealista vía Anuario',1);
+addXS('upv','Alquiler medio de oferta 4T-2025, €/mes','€/mes',D.upv.rent_district_month_4t2025,'Observatorio UPV');
+addXS('serp23','Alquiler mediano pagado en 2023, €/mes','€/mes',Object.fromEntries(Object.entries((SD['2023']||{}).renta_mediana||{}).map(([d,r])=>[d,r[0]])),'SERPAVI (MIVAU)');
+addXS('serp_var','Variación del alquiler pagado 2018-2023, %','%',Object.fromEntries(Object.keys((SD['2023']||{}).renta_mediana||{}).map(d=>[d,(SD['2018']&&SD['2018'].renta_mediana[d])?Math.round(1000*(SD['2023'].renta_mediana[d][0]/SD['2018'].renta_mediana[d][0]-1))/10:null])),'SERPAVI (MIVAU)',1);
+addXS('esf','Esfuerzo de compra 2024, % de la renta del hogar','%',Object.fromEntries(Object.entries(ESF).map(([d,r])=>[d,Math.round(r.esfuerzo_4t*1000)/10])),'Anuario',1);
+addXS('vac11','Viviendas vacías 2011, %','%',Object.fromEntries(Object.entries(C11).map(([d,r])=>[d,Math.round(1000*r.vacias/r.total)/10])),'INE, Censo 2011',1);
+addXS('pob25','Población 2025','hab.',pdL,'Padrón municipal');
+addXS('pob_var','Variación de población 2017-2025, %','%',Object.fromEntries(Object.entries(pdL).map(([d,v])=>[d,pdF[d]?Math.round(1000*(v/pdF[d]-1))/10:null])),'Padrón municipal',1);
+addXS('pph','Personas por hogar 2025','',Object.fromEntries(Object.entries(HD).map(([d,r])=>[d,Math.round(r[1]*100)/100])),'Padrón municipal',2);
+addXS('solo24','Jóvenes de 0-24 años empadronados solos, ‰ hogares','‰',Object.fromEntries(Object.entries(HC).filter(([k])=>k!=='Total').map(([k,r])=>{ const d=dkey(k); return [d,HD[d]?Math.round(10000*r['Solo de 0 a 24 años']/HD[d][0])/10:null]; })),'Padrón municipal',1);
+addXS('solo65','Personas de 65 o más años empadronadas solas, % hogares','%',Object.fromEntries(Object.entries(HC).filter(([k])=>k!=='Total').map(([k,r])=>{ const d=dkey(k); return [d,HD[d]?Math.round(1000*r['Solo de 65 y más']/HD[d][0])/10:null]; })),'Padrón municipal',1);
+addXS('menores','Hogares con algún menor, %','%',Object.fromEntries(Object.entries(HC).filter(([k])=>k!=='Total').map(([k,r])=>{ const d=dkey(k); return [d,HD[d]?Math.round(1000*(r['Un menor']+r['Dos menores']+r['Tres menores']+r['Cuatro o más menores'])/HD[d][0])/10:null]; })),'Padrón municipal',1);
+const DD=(E.demo_atlas&&E.demo_atlas.dist)||{}; const ddv=(k)=>Object.fromEntries(Object.entries(DD).map(([d,r])=>[d,(r[k]||{})['2024']]));
+addXS('edad','Edad media 2024','años',ddv('Edad media de la población'),'INE, Atlas de renta',1);
+addXS('esp','Población de nacionalidad española 2024, %','%',ddv('Porcentaje de población española'),'INE, Atlas de renta',1);
+addXS('p65','Población de 65 o más años 2024, %','%',ddv('Porcentaje de población de 65 y más años'),'INE, Atlas de renta',1);
+addXS('unip','Hogares unipersonales 2024, % (INE)','%',ddv('Porcentaje de hogares unipersonales'),'INE, Atlas de renta',1);
+addXS('ext25','Población de otra nacionalidad 2025, %','%',Object.fromEntries(Object.entries(xc25).filter(([d])=>d!=='Total').map(([d,r])=>[d,pdL[d]?Math.round(1000*r.Total/pdL[d])/10:null])),'Padrón municipal',1);
+addXS('ue25','Residentes de la UE sobre los de otra nacionalidad 2025, %','%',Object.fromEntries(Object.entries(xc25).filter(([d])=>d!=='Total').map(([d,r])=>[d,Math.round(1000*(r['Unión Europea (27)']||0)/r.Total)/10])),'Padrón municipal',1);
+addXS('na25','Norteamericanos sobre los de otra nacionalidad 2025, %','%',Object.fromEntries(Object.entries(xc25).filter(([d])=>d!=='Total').map(([d,r])=>[d,Math.round(1000*(r['América del Norte']||0)/r.Total)/10])),'Padrón municipal',1);
+addXS('sa25','Sudamericanos sobre los de otra nacionalidad 2025, %','%',Object.fromEntries(Object.entries(xc25).filter(([d])=>d!=='Total').map(([d,r])=>[d,Math.round(1000*(r['América del Sur']||0)/r.Total)/10])),'Padrón municipal',1);
+addXS('catval','Valor catastral medio 2025, €','€',Object.fromEntries(Object.entries(CVD).map(([d,r])=>[d,r[3]])),'Catastro');
+addXS('lic24','Viviendas con licencia 2024','',Object.fromEntries(Object.entries((E.licencias_distrito||{}).rows||{}).map(([d,r])=>[d,r[1]])),'Anuario');
+const ND=E.nac_def_distrito||{}; addXS('natal','Nacimientos 2024 por 1.000 habitantes','‰',Object.fromEntries(Object.entries(ND).map(([k,r])=>{ const d=dkey(k); return [d,pdL[d]&&r[3]!=null?Math.round(10000*r[3]/pdL[d])/10:null]; })),'Padrón municipal',1);
+if(D.turistico.ratio_distritos) addXS('airbnb','Viviendas completas en Airbnb por 100 viviendas (2026)','%',Object.fromEntries(Object.entries(D.turistico.ratio_distritos).map(([d,r])=>[d,r[2]])),'Inside Airbnb y censo municipal',2);
+
+const exMode=$('#exMode'),exX=$('#exX'),exY=$('#exY'),exLag=$('#exLag'),exIdx=$('#exIdx');
+function fillSel(){ const reg=exMode.value==='t'?TS:XS; const opt=reg.map(s=>'<option value="'+esc(s.id)+'">'+esc(s.name)+'</option>').join(''); exX.innerHTML=opt; exY.innerHTML=opt; const t=exMode.value==='t'; $('#lagWrap').style.display=t?'':'none'; $('#idxWrap').style.display=t?'':'none'; $('#figLine').style.display=t?'':'none'; }
+function fmtU(s){ return v=>fmt(v,s.dec)+(s.unit?' '+s.unit:''); }
+function drawEx(){
+  const t=exMode.value==='t'; const reg=t?TS:XS; const a=reg.find(s=>s.id===exX.value)||reg[0], b=reg.find(s=>s.id===exY.value)||reg[1]; if(!a||!b) return;
+  const lag=t?(parseInt(exLag.value)||0):0; let pts=[];
+  if(t){ for(const y of Object.keys(a.pts)){ const yb=+y+lag; if(b.pts[yb]!=null) pts.push({x:a.pts[y],y:b.pts[yb],l:lag?y+'→'+yb:y,yr:+y}); } pts.sort((p,q)=>p.yr-q.yr); }
+  else { for(const d of Object.keys(a.vals)) if(b.vals[d]!=null) pts.push({x:a.vals[d],y:b.vals[d],l:d}); }
+  if(t){ let sa=Object.entries(a.pts).map(([y,v])=>[+y,v]), sb=Object.entries(b.pts).map(([y,v])=>[+y-lag,v]);
+    if(exIdx.checked&&pts.length){ const y0=pts[0].yr; const ba=a.pts[y0], bb=b.pts[y0+lag]; sa=sa.map(([y,v])=>[y,100*v/ba]); sb=sb.map(([y,v])=>[y,100*v/bb]); }
+    $('#exLineT').textContent='Evolución'+(lag?' (Y desplazada '+(-lag)+' años para alinearla)':'');
+    lineChart($('#exLine'),{series:[{name:a.name,color:C.s1,pts:sa,dots:true,lf:exIdx.checked?v=>fmt(v,1):fmtU(a)},{name:b.name+(lag?' (desfase '+lag+')':''),color:C.s2,pts:sb,dots:true,axis:exIdx.checked?undefined:'r',lf:exIdx.checked?v=>fmt(v,1):fmtU(b)}],auto:true,yf:v=>fmt(v,exIdx.checked?0:a.dec),rf:v=>fmt(v,b.dec),xf:x=>''+Math.round(x),h:250}); }
+  $('#exScT').textContent=t?'Relación año a año':'Relación entre distritos';
+  const st=scatterChart($('#exScatter'),pts,{xName:a.name,yName:b.name,xf:v=>fmt(v,a.dec),yf:v=>fmt(v,b.dec),path:t,h:320});
+  let dst=null; if(t&&pts.length>3){ const dx=[],dy=[]; for(let i=1;i<pts.length;i++){ if(pts[i].yr===pts[i-1].yr+1){ dx.push(pts[i].x-pts[i-1].x); dy.push(pts[i].y-pts[i-1].y); } } dst=stats(dx,dy); }
+  const r=st?st.r:NaN; const r2=r*r; const strength=Math.abs(r)>=0.8?'muy fuerte':Math.abs(r)>=0.6?'fuerte':Math.abs(r)>=0.4?'moderada':Math.abs(r)>=0.2?'débil':'nula';
+  const exSrc=[[a.src,''],[b.src,'']]; const fr=v=>fmt(v,2);
+  $('#exStats').innerHTML=kpiHtml([[pts.length,t?'años en común':'distritos en común',pts.length<8?'muy pocos para concluir nada':'',pts.length<8?'w':''],[isFinite(r)?fmt(r,2):'—','correlación r (niveles)','relación '+strength+(r<0?' e inversa':r>0?' y directa':''),''],[isFinite(r2)?Math.round(100*r2)+' %':'—','r²: varianza de Y explicada por X','en línea recta',''],[dst&&isFinite(dst.r)?fmt(dst.r,2):'—',t?'correlación de las variaciones anuales (Δ)':'Δ r (solo series)',t?(dst&&dst.n?dst.n+' pares de cambios; la prueba exigente':''):'no aplica en un corte transversal',''],[st&&isFinite(st.b)?sig(st.b):'—','pendiente','cuánto cambia Y por cada +1 '+(a.unit||'unidad')+' de X','']],exSrc);
+  let txt='';
+  if(pts.length<8) txt='<b>Con '+pts.length+' puntos</b> no se puede hablar de relación: casi cualquier par de series cortas da un r alto por azar.';
+  else if(t){ const trendA=Math.sign(pts[pts.length-1].x-pts[0].x)===Math.sign(pts[pts.length-1].y-pts[0].y); if(Math.abs(r)>=0.6&&(!dst||Math.abs(dst.r)<0.35)) txt='<b>Correlación de tendencia.</b> Las dos series '+(trendA?'suben o bajan a la vez':'van en sentidos opuestos')+' a lo largo del tiempo (r = '+fmt(r,2)+'), pero sus variaciones año a año apenas se mueven juntas (Δ r = '+(dst?fmt(dst.r,2):'—')+'). Es lo que ocurre con dos cosas que simplemente cambian con los años: no indica que una cause la otra.'; else if(dst&&Math.abs(dst.r)>=0.5) txt='<b>Los cambios anuales también van juntos</b> (Δ r = '+fmt(dst.r,2)+'): cuando X sube más de lo normal, Y '+(dst.r>0?'también':'baja')+'. Es una relación más sólida que la de tendencia, aunque sigue sin decir cuál es la causa; prueba desfases de 1 o 2 años para ver si una va por delante.'; else if(Math.abs(r)<0.3) txt='<b>Sin relación apreciable</b> en estos años.'; else txt='<b>Relación '+strength+'</b> en niveles (r = '+fmt(r,2)+') y '+(dst&&isFinite(dst.r)?'Δ r = '+fmt(dst.r,2):'sin Δ')+'. Mira la nube: si los puntos siguen una curva o hay un año fuera de sitio, el r engaña.'; }
+  else if(window.LANG==='va'&&Math.abs(r)>=0.6){ const sv={'muy fuerte':'molt forta','fuerte':'forta'}[strength]||strength; txt='<b>Relació '+sv+' entre districtes</b>: els que tenen més '+window.tr(a.name).split(',')[0].toLowerCase()+' tenen '+(r>0?'més':'menys')+' '+window.tr(b.name).split(',')[0].toLowerCase()+". Compte amb els districtes menuts (Pobles del Nord, de l'Oest, del Sud) i amb el fet que moltes d'aquestes variables són dues cares de la mateixa cosa (renda, preu, edat)."; }
+  else { txt=Math.abs(r)>=0.6?'<b>Relación '+strength+' entre distritos</b>: los que tienen más '+a.name.split(',')[0].toLowerCase()+' tienen '+(r>0?'más':'menos')+' '+b.name.split(',')[0].toLowerCase()+'. Cuidado con los distritos pequeños (Pobles del Nord, de l\'Oest, del Sud) y con que muchas de estas variables son dos caras de la misma cosa (renta, precio, edad).':Math.abs(r)>=0.3?'<b>Relación '+strength+'</b>: hay distritos que se salen del patrón; fíjate en cuáles.':'<b>Sin relación clara</b> entre distritos.'; }
+  $('#exInterp').innerHTML=txt; $('#exSrc').textContent='X: '+window.tr(a.src)+'. Y: '+window.tr(b.src)+window.T('. Correlación de Pearson; la recta discontinua es la regresión de Y sobre X.','. Correlació de Pearson; la recta discontínua és la regressió de Y sobre X.');
+  if(exHash) try{ history.replaceState(null,'','#ex='+encodeURIComponent(JSON.stringify({m:exMode.value,x:a.id,y:b.id,l:lag,i:exIdx.checked?1:0}))+'#explorador'); }catch(e){}
+}
+const FAMS={rent:'r',rent85:'r',renta_p:'i',renta_h:'i',renta_med:'i',nac:'n',tbn:'n',uni:'h',pph:'h',hojas:'h',lanz:'l',lanz_lau:'l',lanz_hip:'l',serpavi_med:'s',serpavi_m2:'s',gini:'g',p8020:'g',trans:'t',trans_n:'t',ext:'e',esp:'e',pob:'e',esf85:'r',fianza:'f',fianza_n:'f'}; const FAM=id=>FAMS[id]||(id.startsWith('nac_')?'e':null);
+function matrix(){ const rows=[]; for(let i=0;i<TS.length;i++) for(let j=i+1;j<TS.length;j++){ const a=TS[i],b=TS[j]; if(FAM(a.id)&&FAM(a.id)===FAM(b.id)) continue; const ys=Object.keys(a.pts).filter(y=>b.pts[y]!=null).map(Number).sort((p,q)=>p-q); if(ys.length<8) continue; const st=stats(ys.map(y=>a.pts[y]),ys.map(y=>b.pts[y])); const dx=[],dy=[]; for(let k=1;k<ys.length;k++) if(ys[k]===ys[k-1]+1){ dx.push(a.pts[ys[k]]-a.pts[ys[k-1]]); dy.push(b.pts[ys[k]]-b.pts[ys[k-1]]); } const d=stats(dx,dy); if(!st||!d||!isFinite(d.r)) continue; rows.push([a,b,ys.length,st.r,d.r]); }
+  rows.sort((p,q)=>Math.abs(q[4])-Math.abs(p[4]));
+  $('#exMatrix').innerHTML='<table><thead><tr><th>X</th><th>Y</th><th class="n">años</th><th class="n">r</th><th class="n">Δ r</th></tr></thead><tbody>'+rows.slice(0,60).map(([a,b,n,r,dr])=>'<tr class="clk" data-x="'+esc(a.id)+'" data-y="'+esc(b.id)+'"><td>'+esc(a.name)+'</td><td>'+esc(b.name)+'</td><td class="n">'+n+'</td><td class="n">'+fmt(r,2)+'</td><td class="n"><b>'+fmt(dr,2)+'</b></td></tr>').join('')+'</tbody></table>';
+  $('#exMatrix').addEventListener('click',e=>{ const a=e.target.closest('tr[data-x]'); if(!a) return; exHash=true; exMode.value='t'; fillSel(); exX.value=a.dataset.x; exY.value=a.dataset.y; exLag.value=0; drawEx(); $('#figLine').scrollIntoView({behavior:'smooth',block:'center'}); }); }
+let exHash=false;
+fillSel();
+let init=null; try{ const m=location.hash.match(/ex=([^#&]+)/); if(m) init=JSON.parse(decodeURIComponent(m[1])); }catch(e){}
+if(init&&init.m){ exHash=true; exMode.value=init.m; fillSel(); exX.value=init.x; exY.value=init.y; exLag.value=init.l||0; exIdx.checked=!!init.i; } else { exX.value='rent'; exY.value='renta_p'; exLag.value=0; }
+if(!exX.value) exX.value=(exMode.value==='t'?TS:XS)[0].id; if(!exY.value) exY.value=(exMode.value==='t'?TS:XS)[1].id;
+const exUser=()=>{ exHash=true; drawEx(); }; for(const el of [exX,exY,exLag,exIdx]) el.addEventListener('change',exUser); exLag.addEventListener('input',exUser);
+exMode.addEventListener('change',()=>{ exHash=true; fillSel(); if(exMode.value==='d'){ exX.value='renta24'; exY.value='irent'; } else { exX.value='rent'; exY.value='renta_p'; } drawEx(); });
+$('#exSwap').addEventListener('click',()=>{ exHash=true; const x=exX.value; exX.value=exY.value; exY.value=x; drawEx(); });
+$('#exShare').addEventListener('click',()=>{ exHash=true; drawEx(); const u=location.href; (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>{ $('#exShare').textContent='Enlace copiado'; setTimeout(()=>$('#exShare').textContent='Copiar enlace a esta comparación',1500); }).catch(()=>prompt('Copia el enlace:',u)); });
+drawEx(); matrix();
+
+// ---- fuentes
+const srcs=[...Object.values(SRC).filter(s=>s[1]&&!/^https:\/\/(valenciaplaza\.com\/|www\.fiscal\.es)\/?$/.test(s[1])).map(s=>[s[0],s[1]]),...(G.srcs||[]),...(X.srcs||[]),...(S.srcs||[]),...(MU.groups||[]).flatMap(g=>g.cases.flatMap(c=>c.src||[])),...((DET.f_shares&&DET.f_shares.src)||[])];
+const seen=new Set(); $('#srcList').innerHTML=srcs.filter(([t,u])=>{ if(seen.has(u)) return false; seen.add(u); return true; }).map(([t,u])=>'<li><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(t)+'</a>'+archA(u)+'</li>').join('');
+$('#foot').textContent='Elaborado el '+fecha(D.updated)+'. Las cifras de prensa se han contrastado con la fuente original cuando estaba accesible; donde solo existe la noticia se cita la noticia. Los cálculos propios se indican como tales.';
+addDataTools(); setTimeout(addDataTools,80);
+})();
+</script>
+<script>(function(){ document.querySelectorAll('a.langsw').forEach(function(a){ var va=window.LANG==='va'; a.textContent=va?'Castellano':'Valencià'; a.setAttribute('lang',va?'es':'ca-ES-valencia'); a.addEventListener('click',function(e){ e.preventDefault(); location.href=location.pathname+'?lang='+(va?'es':'va')+location.hash; }); }); })();</script>
+<script>(function(){ if(window.LANG!=='va'||!window.VA_DICT) return; const D=window.VA_DICT;
+const INL=new Set(['B','STRONG','I','EM','A','SMALL','SPAN','MARK','SUP','SUB','BR','ABBR','U','S','Q','TIME','WBR']);
+const SKIP=new Set(['SCRIPT','STYLE','NOSCRIPT','TEXTAREA','CODE','PRE']);
+const norm=s=>s.replace(/\s+/g,' ').trim(); const NUM=/[−\-+]?\d[\d.,]*/g;
+const hasL=s=>/[A-Za-zÀ-ÿ]{2,}/.test(s.replace(/<[^>]*>/g,' ').replace(/&[a-z]+;/g,' '));
+function keyOf(s){ const nums=[]; let i=0; const k=norm(s).replace(NUM,m=>{ nums.push(m); return '{'+(i++)+'}'; }); return [k,nums]; }
+const fill=(t,nums)=>t.replace(/\{(\d+)\}/g,(m,i)=>nums[+i]!=null?nums[+i]:m);
+function look(s){ if(!s||!hasL(s)) return null; const [k,nums]=keyOf(s); const t=D[k]; return t==null?null:fill(t,nums); }
+window.tr=function(s){ const t=look(s); return t==null?s:t; };
+const DONE=new WeakSet(), VALS=new Set(Object.values(D).map(norm));
+function isUnit(el){ if(el.querySelector('[data-notr]')) return false; let txt=false; for(const n of el.childNodes){ if(n.nodeType===3){ if(n.nodeValue.trim()) txt=true; } else if(n.nodeType===1){ if(!INL.has(n.tagName)) return false; if(n.querySelector('button,input,select,svg,textarea,img')) return false; } } return txt&&hasL(el.textContent); }
+function attrs(el){ for(const a of ['title','aria-label','placeholder','alt']){ const v=el.getAttribute&&el.getAttribute(a); if(v){ const t=look(v); if(t!=null&&t!==v) el.setAttribute(a,t); } } }
+function walk(el){ if(el.nodeType!==1||SKIP.has(el.tagName)||el.hasAttribute('data-notr')) return; attrs(el);
+  if(el.tagName==='OPTION'){ const t=look(el.textContent); if(t!=null) el.textContent=t; return; }
+  if(isUnit(el)){ if(DONE.has(el)&&VALS.has(norm(el.innerHTML))) return; const t=look(el.innerHTML); if(t!=null&&t!==el.innerHTML){ el.innerHTML=t; } DONE.add(el); return; }
+  for(const n of [...el.childNodes]){ if(n.nodeType===3){ const v=n.nodeValue; if(!v.trim()) continue; const t=look(v); if(t!=null){ const lead=v.match(/^\s*/)[0], trail=v.match(/\s*$/)[0]; const nv=lead+t+trail; if(nv!==v) n.nodeValue=nv; } } else if(n.nodeType===1) walk(n); } }
+const doc=()=>{ walk(document.body); const t=look(document.title); if(t) document.title=t; document.querySelectorAll('meta[name=description],meta[property="og:description"],meta[property="og:title"]').forEach(m=>{ const x=look(m.content); if(x) m.content=x; }); };
+doc(); let busy=false;
+const mo=new MutationObserver(ms=>{ if(busy) return; busy=true; try{ for(const m of ms){ if(m.type==='childList') m.addedNodes.forEach(n=>{ if(n.nodeType===1) walk(n); else if(n.nodeType===3&&n.parentElement) walk(n.parentElement); }); else if(m.type==='characterData'&&m.target.parentElement) walk(m.target.parentElement); } } finally { busy=false; } });
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<body>
+<div class="tip" id="tip"></div>
+<div class="det" id="det"><div class="bg" id="detBg"></div><div class="box" role="dialog" aria-modal="true" aria-labelledby="detTitle"><button class="x" id="detX" aria-label="Cerrar">×</button><div id="detBody"></div></div></div>
+<div class="page">
+<nav class="spine" id="spine">
+  <div class="brand">Informe sobre la vivienda en València</div>
+  <a href="#claves">Cifras clave</a><a href="#precios">Precios</a><a href="#rentas">Rentas y salarios</a><a href="#oferta">Oferta y demanda</a><a href="#parque">El parque</a><a href="#hogares">Hogares</a><a href="#extranjeros">Quién llega</a><a href="#propietarios">Propietarios</a><a href="#turistico">Pisos turísticos</a><a href="#publica">Vivienda pública</a><a href="#gasto">Gasto público</a><a href="#fuera">Otras ciudades</a><a href="#explorador">Explorador</a><a href="#cronologia">Cronología</a><a href="#sobre">Sobre la web</a><a href="#fuentes">Fuentes</a>
+  <div class="foot">Cada cifra abre una ficha con su fuente. <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></div>
+</nav>
+<main id="top">
+<header class="hero">
+  <p class="meta">Informe con datos a octubre de 2026 · <a class="langsw" data-notr href="?lang=va">Valencià</a></p>
+  <h1>Informe sobre la vivienda en València</h1>
+  <p class="dek" id="lead"></p>
+  <div class="btnrow"><a class="btn primary" href="pisos-turisticos-valencia.html">Abrir el mapa de pisos turísticos</a><a class="btn" href="#explorador">Cruzar dos indicadores</a><a class="btn" href="#fuentes">Fuentes y método</a></div>
+  <div class="hero-chart"><div id="chHero"></div><div class="cap">Alquiler anunciado en la ciudad, €/m² al mes, septiembre de 2008 a septiembre de 2026 (idealista). La banda amarilla empieza en mayo de 2023, cuando el Consell inició la declaración de zona tensionada que su sucesor dejó caer.</div></div>
+</header>
+
+
+<section id="minuto" class="minuto">
+  <h2>En un minuto</h2>
+  <ol>
+    <li><span>Entre 2015 y 2024 el alquiler anunciado subió un <b>129&nbsp;%</b> y la renta por persona un <b>43&nbsp;%</b>. Hoy se piden 16,3&nbsp;€/m², casi el triple que en 2014. <a href="#precios">Ver precios</a></span></li>
+    <li><span>Los anuncios de alquiler de larga duración han caído un <b>47&nbsp;%</b> desde 2018, mientras crecen los de temporada y por habitaciones. <a href="#oferta">Ver oferta</a></span></li>
+    <li><span>Solo el <b>14,1&nbsp;%</b> de los jóvenes de 16 a 29 años de la Comunitat vive fuera de casa de sus padres: alquilar solo se lleva el 95,7&nbsp;% de un sueldo joven. <a href="#hogares">Ver hogares</a></span></li>
+    <li><span>La vivienda pública de alquiler es el <b>0,5&nbsp;%</b> de los hogares de la ciudad; en la Unión Europea la media es el 9&nbsp;% y en Viena el 41&nbsp;%. <a href="#publica">Ver vivienda pública</a></span></li>
+    <li><span>Hay <b>5.708</b> viviendas turísticas registradas y 7.968 anuncios en Airbnb, concentrados en Ciutat Vella y el Marítimo, y <b>3.231</b> propietarios con cinco o más viviendas. <a href="#turistico">Ver pisos turísticos</a></span></li>
+  </ol>
+</section>
+
+<section id="claves">
+  <h2>Las cifras que resumen la década</h2>
+  <div class="ledger" id="kpis"></div>
+  <div class="callout" id="callout"></div>
+</section>
+
+<section id="precios">
+  <h2>Precios: el alquiler anunciado se ha multiplicado por 2,8 desde 2014</h2>
+  <p class="lede">El alquiler anunciado en la ciudad pasó de 5,9 €/m² en enero de 2014 a 16,3 €/m² en septiembre de 2026. Hubo dos saltos: 2017 (+14 %) y, sobre todo, 2022-2023 (+21 % cada año), cuando la oferta se hundió al volver el turismo. La compra tardó más en arrancar, pero desde 2022 sube a dos dígitos cada año y en 2024 un 22 %.</p>
+  <figure><div class="t">Alquiler anunciado, €/m² al mes (2008-2026)</div><div class="d">Ciudad de València, serie mensual idealista. La línea discontinua marca el suelo de 2014.</div><div id="chRent"></div><figcaption>Precio de oferta de los anuncios, no de los contratos firmados. idealista cambió la metodología en julio de 2026; los datos anteriores y posteriores no son exactamente comparables.</figcaption></figure>
+  <figure><div class="t">Compra, €/m² anunciado (2007-2026)</div><div class="d">Ciudad de València, serie mensual idealista.</div><div id="chSale"></div><figcaption>Precio de oferta, no de cierre: el valor tasado (MIVAU) era 2.973 €/m² en el 2T de 2026 y el precio registrado (Registradores) 2.868 €/m² en los doce meses a junio de 2026.</figcaption></figure>
+  <figure><div class="t">Índice 2014 = 100: alquiler, compra, precio oficial y renta</div><div class="d">Alquiler y compra anunciados (idealista, diciembre de cada año), Índice de Precios de Vivienda del INE para la Comunitat Valenciana (precios de escritura) y renta neta media por persona de la ciudad (INE, 2015 = 100).</div><div id="chIndex"></div><figcaption>El IPV es autonómico y va por debajo del dato de la ciudad. 2026: dato de septiembre.</figcaption></figure>
+  <figure><div class="t">Valor tasado de la vivienda libre, €/m² por trimestre (2017-2026)</div><div class="d">Tasaciones oficiales (MIVAU) en el municipio: el precio que respalda las hipotecas, no el anunciado.</div><div id="chTasado"></div><figcaption>MIVAU, valor tasado de vivienda libre, vía Anuario Estadístico (tabla 4.3.2) y Últimos datos de la Oficina d'Estadística.</figcaption></figure>
+
+  <h3>Lo anunciado frente a lo que se paga</h3>
+  <p id="pPaga"></p>
+  <figure><div class="t">Tres medidas del alquiler que se paga en la ciudad (€/mes)</div><div class="d">Mediana de todos los contratos vigentes (SERPAVI), mediana de las fianzas de los contratos nuevos de cada año (Generalitat; la fianza legal es una mensualidad) y alquiler anunciado para un piso de 85 m² (idealista, diciembre; 2026: septiembre).</div><div id="chPaga"></div><figcaption>MIVAU, Sistema estatal de referencia del precio del alquiler (vía Anuario 2025); Conselleria de Hacienda, registro de fianzas 2020-2026 (2026: enero-septiembre; municipio de València, importes entre 50 y 20.000 €); idealista. Hacienda (AEAT) cuenta para 2023 64.180 viviendas arrendadas y 686 €/mes de media.</figcaption></figure>
+  <div class="ledger two" id="kpiPaga"></div>
+  <figure><div class="t">Alquiler medio de oferta por tamaño del piso (4T-2025)</div><div class="d">Precio medio mensual de los anuncios de la muestra UPV en la ciudad según el número de habitaciones.</div><div class="bars" id="chTipologia"></div><figcaption>Cátedra Observatorio de la Vivienda UPV, informe 4T-2025. La media de la ciudad (1.659 €) queda entre el piso de dos y el de tres habitaciones.</figcaption></figure>
+  <figure><div class="t">Renta declarada por código postal, 2023</div><div class="d">€/m² al mes de los contratos declarados en IRPF; los códigos del centro encabezan la lista.</div><div class="bars" id="chAeat"></div><figcaption>AEAT, Estadística de viviendas en IRPF 2023, municipio de València por código postal.</figcaption></figure>
+  <figure><div class="t">Fianza mediana de los contratos nuevos por código postal: 2021 frente a 2025</div><div class="d">Una fianza equivale a una mensualidad. Solo códigos con 40 o más contratos; entre paréntesis, la mediana de 2021.</div><div class="bars" id="chFianzaCp"></div><figcaption>Registro de fianzas de la Generalitat (dadesobertes.gva.es). <span id="capFianzaCp"></span></figcaption></figure>
+
+  <h3>Por distrito</h3>
+  <p class="swipe">Desliza la tabla para ver todas las columnas.</p><div class="tbl"><table id="tDist"><thead><tr><th>Distrito</th><th class="n">Alquiler €/m²<small>idealista sep-26</small></th><th class="n">Var. anual</th><th class="n">Compra €/m²<small>idealista sep-26</small></th><th class="n">Var. anual</th><th class="n">Alquiler €/mes<small>UPV 4T-25</small></th><th class="n">Alquiler pagado<small>SERPAVI mediana 2023</small></th><th class="n">Var. 2018-23</th><th class="n">Renta/persona<small>INE 2024</small></th></tr></thead><tbody></tbody></table></div>
+  <p class="src">Brains RE (1T-2026) sitúa el esfuerzo del alquiler por encima del 30 % de la renta del hogar en 17 de los 19 distritos: Poblats Marítims 42,5 %, Quatre Carreres 41,4 %; solo el Pla del Real (24,9 %) queda claramente por debajo. idealista estima el esfuerzo medio en la ciudad en el 40 % (feb-2026).</p>
+  <figure><div class="t">Evolución del alquiler anunciado por distrito, €/m² (media anual idealista)</div><div class="d">Elige un distrito para compararlo con la media de la ciudad.</div><div class="ctls"><label class="ctl">Distrito<select id="selDist"></select></label></div><div id="chDistSerie"></div><figcaption>idealista vía Anuario Estadístico (tablas 4.4), medias anuales 2016-2024 y dato de septiembre de 2026.</figcaption></figure>
+  <h3>Alquiler mediano pagado por barrio (2023)</h3>
+  <p>El SERPAVI del Ministerio de Vivienda recoge la renta de todos los contratos con fianza vigentes, no solo los nuevos: por eso sus cifras quedan por debajo de los portales. Los 15 barrios más caros y los 15 más baratos por €/m²:</p>
+  <div class="two"><div class="bars" id="chBarrioTop"></div><div class="bars" id="chBarrioBot"></div></div>
+  <p class="src">SERPAVI 2023 vía Anuario 2025; mediana de la renta mensual por barrio y m². Solo barrios con 100 o más contratos.</p>
+  <figure><div class="t">Esfuerzo: alquiler medio frente a renta</div><div class="d">Alquiler medio de oferta en €/mes (UPV, 4º trimestre) y renta neta media mensual por persona (INE, ejercicios 2019-2024).</div><div id="chUpvRent"></div><figcaption>Cátedra Observatorio de la Vivienda UPV; INE Atlas de distribución de renta. Un alquiler medio de 1.659 €/mes (4T-2025) equivale a 1,2 rentas netas medias por persona (16.944 €/año = 1.412 €/mes en 2024); el precio por tipología va de 1.175 € (estudio) a 2.091 € (cuatro o más habitaciones).</figcaption></figure>
+  <figure><div class="t">Esfuerzo de compra por distrito (2024)</div><div class="d">Porcentaje de la renta neta del hogar que absorbe la cuota de una vivienda media del distrito, según la Oficina d'Estadística.</div><div class="bars" id="chEsfDist"></div><figcaption>Anuario Estadístico 2025, indicadores de accesibilidad (4º trimestre de 2024). El umbral habitual de sobreesfuerzo es el 30-35 %.</figcaption></figure>
+</section>
+
+<section id="rentas">
+  <h2>Rentas y salarios: la renta sube un 43 %, el alquiler un 129 %</h2>
+  <p class="lede" id="pRenta"></p>
+  <figure><div class="t">Renta neta media por persona y por hogar (€/año, 2015-2024)</div><div id="chRenta"></div><figcaption>INE, Atlas de distribución de renta de los hogares (datos fiscales), municipio de València. Renta neta = después de impuestos; incluye pensiones y prestaciones.</figcaption></figure>
+  <div id="blkSalarios"></div>
+  <figure><div class="t">Desigualdad de renta: índice de Gini y ratio P80/P20 (2015-2024)</div><div class="d">El Gini baja de 37,3 a 33,5: la renta de la ciudad se ha hecho algo más igual mientras la vivienda se encarecía para todos.</div><div id="chGini"></div><figcaption>INE, Atlas de distribución de renta (tabla 37721). P80/P20: cuántas veces la renta del percentil 80 contiene la del 20.</figcaption></figure>
+  <h3>Renta por distrito: quién puede pagar qué</h3>
+  <figure><div class="t">Renta neta media por persona, 2024, y variación desde 2015</div><div class="bars" id="chRentaDist"></div><figcaption>INE Atlas de renta. El Pla del Real casi duplica a Rascanya y l'Olivereta. Entre paréntesis, variación 2015-2024.</figcaption></figure>
+  <figure><div class="t">Alquiler anunciado de un piso de 85 m² como porcentaje de la renta neta mensual por persona</div><div class="d">Índice de esfuerzo teórico: alquiler idealista (diciembre) × 85 m² dividido entre la renta neta media por persona del año (INE). Por encima del 100 %, una sola renta media no paga el piso.</div><div id="chEsfIdx"></div><figcaption>Cálculo propio con idealista e INE; 2025-2026 usan la última renta publicada (2024), así que están algo sobreestimados.</figcaption></figure>
+</section>
+
+<section id="oferta">
+  <h2>Oferta y demanda: la mitad de los anuncios de alquiler han desaparecido</h2>
+  <p class="lede">idealista contaba 39.086 anuncios de alquiler permanente en la ciudad en 2018 y 20.621 en 2025: un 47 % menos. En los últimos cinco años la oferta permanente cayó un 33 % mientras la de temporada, que escapa de la Ley de Vivienda, creció un 276 %. La muestra trimestral del Observatorio de la UPV, más pequeña y no comparable en nivel, enseña el vaivén: 1.113 testigos a finales de 2019, 3.404 en plena pandemia (los pisos turísticos volvieron al alquiler residencial), 1.343 a finales de 2022, cuando se fueron otra vez, y 1.755 a finales de 2024. Mientras, el número de viviendas alquiladas con contrato y fianza no deja de crecer: 36.026 en 2014 y 64.420 en 2023.</p>
+  <figure><div class="t">Oferta de alquiler medida por la UPV (testigos, 4º trimestre)</div><div class="d">Anuncios activos en la muestra del Observatorio; según el informe del 4T-2024, 480 anuncios de la muestra eran de corta estancia.</div><div id="chListings"></div><figcaption>Cátedra Observatorio de la Vivienda UPV, informe 4T-2024.</figcaption></figure>
+  <figure><div class="t">Viviendas alquiladas con contrato declarado en la ciudad (2014-2023)</div><div id="chSerpaviN"></div><figcaption>MIVAU, SERPAVI (fianzas depositadas y declaraciones), vía Anuario Estadístico 2025. Hacienda cuenta 64.180 arrendadas en IRPF 2023.</figcaption></figure>
+  <div class="ledger two" id="kpiOferta"></div>
+  <h3>Compraventas e hipotecas</h3>
+  <p>En la ciudad se firmaron 11.027 compraventas de vivienda en 2024 (9.964 de segunda mano y 1.063 nuevas) y 10.195 en los doce meses hasta junio de 2025 (+14 %). El máximo fue 2022, con 12.873. Según Registradores, en la provincia se firman 60,6 hipotecas por cada 100 compraventas; según los notarios, siete de cada diez viviendas de la Comunitat se pagaron sin hipoteca en 2023 (las dos fuentes miden cosas distintas: hipotecas inscritas frente a escrituras). Las personas de otra nacionalidad hacen entre el 13 % (Registradores) y el 18 % (Observatorio UV) de las compras en la provincia en 2025, y entre el 28 % y el 33 % en la Comunitat.</p>
+  <figure><div class="t">Compraventas de vivienda en la ciudad por año: nueva y segunda mano</div><div id="chTrans"></div><figcaption>MIVAU, transacciones inmobiliarias, vía Anuario Estadístico. Vivienda protegida: entre 665 y 1.153 operaciones al año.</figcaption></figure>
+  <figure><div class="t">Compraventas de vivienda en la ciudad, por trimestre</div><div id="chSales"></div><figcaption>MIVAU / Registradores vía informe COAPI-APIVA 2T-2025.</figcaption></figure>
+  <h3>Desahucios y emergencia habitacional</h3>
+  <p id="pDes"></p>
+  <figure><div class="t">Desahucios practicados en el partido judicial de València (2013-2025)</div><div class="d">Por impago de alquiler (LAU), por ejecución hipotecaria y otros. El partido judicial incluye la ciudad y municipios del área.</div><div id="chCgpj"></div><figcaption>CGPJ, Efectos de la crisis en los órganos judiciales, lanzamientos por partido judicial. Entre 2020 y 2025 rigieron las moratorias de la pandemia y de la Ley de Vivienda para hogares vulnerables.</figcaption></figure>
+  <div class="ledger two" id="kpiDes"></div>
+  <p class="src" id="desNote"></p>
+</section>
+
+<section id="parque">
+  <h2>El parque: 420.000 viviendas, una de cada cinco sin residente habitual</h2>
+  <p class="lede">El Catastro cuenta 419.829 inmuebles de uso residencial a 1 de enero de 2025, 10.000 más que en 2016: la ciudad construye poco (entre 1.000 y 3.400 viviendas con licencia al año) y crece sobre todo en población, 58.000 habitantes más entre 2021 y 2026. El Censo de 2021 clasificó 91.817 viviendas (22 %) como no principales; de ellas, 36.454 (8,8 %) sin consumo eléctrico apreciable, es decir, vacías.</p>
+  <div class="two">
+    <figure><div class="t">Viviendas según el Censo</div><div id="chCenso"></div><figcaption>INE, Censos 1991-2021. El dato de 2021 procede de registros administrativos, el de 2011 de encuesta.</figcaption></figure>
+    <figure><div class="t">Inmuebles residenciales (Catastro, 1 de enero)</div><div id="chCatastro"></div><figcaption>Oficina d'Estadística, ficha F04051000.</figcaption></figure>
+  </div>
+  <figure><div class="t">Uso de las viviendas, Censo 2011 frente a Censo 2021</div><div class="d">Principales, secundarias/otras y vacías. Los censos usan métodos distintos: en 2021 "vacía" es la que consume menos de 15 días de electricidad al año.</div><div id="chUso"></div><figcaption>INE Censo 2011 (vía Plan Estratégico de Vivienda 2017-21) y Censo 2021 (tablas 59529 y 59531). El Ayuntamiento, con los contadores de agua de Emivasa, contaba en marzo de 2026 unas 11.200 viviendas sin consumo o con menos de 1 m³ al año.</figcaption></figure>
+  <div class="ledger two" id="kpiParque"></div>
+  <figure><div class="t">Viviendas con licencia de construcción por año</div><div id="chLic"></div><figcaption>Oficina d'Estadística, ficha F04102000. En 2024 el Observatorio UPV contaba 40 promociones de obra nueva en venta en la ciudad y 137 viviendas a finales de 2025. Por distrito, 2024: l'Olivereta 521, Patraix 303, Quatre Carreres 257, Rascanya 143; la Saïdia y Algirós, 0.</figcaption></figure>
+  <figure><div class="t">Antigüedad del parque residencial (2024)</div><div class="d">Casi la mitad de las viviendas se construyó entre 1961 y 1980.</div><div id="chAnt"></div><figcaption>Recull Estadístic 2024, bienes inmuebles de uso residencial según año de construcción.</figcaption></figure>
+  <h3>Dónde hay más vivienda sin residente</h3>
+  <div class="two">
+    <figure><div class="t">Viviendas no principales, Censo 2021: distritos y barrios destacados (%)</div><div class="bars" id="chNoPrin"></div><figcaption>Valencia Plaza (abr-2024) sobre datos del INE por sección censal. Ciutat Vella supera el 40 %; en el Mercat, el 53 %.</figcaption></figure>
+    <figure><div class="t">Viviendas vacías, Censo 2011 (%)</div><div class="bars" id="chVac11"></div><figcaption>INE Censo 2011 (encuesta) vía Anuario; porcentaje de vacías sobre el total del distrito. Ciutat Vella 27 %, Poblats Marítims 18 %.</figcaption></figure>
+  </div>
+  <h3>Población por distrito</h3>
+  <figure><div class="t">Habitantes en 2025 y variación desde 2017</div><div class="bars" id="chPobDist"></div><figcaption>Padrón municipal a 1 de enero, vía Anuario. La ciudad crece un 7 % en ocho años. Benimaclet y Algirós pierden población y Poblats Marítims apenas crece (+2 %); Ciutat Vella gana vecinos pese a la presión turística.</figcaption></figure>
+</section>
+
+<section id="hogares">
+  <h2>Hogares: más gente sola, menos nacimientos, emancipación cada vez más tarde</h2>
+  <p class="lede" id="pHog"></p>
+  <div class="ledger two" id="kpiHog"></div>
+  <div class="two">
+    <figure><div class="t">Nacimientos de madres residentes en la ciudad (2004-2023)</div><div id="chNac"></div><figcaption>INE, Movimiento Natural de la Población, vía Anuario. Padrón: 5.578 altas por nacimiento en 2023 y 5.591 en 2024.</figcaption></figure>
+    <figure><div class="t">Hijos por mujer y edad media al primer hijo</div><div id="chIsf"></div><figcaption>Indicadores de natalidad con residencia de la madre en València (Anuario, 2015-2023).</figcaption></figure>
+  </div>
+  <figure><div class="t">Hogares (hojas padronales) según número de personas, 2017-2025</div><div class="d">Las hojas de una persona pasan del 32,6 % al 35,7 % del total; el tamaño medio baja de 2,41 a 2,32 personas.</div><div id="chHojas"></div><figcaption>Padrón municipal a 1 de enero, vía Anuario (hojas familiares según tamaño).</figcaption></figure>
+  <div class="two">
+    <figure><div class="t">Tipos de hogar en el Censo 2021</div><div class="bars wide" id="chTipoHog"></div><figcaption>INE, Censo 2021 (tabla 59544), municipio de València: 323.171 hogares. "Multipersonal sin familia" son personas que comparten vivienda sin ser pareja ni familia: 12.213 hogares (3,8 %).</figcaption></figure>
+    <figure><div class="t">Jóvenes de 0 a 24 años empadronados solos, por distrito (2025)</div><div class="bars" id="chSolo24"></div><figcaption>Hojas padronales de una sola persona de 0 a 24 años por cada 1.000 hojas del distrito. Algirós, Ciutat Vella y Benimaclet (universidades y centro) encabezan. Padrón vía Anuario.</figcaption></figure>
+  </div>
+  <div id="blkSocial"></div>
+</section>
+
+<section id="extranjeros">
+  <h2>Quién llega: 166.000 vecinas y vecinos de otras nacionalidades, con rentas muy distintas</h2>
+  <p class="lede" id="pExt"></p>
+  <div class="ledger two" id="kpiExt"></div>
+  <figure><div class="t">Población de otra nacionalidad por continente (2017-2025)</div><div id="chContSerie"></div><figcaption>Padrón municipal a 1 de enero, vía Anuario. Hasta 2020 la UE incluye al Reino Unido; América del Norte y Central se separan desde 2021 (aquí se suman).</figcaption></figure>
+  <figure><div class="t">Nacionalidades más frecuentes: 2017, 2021 y 2025</div><div id="chNac3"></div><figcaption>Padrón vía Anuario (tablas de nacionalidades más frecuentes). Rumanía era la primera en 2017 y es la séptima en 2025. Las nacionalidades sin barra en un año no estaban ese año entre las más frecuentes que publica el Anuario.</figcaption></figure>
+  <h3>Seis grupos, seis mercados</h3>
+  <div class="tbl"><table class="cardm" id="tGrupos"><thead><tr><th>Grupo</th><th>Nacionalidades</th><th>Cifras y dónde viven</th></tr></thead><tbody></tbody></table></div>
+  <figure><div class="t">Composición por distrito (2025)</div><div class="d">Porcentaje de cada origen sobre los residentes de otra nacionalidad del distrito. El centro y la playa concentran a europeos y norteamericanos; la periferia norte y oeste, con los alquileres más bajos de la ciudad, a latinoamericanos, africanos y asiáticos.</div><div id="chContDist"></div><figcaption>Padrón municipal 2025 vía Anuario (tabla 9).</figcaption></figure>
+  <h3>Renta, tenencia y lo que pagan</h3>
+  <div class="cards" id="cardsRentaExt"></div>
+  <h3>Jubilación europea</h3>
+  <p id="pJub"></p>
+  <h3>Nómadas digitales y expatriados de alta renta</h3>
+  <div class="cards" id="cardsNom"></div>
+  <h3>Estudiantes internacionales</h3>
+  <p id="pEst"></p>
+</section>
+
+<section id="propietarios">
+  <h2>Propietarios: 3.231 grandes tenedores y 60.000 viviendas en pocas manos</h2>
+  <p class="lede">Según el padrón del IBI, en octubre de 2026 hay 3.231 propietarios con cinco o más viviendas en la ciudad (3.067 tres años antes), que suman más de 16.000 pisos; 901 son sociedades, 735 hace tres años. El Catastro, con otro corte, atribuye 59.948 viviendas (14 % del parque) a titulares con más de cinco inmuebles residenciales, 6.013 de ellas a titulares con más de cien. Una sola persona física posee 318 viviendas en la ciudad. En el otro extremo, el 99,7 % de los 324.000 propietarios contados en 2021 tenía menos de diez.</p>
+  <figure><div class="t">Viviendas de la ciudad según el tamaño de su propietario (Catastro)</div><div id="chTramos"></div><figcaption>Catastro vía eldiario.es / Civio (nov-2024). Los edificios sin división horizontal cuentan como un solo inmueble, así que la concentración real es mayor.</figcaption></figure>
+  <div class="ledger two" id="kpiProp"></div>
+  <h3>Quién alquila a gran escala en la Comunitat</h3>
+  <div class="two">
+    <figure><div class="t">Mayores caseros por fianzas depositadas (Comunitat Valenciana, 2024)</div><div class="bars wide" id="chCaseros"></div><figcaption>Civio / Conselleria de Hacienda, vía eldiario.es. 59 entidades controlan el 13,9 % del alquiler con fianza.</figcaption></figure>
+    <figure><div class="t">Grandes caseros privados valencianos (viviendas alquiladas)</div><div class="bars wide" id="chPrivados"></div><figcaption>Valencia Plaza (mar-2024), registro de fianzas.</figcaption></figure>
+  </div>
+  <h3>Fondos, build-to-rent y coliving en la ciudad</h3>
+  <div class="cards" id="fondos"></div>
+  <figure><div class="t">Valor catastral medio de la vivienda por distrito (2025)</div><div class="bars" id="chCatVal"></div><figcaption>Catastro vía Anuario 2025: valor catastral medio (suelo + construcción) de los inmuebles residenciales. Es la base del IBI y queda muy por debajo del precio de mercado.</figcaption></figure>
+  <p class="note">El recargo del IBI a la vivienda vacía, aprobado en 2022, solo pudo aplicarse a 29 viviendas en 2023 frente a las 36.454 vacías del Censo; el Ayuntamiento reconoce en 2026 que no se aplica.</p>
+</section>
+
+<section id="turistico">
+  <h2>Pisos turísticos: 5.708 viviendas registradas y 8.000 anuncios</h2>
+  <p class="lede">El Registro de Turismo de la Generalitat inscribe 5.708 viviendas de uso turístico en la ciudad (19.886 plazas); Inside Airbnb capta 7.968 anuncios activos en septiembre de 2026, 6.257 de vivienda completa, y el INE estima 5.393 viviendas anunciadas. En los barrios del centro y la playa la vivienda turística anunciada equivale ya a entre el 5 % y el 10 % de todas las viviendas, muy por encima del 2 % que fija la nueva normativa municipal.</p>
+  <figure><div class="t">Viviendas completas anunciadas en Airbnb por cada 100 viviendas del barrio</div><div class="bars" id="chRatio"></div><figcaption>Inside Airbnb 2026-09-20 y viviendas por barrio del censo municipal (CATAV). Detalle piso a piso en el mapa.</figcaption></figure>
+  <div class="cards">
+    <div class="card"><b>¿Cuánto suben el alquiler?</b>El estudio MESVAL (Universitat de València, 2022) estima que un 1 % más de anuncios de Airbnb en un barrio sube el alquiler un 0,056 %. La pericial encargada por la patronal Aptur (2025) atribuye a las VUT solo 0,53 puntos de los 62 que subió el alquiler entre 2018 y 2024. Ninguno de los dos mide el efecto sobre la oferta disponible, que es donde la relación se ve a simple vista aunque nadie la haya cuantificado: en 2020 la oferta de la muestra UPV se triplicó cuando los pisos turísticos pasaron al alquiler residencial y volvió a hundirse en 2022 cuando regresaron al turismo.<div class="src"><a href="https://www.uv.es/mesval/Informes-2022/MESVAL_2022_DT_05-AIRBNB.pdf" target="_blank" rel="noopener">uv.es/mesval</a></div></div>
+    <div class="card"><b>Tres cifras que no miden lo mismo</b>Visit València: 10.516 apartamentos antes de la moratoria y 9.057 en febrero de 2026. Registro GVA: 5.708 viviendas. INE experimental: 5.393 anunciadas (máximo 7.976 en agosto de 2024). Inside Airbnb: 7.968 anuncios, incluidas habitaciones.<div class="src"><a href="pisos-turisticos-valencia.html">Ver el cruce en el mapa</a></div></div>
+  </div>
+  <div class="btnrow"><a class="btn primary" href="pisos-turisticos-valencia.html">Mapa y datos de pisos turísticos</a></div>
+</section>
+
+<section id="publica">
+  <h2>Vivienda pública: 2.000 viviendas para una ciudad de 360.000 hogares</h2>
+  <p class="lede">El parque municipal (AUMSA) ronda las 600 viviendas y aloja a 539 familias; la lista de demandantes de alquiler asequible pasó de 1.231 (sep-2023) a más de 1.900 (may-2025). La Generalitat tenía 1.331 viviendas de EVha en la ciudad en 2023; en toda la Comunitat eran unas 14.600, con 15.704 unidades de convivencia en lista de espera. El Plan Vive licitó 1.675 viviendas en la Comunitat en 2024, 61 de ellas en València. En total, unas 2.000 viviendas públicas de alquiler: el 0,5 % de los hogares de la ciudad, frente al 2,5 % de vivienda social sobre el parque en España y el 9 % de media en la Unión Europea (Housing Europe, 2023).</p>
+  <div class="ledger two" id="kpiPub"></div>
+  <figure><div class="t">Lista de espera de vivienda pública de la Generalitat (EVha, Comunitat)</div><div id="chEvha"></div><figcaption>Valencia Plaza / Alicante Plaza con datos de la Conselleria. 2023: unidades de convivencia (abril).</figcaption></figure>
+  <div class="cards">
+    <div class="card"><b>Zonas tensionadas, nunca declaradas</b>El Consell del Botànic inició en mayo de 2023 el procedimiento para declarar zona tensionada a las tres capitales y decenas de municipios; el Consell de PP y Vox no lo culminó y rechaza las peticiones de 13 ayuntamientos. El alquiler anunciado en la ciudad ha subido un 35 % desde mayo de 2023 (12,1 → 16,3 €/m²).<div class="src"><a href="https://www.eldiario.es/1_ce91ab" target="_blank" rel="noopener">eldiario.es</a></div></div>
+    <div class="card"><b>Bono Alquiler Joven</b>Comunitat 2023-24: 13.554 solicitudes y 5.640 concedidas. En 2022: 16.716 solicitudes y 3.910 concedidas; 12.806 jóvenes se quedaron sin ayuda.<div class="src"><a href="https://valenciaplaza.com/valenciaplaza/el-consell-aumenta-un-40-los-fondos-para-el-bono-alquiler-joven-con-mas-de-5600-beneficiarios" target="_blank" rel="noopener">Valencia Plaza</a></div></div>
+    <div class="card"><b>Sin hogar</b>El recuento de la Universitat de València de octubre de 2023 encontró 1.101 personas sin hogar (492 en la calle, 609 en centros) más 139 en asentamientos. El Ayuntamiento atendió a 967 en 2024 con unas 1.000 plazas.<div class="src"><a href="https://www.uv.es/sociallab/observatoris/sense_llar/informe_PSH_2023" target="_blank" rel="noopener">uv.es</a></div></div>
+  </div>
+</section>
+
+<section id="gasto">
+  <h2>Gasto público: lo anunciado, lo gastado y lo construido</h2>
+  <p class="lede" id="pGasto"></p>
+  <div class="ledger two" id="kpiGasto"></div>
+  <h3>Promesas frente a realidad (2018-2026)</h3>
+  <div class="tbl"><table class="prom cardm" id="tProm"><thead><tr><th>Anuncio</th><th>Cuándo</th><th>Qué ha pasado</th></tr></thead><tbody></tbody></table></div>
+  <figure><div class="t">Coste por vivienda pública según la vía (€)</div><div class="bars wide" id="chCoste"></div><figcaption>Cálculo propio a partir de los importes publicados por el Ayuntamiento y la Generalitat. Comprar un edificio ya habitado (La Torre) protege a sus inquilinos, pero no añade viviendas al parque.</figcaption></figure>
+  <h3>Ayuntamiento y AUMSA</h3>
+  <div class="tbl"><table class="cardm" id="tAyto"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
+  <h3>Generalitat (EVha y Conselleria)</h3>
+  <div class="tbl"><table class="cardm" id="tGva"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
+  <h3>Estado y fondos europeos</h3>
+  <div class="tbl"><table class="cardm" id="tEstado"><thead><tr><th>Partida</th><th>Dato</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="fuera">
+  <h2>Otras ciudades: qué han probado y qué ha pasado</h2>
+  <p class="lede" id="pFuera"></p>
+  <figure><div class="t">Vivienda social o pública de alquiler sobre el total</div><div class="bars wide" id="chShares"></div><figcaption id="capShares"></figcaption></figure>
+  <p class="klegend"><span style="--c:var(--s3)">la evidencia apunta a una mejora</span><span style="--c:var(--s5)">resultado mixto o discutido</span><span style="--c:var(--s2)">sin efecto medido</span><span style="--c:var(--fg)">en curso o estudio</span></p>
+  <p class="sub">Cada caso abre una ficha con qué se hizo, qué se ha medido, sus límites y las fuentes.</p>
+  <div id="casos"></div>
+  <h3>Lo que repiten los estudios</h3>
+  <ul class="lessons" id="lessons"></ul>
+</section>
+
+<section id="explorador">
+  <h2>Explorador de relaciones</h2>
+  <p>Elige dos indicadores y compara su evolución, su nube de puntos y su correlación. Es una herramienta de exploración, no una prueba: dos series que suben a la vez correlacionan aunque no tengan nada que ver, por eso el explorador calcula también la correlación de las variaciones anuales, que es la que cuesta obtener por casualidad. Con menos de ocho años en común el resultado no significa nada.</p>
+  <div class="explorer">
+    <div class="ctls">
+      <label class="ctl full">Modo<select id="exMode"><option value="t">Series anuales de la ciudad (2004-2026)</option><option value="d">Corte por distritos (cada variable indica su año)</option></select></label>
+      <label class="ctl">Indicador X<select id="exX"></select></label>
+      <label class="ctl">Indicador Y<select id="exY"></select></label>
+      <label class="ctl" id="lagWrap">Desfase de Y en años (2 = Y dos años después de X)<input type="number" id="exLag" value="0" min="-6" max="6" step="1"></label>
+      <label class="ctl chk" id="idxWrap"><input type="checkbox" id="exIdx"> Índice base 100 en el primer año común</label>
+    </div>
+    <figure id="figLine"><div class="t" id="exLineT">Evolución</div><div id="exLine"></div></figure>
+    <figure><div class="t" id="exScT">Relación</div><div id="exScatter"></div></figure>
+    <div class="ledger two" id="exStats"></div>
+    <p class="interp" id="exInterp"></p>
+    <p class="src" id="exSrc"></p>
+    <div class="btnrow"><button class="btn" id="exShare">Copiar enlace a esta comparación</button><button class="btn" id="exSwap">Intercambiar X e Y</button></div>
+    <details><summary>Tabla de correlaciones entre todas las series anuales</summary><p class="sub">Pares con al menos 8 años en común, ordenados por la correlación de las variaciones anuales (Δ), que es la menos engañosa. r: correlación de niveles. Pulsa un par para cargarlo.</p><div class="tbl" id="exMatrix"></div></details>
+  </div>
+</section>
+
+<section id="cronologia">
+  <h2>Cronología 2014-2026</h2>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<section id="sobre">
+  <h2>Sobre esta web</h2>
+  <div class="cards">
+    <div class="card"><b>Qué es</b>Un proyecto independiente y sin ánimo de lucro para entender la vivienda en València con datos verificables. No tiene publicidad, no usa cookies y no recoge datos personales.</div>
+    <div class="card"><b>Datos y código abiertos</b>Los datos limpios y el código que genera cada cifra están publicados en <a href="https://github.com/danilm99/viviendavalencia" target="_blank" rel="noopener">GitHub</a>. Los textos y los datos se pueden reutilizar citando la fuente (licencia CC BY 4.0); el código, con licencia MIT. Cada gráfico se puede ver como tabla o descargar en CSV.</div>
+    <div class="card"><b>Cómo se clasifica cada dato</b>Cada cifra indica de dónde sale: estadística oficial, registro administrativo, estudio, anuncios (precio pedido, no pagado), fuente institucional, cálculo propio o prensa. Donde solo existe la noticia, se cita la noticia.</div>
+    <div class="card"><b>Privacidad en el mapa</b>Los anfitriones con menos de cinco anuncios y sin ficha de empresa aparecen como «particular»: su nombre no se publica. Las visitas se miden con GoatCounter, sin cookies; las estadísticas son <a href="https://viviendavalencia.goatcounter.com" target="_blank" rel="noopener">públicas</a>.</div>
+    <div class="card"><b>¿Has visto un error?</b>Avisa abriendo una <a href="https://github.com/danilm99/viviendavalencia/issues" target="_blank" rel="noopener">incidencia en GitHub</a>. Toda corrección se publica con su fecha en el registro de abajo.</div>
+  </div>
+  <h3>Cambios y correcciones</h3>
+  <ul class="changes" id="changes"></ul>
+</section>
+
+<section id="fuentes">
+  <h2>Fuentes y método</h2>
+  <p class="sub">Cada cifra del informe abre una ficha con qué mide, cómo se ha obtenido y la fuente original. Las series mensuales de precios son de idealista (precio de oferta, no de cierre); las cifras oficiales de valor tasado, Censo, Catastro, rentas declaradas y fianzas se citan por separado porque miden cosas distintas. Cuando un dato es provincial o autonómico se indica. "Grandes tenedores" se usa con el umbral de cada fuente (5 o 10 viviendas). Los cálculos propios (índices, costes por vivienda, correlaciones) se identifican como tales.</p>
+  <p class="sub"><b>Visitas.</b> La web cuenta visitas con <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>, software de código abierto, sin cookies y sin guardar datos personales: solo la página vista, de dónde llega la visita y el país. Las estadísticas son públicas en <a href="https://viviendavalencia.goatcounter.com" target="_blank" rel="noopener">viviendavalencia.goatcounter.com</a>.</p>
+  <ul class="src-list" id="srcList"></ul>
+  <p class="foot" id="foot"></p>
+</section>
+<a class="totop" href="#top" aria-label="Volver arriba">↑</a>
+</main>
+</div>

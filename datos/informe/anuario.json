@@ -1,0 +1,5019 @@
+{
+"serpavi_city": {
+"src": "Sistema estatal de referencia del precio del alquiler (MIVAU) vía Anuario Estadístico 2025, tabla 4.10.2",
+"viviendas_alquiladas": {
+"2014": 36026,
+"2015": 39803,
+"2016": 43515,
+"2017": 46971,
+"2018": 49859,
+"2019": 52802,
+"2020": 55171,
+"2021": 58405,
+"2022": 61030,
+"2023": 64420
+},
+"col_mediana_eur": {
+"2014": 400,
+"2015": 400,
+"2016": 400,
+"2017": 417.2865013774105,
+"2018": 450,
+"2019": 500,
+"2020": 513.3333333333334,
+"2021": 550,
+"2022": 590,
+"2023": 625
+},
+"col_p25_eur": {
+"2014": 300,
+"2015": 300,
+"2016": 315,
+"2017": 327.70501841620626,
+"2018": 350,
+"2019": 389.5833333333333,
+"2020": 400,
+"2021": 420.8333333333333,
+"2022": 450,
+"2023": 491.6666666666667
+},
+"col_p75_eur": {
+"2014": 500,
+"2015": 500,
+"2016": 504.1666666666667,
+"2017": 544.7630597014925,
+"2018": 570,
+"2019": 644.7010869565216,
+"2020": 657.6352083333334,
+"2021": 699.1293532338309,
+"2022": 744.3333333333334,
+"2023": 800
+},
+"col_mediana_m2": {
+"2014": 4.639175257731959,
+"2015": 4.684047860034703,
+"2016": 4.8076923076923075,
+"2017": 4.956896551724138,
+"2018": 5.25,
+"2019": 5.853658536585367,
+"2020": 6.13939393939394,
+"2021": 6.5,
+"2022": 6.968616452991452,
+"2023": 7.515348906858342
+},
+"col_superficie_mediana": {
+"2014": 87,
+"2015": 87,
+"2016": 87,
+"2017": 87,
+"2018": 86,
+"2019": 86,
+"2020": 86,
+"2021": 86,
+"2022": 85,
+"2023": 85
+}
+},
+"serpavi_district": {
+"2018": {
+"renta_mediana": {
+"Ciutat Vella": [
+600,
+550,
+517
+],
+"l'Eixample": [
+600,
+550,
+510
+],
+"Extramurs": [
+520,
+500,
+460
+],
+"Campanar": [
+600,
+568,
+550
+],
+"la Saïdia": [
+453,
+421,
+413
+],
+"el Pla del Real": [
+650,
+600,
+579
+],
+"l'Olivereta": [
+424,
+400,
+400
+],
+"Patraix": [
+450,
+446,
+420
+],
+"Jesús": [
+450,
+408,
+400
+],
+"Quatre Carreres": [
+490,
+450,
+449
+],
+"Poblats Marítims": [
+450,
+406,
+400
+],
+"Camins al Grau": [
+550,
+500,
+500
+],
+"Algirós": [
+600,
+550,
+524
+],
+"Benimaclet": [
+525,
+500,
+480
+],
+"Rascanya": [
+433,
+410,
+400
+],
+"Benicalap": [
+450,
+425,
+425
+],
+"Pobles del Nord": [
+393,
+385,
+356
+],
+"Pobles de l'Oest": [
+392,
+355,
+352
+],
+"Pobles del Sud": [
+400,
+400,
+400
+]
+}
+},
+"2020": {
+"renta_mediana": {
+"Ciutat Vella": [
+611.657608695652,
+478.852344801076,
+798.17010375634
+],
+"l'Eixample": [
+642.224702380952,
+490,
+800
+],
+"Extramurs": [
+560,
+448.948598130841,
+700
+],
+"Campanar": [
+574.583333333333,
+425,
+750
+],
+"la Saïdia": [
+490,
+398.333333333333,
+600
+],
+"el Pla del Real": [
+648.936241830065,
+500,
+800
+],
+"l'Olivereta": [
+450,
+351.886538461538,
+550
+],
+"Patraix": [
+480,
+392.6775,
+581.297031772575
+],
+"Jesús": [
+456.5,
+375,
+559.925373134328
+],
+"Quatre Carreres": [
+500,
+400,
+641.666666666667
+],
+"Poblats Marítims": [
+481.25,
+365.525362318841,
+600
+],
+"Camins al Grau": [
+550,
+412.5,
+746.568669527897
+],
+"Algirós": [
+592.466666666667,
+471.579104477612,
+708.333333333333
+],
+"Benimaclet": [
+541.666666666667,
+433.333333333333,
+655.447144443074
+],
+"Rascanya": [
+450,
+350,
+590
+],
+"Benicalap": [
+450,
+352.846313381338,
+600
+],
+"Pobles del Nord": [
+400,
+313.970588235294,
+570.093457943925
+],
+"Pobles de l'Oest": [
+397.826086956522,
+310,
+490
+],
+"Pobles del Sud": [
+420,
+345.62125,
+518.745110410095
+]
+}
+},
+"2021": {
+"renta_mediana": {
+"Ciutat Vella": [
+643.010298102981,
+505.5,
+805.514678027817
+],
+"l'Eixample": [
+659.318472222222,
+502.463161659514,
+841.368846153846
+],
+"Extramurs": [
+600,
+463.134430727023,
+720.068027210884
+],
+"Campanar": [
+600,
+450,
+775
+],
+"la Saïdia": [
+516.488347457627,
+406.559405940594,
+630
+],
+"el Pla del Real": [
+688.191332627234,
+533.333333333333,
+850
+],
+"l'Olivereta": [
+479.166666666667,
+380,
+580
+],
+"Patraix": [
+500,
+400,
+600
+],
+"Jesús": [
+493.894361471862,
+400,
+595.833333333333
+],
+"Quatre Carreres": [
+542.763333333333,
+423.068181818182,
+653.575
+],
+"Poblats Marítims": [
+500,
+400,
+634.782608695652
+],
+"Camins al Grau": [
+580,
+450,
+753.333333333333
+],
+"Algirós": [
+630,
+500,
+774.764150943396
+],
+"Benimaclet": [
+566.086666666667,
+450,
+700
+],
+"Rascanya": [
+475,
+365,
+600
+],
+"Benicalap": [
+490,
+380,
+605.173333333333
+],
+"Pobles del Nord": [
+418.121666666667,
+325,
+600
+],
+"Pobles de l'Oest": [
+410,
+329,
+500
+],
+"Pobles del Sud": [
+430,
+350,
+536.764705882353
+]
+},
+"viviendas": {
+"Ciutat Vella": 2881,
+"l'Eixample": 3920,
+"Extramurs": 4174,
+"Campanar": 2647,
+"la Saïdia": 3500,
+"el Pla del Real": 2659,
+"l'Olivereta": 3297,
+"Patraix": 3228,
+"Jesús": 3381,
+"Quatre Carreres": 4815,
+"Poblats Marítims": 3355,
+"Camins al Grau": 4668,
+"Algirós": 3573,
+"Benimaclet": 3179,
+"Rascanya": 3501,
+"Benicalap": 2867,
+"Pobles del Nord": 281,
+"Pobles de l'Oest": 782,
+"Pobles del Sud": 988
+},
+"superficie_mediana": {
+"Ciutat Vella": 77,
+"l'Eixample": 91,
+"Extramurs": 85,
+"Campanar": 92,
+"la Saïdia": 80,
+"el Pla del Real": 95.5,
+"l'Olivereta": 84,
+"Patraix": 91,
+"Jesús": 84,
+"Quatre Carreres": 91,
+"Poblats Marítims": 77,
+"Camins al Grau": 82,
+"Algirós": 94,
+"Benimaclet": 86,
+"Rascanya": 77,
+"Benicalap": 79,
+"Pobles del Nord": 97.5,
+"Pobles de l'Oest": 88,
+"Pobles del Sud": 87
+}
+},
+"2022": {
+"renta_mediana": {
+"Ciutat Vella": [
+680,
+550,
+862.933884297521
+],
+"l'Eixample": [
+700,
+552.6875,
+900
+],
+"Extramurs": [
+630,
+500,
+766.662093495935
+],
+"Campanar": [
+637.5,
+480,
+804.166666666667
+],
+"la Saïdia": [
+550,
+441.916666666667,
+670
+],
+"el Pla del Real": [
+730,
+575,
+900
+],
+"l'Olivereta": [
+500,
+400,
+607.5
+],
+"Patraix": [
+540,
+436.347319935499,
+650
+],
+"Jesús": [
+510,
+406.129583333333,
+620
+],
+"Quatre Carreres": [
+575,
+450,
+701.180638722555
+],
+"Poblats Marítims": [
+550,
+420,
+675
+],
+"Camins al Grau": [
+618.544063219293,
+474.250416666667,
+800
+],
+"Algirós": [
+679.448356807512,
+540,
+830.783582089552
+],
+"Benimaclet": [
+602.333333333333,
+500,
+750
+],
+"Rascanya": [
+500,
+400,
+650
+],
+"Benicalap": [
+506.566127694859,
+400,
+650
+],
+"Pobles del Nord": [
+450,
+350.365384615385,
+665
+],
+"Pobles de l'Oest": [
+450,
+351.690331112778,
+550
+],
+"Pobles del Sud": [
+450,
+370,
+568.545197740113
+]
+},
+"viviendas": {
+"Ciutat Vella": 2997,
+"l'Eixample": 4082,
+"Extramurs": 4353,
+"Campanar": 2776,
+"la Saïdia": 3730,
+"el Pla del Real": 2745,
+"l'Olivereta": 3563,
+"Patraix": 3388,
+"Jesús": 3638,
+"Quatre Carreres": 5209,
+"Poblats Marítims": 3550,
+"Camins al Grau": 4875,
+"Algirós": 3786,
+"Benimaclet": 3327,
+"Rascanya": 3722,
+"Benicalap": 3084,
+"Pobles del Nord": 285,
+"Pobles de l'Oest": 832,
+"Pobles del Sud": 1088
+},
+"superficie_mediana": {
+"Ciutat Vella": 77,
+"l'Eixample": 91,
+"Extramurs": 85,
+"Campanar": 91,
+"la Saïdia": 80,
+"el Pla del Real": 95,
+"l'Olivereta": 84,
+"Patraix": 91,
+"Jesús": 84,
+"Quatre Carreres": 91,
+"Poblats Marítims": 77,
+"Camins al Grau": 83,
+"Algirós": 94,
+"Benimaclet": 86,
+"Rascanya": 77,
+"Benicalap": 79,
+"Pobles del Nord": 98.5,
+"Pobles de l'Oest": 87,
+"Pobles del Sud": 87
+}
+},
+"2023": {
+"renta_mediana": {
+"Ciutat Vella": [
+744.26231292517,
+590,
+968.2843543046357
+],
+"l'Eixample": [
+760,
+600,
+1000
+],
+"Extramurs": [
+680.6733333333333,
+536.6666666666666,
+850
+],
+"Campanar": [
+691.3333333333334,
+510,
+891.6666666666666
+],
+"la Saïdia": [
+600,
+472.840909090909,
+732.25
+],
+"el Pla del Real": [
+782.9204166666666,
+608.9808938424715,
+1000
+],
+"l'Olivereta": [
+550,
+430,
+664.9201888489208
+],
+"Patraix": [
+578.8333333333334,
+460,
+700
+],
+"Jesús": [
+550,
+450,
+666.25
+],
+"Quatre Carreres": [
+613.9266473988439,
+490,
+775
+],
+"Poblats Marítims": [
+600,
+450,
+750
+],
+"Camins al Grau": [
+660.1056168987037,
+500,
+880
+],
+"Algirós": [
+726.1331087824351,
+575,
+901.5776820945566
+],
+"Benimaclet": [
+654.3333333333334,
+521.3680340557275,
+806.5419626593806
+],
+"Rascanya": [
+550,
+425.0660422670509,
+700
+],
+"Benicalap": [
+550,
+435,
+708.198383084577
+],
+"Pobles del Nord": [
+490.81439393939394,
+366.4166666666667,
+700
+],
+"Pobles de l'Oest": [
+480,
+386.83333333333337,
+580
+],
+"Pobles del Sud": [
+495.9239130434782,
+400,
+610
+]
+},
+"viviendas": {
+"Ciutat Vella": 3127,
+"l'Eixample": 4170,
+"Extramurs": 4530,
+"Campanar": 2972,
+"la Saïdia": 3937,
+"el Pla del Real": 2864,
+"l'Olivereta": 3820,
+"Patraix": 3586,
+"Jesús": 3822,
+"Quatre Carreres": 5590,
+"Poblats Marítims": 3764,
+"Camins al Grau": 5127,
+"Algirós": 3964,
+"Benimaclet": 3477,
+"Rascanya": 3994,
+"Benicalap": 3331,
+"Pobles del Nord": 292,
+"Pobles de l'Oest": 877,
+"Pobles del Sud": 1176
+},
+"superficie_mediana": {
+"Ciutat Vella": 77,
+"l'Eixample": 91,
+"Extramurs": 86,
+"Campanar": 91,
+"la Saïdia": 80,
+"el Pla del Real": 95,
+"l'Olivereta": 84,
+"Patraix": 91,
+"Jesús": 84,
+"Quatre Carreres": 91,
+"Poblats Marítims": 77,
+"Camins al Grau": 82,
+"Algirós": 94,
+"Benimaclet": 86,
+"Rascanya": 77,
+"Benicalap": 79,
+"Pobles del Nord": 100,
+"Pobles de l'Oest": 87,
+"Pobles del Sud": 87
+}
+}
+},
+"serpavi_barrio_2023": {
+"la Seu": {
+"distrito": "Ciutat Vella",
+"n": 419,
+"sup": 83.200477326969,
+"renta": 739.29417373957,
+"m2": 9.83094708945409
+},
+"la Xerea": {
+"distrito": "Ciutat Vella",
+"n": 402,
+"sup": 87.2213930348259,
+"renta": 805.972139303483,
+"m2": 10.2906541041977
+},
+"el Carme": {
+"distrito": "Ciutat Vella",
+"n": 779,
+"sup": 72.5288831835687,
+"renta": 667.52633910039,
+"m2": 9.50944785084271
+},
+"el Pilar": {
+"distrito": "Ciutat Vella",
+"n": 517,
+"sup": 71.7504835589942,
+"renta": 701.371898915146,
+"m2": 9.87073656956659
+},
+"el Mercat": {
+"distrito": "Ciutat Vella",
+"n": 449,
+"sup": 78.2984409799555,
+"renta": 753.138827023014,
+"m2": 10.2687008313471
+},
+"Sant Francesc": {
+"distrito": "Ciutat Vella",
+"n": 550,
+"sup": 85.3709090909091,
+"renta": 850.295303030303,
+"m2": 10.6494943869422
+},
+"Russafa": {
+"distrito": "l'Eixample",
+"n": 2699,
+"sup": 83.1081882178585,
+"renta": 702.037634217418,
+"m2": 8.62815611888326
+},
+"el Pla del Remei": {
+"distrito": "l'Eixample",
+"n": 485,
+"sup": 119.249484536082,
+"renta": 1097.22325677427,
+"m2": 10.2208800519362
+},
+"la Gran Via": {
+"distrito": "l'Eixample",
+"n": 983,
+"sup": 108.668362156663,
+"renta": 879.037884979145,
+"m2": 8.64488768571648
+},
+"el Botànic": {
+"distrito": "Extramurs",
+"n": 692,
+"sup": 76.0505780346821,
+"renta": 687.631972575043,
+"m2": 8.88888845972832
+},
+"la Roqueta": {
+"distrito": "Extramurs",
+"n": 646,
+"sup": 83.9504643962848,
+"renta": 697.927566419038,
+"m2": 8.59837210889679
+},
+"la Petxina": {
+"distrito": "Extramurs",
+"n": 1210,
+"sup": 87.2512396694215,
+"renta": 652.588740741866,
+"m2": 7.76849670734993
+},
+"Arrancapins": {
+"distrito": "Extramurs",
+"n": 1979,
+"sup": 91.44416371905,
+"renta": 697.394164295499,
+"m2": 7.81166180296962
+},
+"Campanar": {
+"distrito": "Campanar",
+"n": 676,
+"sup": 97.887573964497,
+"renta": 631.703293885602,
+"m2": 6.6855323953513
+},
+"les Tendetes": {
+"distrito": "Campanar",
+"n": 433,
+"sup": 72.5519630484988,
+"renta": 563.131397228637,
+"m2": 7.58230159350113
+},
+"el Calvari": {
+"distrito": "Campanar",
+"n": 490,
+"sup": 64.7510204081633,
+"renta": 546.324489795918,
+"m2": 7.75274753593484
+},
+"Sant Pau": {
+"distrito": "Campanar",
+"n": 1356,
+"sup": 102.855457227139,
+"renta": 832.266209420517,
+"m2": 8.64080316574636
+},
+"Marxalenes": {
+"distrito": "la Saïdia",
+"n": 862,
+"sup": 78.1751740139211,
+"renta": 553.157575478921,
+"m2": 6.9944414153235
+},
+"Morvedre": {
+"distrito": "la Saïdia",
+"n": 857,
+"sup": 80.3150525087515,
+"renta": 618.248135721033,
+"m2": 7.55375612269447
+},
+"Trinitat": {
+"distrito": "la Saïdia",
+"n": 883,
+"sup": 77.713476783692,
+"renta": 638.374042813169,
+"m2": 8.45637422238313
+},
+"Tormos": {
+"distrito": "la Saïdia",
+"n": 659,
+"sup": 76.6251896813354,
+"renta": 552.631514921598,
+"m2": 7.11780750836209
+},
+"Sant Antoni": {
+"distrito": "la Saïdia",
+"n": 670,
+"sup": 93.0776119402985,
+"renta": 619.396320157389,
+"m2": 6.86162317707329
+},
+"Exposició": {
+"distrito": "el Pla del Real",
+"n": 547,
+"sup": 99.3802559414991,
+"renta": 863.334446741501,
+"m2": 9.03793255382504
+},
+"Mestalla": {
+"distrito": "el Pla del Real",
+"n": 1508,
+"sup": 89.6492042440318,
+"renta": 747.396749557913,
+"m2": 8.63344354106798
+},
+"Jaume Roig": {
+"distrito": "el Pla del Real",
+"n": 493,
+"sup": 98.1176470588235,
+"renta": 813.667586689848,
+"m2": 8.76717534193218
+},
+"Ciutat Universitària": {
+"distrito": "el Pla del Real",
+"n": 314,
+"sup": 97.1178343949045,
+"renta": 843.314904458599,
+"m2": 8.97614771391355
+},
+"Nou Moles": {
+"distrito": "l'Olivereta",
+"n": 2204,
+"sup": 87.0694192377495,
+"renta": 570.520245380195,
+"m2": 6.57871433549511
+},
+"Soternes": {
+"distrito": "l'Olivereta",
+"n": 437,
+"sup": 82.649885583524,
+"renta": 556.992646834478,
+"m2": 6.55417777132591
+},
+"Tres Forques": {
+"distrito": "l'Olivereta",
+"n": 694,
+"sup": 74.9466858789625,
+"renta": 477.51315089559,
+"m2": 6.39350137659205
+},
+"la Fontsanta": {
+"distrito": "l'Olivereta",
+"n": 178,
+"sup": 71.1067415730337,
+"renta": 478.370786516854,
+"m2": 6.40449438202247
+},
+"la Llum": {
+"distrito": "l'Olivereta",
+"n": 291,
+"sup": 92.4879725085911,
+"renta": 571.426253254191,
+"m2": 6.00315868420209
+},
+"Patraix": {
+"distrito": "Patraix",
+"n": 1890,
+"sup": 83.7920634920635,
+"renta": 571.749151881018,
+"m2": 6.72332326142975
+},
+"Sant Isidre": {
+"distrito": "Patraix",
+"n": 449,
+"sup": 98.4075723830735,
+"renta": 570.236819099557,
+"m2": 6.1949154450933
+},
+"Vara de Quart": {
+"distrito": "Patraix",
+"n": 540,
+"sup": 96.9444444444444,
+"renta": 559.324956790124,
+"m2": 5.75141774503436
+},
+"el Safranar": {
+"distrito": "Patraix",
+"n": 440,
+"sup": 102.411363636364,
+"renta": 606.674783029471,
+"m2": 6.28811898215229
+},
+"Favara": {
+"distrito": "Patraix",
+"n": 256,
+"sup": 78.4375,
+"renta": 553.476100869578,
+"m2": 7.08315921825925
+},
+"la Raiosa": {
+"distrito": "Jesús",
+"n": 1384,
+"sup": 82.0325144508671,
+"renta": 579.815506572725,
+"m2": 6.90492295872036
+},
+"l'Hort de Senabre": {
+"distrito": "Jesús",
+"n": 1092,
+"sup": 84.4505494505494,
+"renta": 538.061000622891,
+"m2": 6.24536189887446
+},
+"la Creu Coberta": {
+"distrito": "Jesús",
+"n": 357,
+"sup": 88.6218487394958,
+"renta": 549.84593837535,
+"m2": 6.6082544536589
+},
+"Sant Marcel·lí": {
+"distrito": "Jesús",
+"n": 688,
+"sup": 72.6656976744186,
+"renta": 522.609791175239,
+"m2": 7.17935622495796
+},
+"Camí Real": {
+"distrito": "Jesús",
+"n": 279,
+"sup": 92.1935483870968,
+"renta": 579.26693975081,
+"m2": 6.47690514342036
+},
+"Montolivet": {
+"distrito": "Quatre Carreres",
+"n": 1669,
+"sup": 88.8562013181546,
+"renta": 590.315340646228,
+"m2": 6.59338783050387
+},
+"en Corts": {
+"distrito": "Quatre Carreres",
+"n": 936,
+"sup": 83.7628205128205,
+"renta": 588.820094124144,
+"m2": 6.82925408107723
+},
+"Malilla": {
+"distrito": "Quatre Carreres",
+"n": 1320,
+"sup": 95.7886363636364,
+"renta": 620.273843759451,
+"m2": 6.70417212860808
+},
+"la Fonteta de Sant Lluís": {
+"distrito": "Quatre Carreres",
+"n": 249,
+"sup": 90,
+"renta": 482.490230923694,
+"m2": 5.26608467650837
+},
+"na Rovella": {
+"distrito": "Quatre Carreres",
+"n": 303,
+"sup": 94.0924092409241,
+"renta": 567.862056014266,
+"m2": 6.22701011649481
+},
+"la Punta": {
+"distrito": "Quatre Carreres",
+"n": 168,
+"sup": 90.7440476190476,
+"renta": 768.320361482785,
+"m2": 9.4730129236107
+},
+"Ciutat de les Arts i de les Ciències": {
+"distrito": "Quatre Carreres",
+"n": 883,
+"sup": 92.3159682899207,
+"renta": 797.020573801435,
+"m2": 9.37776383463144
+},
+"el Grau": {
+"distrito": "Poblats Marítims",
+"n": 636,
+"sup": 84.2452830188679,
+"renta": 613.947488084709,
+"m2": 7.43075178443266
+},
+"el Cabanyal-el Canyamelar": {
+"distrito": "Poblats Marítims",
+"n": 1293,
+"sup": 74.3866976024749,
+"renta": 591.576920954429,
+"m2": 8.11144198068342
+},
+"la Malva-rosa": {
+"distrito": "Poblats Marítims",
+"n": 766,
+"sup": 78.9582245430809,
+"renta": 592.320097185959,
+"m2": 7.61799163778116
+},
+"Beteró": {
+"distrito": "Poblats Marítims",
+"n": 523,
+"sup": 88.7112810707457,
+"renta": 656.319219247928,
+"m2": 7.89335133048796
+},
+"Natzaret": {
+"distrito": "Poblats Marítims",
+"n": 322,
+"sup": 72.0962732919255,
+"renta": 440.786425983437,
+"m2": 6.01072027333304
+},
+"Aiora": {
+"distrito": "Camins al Grau",
+"n": 1790,
+"sup": 76.7966480446927,
+"renta": 588.137554299184,
+"m2": 7.49757352223884
+},
+"Albors": {
+"distrito": "Camins al Grau",
+"n": 708,
+"sup": 82.7203389830509,
+"renta": 596.043444232321,
+"m2": 7.67165793059278
+},
+"la Creu del Grau": {
+"distrito": "Camins al Grau",
+"n": 1025,
+"sup": 77.3014634146341,
+"renta": 619.485442882966,
+"m2": 7.90064431816106
+},
+"Camí Fondo": {
+"distrito": "Camins al Grau",
+"n": 325,
+"sup": 74.8276923076923,
+"renta": 615.090247981721,
+"m2": 7.75725734407073
+},
+"Penya-roja": {
+"distrito": "Camins al Grau",
+"n": 1265,
+"sup": 113.307509881423,
+"renta": 984.805525487883,
+"m2": 9.25549179705333
+},
+"l'Illa Perduda": {
+"distrito": "Algirós",
+"n": 545,
+"sup": 87.4880733944954,
+"renta": 665.328892057133,
+"m2": 8.30053855725288
+},
+"Ciutat Jardí": {
+"distrito": "Algirós",
+"n": 1520,
+"sup": 96.0532894736842,
+"renta": 751.248418683877,
+"m2": 8.15048086352648
+},
+"l'Amistat": {
+"distrito": "Algirós",
+"n": 837,
+"sup": 81.0764635603345,
+"renta": 649.859638621032,
+"m2": 8.3229803495117
+},
+"la Bega Baixa": {
+"distrito": "Algirós",
+"n": 657,
+"sup": 100.464231354642,
+"renta": 787.064761542364,
+"m2": 8.12453087744158
+},
+"la Carrasca": {
+"distrito": "Algirós",
+"n": 403,
+"sup": 102.344913151365,
+"renta": 748.183886657061,
+"m2": 8.16631672711077
+},
+"Benimaclet": {
+"distrito": "Benimaclet",
+"n": 3067,
+"sup": 81.8203456146071,
+"renta": 650.664938568769,
+"m2": 8.06877403353689
+},
+"Camí de Vera": {
+"distrito": "Benimaclet",
+"n": 344,
+"sup": 100.837209302326,
+"renta": 686.541101421189,
+"m2": 7.17854991545071
+},
+"Orriols": {
+"distrito": "Rascanya",
+"n": 1387,
+"sup": 71.2307137707282,
+"renta": 496.278363827729,
+"m2": 6.87752879690125
+},
+"Torrefiel": {
+"distrito": "Rascanya",
+"n": 1727,
+"sup": 77.2472495657209,
+"renta": 522.908500773272,
+"m2": 6.69344237388021
+},
+"Sant Llorenç": {
+"distrito": "Rascanya",
+"n": 839,
+"sup": 98.8176400476758,
+"renta": 779.935298874159,
+"m2": 8.40255598372442
+},
+"Benicalap": {
+"distrito": "Benicalap",
+"n": 2948,
+"sup": 82.3069877883311,
+"renta": 578.680433585833,
+"m2": 7.22351743645846
+},
+"Ciutat Fallera": {
+"distrito": "Benicalap",
+"n": 352,
+"sup": 70.1732954545455,
+"renta": 484.637954545455,
+"m2": 6.43973095486909
+},
+"Benifaraig+4. les Cases de Bàrcena+5. Mauella": {
+"distrito": "Pobles del Nord",
+"n": 59,
+"sup": 106,
+"renta": 450,
+"m2": 4.73684210526316
+},
+"Poble Nou": {
+"distrito": "Pobles del Nord",
+"n": 38,
+"sup": 68,
+"renta": 462.5,
+"m2": 6.35852367542762
+},
+"Carpesa": {
+"distrito": "Pobles del Nord",
+"n": 42,
+"sup": 87,
+"renta": 300.700757575758,
+"m2": 3.6934609955689
+},
+"Massarrojos": {
+"distrito": "Pobles del Nord",
+"n": 64,
+"sup": 105,
+"renta": 825,
+"m2": 7.66169154228856
+},
+"Borbotó": {
+"distrito": "Pobles del Nord",
+"n": 14,
+"sup": 101,
+"renta": 437.11125,
+"m2": 4.02464076750989
+},
+"Benimàmet+2. Beniferri": {
+"distrito": "Pobles de l'Oest",
+"n": 801,
+"sup": 87.0474406991261,
+"renta": 477.031780408382,
+"m2": 5.70711334234159
+},
+"el Forn d'Alcedo": {
+"distrito": "Pobles del Sud",
+"n": 54,
+"sup": 95,
+"renta": 450,
+"m2": 4.56597222222222
+},
+"Castellar-l'Oliveral": {
+"distrito": "Pobles del Sud",
+"n": 251,
+"sup": 88.9601593625498,
+"renta": 451.494023904383,
+"m2": 5.07353953927806
+},
+"Pinedo": {
+"distrito": "Pobles del Sud",
+"n": 142,
+"sup": 91.9507042253521,
+"renta": 489.321172939275,
+"m2": 5.35793536067244
+},
+"el Saler": {
+"distrito": "Pobles del Sud",
+"n": 197,
+"sup": 94,
+"renta": 610,
+"m2": 7.14275539952369
+},
+"el Palmar": {
+"distrito": "Pobles del Sud",
+"n": 6,
+"sup": null,
+"renta": null,
+"m2": null
+},
+"el Perellonet": {
+"distrito": "Pobles del Sud",
+"n": 91,
+"sup": 80,
+"renta": 492.577597840756,
+"m2": 6.20694202120259
+},
+"la Torre+8. Faitanar": {
+"distrito": "Pobles del Sud",
+"n": 318,
+"sup": 81.7547169811321,
+"renta": 488.328081761006,
+"m2": 6.06008254924876
+}
+},
+"transacciones": {
+"2016": {
+"total": 9073,
+"nueva": 438,
+"segunda": 8635,
+"libre": 8308,
+"protegida": 765
+},
+"2017": {
+"total": 10973,
+"nueva": 318,
+"segunda": 10655,
+"libre": 10093,
+"protegida": 880
+},
+"2019": {
+"total": 10174,
+"nueva": 698,
+"segunda": 9476,
+"libre": 9390,
+"protegida": 784
+},
+"2020": {
+"total": 7961,
+"nueva": 1006,
+"segunda": 6955,
+"libre": 7255,
+"protegida": 706
+},
+"2021": {
+"total": 12084,
+"nueva": 2026,
+"segunda": 10058,
+"libre": 11232,
+"protegida": 852
+},
+"2022": {
+"total": 12873,
+"nueva": 2028,
+"segunda": 10845,
+"libre": 11720,
+"protegida": 1153
+},
+"2023": {
+"total": 11219,
+"nueva": 1533,
+"segunda": 9686,
+"libre": 10554,
+"protegida": 665
+},
+"2024": {
+"total": 11027,
+"nueva": 1063,
+"segunda": 9964,
+"libre": 10218,
+"protegida": 809
+}
+},
+"idealista_district_rent": {
+"2019": {
+"València": {
+"media": 8.73,
+"dic": 9,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 10.83,
+"dic": 11.2,
+"n": 12
+},
+"l'Eixample": {
+"media": 10.08,
+"dic": 10.5,
+"n": 12
+},
+"Extramurs": {
+"media": 8.67,
+"dic": 8.8,
+"n": 12
+},
+"Campanar": {
+"media": 8.95,
+"dic": 9,
+"n": 12
+},
+"la Saïdia": {
+"media": 8.0,
+"dic": 8.5,
+"n": 12
+},
+"el Pla del Real": {
+"media": 8.49,
+"dic": 8.6,
+"n": 12
+},
+"l'Olivereta": {
+"media": 7.62,
+"dic": 8.2,
+"n": 12
+},
+"Patraix": {
+"media": 7.26,
+"dic": 7,
+"n": 12
+},
+"Jesús": {
+"media": 7.19,
+"dic": 7.8,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 8.23,
+"dic": 8.7,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 8.78,
+"dic": 9.3,
+"n": 12
+},
+"Camins al Grau": {
+"media": 9.02,
+"dic": 8.8,
+"n": 12
+},
+"Algirós": {
+"media": 8.17,
+"dic": 8.5,
+"n": 12
+},
+"Benimaclet": {
+"media": 8.11,
+"dic": 8.7,
+"n": 12
+},
+"Rascanya": {
+"media": 7.67,
+"dic": 8.1,
+"n": 12
+},
+"Benicalap": {
+"media": 7.79,
+"dic": 7.5,
+"n": 12
+}
+},
+"2020": {
+"València": {
+"media": 9.15,
+"dic": 8.9,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 11.26,
+"dic": 10.8,
+"n": 12
+},
+"l'Eixample": {
+"media": 10.45,
+"dic": 9.8,
+"n": 12
+},
+"Extramurs": {
+"media": 8.99,
+"dic": 8.7,
+"n": 12
+},
+"Campanar": {
+"media": 9.1,
+"dic": 8.6,
+"n": 12
+},
+"la Saïdia": {
+"media": 8.24,
+"dic": 8.3,
+"n": 12
+},
+"el Pla del Real": {
+"media": 9.04,
+"dic": 8.9,
+"n": 12
+},
+"l'Olivereta": {
+"media": 7.85,
+"dic": 7.5,
+"n": 12
+},
+"Patraix": {
+"media": 8.03,
+"dic": 7.5,
+"n": 12
+},
+"Jesús": {
+"media": 7.83,
+"dic": 7.5,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 8.5,
+"dic": 8.2,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 9.44,
+"dic": 9.1,
+"n": 12
+},
+"Camins al Grau": {
+"media": 8.97,
+"dic": 8.8,
+"n": 12
+},
+"Algirós": {
+"media": 8.64,
+"dic": 8.4,
+"n": 12
+},
+"Benimaclet": {
+"media": 8.52,
+"dic": 8,
+"n": 12
+},
+"Rascanya": {
+"media": 7.99,
+"dic": 7.7,
+"n": 12
+},
+"Benicalap": {
+"media": 8.05,
+"dic": 8.2,
+"n": 12
+}
+},
+"2021": {
+"València": {
+"media": 8.91,
+"dic": 9.3,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 10.89,
+"dic": 11.5,
+"n": 12
+},
+"l'Eixample": {
+"media": 9.81,
+"dic": 10,
+"n": 12
+},
+"Extramurs": {
+"media": 8.6,
+"dic": 9,
+"n": 12
+},
+"Campanar": {
+"media": 8.98,
+"dic": 9.5,
+"n": 12
+},
+"la Saïdia": {
+"media": 8.08,
+"dic": 8.3,
+"n": 12
+},
+"el Pla del Real": {
+"media": 8.98,
+"dic": 10,
+"n": 12
+},
+"l'Olivereta": {
+"media": 7.62,
+"dic": 8.1,
+"n": 12
+},
+"Patraix": {
+"media": 7.73,
+"dic": 7.7,
+"n": 12
+},
+"Jesús": {
+"media": 7.57,
+"dic": 7.8,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 8.38,
+"dic": 9,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 9.09,
+"dic": 10.1,
+"n": 12
+},
+"Camins al Grau": {
+"media": 8.87,
+"dic": 9.2,
+"n": 12
+},
+"Algirós": {
+"media": 8.44,
+"dic": 8.8,
+"n": 12
+},
+"Benimaclet": {
+"media": 8.37,
+"dic": 9.2,
+"n": 12
+},
+"Rascanya": {
+"media": 7.83,
+"dic": 8.5,
+"n": 12
+},
+"Benicalap": {
+"media": 8.43,
+"dic": 8.3,
+"n": 12
+}
+},
+"2022": {
+"València": {
+"media": 10.02,
+"dic": 11,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 12.54,
+"dic": 14.38,
+"n": 12
+},
+"l'Eixample": {
+"media": 11.4,
+"dic": 13.16,
+"n": 12
+},
+"Extramurs": {
+"media": 9.91,
+"dic": 10.58,
+"n": 12
+},
+"Campanar": {
+"media": 9.75,
+"dic": 10.57,
+"n": 12
+},
+"la Saïdia": {
+"media": 9.29,
+"dic": 10.51,
+"n": 12
+},
+"el Pla del Real": {
+"media": 10.32,
+"dic": 11,
+"n": 12
+},
+"l'Olivereta": {
+"media": 8.75,
+"dic": 9.56,
+"n": 12
+},
+"Patraix": {
+"media": 8.43,
+"dic": 9.64,
+"n": 12
+},
+"Jesús": {
+"media": 8.15,
+"dic": 9.01,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 9.51,
+"dic": 10.89,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 10.59,
+"dic": 11.99,
+"n": 12
+},
+"Camins al Grau": {
+"media": 9.97,
+"dic": 11.06,
+"n": 12
+},
+"Algirós": {
+"media": 9.82,
+"dic": 10.78,
+"n": 12
+},
+"Benimaclet": {
+"media": 9.33,
+"dic": 10.01,
+"n": 12
+},
+"Rascanya": {
+"media": 8.98,
+"dic": 9.84,
+"n": 12
+},
+"Benicalap": {
+"media": 9.16,
+"dic": 9.11,
+"n": 12
+},
+"Pobles del Sud": {
+"media": 9.23,
+"dic": 9.23,
+"n": 1
+}
+},
+"2023": {
+"València": {
+"media": 13.53,
+"dic": 12.4,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 15.28,
+"dic": 16.8,
+"n": 12
+},
+"l'Eixample": {
+"media": 13.95,
+"dic": 15.3,
+"n": 12
+},
+"Extramurs": {
+"media": 11.99,
+"dic": 13.3,
+"n": 12
+},
+"Campanar": {
+"media": 11.82,
+"dic": 13.6,
+"n": 12
+},
+"la Saïdia": {
+"media": 11.01,
+"dic": 12.1,
+"n": 12
+},
+"el Pla del Real": {
+"media": 12.17,
+"dic": 13.9,
+"n": 12
+},
+"l'Olivereta": {
+"media": 10.17,
+"dic": 11.1,
+"n": 12
+},
+"Patraix": {
+"media": 10.06,
+"dic": 11.1,
+"n": 12
+},
+"Jesús": {
+"media": 9.83,
+"dic": 10.5,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 11.64,
+"dic": 12.5,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 12.72,
+"dic": 14.3,
+"n": 12
+},
+"Camins al Grau": {
+"media": 12.38,
+"dic": 13.4,
+"n": 12
+},
+"Algirós": {
+"media": 11.4,
+"dic": 12.4,
+"n": 12
+},
+"Benimaclet": {
+"media": 11.58,
+"dic": 12.5,
+"n": 10
+},
+"Rascanya": {
+"media": 10.45,
+"dic": 10.8,
+"n": 12
+},
+"Benicalap": {
+"media": 10.53,
+"dic": 11.5,
+"n": 12
+}
+},
+"2024": {
+"València": {
+"media": 14.08,
+"dic": 14.9,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 17.75,
+"dic": 18.6,
+"n": 12
+},
+"l'Eixample": {
+"media": 16.3,
+"dic": 17.1,
+"n": 12
+},
+"Extramurs": {
+"media": 14.17,
+"dic": 15,
+"n": 12
+},
+"Campanar": {
+"media": 14.26,
+"dic": 14.7,
+"n": 12
+},
+"la Saïdia": {
+"media": 12.72,
+"dic": 13.6,
+"n": 12
+},
+"el Pla del Real": {
+"media": 13.7,
+"dic": 13.5,
+"n": 12
+},
+"l'Olivereta": {
+"media": 11.89,
+"dic": 13.2,
+"n": 12
+},
+"Patraix": {
+"media": 11.76,
+"dic": 12.5,
+"n": 12
+},
+"Jesús": {
+"media": 11.89,
+"dic": 12.7,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 13.78,
+"dic": 14.6,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 14.36,
+"dic": 15.3,
+"n": 12
+},
+"Camins al Grau": {
+"media": 14.32,
+"dic": 15.1,
+"n": 12
+},
+"Algirós": {
+"media": 13.17,
+"dic": 13.8,
+"n": 12
+},
+"Benimaclet": {
+"media": 12.76,
+"dic": 12.5,
+"n": 12
+},
+"Rascanya": {
+"media": 12.39,
+"dic": 13.8,
+"n": 12
+},
+"Benicalap": {
+"media": 12.25,
+"dic": 12.2,
+"n": 12
+}
+},
+"2016": {
+"Ciutat Vella": {
+"media": 8.54,
+"dic": 8.655000000000001,
+"n": 4
+},
+"l'Eixample": {
+"media": 7.98,
+"dic": 8.309999999999999,
+"n": 4
+},
+"Extramurs": {
+"media": 6.55,
+"dic": 6.77,
+"n": 4
+},
+"Campanar": {
+"media": 7.4,
+"dic": 7.355,
+"n": 4
+},
+"la Saïdia": {
+"media": 5.81,
+"dic": 6.075,
+"n": 4
+},
+"el Pla del Real": {
+"media": 7.05,
+"dic": 7.390000000000001,
+"n": 4
+},
+"l'Olivereta": {
+"media": 5.69,
+"dic": 5.975,
+"n": 4
+},
+"Patraix": {
+"media": 5.64,
+"dic": 5.74,
+"n": 4
+},
+"Jesús": {
+"media": 5.61,
+"dic": 5.859999999999999,
+"n": 4
+},
+"Quatre Carreres": {
+"media": 6.24,
+"dic": 6.243333333333333,
+"n": 4
+},
+"Poblats Marítims": {
+"media": 6.13,
+"dic": 6.17,
+"n": 4
+},
+"Camins al Grau": {
+"media": 7.39,
+"dic": 7.605,
+"n": 4
+},
+"Algirós": {
+"media": 6.43,
+"dic": 6.645,
+"n": 4
+},
+"Benimaclet": {
+"media": 6.25,
+"dic": 6.3149999999999995,
+"n": 4
+},
+"Rascanya": {
+"media": 5.9,
+"dic": 5.973333333333334,
+"n": 4
+},
+"Benicalap": {
+"media": 6.27,
+"dic": 6.380000000000001,
+"n": 4
+}
+},
+"2017": {
+"Ciutat Vella": {
+"media": 8.45,
+"dic": 8.246666666666668,
+"n": 4
+},
+"l'Eixample": {
+"media": 8.65,
+"dic": 8.47,
+"n": 4
+},
+"Extramurs": {
+"media": 7.54,
+"dic": 7.913333333333334,
+"n": 4
+},
+"Campanar": {
+"media": 7.77,
+"dic": 8.063333333333333,
+"n": 4
+},
+"la Saïdia": {
+"media": 6.59,
+"dic": 6.96,
+"n": 4
+},
+"el Pla del Real": {
+"media": 7.34,
+"dic": 7.253333333333334,
+"n": 4
+},
+"l'Olivereta": {
+"media": 6.32,
+"dic": 6.586666666666667,
+"n": 4
+},
+"Patraix": {
+"media": 6.16,
+"dic": 6.586666666666666,
+"n": 4
+},
+"Jesús": {
+"media": 6.19,
+"dic": 6.623333333333334,
+"n": 4
+},
+"Quatre Carreres": {
+"media": 7.02,
+"dic": 7.473333333333333,
+"n": 4
+},
+"Poblats Marítims": {
+"media": 7.01,
+"dic": 7.3566666666666665,
+"n": 4
+},
+"Camins al Grau": {
+"media": 7.95,
+"dic": 8.13,
+"n": 4
+},
+"Algirós": {
+"media": 7.12,
+"dic": 7.41,
+"n": 4
+},
+"Benimaclet": {
+"media": 6.72,
+"dic": 7.043333333333333,
+"n": 4
+},
+"Rascanya": {
+"media": 6.17,
+"dic": 6.3999999999999995,
+"n": 4
+},
+"Benicalap": {
+"media": 6.74,
+"dic": 7.19,
+"n": 4
+}
+}
+},
+"idealista_district_sale": {
+"2019": {
+"València": {
+"media": 1754.42,
+"dic": 1779,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 2752.08,
+"dic": 2806,
+"n": 12
+},
+"l'Eixample": {
+"media": 2919.33,
+"dic": 2855,
+"n": 12
+},
+"Extramurs": {
+"media": 2083.58,
+"dic": 2071,
+"n": 12
+},
+"Campanar": {
+"media": 2143.42,
+"dic": 2120,
+"n": 12
+},
+"la Saïdia": {
+"media": 1542.33,
+"dic": 1607,
+"n": 12
+},
+"el Pla del Real": {
+"media": 2544.5,
+"dic": 2504,
+"n": 12
+},
+"l'Olivereta": {
+"media": 1307.92,
+"dic": 1295,
+"n": 12
+},
+"Patraix": {
+"media": 1437.5,
+"dic": 1476,
+"n": 12
+},
+"Jesús": {
+"media": 1321.5,
+"dic": 1357,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 1605.92,
+"dic": 1660,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 1657.25,
+"dic": 1658,
+"n": 12
+},
+"Camins al Grau": {
+"media": 1860.33,
+"dic": 1830,
+"n": 12
+},
+"Algirós": {
+"media": 1839.25,
+"dic": 1866,
+"n": 12
+},
+"Benimaclet": {
+"media": 1805.92,
+"dic": 1806,
+"n": 12
+},
+"Rascanya": {
+"media": 1092.08,
+"dic": 1184,
+"n": 12
+},
+"Benicalap": {
+"media": 1393.92,
+"dic": 1424,
+"n": 12
+}
+},
+"2020": {
+"València": {
+"media": 1812.08,
+"dic": 1824,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 2870.42,
+"dic": 2822,
+"n": 12
+},
+"l'Eixample": {
+"media": 2879.92,
+"dic": 2819,
+"n": 12
+},
+"Extramurs": {
+"media": 2112.08,
+"dic": 2133,
+"n": 12
+},
+"Campanar": {
+"media": 2097.58,
+"dic": 2108,
+"n": 12
+},
+"la Saïdia": {
+"media": 1626.58,
+"dic": 1597,
+"n": 12
+},
+"el Pla del Real": {
+"media": 2487.0,
+"dic": 2490,
+"n": 12
+},
+"l'Olivereta": {
+"media": 1283.5,
+"dic": 1273,
+"n": 12
+},
+"Patraix": {
+"media": 1433.17,
+"dic": 1445,
+"n": 12
+},
+"Jesús": {
+"media": 1335.42,
+"dic": 1338,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 1653.75,
+"dic": 1625,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 1758.58,
+"dic": 1742,
+"n": 12
+},
+"Camins al Grau": {
+"media": 1852.5,
+"dic": 1836,
+"n": 12
+},
+"Algirós": {
+"media": 1945.83,
+"dic": 1948,
+"n": 12
+},
+"Benimaclet": {
+"media": 1729.92,
+"dic": 1835,
+"n": 12
+},
+"Rascanya": {
+"media": 1226.92,
+"dic": 1182,
+"n": 12
+},
+"Benicalap": {
+"media": 1435.0,
+"dic": 1396,
+"n": 12
+}
+},
+"2021": {
+"València": {
+"media": 1834.33,
+"dic": 1829,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 2864.33,
+"dic": 2821,
+"n": 12
+},
+"l'Eixample": {
+"media": 2917.0,
+"dic": 3000,
+"n": 12
+},
+"Extramurs": {
+"media": 2142.08,
+"dic": 2200,
+"n": 12
+},
+"Campanar": {
+"media": 2197.75,
+"dic": 2357,
+"n": 12
+},
+"la Saïdia": {
+"media": 1546.5,
+"dic": 1552,
+"n": 12
+},
+"el Pla del Real": {
+"media": 2489.5,
+"dic": 2548,
+"n": 12
+},
+"l'Olivereta": {
+"media": 1284.25,
+"dic": 1310,
+"n": 12
+},
+"Patraix": {
+"media": 1458.0,
+"dic": 1449,
+"n": 12
+},
+"Jesús": {
+"media": 1343.42,
+"dic": 1363,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 1721.25,
+"dic": 1693,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 1765.0,
+"dic": 1759,
+"n": 12
+},
+"Camins al Grau": {
+"media": 1818.83,
+"dic": 1806,
+"n": 12
+},
+"Algirós": {
+"media": 1945.58,
+"dic": 1992,
+"n": 12
+},
+"Benimaclet": {
+"media": 1730.75,
+"dic": 1815,
+"n": 12
+},
+"Rascanya": {
+"media": 1180.92,
+"dic": 1137,
+"n": 12
+},
+"Benicalap": {
+"media": 1378.5,
+"dic": 1419,
+"n": 12
+}
+},
+"2022": {
+"València": {
+"media": 1969.74,
+"dic": 2026.28,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 2961.42,
+"dic": 3036.49,
+"n": 12
+},
+"l'Eixample": {
+"media": 3076.48,
+"dic": 3175.64,
+"n": 12
+},
+"Extramurs": {
+"media": 2245.66,
+"dic": 2352.06,
+"n": 12
+},
+"Campanar": {
+"media": 2419.47,
+"dic": 2387.42,
+"n": 12
+},
+"la Saïdia": {
+"media": 1726.12,
+"dic": 1820.51,
+"n": 12
+},
+"el Pla del Real": {
+"media": 2685.37,
+"dic": 2813.7,
+"n": 12
+},
+"l'Olivereta": {
+"media": 1398.99,
+"dic": 1476.1,
+"n": 12
+},
+"Patraix": {
+"media": 1543.51,
+"dic": 1602.78,
+"n": 12
+},
+"Jesús": {
+"media": 1430.81,
+"dic": 1501,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 1944.7,
+"dic": 2002.82,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 1825.42,
+"dic": 1896.91,
+"n": 12
+},
+"Camins al Grau": {
+"media": 1915.33,
+"dic": 1944.67,
+"n": 12
+},
+"Algirós": {
+"media": 2024.87,
+"dic": 2038.83,
+"n": 12
+},
+"Benimaclet": {
+"media": 1940.94,
+"dic": 1891.59,
+"n": 12
+},
+"Rascanya": {
+"media": 1230.81,
+"dic": 1348.88,
+"n": 12
+},
+"Benicalap": {
+"media": 1490.05,
+"dic": 1548.01,
+"n": 12
+},
+"Pobles de l'Oest": {
+"media": 1051.2,
+"dic": 1061.44,
+"n": 12
+},
+"Pobles del Sud": {
+"media": 1627.65,
+"dic": 1758.4,
+"n": 12
+}
+},
+"2023": {
+"València": {
+"media": 2211.17,
+"dic": 2287,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 3142.5,
+"dic": 3255,
+"n": 12
+},
+"l'Eixample": {
+"media": 3347.58,
+"dic": 3513,
+"n": 12
+},
+"Extramurs": {
+"media": 2556.17,
+"dic": 2670,
+"n": 12
+},
+"Campanar": {
+"media": 2555.17,
+"dic": 2736,
+"n": 12
+},
+"la Saïdia": {
+"media": 1940.08,
+"dic": 2000,
+"n": 12
+},
+"el Pla del Real": {
+"media": 2866.0,
+"dic": 2993,
+"n": 12
+},
+"l'Olivereta": {
+"media": 1591.92,
+"dic": 1650,
+"n": 12
+},
+"Patraix": {
+"media": 1750.17,
+"dic": 1852,
+"n": 12
+},
+"Jesús": {
+"media": 1642.58,
+"dic": 1781,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 2117.58,
+"dic": 2077,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 2028.83,
+"dic": 2168,
+"n": 12
+},
+"Camins al Grau": {
+"media": 2189.58,
+"dic": 2388,
+"n": 12
+},
+"Algirós": {
+"media": 2225.67,
+"dic": 2273,
+"n": 12
+},
+"Benimaclet": {
+"media": 2159.08,
+"dic": 2261,
+"n": 12
+},
+"Rascanya": {
+"media": 1472.75,
+"dic": 1551,
+"n": 12
+},
+"Benicalap": {
+"media": 1728.42,
+"dic": 1811,
+"n": 12
+}
+},
+"2024": {
+"València": {
+"media": 2585.83,
+"dic": 2836,
+"n": 12
+},
+"Ciutat Vella": {
+"media": 3560.75,
+"dic": 3875,
+"n": 12
+},
+"l'Eixample": {
+"media": 3866.17,
+"dic": 4158,
+"n": 12
+},
+"Extramurs": {
+"media": 2954.92,
+"dic": 3154,
+"n": 12
+},
+"Campanar": {
+"media": 2966.25,
+"dic": 3015,
+"n": 12
+},
+"la Saïdia": {
+"media": 2338.42,
+"dic": 2734,
+"n": 12
+},
+"el Pla del Real": {
+"media": 3401.75,
+"dic": 3644,
+"n": 12
+},
+"l'Olivereta": {
+"media": 1801.25,
+"dic": 1972,
+"n": 12
+},
+"Patraix": {
+"media": 1750.17,
+"dic": 1852,
+"n": 12
+},
+"Jesús": {
+"media": 1931.17,
+"dic": 2115,
+"n": 12
+},
+"Quatre Carreres": {
+"media": 2380.42,
+"dic": 2719,
+"n": 12
+},
+"Poblats Marítims": {
+"media": 2405.5,
+"dic": 2627,
+"n": 12
+},
+"Camins al Grau": {
+"media": 2711.08,
+"dic": 3083,
+"n": 12
+},
+"Algirós": {
+"media": 2577.33,
+"dic": 2800,
+"n": 12
+},
+"Benimaclet": {
+"media": 2533.92,
+"dic": 2788,
+"n": 12
+},
+"Rascanya": {
+"media": 1782.67,
+"dic": 1966,
+"n": 12
+},
+"Benicalap": {
+"media": 2040.92,
+"dic": 2146,
+"n": 12
+}
+}
+},
+"catastro_barrio": {
+"year": 2025,
+"rows": {
+"la Seu": {
+"distrito": "Ciutat Vella",
+"total": 3664,
+"residencial": 2158,
+"comercial": 400
+},
+"la Xerea": {
+"distrito": "Ciutat Vella",
+"total": 5658,
+"residencial": 2733,
+"comercial": 473
+},
+"el Carme": {
+"distrito": "Ciutat Vella",
+"total": 7033,
+"residencial": 4273,
+"comercial": 516
+},
+"el Pilar": {
+"distrito": "Ciutat Vella",
+"total": 5077,
+"residencial": 2866,
+"comercial": 333
+},
+"el Mercat": {
+"distrito": "Ciutat Vella",
+"total": 5389,
+"residencial": 2972,
+"comercial": 579
+},
+"Sant Francesc": {
+"distrito": "Ciutat Vella",
+"total": 9991,
+"residencial": 4525,
+"comercial": 1140
+},
+"Russafa": {
+"distrito": "l'Eixample",
+"total": 24582,
+"residencial": 14479,
+"comercial": 1903
+},
+"el Pla del Remei": {
+"distrito": "l'Eixample",
+"total": 9722,
+"residencial": 4243,
+"comercial": 629
+},
+"la Gran Via": {
+"distrito": "l'Eixample",
+"total": 10031,
+"residencial": 6568,
+"comercial": 778
+},
+"el Botànic": {
+"distrito": "Extramurs",
+"total": 6424,
+"residencial": 3999,
+"comercial": 395
+},
+"la Roqueta": {
+"distrito": "Extramurs",
+"total": 5302,
+"residencial": 3230,
+"comercial": 465
+},
+"la Petxina": {
+"distrito": "Extramurs",
+"total": 13488,
+"residencial": 8038,
+"comercial": 835
+},
+"Arrancapins": {
+"distrito": "Extramurs",
+"total": 22001,
+"residencial": 12590,
+"comercial": 1206
+},
+"Campanar": {
+"distrito": "Campanar",
+"total": 10494,
+"residencial": 5737,
+"comercial": 776
+},
+"les Tendetes": {
+"distrito": "Campanar",
+"total": 4068,
+"residencial": 2737,
+"comercial": 171
+},
+"el Calvari": {
+"distrito": "Campanar",
+"total": 3523,
+"residencial": 2672,
+"comercial": 232
+},
+"Sant Pau": {
+"distrito": "Campanar",
+"total": 19863,
+"residencial": 8017,
+"comercial": 419
+},
+"Marxalenes": {
+"distrito": "la Saïdia",
+"total": 8674,
+"residencial": 5465,
+"comercial": 510
+},
+"Morvedre": {
+"distrito": "la Saïdia",
+"total": 8815,
+"residencial": 5385,
+"comercial": 557
+},
+"Trinitat": {
+"distrito": "la Saïdia",
+"total": 7130,
+"residencial": 4722,
+"comercial": 479
+},
+"Tormos": {
+"distrito": "la Saïdia",
+"total": 6384,
+"residencial": 4167,
+"comercial": 409
+},
+"Sant Antoni": {
+"distrito": "la Saïdia",
+"total": 9077,
+"residencial": 4694,
+"comercial": 390
+},
+"Exposició": {
+"distrito": "el Pla del Real",
+"total": 7108,
+"residencial": 3356,
+"comercial": 253
+},
+"Mestalla": {
+"distrito": "el Pla del Real",
+"total": 15872,
+"residencial": 7899,
+"comercial": 587
+},
+"Jaume Roig": {
+"distrito": "el Pla del Real",
+"total": 5259,
+"residencial": 3000,
+"comercial": 234
+},
+"Ciutat Universitària": {
+"distrito": "el Pla del Real",
+"total": 2236,
+"residencial": 1469,
+"comercial": 113
+},
+"Nou Moles": {
+"distrito": "l'Olivereta",
+"total": 20642,
+"residencial": 13401,
+"comercial": 935
+},
+"Soternes": {
+"distrito": "l'Olivereta",
+"total": 3503,
+"residencial": 2497,
+"comercial": 141
+},
+"Tres Forques": {
+"distrito": "l'Olivereta",
+"total": 4876,
+"residencial": 4402,
+"comercial": 104
+},
+"la Fontsanta": {
+"distrito": "l'Olivereta",
+"total": 1769,
+"residencial": 1550,
+"comercial": 67
+},
+"la Llum": {
+"distrito": "l'Olivereta",
+"total": 3532,
+"residencial": 2278,
+"comercial": 135
+},
+"Patraix": {
+"distrito": "Patraix",
+"total": 21815,
+"residencial": 12225,
+"comercial": 1061
+},
+"Sant Isidre": {
+"distrito": "Patraix",
+"total": 7940,
+"residencial": 4628,
+"comercial": 313
+},
+"Vara de Quart": {
+"distrito": "Patraix",
+"total": 9113,
+"residencial": 4518,
+"comercial": 422
+},
+"el Safranar": {
+"distrito": "Patraix",
+"total": 8151,
+"residencial": 4734,
+"comercial": 364
+},
+"Favara": {
+"distrito": "Patraix",
+"total": 3168,
+"residencial": 1734,
+"comercial": 183
+},
+"la Raiosa": {
+"distrito": "Jesús",
+"total": 12747,
+"residencial": 7862,
+"comercial": 751
+},
+"l'Hort de Senabre": {
+"distrito": "Jesús",
+"total": 11895,
+"residencial": 7619,
+"comercial": 691
+},
+"la Creu Coberta": {
+"distrito": "Jesús",
+"total": 5082,
+"residencial": 2865,
+"comercial": 297
+},
+"Sant Marcel·lí": {
+"distrito": "Jesús",
+"total": 7126,
+"residencial": 4807,
+"comercial": 380
+},
+"Camí Real": {
+"distrito": "Jesús",
+"total": 3098,
+"residencial": 1874,
+"comercial": 109
+},
+"Montolivet": {
+"distrito": "Quatre Carreres",
+"total": 14633,
+"residencial": 9771,
+"comercial": 687
+},
+"en Corts": {
+"distrito": "Quatre Carreres",
+"total": 8898,
+"residencial": 6069,
+"comercial": 382
+},
+"Malilla": {
+"distrito": "Quatre Carreres",
+"total": 20219,
+"residencial": 11822,
+"comercial": 558
+},
+"la Fonteta de Sant Lluís": {
+"distrito": "Quatre Carreres",
+"total": 2139,
+"residencial": 1465,
+"comercial": 84
+},
+"na Rovella": {
+"distrito": "Quatre Carreres",
+"total": 3926,
+"residencial": 3270,
+"comercial": 84
+},
+"la Punta": {
+"distrito": "Quatre Carreres",
+"total": 3912,
+"residencial": 2086,
+"comercial": 58
+},
+"Ciutat de les Arts i de les Ciències": {
+"distrito": "Quatre Carreres",
+"total": 10625,
+"residencial": 4609,
+"comercial": 236
+},
+"el Grau": {
+"distrito": "Poblats Marítims",
+"total": 8580,
+"residencial": 4842,
+"comercial": 355
+},
+"el Cabanyal-el Canyamelar": {
+"distrito": "Poblats Marítims",
+"total": 16211,
+"residencial": 11820,
+"comercial": 776
+},
+"la Malva-rosa": {
+"distrito": "Poblats Marítims",
+"total": 8994,
+"residencial": 6894,
+"comercial": 366
+},
+"Beteró": {
+"distrito": "Poblats Marítims",
+"total": 5896,
+"residencial": 3819,
+"comercial": 226
+},
+"Natzaret": {
+"distrito": "Poblats Marítims",
+"total": 3970,
+"residencial": 3060,
+"comercial": 182
+},
+"Aiora": {
+"distrito": "Camins al Grau",
+"total": 20020,
+"residencial": 12012,
+"comercial": 1143
+},
+"Albors": {
+"distrito": "Camins al Grau",
+"total": 7531,
+"residencial": 4603,
+"comercial": 413
+},
+"la Creu del Grau": {
+"distrito": "Camins al Grau",
+"total": 11357,
+"residencial": 7135,
+"comercial": 459
+},
+"Camí Fondo": {
+"distrito": "Camins al Grau",
+"total": 3720,
+"residencial": 2290,
+"comercial": 136
+},
+"Penya-roja": {
+"distrito": "Camins al Grau",
+"total": 14032,
+"residencial": 6118,
+"comercial": 299
+},
+"l'Illa Perduda": {
+"distrito": "Algirós",
+"total": 6408,
+"residencial": 4198,
+"comercial": 371
+},
+"Ciutat Jardí": {
+"distrito": "Algirós",
+"total": 11812,
+"residencial": 7250,
+"comercial": 643
+},
+"l'Amistat": {
+"distrito": "Algirós",
+"total": 5913,
+"residencial": 4031,
+"comercial": 382
+},
+"la Bega Baixa": {
+"distrito": "Algirós",
+"total": 6088,
+"residencial": 3264,
+"comercial": 309
+},
+"la Carrasca": {
+"distrito": "Algirós",
+"total": 3258,
+"residencial": 1914,
+"comercial": 138
+},
+"Benimaclet": {
+"distrito": "Benimaclet",
+"total": 20735,
+"residencial": 12958,
+"comercial": 1477
+},
+"Camí de Vera": {
+"distrito": "Benimaclet",
+"total": 4594,
+"residencial": 2490,
+"comercial": 208
+},
+"Orriols": {
+"distrito": "Rascanya",
+"total": 10503,
+"residencial": 7655,
+"comercial": 469
+},
+"Torrefiel": {
+"distrito": "Rascanya",
+"total": 18846,
+"residencial": 11727,
+"comercial": 860
+},
+"Sant Llorenç": {
+"distrito": "Rascanya",
+"total": 11244,
+"residencial": 4934,
+"comercial": 254
+},
+"Benicalap": {
+"distrito": "Benicalap",
+"total": 35042,
+"residencial": 19656,
+"comercial": 1270
+},
+"Ciutat Fallera": {
+"distrito": "Benicalap",
+"total": 3456,
+"residencial": 2596,
+"comercial": 147
+},
+"Benifaraig": {
+"distrito": "Pobles del Nord",
+"total": 870,
+"residencial": 535,
+"comercial": 33
+},
+"Poble Nou": {
+"distrito": "Pobles del Nord",
+"total": 655,
+"residencial": 501,
+"comercial": 5
+},
+"Carpesa": {
+"distrito": "Pobles del Nord",
+"total": 833,
+"residencial": 602,
+"comercial": 17
+},
+"les Cases de Bàrcena": {
+"distrito": "Pobles del Nord",
+"total": 309,
+"residencial": 239,
+"comercial": 13
+},
+"Mauella": {
+"distrito": "Pobles del Nord",
+"total": 87,
+"residencial": 75,
+"comercial": 0
+},
+"Massarrojos": {
+"distrito": "Pobles del Nord",
+"total": 1489,
+"residencial": 1216,
+"comercial": 5
+},
+"Borbotó": {
+"distrito": "Pobles del Nord",
+"total": 550,
+"residencial": 414,
+"comercial": 18
+},
+"Benimàmet": {
+"distrito": "Pobles de l'Oest",
+"total": 9935,
+"residencial": 6571,
+"comercial": 374
+},
+"Beniferri": {
+"distrito": "Pobles de l'Oest",
+"total": 1044,
+"residencial": 509,
+"comercial": 58
+},
+"el Forn d'Alcedo": {
+"distrito": "Pobles del Sud",
+"total": 1087,
+"residencial": 656,
+"comercial": 43
+},
+"Castellar-l'Oliveral": {
+"distrito": "Pobles del Sud",
+"total": 5072,
+"residencial": 3356,
+"comercial": 145
+},
+"Pinedo": {
+"distrito": "Pobles del Sud",
+"total": 1866,
+"residencial": 1309,
+"comercial": 86
+},
+"el Saler": {
+"distrito": "Pobles del Sud",
+"total": 2798,
+"residencial": 2081,
+"comercial": 38
+},
+"el Palmar": {
+"distrito": "Pobles del Sud",
+"total": 582,
+"residencial": 421,
+"comercial": 13
+},
+"el Perellonet": {
+"distrito": "Pobles del Sud",
+"total": 6005,
+"residencial": 4574,
+"comercial": 60
+},
+"la Torre": {
+"distrito": "Pobles del Sud",
+"total": 3415,
+"residencial": 2499,
+"comercial": 161
+},
+"Faitanar": {
+"distrito": "Pobles del Sud",
+"total": 1206,
+"residencial": 925,
+"comercial": 24
+}
+}
+},
+"catastro_valor_distrito": {
+"year": 2025,
+"rows": {
+"Ciutat Vella": [
+19210,
+33938.39,
+31009.49,
+64947.88,
+529.5
+],
+"l'Eixample": [
+25258,
+43818.59,
+29015.53,
+72842.51,
+573.7
+],
+"Extramurs": [
+27823,
+30622.33,
+28030.73,
+58653.06,
+505.38
+],
+"Campanar": [
+19148,
+19826.95,
+37038.16,
+56865.11,
+502.24
+],
+"la Saïdia": [
+24411,
+12184.63,
+25263.97,
+37448.6,
+372.79
+],
+"el Pla del Real": [
+15719,
+42879.81,
+42168.83,
+85048.64,
+646.31
+],
+"l'Olivereta": [
+24125,
+10844.43,
+23722.62,
+34565.91,
+356.59
+],
+"Patraix": [
+27826,
+14194.71,
+31679.24,
+45873.95,
+418.3
+],
+"Jesús": [
+25019,
+11196.18,
+26546.56,
+37742.74,
+370.62
+],
+"Quatre Carreres": [
+39041,
+12717.82,
+31249.04,
+43967.75,
+400.95
+],
+"Poblats Marítims": [
+30408,
+9488.73,
+22562.1,
+32052.43,
+329.1
+],
+"Camins al Grau": [
+32144,
+17295.7,
+31517.8,
+48818.4,
+463.86
+],
+"Algirós": [
+20646,
+17022.25,
+30391.47,
+47416.54,
+433.23
+],
+"Benimaclet": [
+15440,
+15397.86,
+29534.27,
+44932.71,
+421.15
+],
+"Rascanya": [
+24309,
+10373.72,
+27863.59,
+38237.06,
+384.29
+],
+"Benicalap": [
+22244,
+11323.74,
+29869.16,
+41192.9,
+401.04
+],
+"Pobles del Nord": [
+3534,
+14155.73,
+39453.34,
+53615.67,
+295.66
+],
+"Pobles de l'Oest": [
+7065,
+10354.82,
+27418.81,
+37772.72,
+317.18
+],
+"Pobles del Sud": [
+15780,
+14022.92,
+28214.23,
+42239.94,
+345.25
+]
+}
+},
+"catastro_uso_distrito": {
+"year": 2025,
+"rows": {
+"Ciutat Vella": [
+36812,
+19527,
+10750,
+3441,
+2053,
+199
+],
+"l'Eixample": [
+44335,
+25290,
+14399,
+3310,
+748,
+208
+],
+"Extramurs": [
+47215,
+27857,
+15446,
+2901,
+579,
+132
+],
+"Campanar": [
+37948,
+19163,
+16577,
+1598,
+291,
+105
+],
+"la Saïdia": [
+40080,
+24433,
+12559,
+2345,
+171,
+188
+],
+"el Pla del Real": [
+30475,
+15724,
+12558,
+1187,
+779,
+90
+],
+"l'Olivereta": [
+34322,
+24128,
+8328,
+1382,
+135,
+144
+],
+"Patraix": [
+50187,
+27839,
+18514,
+2343,
+771,
+380
+],
+"Jesús": [
+39948,
+25027,
+11940,
+2228,
+109,
+216
+],
+"Quatre Carreres": [
+64352,
+39092,
+21244,
+2089,
+395,
+537
+],
+"Poblats Marítims": [
+43651,
+30435,
+9279,
+1905,
+347,
+585
+],
+"Camins al Grau": [
+56660,
+32158,
+21291,
+2450,
+298,
+177
+],
+"Algirós": [
+33479,
+20657,
+10620,
+1843,
+143,
+51
+],
+"Benimaclet": [
+25329,
+15448,
+7802,
+1685,
+125,
+76
+],
+"Rascanya": [
+40593,
+24316,
+13802,
+1583,
+267,
+280
+],
+"Benicalap": [
+38498,
+22252,
+13984,
+1417,
+120,
+304
+],
+"Pobles del Nord": [
+4793,
+3582,
+653,
+91,
+17,
+177
+],
+"Pobles de l'Oest": [
+10979,
+7080,
+2410,
+432,
+153,
+336
+],
+"Pobles del Sud": [
+22031,
+15821,
+4175,
+570,
+31,
+605
+]
+}
+},
+"poblacion_distrito": {
+"2017": {
+"Ciutat Vella": 26810,
+"l'Eixample": 42615,
+"Extramurs": 48475,
+"Campanar": 37774,
+"la Saïdia": 46891,
+"el Pla del Real": 30362,
+"l'Olivereta": 48311,
+"Patraix": 57630,
+"Jesús": 52226,
+"Quatre Carreres": 73769,
+"Poblats Marítims": 56643,
+"Camins al Grau": 65320,
+"Algirós": 37043,
+"Benimaclet": 29038,
+"Rascanya": 52764,
+"Benicalap": 45638,
+"Pobles del Nord": 6535,
+"Pobles de l'Oest": 14005,
+"Pobles del Sud": 20237
+},
+"2018": {
+"Ciutat Vella": 27259,
+"l'Eixample": 42778,
+"Extramurs": 48762,
+"Campanar": 38164,
+"la Saïdia": 47383,
+"el Pla del Real": 30706,
+"l'Olivereta": 48639,
+"Patraix": 57972,
+"Jesús": 52708,
+"Quatre Carreres": 74116,
+"Poblats Marítims": 56923,
+"Camins al Grau": 65927,
+"Algirós": 37170,
+"Benimaclet": 29091,
+"Rascanya": 53499,
+"Benicalap": 46359,
+"Pobles del Nord": 6548,
+"Pobles de l'Oest": 14099,
+"Pobles del Sud": 20435
+},
+"2020": {
+"Ciutat Vella": 27418,
+"l'Eixample": 42826,
+"Extramurs": 48877,
+"Campanar": 38736,
+"la Saïdia": 47491,
+"el Pla del Real": 30644,
+"l'Olivereta": 49250,
+"Patraix": 58053,
+"Jesús": 52917,
+"Quatre Carreres": 74518,
+"Poblats Marítims": 55725,
+"Camins al Grau": 65890,
+"Algirós": 36657,
+"Benimaclet": 28686,
+"Rascanya": 54233,
+"Benicalap": 47421,
+"Pobles del Nord": 6582,
+"Pobles de l'Oest": 14581,
+"Pobles del Sud": 21040
+},
+"2021": {
+"Ciutat Vella": 27525,
+"l'Eixample": 42853,
+"Extramurs": 48728,
+"Campanar": 38674,
+"la Saïdia": 47274,
+"el Pla del Real": 30667,
+"l'Olivereta": 49186,
+"Patraix": 57833,
+"Jesús": 52489,
+"Quatre Carreres": 74308,
+"Poblats Marítims": 55760,
+"Camins al Grau": 65981,
+"Algirós": 36390,
+"Benimaclet": 28575,
+"Rascanya": 54130,
+"Benicalap": 47385,
+"Pobles del Nord": 6657,
+"Pobles de l'Oest": 14544,
+"Pobles del Sud": 21221
+},
+"2022": {
+"Ciutat Vella": 27983,
+"l'Eixample": 42672,
+"Extramurs": 48536,
+"Campanar": 39164,
+"la Saïdia": 47013,
+"el Pla del Real": 30444,
+"l'Olivereta": 48686,
+"Patraix": 57798,
+"Jesús": 51941,
+"Quatre Carreres": 74555,
+"Poblats Marítims": 55486,
+"Camins al Grau": 65552,
+"Algirós": 35874,
+"Benimaclet": 28064,
+"Rascanya": 53566,
+"Benicalap": 47752,
+"Pobles del Nord": 6744,
+"Pobles de l'Oest": 14546,
+"Pobles del Sud": 21289
+},
+"2023": {
+"Ciutat Vella": 28763,
+"l'Eixample": 43565,
+"Extramurs": 49335,
+"Campanar": 39846,
+"la Saïdia": 47499,
+"el Pla del Real": 30680,
+"l'Olivereta": 49584,
+"Patraix": 58333,
+"Jesús": 52585,
+"Quatre Carreres": 76572,
+"Poblats Marítims": 55897,
+"Camins al Grau": 66245,
+"Algirós": 35819,
+"Benimaclet": 28317,
+"Rascanya": 54605,
+"Benicalap": 48706,
+"Pobles del Nord": 6875,
+"Pobles de l'Oest": 14758,
+"Pobles del Sud": 21517
+},
+"2024": {
+"Ciutat Vella": 30002,
+"l'Eixample": 44631,
+"Extramurs": 50643,
+"Campanar": 40917,
+"la Saïdia": 48383,
+"el Pla del Real": 31020,
+"l'Olivereta": 51474,
+"Patraix": 59417,
+"Jesús": 53582,
+"Quatre Carreres": 80266,
+"Poblats Marítims": 56843,
+"Camins al Grau": 67453,
+"Algirós": 36266,
+"Benimaclet": 28541,
+"Rascanya": 56703,
+"Benicalap": 50152,
+"Pobles del Nord": 7009,
+"Pobles de l'Oest": 15261,
+"Pobles del Sud": 22043
+},
+"2025": {
+"Ciutat Vella": 30510,
+"l'Eixample": 45236,
+"Extramurs": 51375,
+"Campanar": 41713,
+"la Saïdia": 48791,
+"el Pla del Real": 31206,
+"l'Olivereta": 52319,
+"Patraix": 60087,
+"Jesús": 54305,
+"Quatre Carreres": 83333,
+"Poblats Marítims": 57715,
+"Camins al Grau": 67939,
+"Algirós": 36632,
+"Benimaclet": 28716,
+"Rascanya": 58079,
+"Benicalap": 50967,
+"Pobles del Nord": 7180,
+"Pobles de l'Oest": 15589,
+"Pobles del Sud": 22732
+}
+},
+"hogares_distrito": {
+"2017": {
+"Ciutat Vella": [
+12584,
+2.06
+],
+"l'Eixample": [
+18573,
+2.29
+],
+"Extramurs": [
+21032,
+2.28
+],
+"Campanar": [
+15174,
+2.47
+],
+"la Saïdia": [
+19620,
+2.35
+],
+"el Pla del Real": [
+12123,
+2.49
+],
+"l'Olivereta": [
+20279,
+2.37
+],
+"Patraix": [
+23372,
+2.46
+],
+"Jesús": [
+21405,
+2.43
+],
+"Quatre Carreres": [
+29883,
+2.47
+],
+"Poblats Marítims": [
+23323,
+2.42
+],
+"Camins al Grau": [
+26348,
+2.47
+],
+"Algirós": [
+15723,
+2.35
+],
+"Benimaclet": [
+12217,
+2.36
+],
+"Rascanya": [
+20462,
+2.58
+],
+"Benicalap": [
+18271,
+2.49
+],
+"Pobles del Nord": [
+2496,
+2.59
+],
+"Pobles de l'Oest": [
+5687,
+2.46
+],
+"Pobles del Sud": [
+8408,
+2.4
+]
+},
+"2018": {
+"Ciutat Vella": [
+12714,
+2.06418121755545
+],
+"l'Eixample": [
+18721,
+2.27680145291384
+],
+"Extramurs": [
+21164,
+2.27565677565678
+],
+"Campanar": [
+15297,
+2.47682552134405
+],
+"la Saïdia": [
+19842,
+2.35092228605987
+],
+"el Pla del Real": [
+12313,
+2.482416957687
+],
+"l'Olivereta": [
+20393,
+2.37135291521601
+],
+"Patraix": [
+23624,
+2.44768032509313
+],
+"Jesús": [
+21576,
+2.43386169818317
+],
+"Quatre Carreres": [
+30125,
+2.45696265560166
+],
+"Poblats Marítims": [
+23526,
+2.40805916857944
+],
+"Camins al Grau": [
+26618,
+2.46934405289654
+],
+"Algirós": [
+15804,
+2.34263477600607
+],
+"Benimaclet": [
+12388,
+2.33903777849532
+],
+"Rascanya": [
+20808,
+2.56660899653979
+],
+"Benicalap": [
+18456,
+2.50606848721283
+],
+"Pobles del Nord": [
+2516,
+2.57114467408585
+],
+"Pobles de l'Oest": [
+5715,
+2.46124234470691
+],
+"Pobles del Sud": [
+8508,
+2.39762576398684
+]
+},
+"2020": {
+"Ciutat Vella": [
+12797,
+2.05196530436821
+],
+"l'Eixample": [
+18800,
+2.26781914893617
+],
+"Extramurs": [
+21373,
+2.25929911570673
+],
+"Campanar": [
+15498,
+2.48064266356949
+],
+"la Saïdia": [
+19964,
+2.33956121017832
+],
+"el Pla del Real": [
+12322,
+2.47581561434832
+],
+"l'Olivereta": [
+20665,
+2.36588434551173
+],
+"Patraix": [
+23854,
+2.42529554791649
+],
+"Jesús": [
+21750,
+2.42188505747126
+],
+"Quatre Carreres": [
+30483,
+2.44001574648165
+],
+"Poblats Marítims": [
+23401,
+2.3643006709115
+],
+"Camins al Grau": [
+26799,
+2.44852419866413
+],
+"Algirós": [
+15844,
+2.30251199192123
+],
+"Benimaclet": [
+12261,
+2.31702145012642
+],
+"Rascanya": [
+21012,
+2.57500475918523
+],
+"Benicalap": [
+18801,
+2.51311100473379
+],
+"Pobles del Nord": [
+2536,
+2.56585173501577
+],
+"Pobles de l'Oest": [
+5864,
+2.4793656207367
+],
+"Pobles del Sud": [
+8761,
+2.39504622759959
+]
+},
+"2021": {
+"Ciutat Vella": [
+13025,
+2.02664107485605
+],
+"l'Eixample": [
+18991,
+2.24722236849034
+],
+"Extramurs": [
+21503,
+2.23945495977306
+],
+"Campanar": [
+15610,
+2.46034593209481
+],
+"la Saïdia": [
+20111,
+2.31142161006414
+],
+"el Pla del Real": [
+12414,
+2.45851458031255
+],
+"l'Olivereta": [
+20748,
+2.35285328706381
+],
+"Patraix": [
+23954,
+2.40590298071303
+],
+"Jesús": [
+21792,
+2.39656754772394
+],
+"Quatre Carreres": [
+30756,
+2.41100923397061
+],
+"Poblats Marítims": [
+23724,
+2.33329118192548
+],
+"Camins al Grau": [
+27135,
+2.42085866961489
+],
+"Algirós": [
+15960,
+2.26923558897243
+],
+"Benimaclet": [
+12362,
+2.28911179420806
+],
+"Rascanya": [
+21144,
+2.55320658342792
+],
+"Benicalap": [
+18929,
+2.49484917322627
+],
+"Pobles del Nord": [
+2569,
+2.56558972362787
+],
+"Pobles de l'Oest": [
+5904,
+2.4585027100271
+],
+"Pobles del Sud": [
+8910,
+2.37542087542088
+]
+},
+"2022": {
+"Ciutat Vella": [
+13398,
+1.9978
+],
+"l'Eixample": [
+19114,
+2.2242
+],
+"Extramurs": [
+21649,
+2.217
+],
+"Campanar": [
+15917,
+2.4424
+],
+"la Saïdia": [
+20215,
+2.2857
+],
+"el Pla del Real": [
+12401,
+2.4425
+],
+"l'Olivereta": [
+20758,
+2.3279
+],
+"Patraix": [
+24220,
+2.3766
+],
+"Jesús": [
+21879,
+2.3611
+],
+"Quatre Carreres": [
+31258,
+2.3802
+],
+"Poblats Marítims": [
+23925,
+2.2983
+],
+"Camins al Grau": [
+27243,
+2.3939
+],
+"Algirós": [
+16015,
+2.2298
+],
+"Benimaclet": [
+12315,
+2.2569
+],
+"Rascanya": [
+21324,
+2.5061
+],
+"Benicalap": [
+19289,
+2.4671
+],
+"Pobles del Nord": [
+2619,
+2.5487
+],
+"Pobles de l'Oest": [
+5943,
+2.4429
+],
+"Pobles del Sud": [
+9002,
+2.359
+]
+},
+"2023": {
+"Ciutat Vella": [
+13712,
+1.98767502917153
+],
+"l'Eixample": [
+19707,
+2.20089308367585
+],
+"Extramurs": [
+22213,
+2.19578625129429
+],
+"Campanar": [
+16243,
+2.43372529705104
+],
+"la Saïdia": [
+20637,
+2.2595823036294
+],
+"el Pla del Real": [
+12627,
+2.4168052585729
+],
+"l'Olivereta": [
+21189,
+2.3238944735476
+],
+"Patraix": [
+24725,
+2.34916076845298
+],
+"Jesús": [
+22178,
+2.3592298674362
+],
+"Quatre Carreres": [
+32333,
+2.3633439519995
+],
+"Poblats Marítims": [
+24295,
+2.27590039102696
+],
+"Camins al Grau": [
+27697,
+2.37809149005307
+],
+"Algirós": [
+16292,
+2.18831328259268
+],
+"Benimaclet": [
+12636,
+2.22008547008547
+],
+"Rascanya": [
+21723,
+2.50692814068038
+],
+"Benicalap": [
+19728,
+2.45873884833739
+],
+"Pobles del Nord": [
+2676,
+2.54260089686099
+],
+"Pobles de l'Oest": [
+6058,
+2.43182568504457
+],
+"Pobles del Sud": [
+9107,
+2.35664873174481
+]
+},
+"2024": {
+"Ciutat Vella": [
+14131,
+1.9813176703701083
+],
+"l'Eixample": [
+20201,
+2.199643582000891
+],
+"Extramurs": [
+22899,
+2.1839381632385693
+],
+"Campanar": [
+16755,
+2.421903909280812
+],
+"la Saïdia": [
+21056,
+2.253609422492401
+],
+"el Pla del Real": [
+12825,
+2.4045224171539963
+],
+"l'Olivereta": [
+21687,
+2.355558629593766
+],
+"Patraix": [
+25267,
+2.338821387580639
+],
+"Jesús": [
+22672,
+2.3492413549753
+],
+"Quatre Carreres": [
+33866,
+2.363225654048308
+],
+"Poblats Marítims": [
+24733,
+2.268062911899082
+],
+"Camins al Grau": [
+28258,
+2.3734871540802605
+],
+"Algirós": [
+16633,
+2.17026393314495
+],
+"Benimaclet": [
+12902,
+2.1912106650131764
+],
+"Rascanya": [
+22431,
+2.5194150951807766
+],
+"Benicalap": [
+20316,
+2.456241386099626
+],
+"Pobles del Nord": [
+2727,
+2.5463879721305465
+],
+"Pobles de l'Oest": [
+6183,
+2.4617499595665535
+],
+"Pobles del Sud": [
+9242,
+2.3785977061242156
+]
+},
+"2025": {
+"Ciutat Vella": [
+14274,
+1.98612862547289
+],
+"l'Eixample": [
+20503,
+2.19606886797054
+],
+"Extramurs": [
+23239,
+2.18391497052369
+],
+"Campanar": [
+17002,
+2.43077285025291
+],
+"la Saïdia": [
+21239,
+2.24826969254673
+],
+"el Pla del Real": [
+12959,
+2.39439771587314
+],
+"l'Olivereta": [
+21951,
+2.36408364083641
+],
+"Patraix": [
+25579,
+2.33523593572853
+],
+"Jesús": [
+23026,
+2.34126639451055
+],
+"Quatre Carreres": [
+35015,
+2.37109810081394
+],
+"Poblats Marítims": [
+25300,
+2.25300395256917
+],
+"Camins al Grau": [
+28614,
+2.36275948836234
+],
+"Algirós": [
+16919,
+2.15461906732076
+],
+"Benimaclet": [
+13043,
+2.17894656137392
+],
+"Rascanya": [
+22729,
+2.54467860442606
+],
+"Benicalap": [
+20634,
+2.45759426189784
+],
+"Pobles del Nord": [
+2769,
+2.56663055254605
+],
+"Pobles de l'Oest": [
+6234,
+2.49470644850818
+],
+"Pobles del Sud": [
+9510,
+2.38864353312303
+]
+}
+},
+"licencias_distrito": {
+"year": 2024,
+"rows": {
+"Ciutat Vella": [
+3,
+7,
+0
+],
+"l'Eixample": [
+2,
+51,
+44
+],
+"Extramurs": [
+2,
+82,
+94
+],
+"Campanar": [
+1,
+4,
+4
+],
+"la Saïdia": [
+0,
+0,
+0
+],
+"el Pla del Real": [
+1,
+36,
+0
+],
+"l'Olivereta": [
+2,
+521,
+521
+],
+"Patraix": [
+6,
+303,
+166
+],
+"Jesús": [
+3,
+31,
+8
+],
+"Quatre Carreres": [
+12,
+257,
+220
+],
+"Poblats Marítims": [
+14,
+84,
+26
+],
+"Camins al Grau": [
+4,
+55,
+0
+],
+"Algirós": [
+0,
+0,
+0
+],
+"Benimaclet": [
+2,
+14,
+5
+],
+"Rascanya": [
+7,
+143,
+131
+],
+"Benicalap": [
+5,
+62,
+38
+],
+"Pobles del Nord": [
+6,
+66,
+75
+],
+"Pobles de l'Oest": [
+3,
+33,
+35
+],
+"Pobles del Sud": [
+3,
+3,
+1
+]
+}
+},
+"vpnc": {
+"2016": {
+"definitivas": null,
+"provisionales": null
+},
+"2017": {
+"definitivas": null,
+"provisionales": null
+},
+"2020": {
+"definitivas": null,
+"provisionales": null
+},
+"2021": {
+"definitivas": null,
+"provisionales": null
+},
+"2022": {
+"definitivas": null,
+"provisionales": null
+},
+"2023": {
+"definitivas": null,
+"provisionales": null
+},
+"2024": {
+"definitivas": 481,
+"provisionales": 41
+}
+},
+"tasado_trim": {
+"2017T1": 1205.9,
+"2017T2": 1099,
+"2017T3": 1115.3,
+"2017T4": 1183.8,
+"2019T1": 1410.4,
+"2019T2": 1461,
+"2019T3": 1397.6,
+"2019T4": 1486.1,
+"2020T1": 1506.9,
+"2020T2": 1421.7,
+"2020T3": 1508.1,
+"2020T4": 1502.2,
+"2021T1": 1514.7,
+"2021T2": 1592,
+"2021T3": 1580.1,
+"2021T4": 1679.2,
+"2022T1": 1696.9,
+"2022T2": 1701.3,
+"2022T3": 1685.3,
+"2022T4": 1753.9,
+"2023T1": 1833.9,
+"2023T2": 1880.1,
+"2023T3": 1880.8,
+"2023T4": 1976.4,
+"2024T1": 2068.4,
+"2024T2": 2077.7,
+"2024T3": 2194.7,
+"2024T4": 2400.9
+},
+"esfuerzo_distrito": {
+"year": 2024,
+"rows": {
+"Ciutat Vella": {
+"precio_4t": 3113,
+"esfuerzo_4t": 0.583
+},
+"l'Eixample": {
+"precio_4t": 2984,
+"esfuerzo_4t": 0.494
+},
+"Extramurs": {
+"precio_4t": 2494,
+"esfuerzo_4t": 0.45
+},
+"Campanar": {
+"precio_4t": 2347,
+"esfuerzo_4t": 0.395
+},
+"la Saïdia": {
+"precio_4t": 1831,
+"esfuerzo_4t": 0.39399999999999996
+},
+"el Pla del Real": {
+"precio_4t": 2741,
+"esfuerzo_4t": 0.406
+},
+"l'Olivereta": {
+"precio_4t": 1643,
+"esfuerzo_4t": 0.39299999999999996
+},
+"Patraix": {
+"precio_4t": 1954,
+"esfuerzo_4t": 0.374
+},
+"Jesús": {
+"precio_4t": 1910,
+"esfuerzo_4t": 0.425
+},
+"Quatre Carreres": {
+"precio_4t": 2246,
+"esfuerzo_4t": 0.45799999999999996
+},
+"Poblats Marítims": {
+"precio_4t": 1945,
+"esfuerzo_4t": 0.435
+},
+"Camins al Grau": {
+"precio_4t": 2222,
+"esfuerzo_4t": 0.392
+},
+"Algirós": {
+"precio_4t": 2193,
+"esfuerzo_4t": 0.433
+},
+"Benimaclet": {
+"precio_4t": 2122,
+"esfuerzo_4t": 0.40700000000000003
+},
+"Rascanya": {
+"precio_4t": 1493,
+"esfuerzo_4t": 0.3
+},
+"Benicalap": {
+"precio_4t": 1808,
+"esfuerzo_4t": 0.36
+},
+"Pobles del Nord": {
+"precio_4t": 1425,
+"esfuerzo_4t": 0.23
+},
+"Pobles de l'Oest": {
+"precio_4t": 1333,
+"esfuerzo_4t": 0.298
+},
+"Pobles del Sud": {
+"precio_4t": 1689,
+"esfuerzo_4t": 0.369
+}
+}
+},
+"censo2011_barrio": {
+"la Seu": {
+"total": 2345,
+"principales": 1515,
+"secundarias": 200,
+"vacias": 625
+},
+"la Xerea": {
+"total": 2680,
+"principales": 1525,
+"secundarias": 305,
+"vacias": 860
+},
+"el Carme": {
+"total": 4605,
+"principales": 2970,
+"secundarias": 470,
+"vacias": 1170
+},
+"el Pilar": {
+"total": 2935,
+"principales": 2185,
+"secundarias": 125,
+"vacias": 620
+},
+"el Mercat": {
+"total": 2300,
+"principales": 1765,
+"secundarias": 20,
+"vacias": 515
+},
+"Sant Francesc": {
+"total": 3870,
+"principales": 2255,
+"secundarias": 240,
+"vacias": 1360
+},
+"Russafa": {
+"total": 13985,
+"principales": 11755,
+"secundarias": 580,
+"vacias": 1670
+},
+"el Pla del Remei": {
+"total": 3240,
+"principales": 2930,
+"secundarias": 125,
+"vacias": 185
+},
+"Gran Via": {
+"total": 5535,
+"principales": 4670,
+"secundarias": 250,
+"vacias": 625
+},
+"el Botànic": {
+"total": 4020,
+"principales": 2845,
+"secundarias": 240,
+"vacias": 925
+},
+"la Roqueta": {
+"total": 3205,
+"principales": 2160,
+"secundarias": 390,
+"vacias": 650
+},
+"la Petxina": {
+"total": 8845,
+"principales": 7035,
+"secundarias": 480,
+"vacias": 1330
+},
+"Arrancapins": {
+"total": 11935,
+"principales": 9940,
+"secundarias": 745,
+"vacias": 1245
+},
+"Campanar": {
+"total": 5775,
+"principales": 4640,
+"secundarias": 480,
+"vacias": 655
+},
+"les Tendetes": {
+"total": 3060,
+"principales": 2375,
+"secundarias": 365,
+"vacias": 315
+},
+"el Calvari": {
+"total": 2720,
+"principales": 1725,
+"secundarias": 175,
+"vacias": 820
+},
+"Sant Pau": {
+"total": 7160,
+"principales": 6030,
+"secundarias": 140,
+"vacias": 985
+},
+"Marxalenes": {
+"total": 5430,
+"principales": 4785,
+"secundarias": 180,
+"vacias": 480
+},
+"Morvedre": {
+"total": 5705,
+"principales": 4510,
+"secundarias": 435,
+"vacias": 760
+},
+"Trinitat": {
+"total": 5445,
+"principales": 4035,
+"secundarias": 920,
+"vacias": 490
+},
+"Tormos": {
+"total": 4395,
+"principales": 3500,
+"secundarias": 235,
+"vacias": 670
+},
+"Sant Antoni": {
+"total": 4215,
+"principales": 3995,
+"secundarias": 40,
+"vacias": 180
+},
+"Exposició": {
+"total": 3335,
+"principales": 2315,
+"secundarias": 350,
+"vacias": 665
+},
+"Mestalla": {
+"total": 8050,
+"principales": 6750,
+"secundarias": 795,
+"vacias": 515
+},
+"Jaume Roig": {
+"total": 3035,
+"principales": 2195,
+"secundarias": 245,
+"vacias": 605
+},
+"Ciutat Universitària": {
+"total": 1615,
+"principales": 1080,
+"secundarias": 250,
+"vacias": 285
+},
+"Nou Moles": {
+"total": 13965,
+"principales": 11085,
+"secundarias": 655,
+"vacias": 2240
+},
+"Soternes": {
+"total": 3025,
+"principales": 2350,
+"secundarias": 320,
+"vacias": 355
+},
+"Tres Forques": {
+"total": 4935,
+"principales": 3545,
+"secundarias": 290,
+"vacias": 1105
+},
+"la Fontsanta": {
+"total": 1655,
+"principales": 1325,
+"secundarias": 110,
+"vacias": 225
+},
+"la Llum": {
+"total": 2315,
+"principales": 2050,
+"secundarias": 0,
+"vacias": 265
+},
+"Patraix": {
+"total": 11535,
+"principales": 10565,
+"secundarias": 230,
+"vacias": 745
+},
+"Sant Isidre": {
+"total": 4400,
+"principales": 3790,
+"secundarias": 195,
+"vacias": 415
+},
+"Vara de Quart": {
+"total": 4655,
+"principales": 4100,
+"secundarias": 45,
+"vacias": 510
+},
+"Safranar": {
+"total": 3415,
+"principales": 3245,
+"secundarias": 55,
+"vacias": 115
+},
+"Favara": {
+"total": 1640,
+"principales": 1370,
+"secundarias": 50,
+"vacias": 215
+},
+"la Raiosa": {
+"total": 7200,
+"principales": 6435,
+"secundarias": 80,
+"vacias": 685
+},
+"l'Hort de Senabre": {
+"total": 7075,
+"principales": 6455,
+"secundarias": 155,
+"vacias": 470
+},
+"la Creu Coberta": {
+"total": 3130,
+"principales": 2930,
+"secundarias": 45,
+"vacias": 160
+},
+"Sant Marcel.lí": {
+"total": 5205,
+"principales": 4665,
+"secundarias": 130,
+"vacias": 420
+},
+"Camí Real": {
+"total": 1650,
+"principales": 1610,
+"secundarias": 20,
+"vacias": 20
+},
+"Montolivet": {
+"total": 9655,
+"principales": 8165,
+"secundarias": 560,
+"vacias": 935
+},
+"En Corts": {
+"total": 6740,
+"principales": 4855,
+"secundarias": 530,
+"vacias": 1350
+},
+"Malilla": {
+"total": 10810,
+"principales": 8995,
+"secundarias": 370,
+"vacias": 1465
+},
+"la Fonteta de Sant Lluís": {
+"total": 1365,
+"principales": 1040,
+"secundarias": 20,
+"vacias": 305
+},
+"na Rovella": {
+"total": 3040,
+"principales": 2565,
+"secundarias": 75,
+"vacias": 390
+},
+"la Punta": {
+"total": 1460,
+"principales": 1075,
+"secundarias": 250,
+"vacias": 135
+},
+"Ciutat de les Arts i de les Ciències": {
+"total": 3545,
+"principales": 3015,
+"secundarias": 200,
+"vacias": 330
+},
+"el Grau": {
+"total": 4455,
+"principales": 3495,
+"secundarias": 155,
+"vacias": 805
+},
+"el Cabanyal-el Canyamelar": {
+"total": 12835,
+"principales": 9370,
+"secundarias": 675,
+"vacias": 2800
+},
+"la Malva-rosa": {
+"total": 6560,
+"principales": 5630,
+"secundarias": 180,
+"vacias": 750
+},
+"Beteró": {
+"total": 4120,
+"principales": 3775,
+"secundarias": 160,
+"vacias": 175
+},
+"Natzaret": {
+"total": 3165,
+"principales": 1995,
+"secundarias": 65,
+"vacias": 1110
+},
+"Aiora": {
+"total": 11530,
+"principales": 10170,
+"secundarias": 465,
+"vacias": 910
+},
+"Albors": {
+"total": 4175,
+"principales": 3350,
+"secundarias": 160,
+"vacias": 665
+},
+"la Creu del Grau": {
+"total": 7025,
+"principales": 5670,
+"secundarias": 355,
+"vacias": 1010
+},
+"Camí Fondo": {
+"total": 2625,
+"principales": 2100,
+"secundarias": 150,
+"vacias": 375
+},
+"Penya-roja": {
+"total": 5595,
+"principales": 4655,
+"secundarias": 195,
+"vacias": 750
+},
+"l'Illa Perduda": {
+"total": 4070,
+"principales": 3440,
+"secundarias": 190,
+"vacias": 435
+},
+"Ciutat Jardí": {
+"total": 7960,
+"principales": 5530,
+"secundarias": 1560,
+"vacias": 865
+},
+"l'Amistat": {
+"total": 4365,
+"principales": 2825,
+"secundarias": 670,
+"vacias": 855
+},
+"la Bega Baixa": {
+"total": 3735,
+"principales": 2425,
+"secundarias": 1090,
+"vacias": 220
+},
+"la Carrasca": {
+"total": 1970,
+"principales": 1600,
+"secundarias": 220,
+"vacias": 160
+},
+"Benimaclet": {
+"total": 14150,
+"principales": 10030,
+"secundarias": 2195,
+"vacias": 1915
+},
+"Camí de Vera": {
+"total": 2590,
+"principales": 2060,
+"secundarias": 140,
+"vacias": 385
+},
+"els Orriols": {
+"total": 7370,
+"principales": 6915,
+"secundarias": 150,
+"vacias": 305
+},
+"Torrefiel": {
+"total": 11730,
+"principales": 9215,
+"secundarias": 475,
+"vacias": 2040
+},
+"Sant Llorenç": {
+"total": 4680,
+"principales": 4405,
+"secundarias": 165,
+"vacias": 110
+},
+"Benicalap": {
+"total": 19165,
+"principales": 15650,
+"secundarias": 420,
+"vacias": 3095
+},
+"Ciutat Fallera": {
+"total": 2835,
+"principales": 2075,
+"secundarias": 285,
+"vacias": 470
+},
+"Poble Nou": {
+"total": 435,
+"principales": 330,
+"secundarias": 105,
+"vacias": 0
+},
+"Carpesa": {
+"total": 680,
+"principales": 525,
+"secundarias": 0,
+"vacias": 155
+},
+"Massarrojos": {
+"total": 1065,
+"principales": 590,
+"secundarias": 50,
+"vacias": 420
+},
+"Borbotó": {
+"total": 395,
+"principales": 280,
+"secundarias": 95,
+"vacias": 20
+},
+"el Forn d'Alcedo": {
+"total": 685,
+"principales": 440,
+"secundarias": 0,
+"vacias": 240
+},
+"el Castellar-l'Oliveral": {
+"total": 3895,
+"principales": 2815,
+"secundarias": 200,
+"vacias": 875
+},
+"Pinedo": {
+"total": 1185,
+"principales": 885,
+"secundarias": 45,
+"vacias": 260
+},
+"el Saler": {
+"total": 3250,
+"principales": 815,
+"secundarias": 2440,
+"vacias": 0
+},
+"el Palmar": {
+"total": 450,
+"principales": 320,
+"secundarias": 45,
+"vacias": 85
+},
+"el Perellonet": {
+"total": 7540,
+"principales": 725,
+"secundarias": 6635,
+"vacias": 180
+}
+},
+"censo2011_distrito": {
+"Ciutat Vella": {
+"total": 18735,
+"principales": 12215,
+"secundarias": 1360,
+"vacias": 5150
+},
+"l'Eixample": {
+"total": 22760,
+"principales": 19355,
+"secundarias": 955,
+"vacias": 2480
+},
+"Extramurs": {
+"total": 28005,
+"principales": 21980,
+"secundarias": 1855,
+"vacias": 4150
+},
+"Campanar": {
+"total": 18715,
+"principales": 14770,
+"secundarias": 1160,
+"vacias": 2775
+},
+"la Saïdia": {
+"total": 25190,
+"principales": 20825,
+"secundarias": 1810,
+"vacias": 2580
+},
+"el Pla del Real": {
+"total": 16035,
+"principales": 12340,
+"secundarias": 1640,
+"vacias": 2070
+},
+"l'Olivereta": {
+"total": 25895,
+"principales": 20355,
+"secundarias": 1375,
+"vacias": 4190
+},
+"Patraix": {
+"total": 25645,
+"principales": 23070,
+"secundarias": 575,
+"vacias": 2000
+},
+"Jesús": {
+"total": 24260,
+"principales": 22095,
+"secundarias": 430,
+"vacias": 1755
+},
+"Quatre Carreres": {
+"total": 36615,
+"principales": 29710,
+"secundarias": 2005,
+"vacias": 4910
+},
+"Poblats Marítims": {
+"total": 31135,
+"principales": 24265,
+"secundarias": 1235,
+"vacias": 5640
+},
+"Camins al Grau": {
+"total": 30950,
+"principales": 25945,
+"secundarias": 1325,
+"vacias": 3710
+},
+"Algirós": {
+"total": 22100,
+"principales": 15820,
+"secundarias": 3730,
+"vacias": 2535
+},
+"Benimaclet": {
+"total": 16740,
+"principales": 12090,
+"secundarias": 2335,
+"vacias": 2300
+},
+"Rascanya": {
+"total": 23780,
+"principales": 20535,
+"secundarias": 790,
+"vacias": 2455
+},
+"Benicalap": {
+"total": 22000,
+"principales": 17725,
+"secundarias": 705,
+"vacias": 3565
+},
+"Pobles del Nord": {
+"total": 2575,
+"principales": 1725,
+"secundarias": 250,
+"vacias": 595
+},
+"Pobles del Sud": {
+"total": 17005,
+"principales": 6000,
+"secundarias": 9365,
+"vacias": 1640
+}
+}
+}

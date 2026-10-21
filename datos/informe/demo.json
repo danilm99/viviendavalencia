@@ -1,0 +1,776 @@
+{
+ "nacimientos": {
+  "2004": 8198,
+  "2005": 8444,
+  "2006": 8578,
+  "2007": 8766,
+  "2008": 8939,
+  "2009": 8035,
+  "2010": 7812,
+  "2011": 7596,
+  "2012": 7344,
+  "2013": 6743,
+  "2014": 6743,
+  "2015": 6523,
+  "2016": 6637,
+  "2017": 6196,
+  "2018": 6014,
+  "2019": 5823,
+  "2020": 5655,
+  "2021": 5642,
+  "2022": 5607,
+  "2023": 5807
+ },
+ "natalidad_ind": {
+  "2015": {
+   "tbn": 8.26,
+   "tgf": 36.03,
+   "pct_no_casada": 44.6,
+   "isf": 1.209,
+   "edad_maternidad": 32.7,
+   "edad_primer_hijo": 31.64
+  },
+  "2016": {
+   "tbn": 8.38,
+   "tgf": 36.9,
+   "pct_no_casada": 44.2,
+   "isf": 1.26,
+   "edad_maternidad": 32.67,
+   "edad_primer_hijo": 31.55
+  },
+  "2018": {
+   "tbn": 7.54,
+   "tgf": 33.6,
+   "pct_no_casada": 44.4,
+   "isf": 1.172,
+   "edad_maternidad": 32.7,
+   "edad_primer_hijo": 31.8
+  },
+  "2019": {
+   "tbn": 7.29,
+   "tgf": 32.61,
+   "pct_no_casada": 46.1,
+   "isf": 1.148,
+   "edad_maternidad": 33.01,
+   "edad_primer_hijo": 31.97
+  },
+  "2020": {
+   "tbn": 7.06,
+   "tgf": 31.67,
+   "pct_no_casada": 44.2,
+   "isf": 1.119,
+   "edad_maternidad": 33.18,
+   "edad_primer_hijo": 32.24
+  },
+  "2021": {
+   "tbn": 7.06,
+   "tgf": 31.77,
+   "pct_no_casada": 46.5,
+   "isf": 1.129,
+   "edad_maternidad": 33.37,
+   "edad_primer_hijo": 32.43
+  },
+  "2022": {
+   "tbn": 6.98,
+   "tgf": 31.3,
+   "pct_no_casada": 46.9,
+   "isf": 1.112,
+   "edad_maternidad": 33.36,
+   "edad_primer_hijo": 32.45
+  },
+  "2023": {
+   "tbn": 7.08,
+   "tgf": 31.43,
+   "pct_no_casada": 45.8,
+   "isf": 1.105,
+   "edad_maternidad": 33.51,
+   "edad_primer_hijo": 32.57
+  }
+ },
+ "hojas_tamano_distrito_2025": {
+  "1. Ciutat Vella": {
+   "Número de hojas familiares": 14274.0,
+   "Número medio de personas por hoja": 1.98612862547289,
+   "Hojas de  una persona": 6788.0,
+   "Hojas de  2 personas": 3801.0,
+   "Hojas de  3 personas": 1834.0,
+   "Hojas de  4 personas": 1194.0,
+   "Hojas de  5 personas": 447.0,
+   "Hojas de  6 personas": 119.0,
+   "Hojas de  7 y más": 91.0
+  },
+  "2. l'Eixample": {
+   "Número de hojas familiares": 20503.0,
+   "Número medio de personas por hoja": 2.19606886797054,
+   "Hojas de  una persona": 8328.0,
+   "Hojas de  2 personas": 5363.0,
+   "Hojas de  3 personas": 3204.0,
+   "Hojas de  4 personas": 2341.0,
+   "Hojas de  5 personas": 869.0,
+   "Hojas de  6 personas": 246.0,
+   "Hojas de  7 y más": 152.0
+  },
+  "3. Extramurs": {
+   "Número de hojas familiares": 23239.0,
+   "Número medio de personas por hoja": 2.18391497052369,
+   "Hojas de  una persona": 9398.0,
+   "Hojas de  2 personas": 6277.0,
+   "Hojas de  3 personas": 3605.0,
+   "Hojas de  4 personas": 2683.0,
+   "Hojas de  5 personas": 788.0,
+   "Hojas de  6 personas": 281.0,
+   "Hojas de  7 y más": 207.0
+  },
+  "4. Campanar": {
+   "Número de hojas familiares": 17002.0,
+   "Número medio de personas por hoja": 2.43077285025291,
+   "Hojas de  una persona": 5333.0,
+   "Hojas de  2 personas": 4609.0,
+   "Hojas de  3 personas": 3257.0,
+   "Hojas de  4 personas": 2664.0,
+   "Hojas de  5 personas": 749.0,
+   "Hojas de  6 personas": 240.0,
+   "Hojas de  7 y más": 150.0
+  },
+  "5. la Saïdia": {
+   "Número de hojas familiares": 21239.0,
+   "Número medio de personas por hoja": 2.24826969254673,
+   "Hojas de  una persona": 8021.0,
+   "Hojas de  2 personas": 6005.0,
+   "Hojas de  3 personas": 3457.0,
+   "Hojas de  4 personas": 2457.0,
+   "Hojas de  5 personas": 754.0,
+   "Hojas de  6 personas": 300.0,
+   "Hojas de  7 y más": 245.0
+  },
+  "6. el Pla del Real": {
+   "Número de hojas familiares": 12959.0,
+   "Número medio de personas por hoja": 2.39439771587314,
+   "Hojas de  una persona": 4661.0,
+   "Hojas de  2 personas": 3319.0,
+   "Hojas de  3 personas": 2066.0,
+   "Hojas de  4 personas": 1722.0,
+   "Hojas de  5 personas": 776.0,
+   "Hojas de  6 personas": 262.0,
+   "Hojas de  7 y más": 153.0
+  },
+  "7. l'Olivereta": {
+   "Número de hojas familiares": 21951.0,
+   "Número medio de personas por hoja": 2.36408364083641,
+   "Hojas de  una persona": 7855.0,
+   "Hojas de  2 personas": 6038.0,
+   "Hojas de  3 personas": 3758.0,
+   "Hojas de  4 personas": 2576.0,
+   "Hojas de  5 personas": 898.0,
+   "Hojas de  6 personas": 411.0,
+   "Hojas de  7 y más": 415.0
+  },
+  "8. Patraix": {
+   "Número de hojas familiares": 25579.0,
+   "Número medio de personas por hoja": 2.33523593572853,
+   "Hojas de  una persona": 8331.0,
+   "Hojas de  2 personas": 7505.0,
+   "Hojas de  3 personas": 4872.0,
+   "Hojas de  4 personas": 3545.0,
+   "Hojas de  5 personas": 810.0,
+   "Hojas de  6 personas": 279.0,
+   "Hojas de  7 y más": 237.0
+  },
+  "9. Jesús": {
+   "Número de hojas familiares": 23026.0,
+   "Número medio de personas por hoja": 2.34126639451055,
+   "Hojas de  una persona": 7787.0,
+   "Hojas de  2 personas": 6628.0,
+   "Hojas de  3 personas": 4387.0,
+   "Hojas de  4 personas": 2778.0,
+   "Hojas de  5 personas": 782.0,
+   "Hojas de  6 personas": 341.0,
+   "Hojas de  7 y más": 323.0
+  },
+  "10. Quatre Carreres": {
+   "Número de hojas familiares": 35015.0,
+   "Número medio de personas por hoja": 2.37109810081394,
+   "Hojas de  una persona": 11603.0,
+   "Hojas de  2 personas": 9906.0,
+   "Hojas de  3 personas": 6382.0,
+   "Hojas de  4 personas": 4852.0,
+   "Hojas de  5 personas": 1363.0,
+   "Hojas de  6 personas": 498.0,
+   "Hojas de  7 y más": 411.0
+  },
+  "11. Poblats Marítims": {
+   "Número de hojas familiares": 25300.0,
+   "Número medio de personas por hoja": 2.25300395256917,
+   "Hojas de  una persona": 9481.0,
+   "Hojas de  2 personas": 7067.0,
+   "Hojas de  3 personas": 4321.0,
+   "Hojas de  4 personas": 2938.0,
+   "Hojas de  5 personas": 882.0,
+   "Hojas de  6 personas": 322.0,
+   "Hojas de  7 y más": 289.0
+  },
+  "12. Camins al Grau": {
+   "Número de hojas familiares": 28614.0,
+   "Número medio de personas por hoja": 2.36275948836234,
+   "Hojas de  una persona": 9793.0,
+   "Hojas de  2 personas": 7615.0,
+   "Hojas de  3 personas": 5225.0,
+   "Hojas de  4 personas": 4159.0,
+   "Hojas de  5 personas": 1187.0,
+   "Hojas de  6 personas": 355.0,
+   "Hojas de  7 y más": 280.0
+  },
+  "13. Algirós": {
+   "Número de hojas familiares": 16919.0,
+   "Número medio de personas por hoja": 2.15461906732076,
+   "Hojas de  una persona": 6805.0,
+   "Hojas de  2 personas": 4714.0,
+   "Hojas de  3 personas": 2693.0,
+   "Hojas de  4 personas": 1911.0,
+   "Hojas de  5 personas": 504.0,
+   "Hojas de  6 personas": 171.0,
+   "Hojas de  7 y más": 121.0
+  },
+  "14. Benimaclet": {
+   "Número de hojas familiares": 13043.0,
+   "Número medio de personas por hoja": 2.17894656137392,
+   "Hojas de  una persona": 5177.0,
+   "Hojas de  2 personas": 3506.0,
+   "Hojas de  3 personas": 2231.0,
+   "Hojas de  4 personas": 1485.0,
+   "Hojas de  5 personas": 417.0,
+   "Hojas de  6 personas": 138.0,
+   "Hojas de  7 y más": 89.0
+  },
+  "15. Rascanya": {
+   "Número de hojas familiares": 22729.0,
+   "Número medio de personas por hoja": 2.54467860442606,
+   "Hojas de  una persona": 7250.0,
+   "Hojas de  2 personas": 5846.0,
+   "Hojas de  3 personas": 4161.0,
+   "Hojas de  4 personas": 3278.0,
+   "Hojas de  5 personas": 1152.0,
+   "Hojas de  6 personas": 492.0,
+   "Hojas de  7 y más": 550.0
+  },
+  "16. Benicalap": {
+   "Número de hojas familiares": 20634.0,
+   "Número medio de personas por hoja": 2.45759426189784,
+   "Hojas de  una persona": 6367.0,
+   "Hojas de  2 personas": 5604.0,
+   "Hojas de  3 personas": 4106.0,
+   "Hojas de  4 personas": 3116.0,
+   "Hojas de  5 personas": 851.0,
+   "Hojas de  6 personas": 308.0,
+   "Hojas de  7 y más": 282.0
+  },
+  "17. Pobles del Nord": {
+   "Número de hojas familiares": 2769.0,
+   "Número medio de personas por hoja": 2.56663055254605,
+   "Hojas de  una persona": 806.0,
+   "Hojas de  2 personas": 696.0,
+   "Hojas de  3 personas": 566.0,
+   "Hojas de  4 personas": 471.0,
+   "Hojas de  5 personas": 145.0,
+   "Hojas de  6 personas": 48.0,
+   "Hojas de  7 y más": 37.0
+  },
+  "18. Pobles de l'Oest": {
+   "Número de hojas familiares": 6234.0,
+   "Número medio de personas por hoja": 2.49470644850818,
+   "Hojas de  una persona": 1814.0,
+   "Hojas de  2 personas": 1735.0,
+   "Hojas de  3 personas": 1275.0,
+   "Hojas de  4 personas": 949.0,
+   "Hojas de  5 personas": 270.0,
+   "Hojas de  6 personas": 111.0,
+   "Hojas de  7 y más": 80.0
+  },
+  "19. Pobles del Sud": {
+   "Número de hojas familiares": 9510.0,
+   "Número medio de personas por hoja": 2.38864353312303,
+   "Hojas de  una persona": 3186.0,
+   "Hojas de  2 personas": 2636.0,
+   "Hojas de  3 personas": 1745.0,
+   "Hojas de  4 personas": 1235.0,
+   "Hojas de  5 personas": 411.0,
+   "Hojas de  6 personas": 165.0,
+   "Hojas de  7 y más": 132.0
+  }
+ },
+ "hojas_tamano": {
+  "2017": {
+   "Número de hojas familiares": 326980.0,
+   "Número medio de personas por hoja": 2.41,
+   "Hojas de  una persona": 106446.0,
+   "Hojas de  2 personas": 88371.0,
+   "Hojas de  3 personas": 62357.0,
+   "Hojas de  4 personas": 47916.0,
+   "Hojas de  5 personas": 13650.0,
+   "Hojas de  6 personas": 4510.0,
+   "Hojas de  7 y más": 3730.0
+  },
+  "2018": {
+   "Número de hojas familiares": 330108.0,
+   "Número medio de personas por hoja": 2.40471300301719,
+   "Hojas de  una persona": 108018.0,
+   "Hojas de  2 personas": 89462.0,
+   "Hojas de  3 personas": 62496.0,
+   "Hojas de  4 personas": 47820.0,
+   "Hojas de  5 personas": 13839.0,
+   "Hojas de  6 personas": 4659.0,
+   "Hojas de  7 y más": 3814.0
+  },
+  "2020": {
+   "Número de hojas familiares": 332785.0,
+   "Número medio de personas por hoja": 2.39151103565365,
+   "Hojas de  una persona": 109965.0,
+   "Hojas de  2 personas": 90846.0,
+   "Hojas de  3 personas": 62243.0,
+   "Hojas de  4 personas": 47310.0,
+   "Hojas de  5 personas": 13905.0,
+   "Hojas de  6 personas": 4680.0,
+   "Hojas de  7 y más": 3836.0
+  },
+  "2021": {
+   "Número de hojas familiares": 335541.0,
+   "Número medio de personas por hoja": 2.36784178386546,
+   "Hojas de  una persona": 113414.0,
+   "Hojas de  2 personas": 91533.0,
+   "Hojas de  3 personas": 61643.0,
+   "Hojas de  4 personas": 47009.0,
+   "Hojas de  5 personas": 13742.0,
+   "Hojas de  6 personas": 4617.0,
+   "Hojas de  7 y más": 3583.0
+  },
+  "2022": {
+   "Número de hojas familiares": 338484.0,
+   "Número medio de personas por hoja": 2.3391,
+   "Hojas de  una persona": 117069.0,
+   "Hojas de  2 personas": 92098.0,
+   "Hojas de  3 personas": 61692.0,
+   "Hojas de  4 personas": 46398.0,
+   "Hojas de  5 personas": 13529.0,
+   "Hojas de  6 personas": 4457.0,
+   "Hojas de  7 y más": 3241.0
+  },
+  "2023": {
+   "Número de hojas familiares": 345776.0,
+   "Número medio de personas por hoja": 2.3222230577021,
+   "Hojas de  una persona": 121901.0,
+   "Hojas de  2 personas": 94425.0,
+   "Hojas de  3 personas": 61810.0,
+   "Hojas de  4 personas": 45953.0,
+   "Hojas de  5 personas": 13626.0,
+   "Hojas de  6 personas": 4694.0,
+   "Hojas de  7 y más": 3367.0
+  },
+  "2024": {
+   "Número de hojas familiares": 355249.0,
+   "Número medio de personas por hoja": 2.3193943357084876,
+   "Hojas de  una persona": 126268.0,
+   "Hojas de  2 personas": 97147.0,
+   "Hojas de  3 personas": 62370.0,
+   "Hojas de  4 personas": 46255.0,
+   "Hojas de  5 personas": 13939.0,
+   "Hojas de  6 personas": 4911.0,
+   "Hojas de  7 y más": 3894.0
+  },
+  "2025": {
+   "Número de hojas familiares": 360539.0,
+   "Número medio de personas por hoja": 2.31931358327393,
+   "Hojas de  una persona": 128784.0,
+   "Hojas de  2 personas": 98870.0,
+   "Hojas de  3 personas": 63145.0,
+   "Hojas de  4 personas": 46354.0,
+   "Hojas de  5 personas": 14055.0,
+   "Hojas de  6 personas": 5087.0,
+   "Hojas de  7 y más": 4244.0
+  }
+ },
+ "nac_def_distrito_hdr": [
+  "",
+  "Año 2023",
+  "",
+  "",
+  "Año 2024",
+  "",
+  "",
+  ""
+ ],
+ "nac_def_distrito": {
+  "1. Ciutat Vella": [
+   194.0,
+   280.0,
+   -86.0,
+   182.0,
+   251.0,
+   -69.0,
+   null
+  ],
+  "2. l'Eixample": [
+   296.0,
+   405.0,
+   -109.0,
+   348.0,
+   403.0,
+   -55.0,
+   null
+  ],
+  "3. Extramurs": [
+   353.0,
+   486.0,
+   -133.0,
+   336.0,
+   483.0,
+   -147.0,
+   null
+  ],
+  "4. Campanar": [
+   306.0,
+   291.0,
+   15.0,
+   259.0,
+   303.0,
+   -44.0,
+   null
+  ],
+  "5. la Saïdia": [
+   333.0,
+   460.0,
+   -127.0,
+   334.0,
+   468.0,
+   -134.0,
+   null
+  ],
+  "6. el Pla del Real": [
+   265.0,
+   259.0,
+   6.0,
+   256.0,
+   262.0,
+   -6.0,
+   null
+  ],
+  "7. l'Olivereta": [
+   394.0,
+   480.0,
+   -86.0,
+   369.0,
+   500.0,
+   -131.0,
+   null
+  ],
+  "8. Patraix": [
+   390.0,
+   468.0,
+   -78.0,
+   370.0,
+   504.0,
+   -134.0,
+   null
+  ],
+  "9. Jesús": [
+   347.0,
+   477.0,
+   -130.0,
+   328.0,
+   378.0,
+   -50.0,
+   null
+  ],
+  "10. Quatre Carreres": [
+   549.0,
+   633.0,
+   -84.0,
+   607.0,
+   607.0,
+   0.0,
+   null
+  ],
+  "11. Poblats Marítims": [
+   353.0,
+   530.0,
+   -177.0,
+   368.0,
+   472.0,
+   -104.0,
+   null
+  ],
+  "12. Camins al Grau": [
+   396.0,
+   494.0,
+   -98.0,
+   407.0,
+   475.0,
+   -68.0,
+   null
+  ],
+  "13. Algirós": [
+   180.0,
+   317.0,
+   -137.0,
+   167.0,
+   331.0,
+   -164.0,
+   null
+  ],
+  "14. Benimaclet": [
+   172.0,
+   265.0,
+   -93.0,
+   158.0,
+   241.0,
+   -83.0,
+   null
+  ],
+  "15. Rascanya": [
+   368.0,
+   355.0,
+   13.0,
+   403.0,
+   411.0,
+   -8.0,
+   null
+  ],
+  "16. Benicalap": [
+   355.0,
+   364.0,
+   -9.0,
+   352.0,
+   336.0,
+   16.0,
+   null
+  ],
+  "17. Pobles del Nord": [
+   42.0,
+   70.0,
+   -28.0,
+   45.0,
+   62.0,
+   -17.0,
+   null
+  ],
+  "18. Pobles de l'Oest": [
+   123.0,
+   94.0,
+   29.0,
+   133.0,
+   92.0,
+   41.0,
+   null
+  ],
+  "19. Pobles del Sud": [
+   162.0,
+   204.0,
+   -42.0,
+   169.0,
+   170.0,
+   -1.0,
+   null
+  ]
+ },
+ "hojas_comp_2025": {
+  "Total": {
+   "Solo de  0 a 24 años": 5943.0,
+   "Solo de  65 y más": 79205.0,
+   "Solo de  80 y más": 25994.0,
+   "Ningún menor de 18 años": 279574.0,
+   "Un menor": 46095.0,
+   "Dos menores": 28272.0,
+   "Tres menores": 5218.0,
+   "Cuatro o más menores": 1380.0
+  },
+  "1. Ciutat Vella": {
+   "Solo de  0 a 24 años": 511.0,
+   "Solo de  65 y más": 2751.0,
+   "Solo de  80 y más": 831.0,
+   "Ningún menor de 18 años": 11895.0,
+   "Un menor": 1336.0,
+   "Dos menores": 839.0,
+   "Tres menores": 165.0,
+   "Cuatro o más menores": 39.0
+  },
+  "2. l'Eixample": {
+   "Solo de  0 a 24 años": 330.0,
+   "Solo de  65 y más": 4793.0,
+   "Solo de  80 y más": 1705.0,
+   "Ningún menor de 18 años": 16139.0,
+   "Un menor": 2301.0,
+   "Dos menores": 1654.0,
+   "Tres menores": 334.0,
+   "Cuatro o más menores": 75.0
+  },
+  "3. Extramurs": {
+   "Solo de  0 a 24 años": 478.0,
+   "Solo de  65 y más": 5437.0,
+   "Solo de  80 y más": 1946.0,
+   "Ningún menor de 18 años": 18566.0,
+   "Un menor": 2577.0,
+   "Dos menores": 1720.0,
+   "Tres menores": 296.0,
+   "Cuatro o más menores": 80.0
+  },
+  "4. Campanar": {
+   "Solo de  0 a 24 años": 146.0,
+   "Solo de  65 y más": 3842.0,
+   "Solo de  80 y más": 1096.0,
+   "Ningún menor de 18 años": 12313.0,
+   "Un menor": 2519.0,
+   "Dos menores": 1830.0,
+   "Tres menores": 295.0,
+   "Cuatro o más menores": 45.0
+  },
+  "5. la Saïdia": {
+   "Solo de  0 a 24 años": 362.0,
+   "Solo de  65 y más": 4948.0,
+   "Solo de  80 y más": 1775.0,
+   "Ningún menor de 18 años": 16867.0,
+   "Un menor": 2571.0,
+   "Dos menores": 1450.0,
+   "Tres menores": 253.0,
+   "Cuatro o más menores": 98.0
+  },
+  "6. el Pla del Real": {
+   "Solo de  0 a 24 años": 296.0,
+   "Solo de  65 y más": 3264.0,
+   "Solo de  80 y más": 1207.0,
+   "Ningún menor de 18 años": 9872.0,
+   "Un menor": 1426.0,
+   "Dos menores": 1183.0,
+   "Tres menores": 358.0,
+   "Cuatro o más menores": 120.0
+  },
+  "7. l'Olivereta": {
+   "Solo de  0 a 24 años": 254.0,
+   "Solo de  65 y más": 4959.0,
+   "Solo de  80 y más": 1910.0,
+   "Ningún menor de 18 años": 17205.0,
+   "Un menor": 2830.0,
+   "Dos menores": 1468.0,
+   "Tres menores": 350.0,
+   "Cuatro o más menores": 98.0
+  },
+  "8. Patraix": {
+   "Solo de  0 a 24 años": 189.0,
+   "Solo de  65 y más": 6062.0,
+   "Solo de  80 y más": 1741.0,
+   "Ningún menor de 18 años": 20015.0,
+   "Un menor": 3318.0,
+   "Dos menores": 1902.0,
+   "Tres menores": 288.0,
+   "Cuatro o más menores": 56.0
+  },
+  "9. Jesús": {
+   "Solo de  0 a 24 años": 258.0,
+   "Solo de  65 y más": 5209.0,
+   "Solo de  80 y más": 1675.0,
+   "Ningún menor de 18 años": 18080.0,
+   "Un menor": 2989.0,
+   "Dos menores": 1614.0,
+   "Tres menores": 274.0,
+   "Cuatro o más menores": 69.0
+  },
+  "10. Quatre Carreres": {
+   "Solo de  0 a 24 años": 368.0,
+   "Solo de  65 y más": 7224.0,
+   "Solo de  80 y más": 2432.0,
+   "Ningún menor de 18 años": 26453.0,
+   "Un menor": 4928.0,
+   "Dos menores": 3004.0,
+   "Tres menores": 499.0,
+   "Cuatro o más menores": 131.0
+  },
+  "11. Poblats Marítims": {
+   "Solo de  0 a 24 años": 477.0,
+   "Solo de  65 y más": 5367.0,
+   "Solo de  80 y más": 1744.0,
+   "Ningún menor de 18 años": 20084.0,
+   "Un menor": 3071.0,
+   "Dos menores": 1700.0,
+   "Tres menores": 342.0,
+   "Cuatro o más menores": 103.0
+  },
+  "12. Camins al Grau": {
+   "Solo de  0 a 24 años": 506.0,
+   "Solo de  65 y más": 5798.0,
+   "Solo de  80 y más": 1851.0,
+   "Ningún menor de 18 años": 21698.0,
+   "Un menor": 4005.0,
+   "Dos menores": 2428.0,
+   "Tres menores": 390.0,
+   "Cuatro o más menores": 93.0
+  },
+  "13. Algirós": {
+   "Solo de  0 a 24 años": 614.0,
+   "Solo de  65 y más": 4298.0,
+   "Solo de  80 y más": 1261.0,
+   "Ningún menor de 18 años": 14159.0,
+   "Un menor": 1563.0,
+   "Dos menores": 1001.0,
+   "Tres menores": 152.0,
+   "Cuatro o más menores": 44.0
+  },
+  "14. Benimaclet": {
+   "Solo de  0 a 24 años": 412.0,
+   "Solo de  65 y más": 3015.0,
+   "Solo de  80 y más": 927.0,
+   "Ningún menor de 18 años": 10665.0,
+   "Un menor": 1361.0,
+   "Dos menores": 839.0,
+   "Tres menores": 142.0,
+   "Cuatro o más menores": 36.0
+  },
+  "15. Rascanya": {
+   "Solo de  0 a 24 años": 375.0,
+   "Solo de  65 y más": 4422.0,
+   "Solo de  80 y más": 1513.0,
+   "Ningún menor de 18 años": 16686.0,
+   "Un menor": 3400.0,
+   "Dos menores": 2032.0,
+   "Tres menores": 465.0,
+   "Cuatro o más menores": 146.0
+  },
+  "16. Benicalap": {
+   "Solo de  0 a 24 años": 227.0,
+   "Solo de  65 y más": 4008.0,
+   "Solo de  80 y más": 1304.0,
+   "Ningún menor de 18 años": 15180.0,
+   "Un menor": 3111.0,
+   "Dos menores": 1953.0,
+   "Tres menores": 312.0,
+   "Cuatro o más menores": 78.0
+  },
+  "17. Pobles del Nord": {
+   "Solo de  0 a 24 años": 13.0,
+   "Solo de  65 y más": 550.0,
+   "Solo de  80 y más": 157.0,
+   "Ningún menor de 18 años": 2006.0,
+   "Un menor": 424.0,
+   "Dos menores": 276.0,
+   "Tres menores": 50.0,
+   "Cuatro o más menores": 13.0
+  },
+  "18. Pobles de l'Oest": {
+   "Solo de  0 a 24 años": 56.0,
+   "Solo de  65 y más": 1245.0,
+   "Solo de  80 y más": 359.0,
+   "Ningún menor de 18 años": 4551.0,
+   "Un menor": 1007.0,
+   "Dos menores": 552.0,
+   "Tres menores": 102.0,
+   "Cuatro o más menores": 22.0
+  },
+  "19. Pobles del Sud": {
+   "Solo de  0 a 24 años": 71.0,
+   "Solo de  65 y más": 2013.0,
+   "Solo de  80 y más": 560.0,
+   "Ningún menor de 18 años": 7140.0,
+   "Un menor": 1358.0,
+   "Dos menores": 827.0,
+   "Tres menores": 151.0,
+   "Cuatro o más menores": 34.0
+  }
+ }
+}
