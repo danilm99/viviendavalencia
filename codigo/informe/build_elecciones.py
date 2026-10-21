@@ -293,7 +293,7 @@ if H:
 NAV += [("evidencia", "Otras ciudades"), ("metodo", "Método")]
 
 body = f"""<body>
-<div class="page">
+SITEBAR<div class="page">
 <nav class="spine" id="spine">
   <div class="brand">Elecciones del 29-N y vivienda</div>
   {"".join(f'<a href="#{i}">{esc(t)}</a>' for i, t in NAV)}
@@ -316,6 +316,7 @@ body = f"""<body>
 {sec_votos()}
 {sec_evidencia()}
 {sec_metodo()}
+<p class="foot"><a href="./">Informe sobre la vivienda en València</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a></p>
 <p class="foot">viviendavalencia.info · Página informativa sin afiliación a ningún partido. Datos y código abiertos. Esta web cuenta visitas de forma anónima con GoatCounter, sin cookies.</p>
 </main>
 </div>
@@ -329,5 +330,6 @@ const tt=document.getElementById('totop'); addEventListener('scroll',()=>tt.clas
 </html>
 """
 
+body = body.replace("SITEBAR", '<div class="sitebar"><a class="sb-home" href="./">viviendavalencia.info</a><nav aria-label="Secciones del sitio"><a href="./">Informe</a><a href="pisos-turisticos-valencia.html">Mapa</a><a href="elecciones-29n.html" aria-current="page">Elecciones 29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></nav></div>\n', 1)
 OUT.write_text(HEAD + body, encoding="utf-8")
 print("ok", OUT, len(HEAD + body))

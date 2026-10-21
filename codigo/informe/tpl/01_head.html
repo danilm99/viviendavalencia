@@ -247,6 +247,20 @@ table.cardm td.y{border-radius:3px}
 .swipe{display:none;font-size:12px;color:var(--muted);margin:4px 0 0}
 @media print{nav.spine,.det,.btnrow{display:none}.page{display:block}figure{break-inside:avoid}}
 
+/* barra común del sitio */
+.sitebar{background:var(--fg);color:var(--bg);display:flex;align-items:center;gap:18px;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));min-height:42px;font:600 13.5px/1 var(--body)}
+.sitebar a{color:var(--bg);text-decoration:none}
+.sitebar a:hover{background:none;color:var(--mark)}
+.sitebar .sb-home{font:800 16px/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.sitebar nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.sitebar nav::-webkit-scrollbar{display:none}
+.sitebar nav a{padding:13px 10px 11px;white-space:nowrap;border-bottom:3px solid transparent}
+.sitebar nav a[aria-current="page"]{border-bottom-color:var(--mark)}
+.sitebar nav a.langsw{opacity:.75}
+@media (max-width:560px){.sitebar{gap:8px}.sitebar .sb-home{font-size:14px}.sitebar nav{margin-left:auto}.sitebar nav a{padding:13px 7px 11px}}
+@media (max-width:400px){.sitebar .sb-home{display:none}.sitebar nav{margin-left:0}}
+@media print{.sitebar{display:none}}
+
 /* otras ciudades */
 .cgroup{margin:22px 0 4px}.cgroup h3{margin:0 0 10px}
 .cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}

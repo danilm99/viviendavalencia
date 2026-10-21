@@ -247,6 +247,20 @@ table.cardm td.y{border-radius:3px}
 .swipe{display:none;font-size:12px;color:var(--muted);margin:4px 0 0}
 @media print{nav.spine,.det,.btnrow{display:none}.page{display:block}figure{break-inside:avoid}}
 
+/* barra común del sitio */
+.sitebar{background:var(--fg);color:var(--bg);display:flex;align-items:center;gap:18px;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));min-height:42px;font:600 13.5px/1 var(--body)}
+.sitebar a{color:var(--bg);text-decoration:none}
+.sitebar a:hover{background:none;color:var(--mark)}
+.sitebar .sb-home{font:800 16px/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.sitebar nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.sitebar nav::-webkit-scrollbar{display:none}
+.sitebar nav a{padding:13px 10px 11px;white-space:nowrap;border-bottom:3px solid transparent}
+.sitebar nav a[aria-current="page"]{border-bottom-color:var(--mark)}
+.sitebar nav a.langsw{opacity:.75}
+@media (max-width:560px){.sitebar{gap:8px}.sitebar .sb-home{font-size:14px}.sitebar nav{margin-left:auto}.sitebar nav a{padding:13px 7px 11px}}
+@media (max-width:400px){.sitebar .sb-home{display:none}.sitebar nav{margin-left:0}}
+@media print{.sitebar{display:none}}
+
 /* otras ciudades */
 .cgroup{margin:22px 0 4px}.cgroup h3{margin:0 0 10px}
 .cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
@@ -288,6 +302,7 @@ a.arch{font-size:.85em;color:var(--muted);margin-left:4px}
 <script>window.goatcounter={path:function(){return location.pathname||"/"}}</script><script data-goatcounter="https://viviendavalencia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
+<div class="sitebar"><a class="sb-home" href="./">viviendavalencia.info</a><nav aria-label="Secciones del sitio"><a href="./" aria-current="page">Informe</a><a href="pisos-turisticos-valencia.html">Mapa</a><a href="elecciones-29n.html">Elecciones 29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></nav></div>
 <div class="tip" id="tip"></div>
 <div class="det" id="det"><div class="bg" id="detBg"></div><div class="box" role="dialog" aria-modal="true" aria-labelledby="detTitle"><button class="x" id="detX" aria-label="Cerrar">×</button><div id="detBody"></div></div></div>
 <div class="page">
@@ -737,7 +752,7 @@ function kpiHtml(items,defSrc){ return items.map(it=>{ const it5=[...it.slice(0,
 const cardHtml=a=>a.map(([t,x,u])=>'<div class="card"><b>'+esc(t)+'</b>'+esc(x)+(u?'<div class="src"><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(host(u))+'</a>'+archA(u)+'</div>':'')+'</div>').join('');
 const rowsHtml=a=>a.map(([t,x,u])=>'<tr><td><b>'+esc(t)+'</b></td><td>'+esc(x)+(u?'<small><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(host(u))+'</a>'+archA(u)+'</small>':'')+'</td></tr>').join('');
 const det=$('#det'), detBody=$('#detBody'); let lastFocus=null;
-const ARCH=D.arch||{}; const archA=u=>u&&ARCH[u]?' <a class="arch" href="'+esc(ARCH[u])+'" target="_blank" rel="noopener" title="Copia guardada en archive.org">copia</a>':'';
+const ARCH=D.arch||{}; const archA=u=>u&&ARCH[u]?' <a class="arch" href="'+esc(ARCH[u])+'" target="_blank" rel="noopener" title="'+window.T('Copia guardada en archive.org','Còpia guardada a archive.org')+'" data-notr>'+window.T('copia','còpia')+'</a>':'';
 function srcList(list){ return '<h5>Fuentes</h5><ul>'+list.map(s=>{ const e=Array.isArray(s)?s:(SRC[s]||[s,'']); return '<li>'+(e[1]?'<a href="'+esc(e[1])+'" target="_blank" rel="noopener">'+esc(e[0])+'</a>'+archA(e[1]):esc(e[0]))+(e[2]?' <span class="sub">'+esc(e[2])+'</span>':'')+'</li>'; }).join('')+'</ul>'; }
 function openDet(d){ lastFocus=document.activeElement; let h='';
   if(d.n) h+='<div class="big">'+d.n+'</div>'; h+='<h4 id="detTitle">'+esc(d.t||'')+'</h4>'; { const ts=typesOf(d); if(ts.length) h+=tyChips(ts); } if(d.lbl) h+='<p class="lbl">'+esc(d.lbl)+'</p>';

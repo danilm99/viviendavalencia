@@ -187,7 +187,7 @@ function kpiHtml(items,defSrc){ return items.map(it=>{ const it5=[...it.slice(0,
 const cardHtml=a=>a.map(([t,x,u])=>'<div class="card"><b>'+esc(t)+'</b>'+esc(x)+(u?'<div class="src"><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(host(u))+'</a>'+archA(u)+'</div>':'')+'</div>').join('');
 const rowsHtml=a=>a.map(([t,x,u])=>'<tr><td><b>'+esc(t)+'</b></td><td>'+esc(x)+(u?'<small><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(host(u))+'</a>'+archA(u)+'</small>':'')+'</td></tr>').join('');
 const det=$('#det'), detBody=$('#detBody'); let lastFocus=null;
-const ARCH=D.arch||{}; const archA=u=>u&&ARCH[u]?' <a class="arch" href="'+esc(ARCH[u])+'" target="_blank" rel="noopener" title="Copia guardada en archive.org">copia</a>':'';
+const ARCH=D.arch||{}; const archA=u=>u&&ARCH[u]?' <a class="arch" href="'+esc(ARCH[u])+'" target="_blank" rel="noopener" title="'+window.T('Copia guardada en archive.org','Còpia guardada a archive.org')+'" data-notr>'+window.T('copia','còpia')+'</a>':'';
 function srcList(list){ return '<h5>Fuentes</h5><ul>'+list.map(s=>{ const e=Array.isArray(s)?s:(SRC[s]||[s,'']); return '<li>'+(e[1]?'<a href="'+esc(e[1])+'" target="_blank" rel="noopener">'+esc(e[0])+'</a>'+archA(e[1]):esc(e[0]))+(e[2]?' <span class="sub">'+esc(e[2])+'</span>':'')+'</li>'; }).join('')+'</ul>'; }
 function openDet(d){ lastFocus=document.activeElement; let h='';
   if(d.n) h+='<div class="big">'+d.n+'</div>'; h+='<h4 id="detTitle">'+esc(d.t||'')+'</h4>'; { const ts=typesOf(d); if(ts.length) h+=tyChips(ts); } if(d.lbl) h+='<p class="lbl">'+esc(d.lbl)+'</p>';

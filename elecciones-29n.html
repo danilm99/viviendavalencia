@@ -247,6 +247,20 @@ table.cardm td.y{border-radius:3px}
 .swipe{display:none;font-size:12px;color:var(--muted);margin:4px 0 0}
 @media print{nav.spine,.det,.btnrow{display:none}.page{display:block}figure{break-inside:avoid}}
 
+/* barra común del sitio */
+.sitebar{background:var(--fg);color:var(--bg);display:flex;align-items:center;gap:18px;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));min-height:42px;font:600 13.5px/1 var(--body)}
+.sitebar a{color:var(--bg);text-decoration:none}
+.sitebar a:hover{background:none;color:var(--mark)}
+.sitebar .sb-home{font:800 16px/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.sitebar nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.sitebar nav::-webkit-scrollbar{display:none}
+.sitebar nav a{padding:13px 10px 11px;white-space:nowrap;border-bottom:3px solid transparent}
+.sitebar nav a[aria-current="page"]{border-bottom-color:var(--mark)}
+.sitebar nav a.langsw{opacity:.75}
+@media (max-width:560px){.sitebar{gap:8px}.sitebar .sb-home{font-size:14px}.sitebar nav{margin-left:auto}.sitebar nav a{padding:13px 7px 11px}}
+@media (max-width:400px){.sitebar .sb-home{display:none}.sitebar nav{margin-left:0}}
+@media print{.sitebar{display:none}}
+
 
 /* página de elecciones */
 q{quotes:"«" "»"}
@@ -309,6 +323,7 @@ table.cardm td[data-h]::before{content:attr(data-h);display:block;font-weight:60
 <script>window.goatcounter={path:function(){return location.pathname||"/"}}</script><script data-goatcounter="https://viviendavalencia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
+<div class="sitebar"><a class="sb-home" href="./">viviendavalencia.info</a><nav aria-label="Secciones del sitio"><a href="./">Informe</a><a href="pisos-turisticos-valencia.html">Mapa</a><a href="elecciones-29n.html" aria-current="page">Elecciones 29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></nav></div>
 <div class="page">
 <nav class="spine" id="spine">
   <div class="brand">Elecciones del 29-N y vivienda</div>
@@ -381,6 +396,7 @@ table.cardm td[data-h]::before{content:attr(data-h);display:block;font-weight:60
 <ul class="plain"><li>Incluimos las candidaturas que las encuestas publicadas sitúan con al menos un escaño en la provincia de Valencia: PP, PSOE, Compromís-Front Valencià y Vox. Van en el orden de votos que obtuvieron en la provincia en 2023.</li><li>Solo recogemos lo dicho para estas elecciones: documentos oficiales del partido y declaraciones públicas de sus dirigentes o candidatos desde la convocatoria (5 de octubre). No usamos programas de elecciones anteriores ni deducimos posturas.</li><li>Las frases entre comillas son literales. No valoramos las propuestas: al final de la página enlazamos lo que dicen los estudios sobre cada tipo de medida en otras ciudades.</li><li>Para el historial usamos datos oficiales (BOE, DOGV, cuentas de la EVha, informes de la Conselleria y del Ministerio) y, cuando no los hay, prensa. Algunas cifras proceden de la administración que gobierna y se presentan como suyas; lo indicamos.</li></ul>
 <p>Si ves un error, una omisión o una declaración que falta, escríbenos: lo corregimos y lo anotamos en el registro de cambios del informe. Última actualización: 21 de octubre de 2026.</p>
 </section>
+<p class="foot"><a href="./">Informe sobre la vivienda en València</a> · <a href="pisos-turisticos-valencia.html">Mapa de pisos turísticos</a></p>
 <p class="foot">viviendavalencia.info · Página informativa sin afiliación a ningún partido. Datos y código abiertos. Esta web cuenta visitas de forma anónima con GoatCounter, sin cookies.</p>
 </main>
 </div>

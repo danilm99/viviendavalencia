@@ -307,6 +307,7 @@ th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2p
   #src{max-width:60vw}
 }
 #tabs a.langsw{color:var(--muted);text-decoration:none;padding:7px 10px}
+@media (max-width:560px){#tabs .lg{display:none}#tabs button,#tabs a{padding:7px 10px}#tabs a.langsw{padding:7px 8px}}
 </style>
 <script>window.goatcounter={path:function(){return location.pathname||"/"}}</script><script data-goatcounter="https://viviendavalencia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -343,7 +344,7 @@ th{font-family:var(--body);text-transform:none;letter-spacing:0;border-bottom:2p
 <div id="foot">
   <div id="count"><b id="n">0</b> visibles · <span id="ntot">0</span> en total</div>
   <div id="src"></div>
-  <div id="tabs" role="tablist"><button role="tab" id="tabMap" aria-selected="true">Mapa</button><button role="tab" id="tabData" aria-selected="false">Datos</button><a id="tabInforme" href="informe-vivienda-valencia.html" title="Informe completo sobre la vivienda en València">Informe</a><a class="langsw" data-notr href="?lang=va">Valencià</a></div>
+  <div id="tabs" role="tablist"><button role="tab" id="tabMap" aria-selected="true">Mapa</button><button role="tab" id="tabData" aria-selected="false">Datos</button><a id="tabInforme" href="informe-vivienda-valencia.html" title="Informe completo sobre la vivienda en València">Informe</a><a id="tabElec" href="elecciones-29n.html" title="Elecciones del 29-N: qué dicen los partidos sobre vivienda"><span class="lg">Elecciones&nbsp;</span>29-N</a><a class="langsw" data-notr href="?lang=va">Valencià</a></div>
 </div>
 
 <section id="sheet" aria-live="polite">
