@@ -1,5 +1,5 @@
 {
-"updated": "2026-10-19",
+"updated": "2026-10-23",
 "idealista": {
 "rent_month": [
 [
@@ -2048,7 +2048,23 @@
 "2": 1565,
 "3": 1737,
 "4+": 2091
-}
+},
+"rent_last": {
+"q": "3T-2026",
+"eur": 1776,
+"yoy": 8.7,
+"listings": 1572,
+"listings_prev": 1909,
+"url": "https://valenciaplaza.com/valenciaplaza/plaza-inmobiliaria/la-obra-nueva-en-valencia-se-dispara-un-235-en-un-ano-y-roza-los-4600-euros-m"
+},
+"newbuild_q3_2026": {
+"listings": 189,
+"promociones": 50,
+"price": 4575,
+"yoy": 23.5,
+"url": "https://valenciaplaza.com/valenciaplaza/plaza-inmobiliaria/la-obra-nueva-en-valencia-se-dispara-un-235-en-un-ano-y-roza-los-4600-euros-m"
+},
+"vpo_calificadas_ciudad_2025_3t2026": 1074
 },
 "brains_q1_2026": {
 "src": "Brains RE, Q1 2026",
@@ -2673,7 +2689,15 @@
 "puntos_2025": 84,
 "expedientes_oficina": 59,
 "avisos": 1134
-}
+},
+"cv_2t2026": [
+629,
+361,
+184,
+84
+],
+"cv_2t2025_total": 806,
+"url_2t2026": "https://www.elperiodic.com/bajan-desahucios-inquilinos-comunitat-valenciana-pero-crecen-relacionados-hipotecas_1098089"
 },
 "turistico": {
 "vut_registro_gva": 5708,

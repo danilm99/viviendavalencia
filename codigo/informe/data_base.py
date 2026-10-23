@@ -6,7 +6,7 @@ ROOT = pathlib.Path(__file__).parent
 ide = json.load(open(ROOT / "idealista_series.json"))
 
 D = {
- "updated": "2026-10-19",
+ "updated": "2026-10-23",
  "idealista": ide,
  "rent_dec": {"2014": 6.1, "2015": 6.5, "2016": 7.1, "2017": 8.1, "2018": 8.6, "2019": 9.2, "2020": 8.9, "2021": 9.3, "2022": 11.3, "2023": 13.7, "2024": 14.9, "2025": 15.8, "2026": 16.3},
  "sale_dec": {"2014": 1388, "2015": 1404, "2016": 1480, "2017": 1577, "2018": 1834, "2019": 1856, "2020": 1893, "2021": 1910, "2022": 2114, "2023": 2356, "2024": 2883, "2025": 3362, "2026": 3473},
@@ -18,6 +18,7 @@ D = {
    "short_term_q4_2024": {"listings": 480, "share": 22, "price": 1529},
    "newbuild_eur_m2_q4": {"2019": 1915, "2023": 2889, "2024": 3422},
    "newbuild_q4_2025": {"listings": 137, "price_over": 4000},
+   "rent_last": {"q": "3T-2026", "eur": 1776, "yoy": 8.7, "listings": 1572, "listings_prev": 1909, "url": "https://valenciaplaza.com/valenciaplaza/plaza-inmobiliaria/la-obra-nueva-en-valencia-se-dispara-un-235-en-un-ano-y-roza-los-4600-euros-m"}, "newbuild_q3_2026": {"listings": 189, "promociones": 50, "price": 4575, "yoy": 23.5, "url": "https://valenciaplaza.com/valenciaplaza/plaza-inmobiliaria/la-obra-nueva-en-valencia-se-dispara-un-235-en-un-ano-y-roza-los-4600-euros-m"}, "vpo_calificadas_ciudad_2025_3t2026": 1074,
    "newbuild_district_q4_2024": {"Ciutat Vella": 5300, "Algirós": 5063, "L'Eixample": 4657, "Poblats Marítims": 4397, "La Saïdia": 3762, "Benimaclet": 3686, "Campanar": 3621, "Camins al Grau": 3590, "Extramurs": 3570, "Patraix": 3300, "Quatre Carreres": 3199, "Benicalap": 2789, "Rascanya": 2329, "Pobles del Sud": 1978},
    "rent_district_month_4t2025": {"Ciutat Vella": 1850, "L'Eixample": 2029, "Extramurs": 1599, "Campanar": 1919, "La Saïdia": 1321, "El Pla del Real": 1695, "L'Olivereta": 1289, "Patraix": 1301, "Jesús": 1273, "Quatre Carreres": 1569, "Poblats Marítims": 1642, "Camins al Grau": 2045, "Algirós": 1526, "Benimaclet": 1424, "Rascanya": 1339, "Benicalap": 1307, "Pobles del Nord": 1598, "Pobles de l'Oest": 1067, "Pobles del Sud": 1095},
    "rent_by_bedrooms_q4_2024": {"0": 1184, "1": 1338, "2": 1581, "3": 1696, "4+": 2144},
@@ -106,7 +107,7 @@ D = {
    "sin_hogar": {"2023": [1101, 492, 609, 139], "atendidas_2024": 967, "url": "https://www.uv.es/sociallab/observatoris/sense_llar/informe_PSH_2023"},
  },
  "desahucios": {"src": "CGPJ, lanzamientos practicados", "url": "https://forbes.es/economia/893652/los-desahucios-caen-un-11-en-2025-hasta-los-25-540-segun-cgpj/",
-   "cv": {"2023": [3869, 2673, 1049], "2025": [2992, 2158, 637]}, "cv_1t2026": [741, 513, 158], "prov_1t2026": 454, "tasa_cv_1t2026": 13.7, "ciudad_2017": 1096,
+   "cv": {"2023": [3869, 2673, 1049], "2025": [2992, 2158, 637]}, "cv_1t2026": [741, 513, 158], "cv_2t2026": [629, 361, 184, 84], "cv_2t2025_total": 806, "url_2t2026": "https://www.elperiodic.com/bajan-desahucios-inquilinos-comunitat-valenciana-pero-crecen-relacionados-hipotecas_1098089", "prov_1t2026": 454, "tasa_cv_1t2026": 13.7, "ciudad_2017": 1096,
    "oficina_dret": {"suspendidos": 187, "total": 277, "periodo": "oct-2021 – jul-2022"},
    "ocupacion": {"usurpacion_prov_2023": 575, "puntos_2023": 474, "puntos_2025": 84, "expedientes_oficina": 59, "avisos": 1134}},
  "turistico": {"vut_registro_gva": 5708, "plazas_gva": 19886, "airbnb_2026": 7968, "ine_exp_2026": 5393, "visit_vlc": [10516, 9057],

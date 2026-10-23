@@ -306,7 +306,7 @@ SITEBAR<div class="page">
   <p class="meta">Actualizado el {esc(E["updated"])} · <a href="./">viviendavalencia.info</a> · <a class="langsw" data-notr href="?lang=va">Valencià</a></p>
   <h1>Elecciones del 29-N: qué dicen los partidos sobre vivienda</h1>
   <p class="dek">Lo que han dicho hasta ahora las candidaturas con opciones de escaño en Valencia, qué decide cada administración y qué hizo cada partido cuando tuvo el poder de decidir.</p>
-  <div class="warn"><b>Todavía no hay programas.</b> A {esc(E["updated"])} ningún partido ha publicado su programa electoral para el 29-N. Lo que recogemos son documentos y declaraciones; cuando se publiquen los programas, actualizaremos la página.</div>
+  <div class="warn"><b>Todavía no hay programas.</b> A {esc(E["updated"])} ningún partido ha publicado su programa electoral para el 29-N. {esc(E.get("warn_extra",""))}Lo que recogemos son documentos y declaraciones; cuando se publiquen los programas, actualizaremos la página.</div>
   <div class="btnrow"><a class="btn primary" href="#dicho">Qué ha dicho cada partido</a>{'<a class="btn" href="#historial">Qué hicieron cuando gobernaron</a><a class="btn" href="#competencias">Quién decide qué</a>' if H else ''}</div>
 </header>
 {sec_estado()}
