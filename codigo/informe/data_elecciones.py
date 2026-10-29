@@ -1,7 +1,7 @@
-# Elecciones generales del 29-N de 2026: lo que han dicho los partidos sobre vivienda. Investigación a 23-10-2026.
+# Elecciones generales del 29-N de 2026: lo que han dicho los partidos sobre vivienda. Investigación a 29-10-2026.
 E29 = {
- "updated": "23 de octubre de 2026",
- "intro": "El 29 de noviembre hay elecciones generales. En la provincia de Valencia se eligen 16 diputados y diputadas. A 23 de octubre ningún partido ha publicado todavía su programa electoral; el PP ha presentado un plan de vivienda como avance del suyo. Esta página recoge lo que cada uno ha dicho hasta ahora sobre vivienda, con la fecha, quién lo dijo y el enlace a la fuente. La actualizaremos cuando se publiquen los programas; la campaña empieza el 13 de noviembre.",
+ "updated": "29 de octubre de 2026",
+ "intro": "El 29 de noviembre hay elecciones generales. En la provincia de Valencia se eligen 16 diputados y diputadas. A 29 de octubre ningún partido ha publicado todavía su programa electoral; el PP ha presentado un plan de vivienda como avance del suyo. Esta página recoge lo que cada uno ha dicho hasta ahora sobre vivienda, con la fecha, quién lo dijo y el enlace a la fuente. La actualizaremos cuando se publiquen los programas; la campaña empieza el 13 de noviembre.",
  "method": [
   "Incluimos las candidaturas que las encuestas publicadas sitúan con al menos un escaño en la provincia de Valencia: PP, PSOE, Compromís-Front Valencià y Vox. Van en el orden de votos que obtuvieron en la provincia en 2023.",
   "Solo recogemos lo dicho para estas elecciones: documentos oficiales del partido y declaraciones públicas de sus dirigentes o candidatos desde la convocatoria (5 de octubre). No usamos programas de elecciones anteriores ni deducimos posturas.",
@@ -11,7 +11,7 @@ E29 = {
   {"id": "pp", "name": "PP", "full": "Partido Popular",
    "program": "No publicado. El 21 de octubre presentó un plan de vivienda de 23 medidas como avance del programa.",
    "doc": "«Mi Contrato con España» (19 de octubre) y el plan de vivienda «Una nueva generación de propietarios» (21 de octubre).",
-   "list": "Sin anunciar a 23 de octubre (las listas se presentan hasta el 26).",
+   "list": "María José Catalá, alcaldesa de València, confirmada el 23 de octubre (2: Ricardo Gabaldón; 3: Belén Hoyo). Lista publicada el 26 de octubre.",
    "votes23": "33,9 % y 6 escaños",
    "said": [
     {"kind": "doc", "date": "19-10-2026", "who": "«Mi Contrato con España», punto 4: «Atender eficazmente el primer problema de los españoles: la vivienda»",
@@ -32,14 +32,17 @@ E29 = {
     {"kind": "dec", "date": "23-10-2026", "who": "Alberto Núñez Feijóo, entrevista en la Cadena SER",
      "text": "Según la crónica: construir en suelo público viviendas hasta un 30 % más baratas que las de mercado; rebaja del 60 % del IVA y el ITP para los menores de 40 años, con pago aplazado y avales del 100 %; licencias en 90 días como máximo.",
      "src": [["Moncloa.com", "https://www.moncloa.com/2026/10/23/feijoo-subir-salario-inflacion-3453948"]]},
+    {"kind": "dec", "date": "24-10-2026", "who": "Alberto Núñez Feijóo, acto en Vigo",
+     "text": "Presenta las líneas maestras de su propuesta para el 29-N: un millón de viviendas en la legislatura, con reformas de la Ley del Suelo y de la Ley de Propiedad Horizontal; una ley contra la ocupación con desalojo en 48 horas; menor ITP en la compra de la primera vivienda, sin cifra. No es un programa publicado: según la crónica, no detalla textos legales, costes ni calendario.",
+     "src": [["Moncloa.com", "https://www.moncloa.com/2026/10/24/feijoo-plan-okupas-irpf-vox-3454808/"]]},
     {"kind": "dec", "date": "17-10-2026", "who": "Acto del PP de la Comunitat Valenciana (Susana Camarero y María José Catalá)",
      "text": "Camarero defiende el Plan Vive de la Generalitat y pide que un Gobierno de Feijóo deje sin efecto la legislación estatal de vivienda vigente; Catalá reivindica el plan de vivienda del Ayuntamiento.",
      "src": [["ESdiario", "https://www.esdiario.com/comunidad-valenciana/261017/200525/pp-valencia-vivienda-feijoo.html"]]},
    ]},
   {"id": "psoe", "name": "PSOE", "full": "PSPV-PSOE",
-   "program": "No publicado. La ministra de Vivienda, Isabel Rodríguez, dijo el 20 de octubre que está «en elaboración» y que será «ambicioso» en vivienda.",
+   "program": "No publicado. La ministra de Vivienda, Isabel Rodríguez, dijo el 20 de octubre que está «en elaboración» y que será «ambicioso» en vivienda; el 24 de octubre añadió: «lo daremos a conocer en las próximas semanas».",
    "doc": "Ninguno sobre vivienda para estas elecciones.",
-   "list": "Pilar Bernabé, registrada el 21 de octubre (2: Arcadi España; 3: Rebeca Torró).",
+   "list": "Pilar Bernabé, registrada el 21 de octubre (2: Arcadi España; 3: Rebeca Torró). Lista publicada el 26 de octubre.",
    "votes23": "32,4 % y 5 escaños",
    "said": [
     {"kind": "dec", "date": "10-10-2026", "who": "Pedro Sánchez, mitin en Dos Hermanas",
@@ -58,13 +61,13 @@ E29 = {
      "text": "180 M€ para vivienda asequible en los 317 municipios con zonas tensionadas declaradas (Cataluña, País Vasco, Navarra, Galicia y Asturias) y 45 M€ para alojamiento universitario. La Comunitat Valenciana no recibe nada de la primera partida porque no ha declarado ninguna zona.",
      "src": [["Moncloa.com", "https://www.moncloa.com/2026/10/20/consejo-ministros-vivienda-180-millones-3452122/"], ["El Español", "https://www.elespanol.com/invertia/observatorios/vivienda/20261020/gobierno-aprueba-vivienda-asequible-decretos-alquiler-pendientes-convalidacion/1003744427423_0.html"]]},
     {"kind": "gov", "date": "7-10-2026", "who": "Decretos de vivienda del Gobierno (BOE de 7 de octubre), que el PSOE promete mantener. Son la segunda versión: el Congreso tumbó la primera el 2 de octubre con los votos de PP, Vox, Junts y UPN",
-     "text": "Suspensión hasta 2030 de desahucios de inquilinos vulnerables; nueva prórroga de dos años de los contratos que venzan hasta finales de 2028 y tope del 2 % a la subida anual hasta 2027; deducción del 10 % del alquiler pagado para rentas de menos de 23.000 € (decreciente hasta 33.000 €); bonificaciones fiscales a los caseros que bajen o mantengan el alquiler, excepto grandes tenedores; préstamos sin intereses con aval del ICO para la entrada de la primera vivienda (hasta el 20 % del precio, con un máximo de 50.000 €); IVA del 10 % en el alquiler turístico desde el 1 de diciembre y límite de 31 días a las estancias turísticas; límites a compras especulativas de vivienda por grandes tenedores hasta 2030; avales para construcción industrializada, más dinero para el fondo de vivienda social y traspaso de inmuebles públicos a Casa 47. El de las prórrogas solo entra en vigor si se convalida. La votación en la Diputación Permanente está prevista para el 12 de noviembre.",
+     "text": "Suspensión hasta 2030 de desahucios de inquilinos vulnerables; nueva prórroga de dos años de los contratos que venzan hasta finales de 2028 y tope del 2 % a la subida anual hasta 2027; deducción del 10 % del alquiler pagado para rentas de menos de 23.000 € (decreciente hasta 33.000 €); bonificaciones fiscales a los caseros que bajen o mantengan el alquiler, excepto grandes tenedores; préstamos sin intereses con aval del ICO para la entrada de la primera vivienda (hasta el 20 % del precio, con un máximo de 50.000 €); IVA del 10 % en el alquiler de viviendas amuebladas con estancias de hasta 30 noches, desde el 1 de diciembre; contratos de temporada con causa acreditada y duración superior a 31 días; límites a compras especulativas de vivienda por grandes tenedores hasta 2030; avales para construcción industrializada, más dinero para el fondo de vivienda social y traspaso de inmuebles públicos a Casa 47. El de las prórrogas solo entra en vigor si se convalida. La votación en la Diputación Permanente está prevista para el 12 de noviembre.",
      "src": [["BOE-A-2026-20823", "https://boe.es/boe/dias/2026/10/07/pdfs/BOE-A-2026-20823.pdf"], ["Civio: todas las medidas del decreto", "https://civio.es/el-boe-nuestro-de-cada-dia/2026/10/07/decreto-ley-vivienda-nueva-ronda/"], ["Moncloa.com: votación del 12 de noviembre", "https://www.moncloa.com/2026/10/17/decretos-vivienda-congreso-12n-3450016/"]]},
    ]},
   {"id": "cfv", "name": "Compromís-Front Valencià", "full": "Compromís, Podem, EUPV y ERPV",
    "program": "No publicado. La coalición se acordó el 16 de octubre.",
    "doc": "Ninguno con medidas de vivienda: la declaración de la Ejecutiva de Compromís (6 de octubre) y el comunicado del acuerdo citan el acceso a la vivienda como prioridad, sin concretar.",
-   "list": "Pactada, pendiente de registro (hasta el 26 de octubre): Àgueda Micó (1), Alberto Ibáñez (2) y EUPV (3).",
+   "list": "Àgueda Micó (2: Alberto Ibáñez; 3: Lara Manyes). Lista publicada el 26 de octubre.",
    "votes23": "17,0 % y 3 escaños (como Sumar-Compromís)",
    "said": [
     {"kind": "dec", "date": "16-10-2026", "who": "Presentación de la coalición (Mª Teresa Pérez, de Podem; Amparo Piquer y Carles Esteve)",
@@ -73,7 +76,7 @@ E29 = {
     {"kind": "dec", "date": "5-10-2026", "who": "Joan Baldoví, síndic de Compromís en Les Corts (no es candidato)",
      "text": "Que «la vivienda sea realmente un derecho reconocido en la Constitución».",
      "src": [["Actualidad Valencia", "https://actualidadvalencia.com/compromis-opcion-valenciana-100-29n-frente-amplio/"]]},
-    {"kind": "dec", "date": "7-10-2026", "who": "Alberto Ibáñez, diputado de Compromís y número dos pactado por Valencia",
+    {"kind": "dec", "date": "7-10-2026", "who": "Alberto Ibáñez, diputado de Compromís y número dos por Valencia",
      "text": "Apoyo a los decretos de vivienda del Gobierno, incluido el límite a la compra especulativa por grandes tenedores, y llamada a secundar la huelga general por la vivienda. Es su posición como diputado, no una propuesta de la coalición.",
      "src": [["Press Digital", "https://www.pressdigital.es/articulo/economia/2026-10-07/6042906-compromis-anima-gente-huelga-general-vivienda-considera-constitucional-valida"]]},
     {"kind": "dec", "date": "16-10-2026", "who": "Alberto Ibáñez, diputado de Compromís",
@@ -83,7 +86,7 @@ E29 = {
   {"id": "vox", "name": "Vox", "full": "Vox",
    "program": "No publicado.",
    "doc": "Ninguno para estas elecciones.",
-   "list": "Ignacio Gil Lázaro, anunciado el 21 de octubre (2: Ana Bellver; 3: Carlos Flores, cabeza de lista en 2023).",
+   "list": "Ignacio Gil Lázaro (2: Ana Bellver; 3: Carlos Flores Juberías, cabeza de lista en 2023). Lista publicada el 26 de octubre.",
    "votes23": "15,3 % y 2 escaños",
    "said": [
     {"kind": "dec", "date": "11-10-2026", "who": "Ignacio Garriga, secretario general, entrevista con EFE",
@@ -109,7 +112,7 @@ E29 = {
   ["Impuestos", {"pp": "IVA e ITP al 4 % para jóvenes; IVA del 4 % en rehabilitación; 75 % de bonificación en el IRPF por alquilar vivienda vacía; donaciones familiares sin impuestos.", "psoe": "Deducción por alquiler pagado y bonificaciones a caseros (decretos del Gobierno).", "cfv": "", "vox": "Bajar impuestos a la construcción; aplazar o fraccionar los de la compra; eliminar los de la primera vivienda (Llanos)."}, "IVA y tramo estatal del IRPF: Estado. ITP y tramo autonómico del IRPF: Generalitat. IBI: Ayuntamiento."],
   ["Desahucios y ocupación", {"pp": "Ley contra la ocupación con desalojo en 24-48 horas; el empadronamiento en una vivienda ocupada no da derechos.", "psoe": "Suspensión de desahucios de inquilinos vulnerables hasta 2030 (decretos del Gobierno).", "cfv": "", "vox": ""}, "Estado (Ley de Enjuiciamiento Civil y Código Penal)."],
   ["Grandes tenedores y compra por inversores", {"pp": "«Un gobierno no puede llamar buitre a un jubilado que tiene su piso en alquiler».", "psoe": "«Pie en pared contra los fondos buitre»; límites a compras de grandes tenedores (decretos).", "cfv": "«Frenar la especulación»; apoyo al límite a grandes tenedores (Ibáñez).", "vox": ""}, "Estado (fiscalidad, condiciones de compra) y Generalitat (vivienda vacía, tanteo)."],
-  ["Pisos turísticos", {"pp": "", "psoe": "IVA del 10 % y límite de 31 días al alquiler turístico (decretos del Gobierno).", "cfv": "", "vox": ""}, "Generalitat (registro y requisitos) y Ayuntamiento (dónde se permiten). El IVA es estatal."],
+  ["Pisos turísticos", {"pp": "", "psoe": "IVA del 10 % en el alquiler de viviendas con estancias de hasta 30 noches, desde el 1 de diciembre (decretos del Gobierno).", "cfv": "", "vox": ""}, "Generalitat (registro y requisitos) y Ayuntamiento (dónde se permiten). El IVA es estatal."],
  ],
  "evidence": [
   ["Construir más", "Auckland, Minneapolis y Tokio", "build"],
@@ -118,8 +121,8 @@ E29 = {
   ["Limitar el alquiler turístico", "Nueva York, Barcelona y Ámsterdam", "tur"],
   ["Gravar la vivienda vacía y la especulación", "Vancouver, Francia, Copenhague y Canadá", "tax"],
  ],
- "polls": "Encuestas consultadas para elegir las candidaturas: SocioMétrica/El Español (1-7 oct), Sigma Dos/El Mundo (1-14 oct) y el agregador e29n.com (13 oct). Ninguna da escaño en la provincia de Valencia a otra candidatura. No hay encuestas provinciales nuevas a 23 de octubre.",
+ "polls": "Encuestas consultadas para elegir las candidaturas: SocioMétrica/El Español (1-7 oct), Sigma Dos/El Mundo (1-14 oct) y el agregador e29n.com (13 oct). Ninguna da escaño en la provincia de Valencia a otra candidatura. No hemos encontrado encuestas provinciales nuevas a 29 de octubre.",
  "polls_src": [["El Español: encuesta SocioMétrica", "https://www.elespanol.com/valencia/comunitat/20261008/pp-perez-llorca-sacaria-hoy-diputados-valencianos-generales-toda-izquierda-junta-frente/1003744412082_0.html"], ["El Debate: encuesta Sigma Dos para El Mundo", "https://www.eldebate.com/espana/comunidad-valenciana/20261021/encuestas-electorales-29n-psoe-acerca-pp-vox-decanta-mayoria-absoluta-centro-derecha_471957.html"], ["e29n.com: modelo de agregación", "https://www.e29n.com/datos/modelo.csv"], ["Resultados de 2023 en Valencia", "https://www.publico.es/resultados-elecciones/generales/2023/comunitat-valenciana/valencia"]],
 }
 E29["decree_vote"] = ["Voto de los decretos de vivienda del 2 de octubre de 2026", {"pp": "En contra", "psoe": "A favor", "cfv": "A favor: Ibáñez, con el grupo de Sumar, y Micó (Mixto), que anunció su voto a favor en el pleno", "vox": "En contra"}]
-E29["warn_extra"] = "El PP ha presentado un plan de vivienda de 23 medidas como avance del suyo. "
+E29["warn_extra"] = "El PP ha presentado un plan de vivienda de 23 medidas como avance del suyo y el PSOE ha dicho que dará a conocer el suyo «en las próximas semanas». "
