@@ -1,7 +1,8 @@
 # Genera elecciones-29n.html (página estática) a partir de data_elecciones.py (E29) y data_historial.py (H).
 import re, html, pathlib
 ROOT = pathlib.Path(__file__).parent
-OUT = ROOT.parent / "elecciones-29n.html"
+SITE = next((d for d in [ROOT.parent, ROOT.parent.parent] if (d / "index.html").exists()), ROOT.parent)
+OUT = SITE / "elecciones-29n.html"
 
 def load(fname, var):
     ns = {}
@@ -102,7 +103,7 @@ HEAD = """<!doctype html>
 <title>Elecciones del 29-N: qué dicen los partidos sobre vivienda</title>
 <meta name="description" content="Qué han dicho PP, PSOE, Compromís-Front Valencià y Vox sobre vivienda antes del 29-N, quién ha gobernado cada administración, qué competencias tiene cada una y qué prometió y cumplió cada partido. Con fuentes.">
 <meta property="og:title" content="Elecciones del 29-N: qué dicen los partidos sobre vivienda">
-<meta property="og:description" content="Ningún partido ha publicado aún su programa. Lo dicho hasta ahora, quién decide qué y qué hizo cada uno cuando gobernó, con la fuente de cada dato.">
+<meta property="og:description" content="Los programas se presentan a partir del 10 de noviembre. Lo dicho hasta ahora por PP, PSOE, Compromís-Front Valencià y Vox, quién decide qué y qué hizo cada uno cuando gobernó, con la fuente de cada dato.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://viviendavalencia.info/og-elecciones.jpg">
 <meta property="og:image:width" content="1200">

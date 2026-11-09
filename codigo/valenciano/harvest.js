@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');const path=require('path'),fs=require('fs');
-const css=fs.readFileSync(path.join(__dirname,'../story/fonts.css'),'utf8'); const core=fs.readFileSync(path.join(__dirname,'i18n_core.js'),'utf8');
+const fcss=path.join(__dirname,'../story/fonts.css'); const css=fs.existsSync(fcss)?fs.readFileSync(fcss,'utf8'):''; const core=fs.readFileSync(path.join(__dirname,'i18n_core.js'),'utf8');
 const [,,page,out,extraJs]=process.argv;
-(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:1280,height:900}});
+(async()=>{const b=await chromium.launch(process.env.CHROME?{executablePath:process.env.CHROME}:{});const c=await b.newContext({viewport:{width:1280,height:900}});
  await c.route('**/*',r=>{const u=r.request().url(); if(u.includes('fonts.googleapis'))return r.fulfill({body:css,contentType:'text/css'}); const lib={'leaflet.min.js':'leaflet/dist/leaflet.js','leaflet.min.css':'leaflet/dist/leaflet.css','leaflet.markercluster.min.js':'leaflet.markercluster/dist/leaflet.markercluster.js','MarkerCluster.css':'leaflet.markercluster/dist/MarkerCluster.css','MarkerCluster.Default.css':'leaflet.markercluster/dist/MarkerCluster.Default.css','MarkerCluster.Default.min.css':'leaflet.markercluster/dist/MarkerCluster.Default.css','MarkerCluster.min.css':'leaflet.markercluster/dist/MarkerCluster.css','papaparse.min.js':'papaparse/papaparse.min.js'}; for(const [k,v] of Object.entries(lib)) if(u.includes('cdnjs')&&u.endsWith(k)) return r.fulfill({path:path.join(__dirname,'node_modules',v)}); if(u.startsWith('file:'))return r.continue(); return r.abort();});
  const p=await c.newPage(); const errs=[]; p.on('pageerror',e=>errs.push(e.message));
  await p.goto('file://'+path.resolve(page)); await p.waitForTimeout(1500); await p.addScriptTag({content:core}); if(process.env.NOSEL) await p.evaluate(s=>window.__NOSEL=s,process.env.NOSEL);

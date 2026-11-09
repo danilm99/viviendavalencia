@@ -1,1 +1,5 @@
 publicar-dominio.ps1
+__pycache__/
+node_modules/
+codigo/valenciano/package.json
+codigo/valenciano/package-lock.json

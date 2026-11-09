@@ -1,12 +1,12 @@
 # Une claves recogidas de cada página con va_all.json y actualiza los va-*.js (sin borrar claves existentes)
 import json,subprocess,sys,os
-SITE='/home/claude/pisos-turisticos'
+SITE=os.environ.get('SITE','/home/claude/pisos-turisticos')
 src=open(SITE+'/va-informe.js').read(); TRAILER=src[src.index('};\n(function')+2:]
 va=json.load(open('va_all.json'))
 pages=[('index.html','va-inicio.js',None),('informe-vivienda-valencia.html','va-informe.js','steps_informe.js'),('pisos-turisticos-valencia.html','va-mapa.js','steps_mapa.js'),('elecciones-29n.html','va-elecciones.js',None)]
 tot=0
 for html,dj,steps in pages:
-    out='k_tmp.json'; cmd=['node','harvest.js',SITE+'/'+html,out]+([steps] if steps else [])
+    out='k_tmp.json'; cmd=['node',os.path.join(os.path.dirname(os.path.abspath(__file__)),'harvest.js'),SITE+'/'+html,out]+([steps] if steps else [])
     subprocess.run(cmd,check=True,capture_output=True)
     keys=[k for k,_ in json.load(open(out))['keys']]
     p=SITE+'/'+dj; d={}
