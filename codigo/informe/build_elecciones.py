@@ -131,10 +131,36 @@ def sec_estado():
         f'<td data-h="Cabeza de lista por Valencia">{esc(p["list"])}</td><td data-h="Resultado en 2023 en Valencia">{esc(p["votes23"])}</td></tr>'
         for p in E["parties"])
     return f"""<section id="estado">
-<h2>Ningún partido ha publicado su programa</h2>
+<h2>Programas electorales</h2>
 <p class="lede">{esc(E["intro"])}</p>
 <div class="tbl"><table class="st cardm"><thead><tr><th>Candidatura</th><th>Programa electoral</th><th>Otros documentos</th><th>Cabeza de lista por Valencia</th><th>Resultado en 2023 en la provincia</th></tr></thead><tbody>{rows}</tbody></table></div>
 <p class="src">{esc(E["polls"])}</p>{srcs(E["polls_src"])}
+</section>"""
+
+def sec_decretos():
+    D = E["decrees"]
+    st = "".join("<tr>" + "".join(f'<td data-h="{esc(h)}">{esc(c)}</td>' for h, c in zip(D["status_head"], r)) + "</tr>" for r in D["status"])
+    cont = "".join(f'<h4>{esc(t)}</h4><ul>' + "".join(f"<li>{esc(x)}</li>" for x in l) + "</ul>" for t, l in D["contents"])
+    imp = "".join(f'<div class="party"><h4>{esc(t)}</h4><p>{esc(x)}</p></div>' for t, x in D["implica"])
+    nxt = "".join(f"<li>{esc(x)}</li>" for x in D["next"])
+    deb = "".join(f'<p><b>{esc(t)}.</b> {rich(x)}</p>' for t, x in D["debate"])
+    head = "".join(f"<th>{esc(h)}</th>" for h in D["status_head"])
+    return f"""<section id="decretos">
+<h2>{esc(D["title"])}</h2>
+<p class="lede">{esc(D["lede"])}</p>
+<div class="tbl"><table class="st cardm"><thead><tr>{head}</tr></thead><tbody>{st}</tbody></table></div>
+<h3>{esc(D["contents_head"])}</h3>
+{cont}
+<h3>{esc(D["implica_head"])}</h3>
+{imp}
+<h3>{esc(D["valencia_head"])}</h3>
+<p>{esc(D["valencia"])}</p>
+<h3>{esc(D["next_head"])}</h3>
+<ul>{nxt}</ul>
+<h3>{esc(D["debate_head"])}</h3>
+{deb}
+<p class="note">{esc(D["debate_note"])}</p>
+{srcs(D["src"])}
 </section>"""
 
 def sec_dicho():
@@ -290,7 +316,7 @@ def sec_votos():
 {srcs(H["votes_src"])}
 </section>"""
 
-NAV = [("estado", "Programas"), ("dicho", "Qué han dicho"), ("temas", "Por temas")]
+NAV = [("estado", "Programas"), ("dicho", "Qué han dicho"), ("temas", "Por temas"), ("decretos", "Decretos de vivienda")]
 if H:
     NAV += [("competencias", "Quién decide qué"), ("gobiernos", "Quién ha gobernado"), ("historial", "Prometido y hecho"), ("votaciones", "Votaciones")]
 NAV += [("evidencia", "Otras ciudades"), ("metodo", "Método")]
@@ -308,11 +334,12 @@ SITEBAR<div class="page">
   <h1>Elecciones del 29-N: qué dicen los partidos sobre vivienda</h1>
   <p class="dek">Lo que han dicho hasta ahora las candidaturas con opciones de escaño en Valencia, qué decide cada administración y qué hizo cada partido cuando tuvo el poder de decidir.</p>
   <div class="warn"><b>Los cuatro programas ya están publicados.</b> A {esc(E["updated"])} hemos incorporado las medidas de vivienda de cada uno. {esc(E.get("warn_extra",""))}Un programa es una promesa, no una ley: lo que cada partido pueda cumplir depende de que gobierne, de que tenga los votos y de qué administración tenga la competencia.</div>
-  <div class="btnrow"><a class="btn primary" href="#dicho">Qué ha dicho cada partido</a>{'<a class="btn" href="#historial">Qué hicieron cuando gobernaron</a><a class="btn" href="#competencias">Quién decide qué</a>' if H else ''}</div>
+  <div class="btnrow"><a class="btn primary" href="#dicho">Qué ha dicho cada partido</a><a class="btn" href="#decretos">Decretos de vivienda</a>{'<a class="btn" href="#historial">Qué hicieron cuando gobernaron</a><a class="btn" href="#competencias">Quién decide qué</a>' if H else ''}</div>
 </header>
 {sec_estado()}
 {sec_dicho()}
 {sec_temas()}
+{sec_decretos()}
 {sec_competencias()}
 {sec_gobiernos()}
 {sec_historial()}
